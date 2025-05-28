@@ -36,7 +36,7 @@ import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
 import { useNotification } from '@/components/ui/NotificationContext';
 
-const API_BASE = 'https://idztech.vercel.app';
+const API_BASE = 'https://idztech.onrender.com';
 
 interface BlogPost {
   id: string;

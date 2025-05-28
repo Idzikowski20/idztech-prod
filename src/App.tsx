@@ -28,7 +28,7 @@ import AIPostPage from './pages/ai-post';
 import CookieBanner from './components/CookieBanner';
 import { useAuth } from '@/utils/firebaseAuth';
 import { useTheme } from '@/utils/themeContext';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const App = () => {
   const { loading } = useAuth();
   const { theme } = useTheme();
@@ -75,6 +75,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />
+      <SpeedInsights/>
     </>
   );
 };
