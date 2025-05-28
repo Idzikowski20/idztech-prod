@@ -452,7 +452,8 @@ function getPriorityAndFreq(url) {
 async function generateSitemap() {
   try {
     const blogUrls = await getAllBlogSlugs();
-    console.log('Blog URLs:', blogUrls);
+    // Loguj tylko URL-e sitemap
+    console.log('Sitemap URLs:', blogUrls);
     const allPaths = [
       ...STATIC_PATHS,
       ...blogUrls
