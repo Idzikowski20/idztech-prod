@@ -31,6 +31,53 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+// Funkcja do aktualizacji liczników użycia API
+async function updateApiUsage(apiName) {
+  const envFile = '.env';
+  let envContent = '';
+  
+  try {
+    envContent = fs.readFileSync(envFile, 'utf8');
+  } catch (err) {
+    console.error('Błąd odczytu pliku .env:', err);
+    return;
+  }
+
+  const totalRequestsKey = `${apiName.toUpperCase()}_TOTAL_REQUESTS`;
+  const lastUsedKey = `${apiName.toUpperCase()}_LAST_USED`;
+  
+  // Aktualizuj licznik zapytań
+  const currentTotal = parseInt(process.env[totalRequestsKey] || '0');
+  const newTotal = currentTotal + 1;
+  
+  // Aktualizuj zawartość pliku .env
+  envContent = envContent.replace(
+    new RegExp(`${totalRequestsKey}=.*`, 'g'),
+    `${totalRequestsKey}=${newTotal}`
+  );
+  envContent = envContent.replace(
+    new RegExp(`${lastUsedKey}=.*`, 'g'),
+    `${lastUsedKey}=${new Date().toISOString()}`
+  );
+  
+  // Jeśli zmienne nie istnieją, dodaj je
+  if (!envContent.includes(totalRequestsKey)) {
+    envContent += `\n${totalRequestsKey}=${newTotal}`;
+  }
+  if (!envContent.includes(lastUsedKey)) {
+    envContent += `\n${lastUsedKey}=${new Date().toISOString()}`;
+  }
+  
+  try {
+    fs.writeFileSync(envFile, envContent);
+    // Aktualizuj zmienne środowiskowe
+    process.env[totalRequestsKey] = newTotal.toString();
+    process.env[lastUsedKey] = new Date().toISOString();
+  } catch (err) {
+    console.error('Błąd zapisu do pliku .env:', err);
+  }
+}
+
 // Uniwersalna funkcja do pobierania odpowiedzi z LLM z fallbackami
 async function fetchFromLLM({ prompt, system, extractJson = false, extractLine = false }) {
   const apiKeyGroq = process.env.GROQ_API_KEY;
@@ -61,6 +108,7 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       let cleanText = text.replace(/```json|```/g, '').trim();
       // Zamień znaki nowej linii i tabulatory w stringach na spacje
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
+      await updateApiUsage('GROQ');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi Groq');
@@ -90,6 +138,7 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       let cleanText = text.replace(/```json|```/g, '').trim();
       // Zamień znaki nowej linii i tabulatory w stringach na spacje
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
+      await updateApiUsage('GEMINI');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi Gemini');
@@ -129,6 +178,7 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       let cleanText = text.replace(/```json|```/g, '').trim();
       // Zamień znaki nowej linii i tabulatory w stringach na spacje
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
+      await updateApiUsage('OPENAI');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi OpenAI');
@@ -168,6 +218,7 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       const text = data.choices?.[0]?.message?.content || '';
       let cleanText = text.replace(/```json|```/g, '').trim();
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
+      await updateApiUsage('MISTRAL');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi Mistral');
@@ -365,6 +416,42 @@ app.get('/api/test-write', (req, res) => {
     res.json({ ok: true, message: 'Zapisano test-write.txt!' });
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+// --- /api/usage ---
+app.get('/api/usage', async (req, res) => {
+  try {
+    const apiUsage = [
+      {
+        api_name: 'OpenAI',
+        total_requests: process.env.OPENAI_TOTAL_REQUESTS || 0,
+        last_used: process.env.OPENAI_LAST_USED || new Date().toISOString(),
+        limit: process.env.OPENAI_MONTHLY_LIMIT || 1000000
+      },
+      {
+        api_name: 'Groq',
+        total_requests: process.env.GROQ_TOTAL_REQUESTS || 0,
+        last_used: process.env.GROQ_LAST_USED || new Date().toISOString(),
+        limit: process.env.GROQ_MONTHLY_LIMIT || 1000000
+      },
+      {
+        api_name: 'Gemini',
+        total_requests: process.env.GEMINI_TOTAL_REQUESTS || 0,
+        last_used: process.env.GEMINI_LAST_USED || new Date().toISOString(),
+        limit: process.env.GEMINI_MONTHLY_LIMIT || 1000000
+      },
+      {
+        api_name: 'Mistral',
+        total_requests: process.env.MISTRAL_TOTAL_REQUESTS || 0,
+        last_used: process.env.MISTRAL_LAST_USED || new Date().toISOString(),
+        limit: process.env.MISTRAL_MONTHLY_LIMIT || 1000000
+      }
+    ];
+    
+    res.status(200).json(apiUsage);
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd pobierania statystyk użycia API', details: err.message });
   }
 });
 

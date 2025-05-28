@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Edit, Trash2, Eye, Search, ArrowUpDown } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, Search, ArrowUpDown, BarChart2 } from 'lucide-react';
 import { useAuth } from '@/utils/firebaseAuth';
 import { Button } from '@/components/ui/button';
 import { db } from '@/integrations/firebase/client';
@@ -51,6 +51,13 @@ interface BlogPost {
   updated_at: string;
 }
 
+interface APIUsage {
+  api_name: string;
+  total_requests: number;
+  last_used: string;
+  limit: number;
+}
+
 const Admin = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -77,6 +84,9 @@ const Admin = () => {
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
   const [sitemapLastUpdate, setSitemapLastUpdate] = useState<string | null>(null);
   const [isGeneratingSitemap, setIsGeneratingSitemap] = useState(false);
+  const [activeTab, setActiveTab] = useState<'posts' | 'usage'>('posts');
+  const [apiUsage, setApiUsage] = useState<APIUsage[]>([]);
+  const [loadingUsage, setLoadingUsage] = useState(true);
 
   useEffect(() => {
     if (!user) {
@@ -84,8 +94,12 @@ const Admin = () => {
       return;
     }
 
-    fetchPosts();
-  }, [user, navigate]);
+    if (activeTab === 'posts') {
+      fetchPosts();
+    } else {
+      fetchApiUsage();
+    }
+  }, [user, navigate, activeTab]);
 
   const fetchPosts = async () => {
     try {
@@ -102,6 +116,20 @@ const Admin = () => {
       console.error(err);
     } finally {
       setLoadingPosts(false);
+    }
+  };
+
+  const fetchApiUsage = async () => {
+    try {
+      setLoadingUsage(true);
+      const response = await fetch(`${API_BASE}/api/usage`);
+      const data = await response.json();
+      setApiUsage(data);
+    } catch (err) {
+      setError('Błąd podczas pobierania statystyk użycia API');
+      console.error(err);
+    } finally {
+      setLoadingUsage(false);
     }
   };
 
@@ -240,223 +268,288 @@ const Admin = () => {
 
   return (
     <AdminLayout>
-      <div className="p-6">
-        <div className="mb-8 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-            <p className="text-gray-600 dark:text-gray-400">Zarządzaj treścią, ustawieniami i danymi.</p>
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold">Panel Administracyjny</h1>
+          <div className="flex space-x-4">
+            <Button
+              variant={activeTab === 'posts' ? 'default' : 'outline'}
+              onClick={() => setActiveTab('posts')}
+            >
+              Posty
+            </Button>
+            <Button
+              variant={activeTab === 'usage' ? 'default' : 'outline'}
+              onClick={() => setActiveTab('usage')}
+            >
+              <BarChart2 className="mr-2 h-4 w-4" />
+              Zużycia
+            </Button>
           </div>
         </div>
 
-        {/* Blog Posts Management */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-2 gap-4 flex-wrap">
-            <h2 className="text-xl font-bold">Blog</h2>
-          </div>
-          <div className="flex items-center justify-end mb-6">
-            <div className="flex gap-4">
-              <Button size="sm" onClick={handleGenerateSitemap} disabled={isGeneratingSitemap} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
-                {isGeneratingSitemap ? 'Generowanie...' : 'Generuj sitemapę'}
-              </Button>
-              <div className="flex items-center gap-4">
-                <Select
-                  value={statusFilter}
-                  onValueChange={(value: 'all' | 'published' | 'draft') => setStatusFilter(value)}
-                >
-                  <SelectTrigger className="w-[180px] dark:bg-transparent bg-white">
-                    <SelectValue placeholder="Filtruj po statusie" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Wszystkie</SelectItem>
-                    <SelectItem value="published">Opublikowane</SelectItem>
-                    <SelectItem value="draft">Szkice</SelectItem>
-                  </SelectContent>
-                </Select>
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-premium-light/50" size={16} />
-                  <Input
-                    placeholder="Wyszukaj po tytule..."
-                    className="pl-10 bg-premium-dark/30 border-premium-light/10 w-64"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                  />
+        {activeTab === 'posts' ? (
+          <div className="p-6">
+            <div className="mb-8 flex justify-between items-center">
+              <div>
+                <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
+                <p className="text-gray-600 dark:text-gray-400">Zarządzaj treścią, ustawieniami i danymi.</p>
+              </div>
+            </div>
+
+            {/* Blog Posts Management */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-2 gap-4 flex-wrap">
+                <h2 className="text-xl font-bold">Blog</h2>
+              </div>
+              <div className="flex items-center justify-end mb-6">
+                <div className="flex gap-4">
+                  <Button size="sm" onClick={handleGenerateSitemap} disabled={isGeneratingSitemap} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                    {isGeneratingSitemap ? 'Generowanie...' : 'Generuj sitemapę'}
+                  </Button>
+                  <div className="flex items-center gap-4">
+                    <Select
+                      value={statusFilter}
+                      onValueChange={(value: 'all' | 'published' | 'draft') => setStatusFilter(value)}
+                    >
+                      <SelectTrigger className="w-[180px] dark:bg-transparent bg-white">
+                        <SelectValue placeholder="Filtruj po statusie" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Wszystkie</SelectItem>
+                        <SelectItem value="published">Opublikowane</SelectItem>
+                        <SelectItem value="draft">Szkice</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-premium-light/50" size={16} />
+                      <Input
+                        placeholder="Wyszukaj po tytule..."
+                        className="pl-10 bg-premium-dark/30 border-premium-light/10 w-64"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                    <Plus size={16} className="mr-2" /> Dodaj nowy post
+                  </Button>
+                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                    <Plus size={16} className="mr-2" /> Generuj z AI
+                  </Button>
                 </div>
               </div>
-              <Button onClick={() => navigate('/admin/new-post')} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
-                <Plus size={16} className="mr-2" /> Dodaj nowy post
-              </Button>
-              <Button onClick={() => navigate('/admin/ai-post')} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
-                <Plus size={16} className="mr-2" /> Generuj z AI
-              </Button>
+
+              <div className="bg-premium-dark/50 border border-premium-light/10 rounded-xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className=" border-premium-light/10 sticky top-0 bg-transparent z-10">
+                      <tr>
+                        <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                          <Button
+                            variant="ghost"
+                            className="hover:bg-transparent p-0"
+                            onClick={() => {
+                              if (sortField === 'title') {
+                                setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+                              } else {
+                                setSortField('title');
+                                setSortDirection('asc');
+                              }
+                            }}
+                          >
+                            Tytuł
+                            <ArrowUpDown size={16} className="ml-2" />
+                          </Button>
+                        </th>
+                        <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                          <Button
+                            variant="ghost"
+                            className="hover:bg-transparent p-0"
+                            onClick={() => {
+                              if (sortField === 'date') {
+                                setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+                              } else {
+                                setSortField('date');
+                                setSortDirection('desc');
+                              }
+                            }}
+                          >
+                            Data
+                            <ArrowUpDown size={16} className="ml-2" />
+                          </Button>
+                        </th>
+                        <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Status</th>
+                        <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Akcje</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-premium-light/10">
+                      {loadingPosts ? (
+                        null
+                      ) : filteredPosts.length === 0 ? (
+                        <tr>
+                          <td className="py-4 px-4 text-left text-premium-light/70" colSpan={4}>
+                            {searchTerm ? 'Brak wyników wyszukiwania' : 'Brak postów. Dodaj pierwszy post, aby zacząć.'}
+                          </td>
+                        </tr>
+                      ) : (
+                        paginatedPosts.map(post => (
+                          <tr key={post.id}>
+                            <td className={`py-2 sm:py-3 px-2 sm:px-4 font-medium break-words max-w-[180px] text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{post.title}</td>
+                            <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-premium-light/70' : 'text-gray-600'}`}>
+                              {post.published 
+                                ? formatDate(post.published_at || post.created_at)
+                                : formatDate(post.created_at)}
+                            </td>
+                            <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                              <button
+                                onClick={() => handleStatusChange(post.id, !post.published)}
+                                className={`${post.published ? 'status-published' : 'status-draft'} cursor-pointer transition-transform hover:scale-105`}
+                              >
+                                {post.published ? 'Opublikowany' : 'Szkic'}
+                              </button>
+                            </td>
+                            <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                              <div className="flex items-center space-x-2 justify-center">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => navigate(`/blog/${post.slug}`)}
+                                  className="admin-action-btn view border-radius999"
+                                >
+                                  <Eye size={14} />
+                                </Button>
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => navigate(`/admin/edit-post/${post.id}`)}
+                                  className="admin-action-btn edit border-radius999"
+                                >
+                                  <Edit size={14} />
+                                </Button>
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => handleDelete(post.id)}
+                                  className="admin-action-btn delete border-radius999"
+                                >
+                                  <Trash2 size={14} />
+                                </Button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+                
+                {/* Blog Posts Pagination */}
+                {totalPostsPages > 1 && (
+                  <div className="flex justify-center py-4">
+                    <Pagination>
+                      <PaginationContent>
+                        <PaginationItem>
+                          <PaginationPrevious 
+                            onClick={() => setCurrentPostsPage(prev => Math.max(prev - 1, 1))}
+                            className={
+                              currentPostsPage === 1
+                                ? 'pointer-events-none opacity-50'
+                                : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:underline`
+                            }
+                          />
+                        </PaginationItem>
+                        
+                        {Array.from({length: Math.min(totalPostsPages, 5)}, (_, i) => {
+                          // Display logic for page numbers
+                          let pageNum;
+                          if (totalPostsPages <= 5) {
+                            pageNum = i + 1;
+                          } else if (currentPostsPage <= 3) {
+                            pageNum = i + 1;
+                          } else if (currentPostsPage >= totalPostsPages - 2) {
+                            pageNum = totalPostsPages - 4 + i;
+                          } else {
+                            pageNum = currentPostsPage - 2 + i;
+                          }
+                          
+                          return (
+                            <PaginationItem key={i}>
+                              <PaginationLink
+                                onClick={() => setCurrentPostsPage(pageNum)}
+                                isActive={currentPostsPage === pageNum}
+                                className={
+                                  currentPostsPage === pageNum
+                                    ? `${theme === 'dark' ? 'bg-premium-dark text-white border border-premium-light/10' : 'bg-white text-black border border-gray-300'} !shadow-none`
+                                    : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:bg-premium-light/10`
+                                }
+                              >
+                                {pageNum}
+                              </PaginationLink>
+                            </PaginationItem>
+                          );
+                        })}
+                        
+                        <PaginationItem>
+                          <PaginationNext 
+                            onClick={() => setCurrentPostsPage(prev => Math.min(prev + 1, totalPostsPages))}
+                            className={
+                              currentPostsPage === totalPostsPages
+                                ? 'pointer-events-none opacity-50'
+                                : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:underline`
+                            }
+                          />
+                        </PaginationItem>
+                      </PaginationContent>
+                    </Pagination>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-
-          <div className="bg-premium-dark/50 border border-premium-light/10 rounded-xl overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className=" border-premium-light/10 sticky top-0 bg-transparent z-10">
-                  <tr>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                      <Button
-                        variant="ghost"
-                        className="hover:bg-transparent p-0"
-                        onClick={() => {
-                          if (sortField === 'title') {
-                            setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
-                          } else {
-                            setSortField('title');
-                            setSortDirection('asc');
-                          }
-                        }}
-                      >
-                        Tytuł
-                        <ArrowUpDown size={16} className="ml-2" />
-                      </Button>
-                    </th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                      <Button
-                        variant="ghost"
-                        className="hover:bg-transparent p-0"
-                        onClick={() => {
-                          if (sortField === 'date') {
-                            setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
-                          } else {
-                            setSortField('date');
-                            setSortDirection('desc');
-                          }
-                        }}
-                      >
-                        Data
-                        <ArrowUpDown size={16} className="ml-2" />
-                      </Button>
-                    </th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Status</th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Akcje</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-premium-light/10">
-                  {loadingPosts ? (
-                    null
-                  ) : filteredPosts.length === 0 ? (
-                    <tr>
-                      <td className="py-4 px-4 text-left text-premium-light/70" colSpan={4}>
-                        {searchTerm ? 'Brak wyników wyszukiwania' : 'Brak postów. Dodaj pierwszy post, aby zacząć.'}
-                      </td>
-                    </tr>
-                  ) : (
-                    paginatedPosts.map(post => (
-                      <tr key={post.id}>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 font-medium break-words max-w-[180px] text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{post.title}</td>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-premium-light/70' : 'text-gray-600'}`}>
-                          {post.published 
-                            ? formatDate(post.published_at || post.created_at)
-                            : formatDate(post.created_at)}
-                        </td>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                          <button
-                            onClick={() => handleStatusChange(post.id, !post.published)}
-                            className={`${post.published ? 'status-published' : 'status-draft'} cursor-pointer transition-transform hover:scale-105`}
-                          >
-                            {post.published ? 'Opublikowany' : 'Szkic'}
-                          </button>
-                        </td>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                          <div className="flex items-center space-x-2 justify-center">
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => navigate(`/blog/${post.slug}`)}
-                              className="admin-action-btn view border-radius999"
-                            >
-                              <Eye size={14} />
-                            </Button>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => navigate(`/admin/edit-post/${post.id}`)}
-                              className="admin-action-btn edit border-radius999"
-                            >
-                              <Edit size={14} />
-                            </Button>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleDelete(post.id)}
-                              className="admin-action-btn delete border-radius999"
-                            >
-                              <Trash2 size={14} />
-                            </Button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
-            
-            {/* Blog Posts Pagination */}
-            {totalPostsPages > 1 && (
-              <div className="flex justify-center py-4">
-                <Pagination>
-                  <PaginationContent>
-                    <PaginationItem>
-                      <PaginationPrevious 
-                        onClick={() => setCurrentPostsPage(prev => Math.max(prev - 1, 1))}
-                        className={
-                          currentPostsPage === 1
-                            ? 'pointer-events-none opacity-50'
-                            : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:underline`
-                        }
-                      />
-                    </PaginationItem>
-                    
-                    {Array.from({length: Math.min(totalPostsPages, 5)}, (_, i) => {
-                      // Display logic for page numbers
-                      let pageNum;
-                      if (totalPostsPages <= 5) {
-                        pageNum = i + 1;
-                      } else if (currentPostsPage <= 3) {
-                        pageNum = i + 1;
-                      } else if (currentPostsPage >= totalPostsPages - 2) {
-                        pageNum = totalPostsPages - 4 + i;
-                      } else {
-                        pageNum = currentPostsPage - 2 + i;
-                      }
-                      
-                      return (
-                        <PaginationItem key={i}>
-                          <PaginationLink
-                            onClick={() => setCurrentPostsPage(pageNum)}
-                            isActive={currentPostsPage === pageNum}
-                            className={
-                              currentPostsPage === pageNum
-                                ? `${theme === 'dark' ? 'bg-premium-dark text-white border border-premium-light/10' : 'bg-white text-black border border-gray-300'} !shadow-none`
-                                : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:bg-premium-light/10`
-                            }
-                          >
-                            {pageNum}
-                          </PaginationLink>
-                        </PaginationItem>
-                      );
-                    })}
-                    
-                    <PaginationItem>
-                      <PaginationNext 
-                        onClick={() => setCurrentPostsPage(prev => Math.min(prev + 1, totalPostsPages))}
-                        className={
-                          currentPostsPage === totalPostsPages
-                            ? 'pointer-events-none opacity-50'
-                            : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:underline`
-                        }
-                      />
-                    </PaginationItem>
-                  </PaginationContent>
-                </Pagination>
+        ) : (
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <h2 className="text-2xl font-semibold mb-6">Statystyki użycia API</h2>
+            {loadingUsage ? (
+              <div className="flex justify-center items-center h-64">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 dark:border-white"></div>
+              </div>
+            ) : error ? (
+              <div className="text-red-500 text-center">{error}</div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {apiUsage.map((usage) => (
+                  <div
+                    key={usage.api_name}
+                    className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 shadow-sm"
+                  >
+                    <h3 className="text-lg font-semibold mb-2">{usage.api_name}</h3>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-300">Zużyte zapytania:</span>
+                        <span className="font-medium">{usage.total_requests}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-300">Limit:</span>
+                        <span className="font-medium">{usage.limit}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600 dark:text-gray-300">Ostatnie użycie:</span>
+                        <span className="font-medium">{formatDate(usage.last_used)}</span>
+                      </div>
+                      <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 mt-4">
+                        <div
+                          className="bg-blue-600 h-2.5 rounded-full"
+                          style={{ width: `${(usage.total_requests / usage.limit) * 100}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
           </div>
-        </div>
+        )}
       </div>
     </AdminLayout>
   );
