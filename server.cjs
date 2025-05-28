@@ -8,7 +8,7 @@ const app = express();
 
 // Dodaj obsługę CORS
 app.use((req, res, next) => {
-  const allowedOrigins = ['https://idztech.vercel.app', 'https://idztech.pl'];
+  const allowedOrigins = ['https://idztech.pl','https://idztech.onrender.com', 'http://localhost:8080', 'http://localhost:10000'];
   // W trybie developerskim dodaj localhost
   if (process.env.NODE_ENV !== 'production') {
     allowedOrigins.push('http://localhost:8080', 'http://localhost:3000', 'http://localhost:5173');
@@ -188,8 +188,8 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
 
 // --- /api/generate-keywords ---
 app.post('/api/generate-keywords', async (req, res) => {
-  const { topic } = req.body || {};
-  const prompt = `Wygeneruj listę słów kluczowych (po przecinku, bez numeracji, bez dodatkowego tekstu) do artykułu na temat: "${topic}". Odpowiedz tylko listą słów kluczowych po przecinku.`;
+  const { topic, length = 7 } = req.body || {};
+  const prompt = `Wygeneruj dokładnie ${length} unikalnych słów kluczowych (po przecinku, bez numeracji, bez dodatkowego tekstu) do artykułu na temat: "${topic}". Odpowiedz tylko listą słów kluczowych po przecinku. Nie dodawaj żadnych wyjaśnień ani dodatkowego tekstu.`;
   try {
     const keywords = await fetchFromLLM({ prompt, system: 'Jesteś ekspertem SEO.', extractLine: true });
     res.status(200).json({ keywords });
@@ -246,7 +246,8 @@ Zwróć tylko JSON:
     for (let i = 0; i < sections.length; i++) {
       let sectionContent = '';
       let done = false;
-      let prompt = `Napisz bardzo długą, szczegółową sekcję artykułu blogowego (minimum 600 słów, najlepiej 800-1000 słów) na temat: \"${sections[i]}\". Temat główny: \"${title}\". Styl: ${style}. Słowa kluczowe: ${keywords}. Język: ${language || 'polski'}. Jeśli opisujesz zalety lub wady, przedstaw je w formie czytelnej listy wypunktowanej (HTML <ul><li>...</li></ul>), każda zaleta/wada w osobnym punkcie, z emoji i krótkim opisem. Jeśli to możliwe, dodaj przykłady, listy, cytaty, diagram napkin.ai (jako JSON).`;
+      const wordsPerSection = Math.round((length || 1000) / sections.length);
+      let prompt = `Napisz szczegółową sekcję artykułu blogowego o długości około ${wordsPerSection} słów na temat: \"${sections[i]}\". Temat główny: \"${title}\". Styl: ${style}. Słowa kluczowe: ${keywords}. Język: ${language || 'polski'}. Jeśli opisujesz zalety lub wady, przedstaw je w formie czytelnej listy wypunktowanej (HTML <ul><li>...</li></ul>), każda zaleta/wada w osobnym punkcie, z emoji i krótkim opisem. Jeśli to możliwe, dodaj przykłady, listy, cytaty, diagram napkin.ai (jako JSON).`;
       let lastResponse = '';
       while (!done) {
         const section = await fetchFromLLM({ prompt, system: 'Jesteś ekspertem od blogowania i SEO.', extractLine: true });

@@ -14,9 +14,9 @@ export default defineConfig({
       '/api': {
         target: process.env.NODE_ENV === 'production'
           ? 'https://idztech.onrender.com'
-          : 'https://idztech.onrender.com',
+          : 'http://localhost:10000',
         changeOrigin: true,
-        secure: true,
+        secure: false,
       },
     },
   },

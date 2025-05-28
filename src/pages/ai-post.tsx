@@ -192,6 +192,7 @@ export default function AIPostPage() {
           style: selectedStyle, 
           presentation: selectedPresentation,
           length: postLength,
+          lengthPrompt: `Napisz artykuł o długości około ${postLength} słów.`,
           audience, 
           cta, 
           meta, 

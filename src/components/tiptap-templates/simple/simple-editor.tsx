@@ -80,112 +80,119 @@ interface SimpleEditorProps {
   value: any;
   onChange: any;
   isToolbarFixed?: boolean;
+  placeholder?: string;
+  className?: string;
 }
 
-export function SimpleEditor({ value, onChange, isToolbarFixed }: SimpleEditorProps) {
-  const isMobile = useMobile()
-  const windowSize = useWindowSize()
-  const [mobileView, setMobileView] = React.useState<
-    "main" | "highlighter" | "link"
-  >("main")
-  const toolbarRef = React.useRef<HTMLDivElement>(null)
+export const SimpleEditor = React.forwardRef<HTMLDivElement, SimpleEditorProps>(
+  ({ value, onChange, isToolbarFixed, placeholder, className }, ref) => {
+    const isMobile = useMobile()
+    const windowSize = useWindowSize()
+    const [mobileView, setMobileView] = React.useState<
+      "main" | "highlighter" | "link"
+    >("main")
+    const toolbarRef = React.useRef<HTMLDivElement>(null)
 
-  const editor = useEditor({
-    immediatelyRender: false,
-    editorProps: {
-      attributes: {
-        autocomplete: "off",
-        autocorrect: "off",
-        autocapitalize: "off",
-        "aria-label": "Main content area, start typing to enter text.",
-      },
-    },
-    extensions: [
-      StarterKit,
-      TextAlign.configure({ types: ["heading", "paragraph"] }),
-      Underline,
-      TaskList,
-      TaskItem.configure({ nested: true }),
-      Highlight.configure({ multicolor: true }),
-      Image,
-      Typography,
-      Superscript,
-      Subscript,
-
-      Selection,
-      ImageUploadNode.configure({
-        accept: "image/*",
-        maxSize: MAX_FILE_SIZE,
-        limit: 3,
-        upload: handleImageUpload,
-        onError: (error) => {
-          console.error("Upload failed:", error);
-          toast.error(error.message || 'Wystąpił błąd podczas uploadu obrazka.');
+    const editor = useEditor({
+      immediatelyRender: false,
+      editorProps: {
+        attributes: {
+          autocomplete: "off",
+          autocorrect: "off",
+          autocapitalize: "off",
+          "aria-label": "Main content area, start typing to enter text.",
         },
-      }),
-      TrailingNode,
-      Link.configure({ openOnClick: false }),
-    ],
-    content: value,
-    onUpdate: ({ editor }) => {
-      if (onChange) onChange(editor.getHTML());
-    },
-  })
+      },
+      extensions: [
+        StarterKit,
+        TextAlign.configure({ types: ["heading", "paragraph"] }),
+        Underline,
+        TaskList,
+        TaskItem.configure({ nested: true }),
+        Highlight.configure({ multicolor: true }),
+        Image,
+        Typography,
+        Superscript,
+        Subscript,
 
-  const bodyRect = useCursorVisibility({
-    editor,
-    overlayHeight: toolbarRef.current?.getBoundingClientRect().height ?? 0,
-  })
+        Selection,
+        ImageUploadNode.configure({
+          accept: "image/*",
+          maxSize: MAX_FILE_SIZE,
+          limit: 3,
+          upload: handleImageUpload,
+          onError: (error) => {
+            console.error("Upload failed:", error);
+            toast.error(error.message || 'Wystąpił błąd podczas uploadu obrazka.');
+          },
+        }),
+        TrailingNode,
+        Link.configure({ openOnClick: false }),
+      ],
+      content: value,
+      onUpdate: ({ editor }) => {
+        if (onChange) onChange(editor.getHTML());
+      },
+    })
 
-  React.useEffect(() => {
-    if (!isMobile && mobileView !== "main") {
-      setMobileView("main")
-    }
-  }, [isMobile, mobileView])
+    const bodyRect = useCursorVisibility({
+      editor,
+      overlayHeight: toolbarRef.current?.getBoundingClientRect().height ?? 0,
+    })
 
-  React.useEffect(() => {
-    if (editor && value !== editor.getHTML()) {
-      editor.commands.setContent(value || '', false);
-    }
-  }, [value, editor]);
+    React.useEffect(() => {
+      if (!isMobile && mobileView !== "main") {
+        setMobileView("main")
+      }
+    }, [isMobile, mobileView])
 
-  return (
-    <EditorContext.Provider value={{ editor }}>
-      <Toolbar
-        ref={toolbarRef}
-        data-variant={isToolbarFixed ? 'fixed' : undefined}
-        style={
-          isMobile
-            ? {
-                bottom: `calc(100% - ${windowSize.height - bodyRect.y}px)`,
-              }
-            : {}
-        }
-      >
-        {mobileView === "main" ? (
-          <MainToolbarContent
-            onHighlighterClick={() => setMobileView("highlighter")}
-            onLinkClick={() => setMobileView("link")}
-            isMobile={isMobile}
+    React.useEffect(() => {
+      if (editor && value !== editor.getHTML()) {
+        editor.commands.setContent(value || '', false);
+      }
+    }, [value, editor]);
+
+    return (
+      <EditorContext.Provider value={{ editor }}>
+        <Toolbar
+          ref={toolbarRef}
+          data-variant={isToolbarFixed ? 'fixed' : undefined}
+          style={
+            isMobile
+              ? {
+                  bottom: `calc(100% - ${windowSize.height - bodyRect.y}px)`,
+                }
+              : {}
+          }
+        >
+          {mobileView === "main" ? (
+            <MainToolbarContent
+              onHighlighterClick={() => setMobileView("highlighter")}
+              onLinkClick={() => setMobileView("link")}
+              isMobile={isMobile}
+            />
+          ) : (
+            <MobileToolbarContent
+              type={mobileView === "highlighter" ? "highlighter" : "link"}
+              onBack={() => setMobileView("main")}
+            />
+          )}
+        </Toolbar>
+
+        <div className={`content-wrapper ${className || ''}`} ref={ref}>
+          <EditorContent
+            editor={editor}
+            role="presentation"
+            className="simple-editor-content"
+            placeholder={placeholder}
           />
-        ) : (
-          <MobileToolbarContent
-            type={mobileView === "highlighter" ? "highlighter" : "link"}
-            onBack={() => setMobileView("main")}
-          />
-        )}
-      </Toolbar>
+        </div>
+      </EditorContext.Provider>
+    )
+  }
+);
 
-      <div className="content-wrapper">
-        <EditorContent
-          editor={editor}
-          role="presentation"
-          className="simple-editor-content"
-        />
-      </div>
-    </EditorContext.Provider>
-  )
-}
+SimpleEditor.displayName = 'SimpleEditor';
 
 const MainToolbarContent = ({
   onHighlighterClick,
