@@ -438,7 +438,6 @@ async function getAllBlogSlugs() {
   const postsRef = collection(db, 'blog_posts');
   const q = query(postsRef, where('published', '==', true));
   const snapshot = await getDocs(q);
-  console.log('Pobrane wpisy:', snapshot.docs.map(doc => doc.data()));
   return snapshot.docs.map(doc => `/blog/${slugify(doc.data().slug)}`);
 }
 
