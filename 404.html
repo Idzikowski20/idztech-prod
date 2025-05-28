@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+      <!-- Google tag (gtag.js) -->
+      <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNPV2N8124"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-SNPV2N8124');
+      </script> -->
     <!-- Preconnect to required origins -->
     <link rel="preconnect" href="https://supabase.co" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -35,16 +44,58 @@
 
     <link rel="manifest" href="/manifest.json" />
 
+    <!-- Schema.org Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IDZTECH",
+      "url": "https://idztech.pl",
+      "logo": "https://idztech.pl/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/idztech",
+        "https://www.linkedin.com/company/idztech",
+        "https://twitter.com/idztech"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+48-XXX-XXX-XXX",
+        "contactType": "customer service",
+        "email": "kontakt@idztech.pl",
+        "availableLanguage": ["Polish", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PL"
+      }
+    }
+    </script>
+
+    <!-- Schema.org WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "IDZTECH",
+      "url": "https://idztech.pl",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://idztech.pl/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <!-- Google Tag Manager -->
     <script>
       // Consent Mode v2 - domyślnie denied
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
       });
     </script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

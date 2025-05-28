@@ -1,3 +1,3 @@
 export const API_URL = import.meta.env.PROD 
-  ? 'https://idztech.onrender.com' 
+  ? 'https://idztech.vercel.app' 
   : ''; 

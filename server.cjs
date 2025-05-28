@@ -8,7 +8,7 @@ const app = express();
 
 // Dodaj obsługę CORS
 app.use((req, res, next) => {
-  const allowedOrigins = ['https://idztech.onrender.com', 'https://idztech.pl'];
+  const allowedOrigins = ['https://idztech.vercel.app', 'https://idztech.pl'];
   // W trybie developerskim dodaj localhost
   if (process.env.NODE_ENV !== 'production') {
     allowedOrigins.push('http://localhost:8080', 'http://localhost:3000', 'http://localhost:5173');
@@ -281,7 +281,7 @@ Zwróć tylko JSON:
 app.post('/api/cron-generate-daily-post', async (req, res) => {
   const topic = "Nowoczesne trendy w marketingu internetowym 2024";
   try {
-    const aiResponse = await fetch(`${process.env.RENDER_EXTERNAL_URL || 'https://idztech.onrender.com'}/api/generate-blog-post`, {
+    const aiResponse = await fetch(`${process.env.VERCEL_EXTERNAL_URL || 'https://idztech.vercel.app'}/api/generate-blog-post`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic })
@@ -360,7 +360,7 @@ app.get('/api/test-write', (req, res) => {
   const path = require('path');
   const testPath = path.join(process.cwd(), 'public/test-write.txt');
   try {
-    fs.writeFileSync(testPath, 'test zapis z rendera', 'utf8');
+    fs.writeFileSync(testPath, 'test zapis z vercela', 'utf8');
     res.json({ ok: true, message: 'Zapisano test-write.txt!' });
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message });

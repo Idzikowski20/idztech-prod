@@ -13,8 +13,8 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: process.env.NODE_ENV === 'production'
-          ? 'https://idztech.onrender.com'
-          : 'https://idztech.onrender.com',
+          ? 'https://idztech.vercel.app'
+          : 'https://idztech.vercel.app',
         changeOrigin: true,
         secure: true,
       },
