@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Jeżeli żądany plik lub katalog nie istnieje
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Przekieruj wszystko do index.html (dla SPA)
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>
