@@ -18,9 +18,10 @@ import { trackEvent } from '@/utils/analytics';
 interface AdminLayoutProps {
   children: React.ReactNode;
   activeNavItem?: string;
+  headerContent?: React.ReactNode;
 }
 
-const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'dashboard' }) => {
+const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'dashboard', headerContent }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
@@ -56,6 +57,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'da
               </Button>
             </Link>
           </div>
+          {headerContent}
         </div>
         
         <div className="flex items-center space-x-4 relative z-10">

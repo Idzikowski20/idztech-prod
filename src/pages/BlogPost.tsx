@@ -49,7 +49,7 @@ const BlogPost = () => {
         }
       });
       tempDiv.querySelectorAll('p').forEach(p => {
-        p.classList.add('mb-6', 'text-base');
+        p.classList.add('mb-6', 'text-base', 'text-premium-light/80');
       });
       // Dodaj style do tabel
       tempDiv.querySelectorAll('table').forEach(table => {
@@ -87,6 +87,10 @@ const BlogPost = () => {
       setTableOfContents(toc);
       // Ustaw sformatowaną treść
       setFormattedContent(tempDiv.innerHTML);
+      tempDiv.querySelectorAll('img').forEach(img => {
+        img.className = '';
+        img.classList.add('max-w-lg', 'w-auto', 'h-auto', 'rounded-lg', 'block', 'mr-auto');
+      });
     }
   }, [post?.content]);
   
@@ -182,7 +186,7 @@ const BlogPost = () => {
               <Button 
                 variant="ghost" 
                 onClick={() => navigate('/blog')}
-                className="text-premium-light/70 hover:text-white hover:bg-premium-light/10"
+                className="text-premium-light/80 hover:text-white hover:bg-premium-light/10"
                 size="sm"
               >
                 <ArrowLeft size={16} className="mr-2" />
@@ -195,7 +199,7 @@ const BlogPost = () => {
             <header className="mb-10">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
               
-              <div className="flex flex-wrap items-center gap-4 text-premium-light/70 mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-premium-light/80 mb-6">
                 <div className="flex items-center">
                   <Calendar size={16} className="mr-2" />
                   <span>{formatDate(post.created_at)}</span>
@@ -220,8 +224,8 @@ const BlogPost = () => {
             )}
             
             {/* Post content */}
-            <section className="mb-10">
-            <div className="mt-10 bg-gradient-to-br from-premium-purple/20 to-indigo-900/20 border border-premium-light/10 rounded-lg p-6 ">
+            <section className="mb-10 toc-section">
+            <div className="mt-10 bg-gradient-to-br from-premium-purple/20 to-indigo-900/20 border border-premium-light/10 rounded-lg p-6">
               <h2 className="text-lg font-bold mb-2">Z tego artykułu dowiesz się:</h2>
               <ul className="list-disc pl-6">
                 {tableOfContents.map(heading => (

@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Check, Calendar, Clock, MapPin, Mail, Briefcase } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import { Helmet } from 'react-helmet-async';
+import FAQAccordion from '@/components/FAQAccordion';
 
 const ContactPage = () => {
   return (
@@ -100,19 +101,19 @@ const ContactPage = () => {
 
                   {/* Dane firmy */}
                   <div className="space-y-4 mt-10">
-                    <h4 className="font-medium text-lg">Dane firmy</h4>
-                    <div className="flex items-center space-x-3">
+                    <h4 className="font-medium text-lg">Dane kontaktowe</h4>
+                    {/* <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center">
                         <MapPin size={20} className="text-white" />
                       </div>
                       <span className="text-premium-light/80">ul. Przykładowa 1, 00-000 Warszawa</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
+                    </div> */}
+                    {/* <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center">
                         <Briefcase size={20} className="text-white" />
                       </div>
                       <span className="text-premium-light/80">NIP: 123-456-78-90</span>
-                    </div>
+                    </div> */}
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center">
                         <Mail size={20} className="text-white" />
@@ -123,6 +124,36 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <FAQAccordion
+              title="Najczęściej zadawane pytania"
+              items={[
+                {
+                  question: 'Jak szybko otrzymam odpowiedź na moje zapytanie?',
+                  answer: 'Staramy się odpowiadać na wszystkie zapytania w ciągu 24 godzin roboczych. W przypadku pilnych spraw, prosimy o zaznaczenie tego w formularzu kontaktowym.'
+                },
+                {
+                  question: 'Czy konsultacja jest naprawdę bezpłatna?',
+                  answer: 'Tak, pierwsza konsultacja jest całkowicie bezpłatna i niezobowiązująca. Podczas niej omówimy Twoje potrzeby i przedstawimy możliwe rozwiązania.'
+                },
+                {
+                  question: 'Jakie informacje powinienem przygotować przed konsultacją?',
+                  answer: 'Warto przygotować podstawowe informacje o swoim biznesie, celach marketingowych oraz konkretnych problemach, które chciałbyś rozwiązać. Nie jest to jednak obowiązkowe - pomożemy Ci je zdefiniować podczas spotkania.'
+                },
+                {
+                  question: 'Czy mogę umówić się na konsultację w weekend?',
+                  answer: 'Konsultacje prowadzimy od poniedziałku do piątku w godzinach 9:00-17:00. W wyjątkowych przypadkach możemy ustalić inny termin.'
+                },
+                {
+                  question: 'Czy konsultacja może odbyć się stacjonarnie?',
+                  answer: 'Obecnie oferujemy wyłącznie konsultacje online przez Zoom/Teams. Dzięki temu możemy zapewnić elastyczność terminów i komfort spotkania bez konieczności dojazdu.'
+                }
+              ]}
+              className="mb-0"
+            />
           </div>
         </div>
       </section>

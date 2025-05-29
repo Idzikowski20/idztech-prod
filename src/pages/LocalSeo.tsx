@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Check, ChevronRight, MapPin, Star, FileText, Settings, Target, TrendingUp, Phone, Building, Utensils, Store, Flower, Stethoscope, Gavel, HardHat, Car, Dumbbell, Home } from "lucide-react";
+import { Check, ChevronRight, MapPin, Star, FileText, Settings, Target, TrendingUp, Phone, Building, Utensils, Store, Flower, Stethoscope, Gavel, HardHat, Car, Dumbbell, Home, ArrowRight } from "lucide-react";
 import SplineSEO from "@/components/SplineSEO";
 import { useTheme } from '@/utils/themeContext';
 import { useNavigate } from "react-router-dom";
@@ -52,14 +52,13 @@ const LocalSeo = () => {
                 Zwiększamy widoczność Twojego biznesu w lokalnych wynikach wyszukiwania Google,
                 przyciągając klientów z Twojego obszaru działania.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-premium-gradient hover:bg-transparent hover:text-black transition-all group relative overflow-hidden"
-                  onClick={() => navigate('/contact')}
-                >
-                  <span className="relative z-10 text-white">Darmowa wycena</span>
-                  <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                  Skontaktuj się z nami
+                  <ArrowRight size={18} className="ml-2" />
+                </Button>
+                <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  Zobacz nasze realizacje
                 </Button>
               </div>
             </div>

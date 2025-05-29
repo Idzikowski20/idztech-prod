@@ -752,6 +752,10 @@
   .overflow-x-auto {
     -webkit-overflow-scrolling: touch;
   }
+
+  .toc-section {
+    padding: 0 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -847,11 +851,11 @@ input:-internal-autofill-selected {
 }
 
 .prose img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  margin: 2rem auto;
-  display: block;
+  border-radius: 2rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .tiptap-toolbar {
@@ -1383,3 +1387,24 @@ input:-webkit-autofill:active {
   height: 200%;
   display: none;
 }
+
+.text-base {
+  font-size: 1.1rem !important;
+  line-height: 1.5rem !important;
+} 
+
+.prose h1 {
+  margin-bottom: 1rem !important;
+  font-size: 1.5em !important;
+  font-weight: 800 !important;
+}
+
+.prose p {
+  margin-bottom: 4rem !important;
+}
+
+/* .tiptap.ProseMirror h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-top: 3em;
+} */

@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import GlobalCTA from "@/components/GlobalCTA";
 import { Helmet } from 'react-helmet-async';
 import FAQAccordion from '@/components/FAQAccordion';
+import { ArrowRight } from "lucide-react";
 
 const SeoAudit = () => {
   const { theme } = useTheme();
@@ -54,14 +55,13 @@ const SeoAudit = () => {
               <p className="text-premium-light/80 text-lg mb-8">
                 Profesjonalny audyt SEO to podstawa skutecznej optymalizacji. Sprawdź, co blokuje widoczność Twojej strony w Google.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <Button 
-                  className="bg-premium-gradient hover:bg-transparent transition-all group relative overflow-hidden"
-                  size="lg"
-                  onClick={() => navigate('/contact')}
-                >
-                  <span className="relative z-10 text-white">Zamów audyt SEO</span>
-                  <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                  Zamów audyt SEO
+                  <ArrowRight size={18} className="ml-2" />
+                </Button>
+                <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  Zobacz nasze realizacje
                 </Button>
               </div>
             </div>

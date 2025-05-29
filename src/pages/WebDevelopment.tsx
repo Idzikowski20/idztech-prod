@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import VerticalProcessSteps from '@/components/VerticalProcessSteps';
 import { JavaScript, Css3, Html5, TypeScript, ReactIcon } from '@/components/TechnologyIcons';
@@ -95,16 +95,13 @@ const WebDevelopment = () => {
                 Tworzymy nowoczesne, responsywne i zoptymalizowane strony internetowe, które 
                 pomagają osiągać cele biznesowe i wyróżniać się na tle konkurencji.
               </p>
-              <div className="flex gap-4">
-                <Button 
-                  onClick={() => navigate('/contact')} 
-                  className="px-8 py-6 bg-premium-gradient text-white hover:text-white"
-                  size="lg"
-                >
-                  Zamów bezpłatną wycenę
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                  Skontaktuj się z nami
+                  <ArrowRight size={18} className="ml-2" />
                 </Button>
-                <Button size="lg" variant="outline" className="transition-all duration-300 hover:bg-black bg-transparent hover:text-white" onClick={() => navigate('/projects')}>
-                  Nasze projekty
+                <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  Zobacz nasze realizacje
                 </Button>
               </div>
             </div>

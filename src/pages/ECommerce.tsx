@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Check, ChevronRight, ShoppingCart, CreditCard, Truck, Package, BarChart, Shield } from "lucide-react";
+import { Check, ChevronRight, ShoppingCart, CreditCard, Truck, Package, BarChart, Shield, ArrowRight } from "lucide-react";
 import { WooCommerceIcon, ShopifyIcon, MagentoIcon } from "@/components/ECommerceIcons";
 import { useTheme } from '@/utils/themeContext';
 import GlobalCTA from "@/components/GlobalCTA";
@@ -59,17 +59,13 @@ const ECommerce = () => {
                 Projektujemy i wdrażamy profesjonalne sklepy internetowe, które zwiększają sprzedaż 
                 i zapewniają doskonałe doświadczenia zakupowe dla Twoich klientów.
               </p>
-              <div className="flex gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-premium-gradient hover:bg-transparent hover:text-black transition-colors group relative overflow-hidden"
-                  onClick={() => navigate('/contact')}
-                >
-                  <span className="relative z-10 text-white">Darmowa wycena</span>
-                  <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                  Skontaktuj się z nami
+                  <ArrowRight size={18} className="ml-2" />
                 </Button>
-                <Button size="lg" variant="outline" className=" transition-all duration-300 hover:bg-black bg-transparent hover:text-white" onClick={() => navigate('/projects')}>
-                  Zobacz projekty
+                <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  Zobacz nasze realizacje
                 </Button>
               </div>
             </div>
