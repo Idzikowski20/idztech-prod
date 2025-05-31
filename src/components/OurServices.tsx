@@ -30,7 +30,7 @@ const OurServices = () => {
           <Code className="text-white" size={28} />
         </div>
       ),
-      title: "Tworzenie stron www",
+      title: "Tworzenie stron internetowych",
       description: "Projektujemy i tworzymy profesjonalne, szybkie i responsywne strony internetowe.",
       link: "/tworzenie-stron-www"
     },

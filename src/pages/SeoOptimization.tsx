@@ -19,8 +19,9 @@ const SeoOptimization = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>IDZTECH - Optymalizacja SEO</title>
-        <meta name="description" content="Profesjonalna optymalizacja strony to klucz do wysokich pozycji. Wykorzystaj naszą wiedzę, aby poprawić widoczność w Google." />
+        <title>Optymalizacja SEO | Pozycjonowanie stron | IDZTECH</title>
+        <meta name="description" content="Profesjonalna optymalizacja SEO stron internetowych w Warszawie. Zwiększ widoczność w Google, popraw pozycje i zdobądź więcej klientów dzięki skutecznym działaniom SEO." />
+        <meta name="keywords" content="optymalizacja SEO, pozycjonowanie stron, SEO Warszawa, optymalizacja stron internetowych, audyt SEO, SEO on-page, SEO off-page, Google SEO, pozycjonowanie w Google" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Optymalizacja SEO" />
         <meta property="og:description" content="Profesjonalna optymalizacja strony to klucz do wysokich pozycji. Wykorzystaj naszą wiedzę, aby poprawić widoczność w Google." />

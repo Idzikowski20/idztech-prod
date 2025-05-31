@@ -20,8 +20,9 @@ const SeoAudit = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>IDZTECH - Audyt SEO</title>
-        <meta name="description" content="Profesjonalny audyt SEO to podstawa skutecznej optymalizacji. Sprawdź, co blokuje widoczność Twojej strony w Google." />
+        <title>Audyt SEO | Analiza i optymalizacja stron | IDZTECH</title>
+        <meta name="description" content="Kompleksowy audyt SEO stron internetowych w Warszawie. Sprawdź, co blokuje Twoją widoczność w Google i otrzymaj szczegółowe rekomendacje optymalizacyjne." />
+        <meta name="keywords" content="audyt SEO, analiza SEO, optymalizacja stron, SEO Warszawa, pozycjonowanie stron, audyt techniczny, audyt treści, SEO on-page, SEO off-page" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Audyt SEO" />
         <meta property="og:description" content="Profesjonalny audyt SEO to podstawa skutecznej optymalizacji. Sprawdź, co blokuje widoczność Twojej strony w Google." />

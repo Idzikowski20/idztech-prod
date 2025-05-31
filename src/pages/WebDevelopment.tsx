@@ -59,8 +59,9 @@ const WebDevelopment = () => {
   return (
     <div className="min-h-screen bg-premium-dark">
       <Helmet>
-        <title>IDZTECH - Tworzenie stron internetowych</title>
-        <meta name="description" content="Tworzymy nowoczesne, responsywne i zoptymalizowane strony internetowe, które pomagają osiągać cele biznesowe i wyróżniać się na tle konkurencji." />
+        <title>Tworzenie stron internetowych | Strony www, projektowanie, web design, landing page | IDZTECH</title>
+        <meta name="description" content="Tworzenie stron internetowych, projektowanie stron, responsywne strony www, landing page, UI/UX, strony firmowe. Profesjonalne strony dla biznesu." />
+        <meta name="keywords" content="tworzenie stron internetowych, strony www, projektowanie stron, web design, landing page, strony firmowe, strony dla biznesu, UI/UX" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Tworzenie stron internetowych" />
         <meta property="og:description" content="Tworzymy nowoczesne, responsywne i zoptymalizowane strony internetowe, które pomagają osiągać cele biznesowe i wyróżniać się na tle konkurencji." />

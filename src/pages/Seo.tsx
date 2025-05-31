@@ -18,8 +18,9 @@ const Seo = () => {
   return (
     <div className="min-h-screen bg-premium-dark">
       <Helmet>
-        <title>IDZTECH - Pozycjonowanie stron internetowych</title>
-        <meta name="description" content="Zwiększamy widoczność Twojej strony w wyszukiwarce Google, pozyskujemy ruch organiczny i budujemy trwałą obecność Twojej firmy w Internecie." />
+        <title>Pozycjonowanie SEO | SEO, optymalizacja stron, audyt SEO, link building, Google SEO | IDZTECH</title>
+        <meta name="description" content="Pozycjonowanie SEO, optymalizacja stron, audyt SEO, link building, SEO on-page, SEO off-page, strategie SEO, pozycjonowanie w Google." />
+        <meta name="keywords" content="SEO, pozycjonowanie stron, optymalizacja SEO, audyt SEO, link building, SEO on-page, SEO off-page, strategie SEO, Google SEO, pozycjonowanie w Google" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Pozycjonowanie stron internetowych" />
         <meta property="og:description" content="Zwiększamy widoczność Twojej strony w wyszukiwarce Google, pozyskujemy ruch organiczny i budujemy trwałą obecność Twojej firmy w Internecie." />
@@ -73,11 +74,63 @@ const Seo = () => {
         </div>
       </section>
       
+      {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
+      <section className="py-16 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+          {/* Lewa kolumna */}
+          <div className="flex-1 max-w-2xl">
+            <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Czym jest SEO i jak może <span className="text-premium-orange">wesprzeć Twój biznes?</span>
+            </h2>
+            <p className="mb-6 text-premium-light/80 text-base">
+              SEO (Search Engine Optimization) to proces optymalizacji stron internetowych pod kątem wyszukiwarek, mający na celu zwiększenie widoczności Twojej firmy w Google. W Polsce często określane jako pozycjonowanie stron.
+            </p>
+            <p className="mb-4 text-premium-light/80 text-base">
+              W praktyce SEO to szereg działań na stronie i poza nią, które mają przekonać Google, że to właśnie Twoja strona powinna być wyżej w wynikach wyszukiwania. Dlaczego to takie istotne?
+            </p>
+            <p className="text-premium-light/70 text-base">
+              Dziś większość klientów szuka rozwiązań swoich problemów w Google. Jeśli Twoja strona pojawia się wysoko, zyskujesz zaufanie i realny ruch, który może przełożyć się na wzrost sprzedaży i rozpoznawalności marki.
+            </p>
+          </div>
+          {/* Prawa kolumna */}
+          <div className="flex-1 flex flex-col gap-8 justify-center">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Realnie zwiększasz ruch na stronie</h3>
+                <p className="text-premium-light/70 text-base">Dzięki skutecznym strategiom SEO zauważysz wzrost odwiedzin, co przekłada się na większą widoczność w sieci.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Pozyskujesz wartościowych klientów</h3>
+                <p className="text-premium-light/70 text-base">Dzięki analizie słów kluczowych docierasz do osób faktycznie zainteresowanych Twoją ofertą, co zwiększa szanse na konwersję.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Budujesz przewagę nad konkurencją</h3>
+                <p className="text-premium-light/70 text-base">Dzięki SEO Twoja strona może wyprzedzić konkurencję w Google i stać się liderem w branży online.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Services Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-premium-purple font-medium">Nasze usługi</span>
+            <span className="text-premium-purple font-medium uppercase">Nasze usługi</span>
             <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Kompleksowe pozycjonowanie SEO</h2>
             <p className="text-premium-light/70 text-lg">
               Oferujemy pełen zakres usług SEO, dostosowanych do specyfiki Twojego biznesu i branży.
@@ -242,7 +295,7 @@ const Seo = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-premium-purple font-medium">Dlaczego warto</span>
+            <span className="text-premium-purple font-medium uppercase">Dlaczego warto</span>
             <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Korzyści z inwestycji w SEO</h2>
             <p className="text-premium-light/70 text-lg">
               Pozycjonowanie to jedna z najbardziej opłacalnych długoterminowych strategii marketingowych.
@@ -301,7 +354,7 @@ const Seo = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-premium-purple font-medium">Nasza metodologia</span>
+            <span className="text-premium-purple font-medium uppercase">Nasze sposoby działania</span>
             <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Jak pracujemy nad SEO</h2>
             <p className="text-premium-light/70 text-lg">
               Nasze podejście do pozycjonowania jest transparentne, oparte na danych i dostosowane do Twoich potrzeb.
@@ -438,6 +491,57 @@ const Seo = () => {
                     </li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Sekcja CASE STUDY SEO */}
+      <section className="py-16 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+          {/* Lewa kolumna */}
+          <div className="flex-1 max-w-2xl">
+            <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">REALNE CASE STUDY</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Optymalizacja SEO<br />na przykładzie <span className="text-premium-orange">case study</span>
+            </h2>
+            <p className="mb-8 text-premium-light/80 text-base">
+              Pandemia mocno dotknęła branżę eventową. Jednak jeden z naszych klientów postanowił wykorzystać ten czas na poprawę wyników organicznych i zdobycie przewagi nad konkurencją. Sprawdź, co zrobiliśmy i co zyskaliśmy.
+            </p>
+            <div className="flex flex-col gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">1</div>
+                <span className="text-base text-premium-light/90">Wyszukaliśmy frazy z dużym potencjałem przyciągnięcia ruchu.</span>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">2</div>
+                <span className="text-base text-premium-light/90">Zadbaliśmy o zoptymalizowanie treści na stronie pod cele widoczności.</span>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">3</div>
+                <span className="text-base text-premium-light/90">Przygotowaliśmy wpisy blogowe, by wzmocnić stronę i zbudować Topical Authority.</span>
+              </div>
+            </div>
+          </div>
+          {/* Prawa kolumna - wyniki */}
+          <div className="flex-1 flex flex-col justify-center gap-10 lg:gap-16">
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <span className="block text-5xl font-bold text-premium-light">10</span>
+                <span className="block text-premium-light/70 mt-2">fraz w TOP 20</span>
+              </div>
+              <div>
+                <span className="block text-5xl font-bold text-premium-light">173%</span>
+                <span className="block text-premium-light/70 mt-2">wzrost ROI</span>
+              </div>
+              <div>
+                <span className="block text-5xl font-bold text-premium-light">20k+</span>
+                <span className="block text-premium-light/70 mt-2">wzrost unikalnych użytkowników</span>
+              </div>
+              <div>
+                <span className="block text-5xl font-bold text-premium-light">47%</span>
+                <span className="block text-premium-light/70 mt-2">większa konwersja na stronie</span>
               </div>
             </div>
           </div>

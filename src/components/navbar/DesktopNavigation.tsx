@@ -63,7 +63,7 @@ const DesktopNavigation = () => {
                 <div className="flex flex-col flex-1 items-start justify-start px-8 py-8 text-left">
                   <div className="flex items-center gap-3 mb-4">
                     <Globe className="text-neutral-700 dark:text-neutral-200" size={32} />
-                    <span className="font-bold text-xl text-black dark:text-neutral-100">Strony www</span>
+                    <span className="font-bold text-xl text-premium-purple dark:text-neutral-100">Strony internetowe</span>
                   </div>
                   <ul className="flex flex-col gap-4 w-full">
                     <li>
@@ -71,8 +71,19 @@ const DesktopNavigation = () => {
                         <Link to="/tworzenie-stron-www" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <Layout className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Tworzenie stron www</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Projektujemy i tworzymy profesjonalne strony internetowe</div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Tworzenie stron internetowych</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Profesjonalne projektowanie i tworzenie stron www - responsywne strony firmowe, landing page i web design dla biznesu</div>
+                          </div>
+                        </Link>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <Link to="/aplikacje-webowe" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
+                          <Layout className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
+                          <div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Tworzenie aplikacji webowych</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Nowoczesne aplikacje webowe na zamówienie – rozwój aplikacji internetowych, platformy webowe i oprogramowanie dla firm - Aplikacje internetowe</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -82,8 +93,8 @@ const DesktopNavigation = () => {
                         <Link to="/sklepy-internetowe" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <ShoppingCart className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Tworzenie sklepów internetowych</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe rozwiązania e-commerce</div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Sklepy internetowe</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe rozwiązania e-commerce - tworzenie i optymalizacja sklepów online (Shopify, WooCommerce)</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -96,7 +107,7 @@ const DesktopNavigation = () => {
                 <div className="flex flex-col flex-1 items-start justify-start px-8 py-8 text-left">
                   <div className="flex items-center gap-3 mb-4">
                     <TrendingUp className="text-neutral-700 dark:text-neutral-200" size={32} />
-                    <span className="font-bold text-xl text-black dark:text-neutral-100">Pozycjonowanie (SEO)</span>
+                    <span className="font-bold text-xl text-premium-purple dark:text-neutral-100">Pozycjonowanie SEO</span>
                   </div>
                   <ul className="flex flex-col gap-4 w-full">
                     <li>
@@ -104,8 +115,8 @@ const DesktopNavigation = () => {
                         <Link to="/pozycjonowanie-stron" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <Search className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Pozycjonowanie stron internetowych</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Zwiększanie widoczności w wyszukiwarkach</div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Pozycjonowanie stron</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe pozycjonowanie SEO - optymalizacja, link building i strategie Google dla firm</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -116,7 +127,7 @@ const DesktopNavigation = () => {
                           <MapPin className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
                             <span className="font-semibold text-black dark:text-neutral-100">Pozycjonowanie lokalne</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Zwiększanie widoczności w lokalnych wynikach</div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Optymalizacja lokalnego SEO - Google Maps, opinie i widoczność w lokalnych wynikach</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -126,8 +137,8 @@ const DesktopNavigation = () => {
                         <Link to="/audyt-seo" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <FileText className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Audyt SEO</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Analiza strony pod kątem SEO</div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Audyt Seo strony</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowy audyt SEO - analiza techniczna, treści i konkurencji z rekomendacjami</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -137,8 +148,8 @@ const DesktopNavigation = () => {
                         <Link to="/optymalizacja-seo" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <Settings className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Optymalizacja SEO</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Optymalizacja techniczna strony</div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Optymalizacja Seo strony</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Profesjonalna optymalizacja SEO - techniczna, treści, UX i mobilna dla lepszych wyników</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -148,8 +159,8 @@ const DesktopNavigation = () => {
                         <Link to="/copywriting-seo" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <PenLine className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Copywriting SEO</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Tworzenie treści pod SEO</div>
+                            <span className="font-semibold text-black dark:text-neutral-100">Copywriting Seo</span>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Profesjonalny copywriting SEO - treści pod pozycjonowanie dla stron, sklepów i blogów</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -160,7 +171,7 @@ const DesktopNavigation = () => {
                           <ListChecks className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
                             <span className="font-semibold text-black dark:text-neutral-100">Content Plan</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Strategia tworzenia treści</div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Strategia content marketing - plan treści i harmonogram publikacji pod SEO</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>

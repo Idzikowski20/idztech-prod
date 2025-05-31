@@ -18,8 +18,9 @@ const ContentPlan = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>IDZTECH - Content Plan</title>
-        <meta name="description" content="Strategiczne planowanie treści dla Twojego biznesu. Zbuduj silną obecność w sieci dzięki przemyślanej strategii content marketingu." />
+        <title>Content Plan | Tworzenie treści pod SEO | IDZTECH</title>
+        <meta name="description" content="Opracujemy dla Ciebie profesjonalny content plan – strategię treści, harmonogram publikacji i wytyczne SEO. Buduj widoczność i autorytet marki w internecie." />
+        <meta name="keywords" content="content plan, strategia treści, content marketing, planowanie treści, SEO, pozycjonowanie, marketing internetowy, harmonogram publikacji, Warszawa" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Content Plan" />
         <meta property="og:description" content="Strategiczne planowanie treści dla Twojego biznesu. Zbuduj silną obecność w sieci dzięki przemyślanej strategii content marketingu." />

@@ -5,6 +5,8 @@ import OurServices from "@/components/OurServices";
 import { applyMobileOptimizations } from "@/utils/performanceUtils";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import LocalSeoSection from "@/components/LocalSeoSection";
+import { Helmet } from 'react-helmet-async';
 
 // Lazy load components with prefetch
 const WhyWorkWithUs = lazy(() => import("@/components/WhyWorkWithUs"));
@@ -95,6 +97,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Tworzenie stron internetowych, sklepy internetowe, pozycjonowanie SEO | IDZTECH</title>
+        <meta name="description" content="Nowoczesne strony internetowe, sklepy internetowe, aplikacje webowe i skuteczne pozycjonowanie SEO. Kompleksowa obsługa firm – od projektu po rozwój i optymalizację." />
+        <meta name="keywords" content="tworzenie stron internetowych, strony www, sklepy internetowe, e-commerce, aplikacje webowe, web design, SEO, pozycjonowanie stron, Warszawa, projektowanie stron, landing page, optymalizacja SEO" />
+      </Helmet>
       <Navbar />
       <Hero />
       
@@ -109,6 +116,10 @@ const Index = () => {
           </div>
         </Suspense>
       </div>
+
+      <Suspense fallback={<LoadingFallback />}>
+        <LocalSeoSection />
+      </Suspense>
 
       <div data-lazy>
         <Suspense fallback={<LoadingFallback />}>

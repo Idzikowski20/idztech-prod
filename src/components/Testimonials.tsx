@@ -60,9 +60,9 @@ const Testimonials = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
           <div className="max-w-2xl">
             <span className="text-premium-purple font-medium">Opinie klientów</span>
-            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">
+            <h5 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">
               Co mówią o nas nasi klienci
-            </h2>
+            </h5>
             <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'}`}>
               Zaufało nam już ponad 10 firm z różnych branż. Poznaj opinie naszych klientów i przekonaj się, że jesteśmy właściwym wyborem dla Twojego biznesu.
             </p>

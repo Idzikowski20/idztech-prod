@@ -49,9 +49,9 @@ const WhyWorkWithUs = () => {
         {/* Nagłówek i opis na całą szerokość */}
         <div className="mb-20 max-w-4xl mx-auto text-center">
           <span className="text-premium-purple font-medium block mb-2">O IDZTECH</span>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h3 className="text-3xl lg:text-4xl font-bold mb-4">
             Kompleksowa firma tworząca strony i sklepy internetowe
-          </h2>
+          </h3>
           <p className="text-premium-light/70 mb-6">
             IDZTECH to zespół doświadczonych specjalistów z pasją do tworzenia nowoczesnych stron i sklepów internetowych. Łączymy kreatywność z analitycznym podejściem, aby dostarczać rozwiązania, które nie tylko wyglądają dobrze, ale przede wszystkim działają efektywnie.
           </p>
@@ -77,15 +77,6 @@ const WhyWorkWithUs = () => {
                 <p className="text-sm text-premium-light/70">Nasi specjaliści posiadają certyfikaty i wieloletnie doświadczenie w branży.</p>
               </div>
             </div>
-          </div>
-          <div className="pt-6">
-            <Link to="/about">
-              <Button 
-                className={`bg-premium-gradient hover:opacity-90 transition-opacity text-white hover:text-white`}
-              >
-                Poznaj nas lepiej
-              </Button>
-            </Link>
           </div>
         </div>
         {/* Grid 2 kolumny: lewa - film + statystyki, prawa - eksperci */}
@@ -148,7 +139,7 @@ const WhyWorkWithUs = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-16 h-16 object-cover rounded-full border-2 border-premium-purple/50"
+                    className="w-16 h-16 object-cover rounded-full border-2 light:border-premium-gray/50 dark:border-gray-700"
                     width="64"
                     height="64"
                     loading="lazy"

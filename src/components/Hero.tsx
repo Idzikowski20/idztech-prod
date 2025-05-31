@@ -6,6 +6,7 @@ import { useMobile } from '@/hooks/use-mobile';
 import HeroImage from "@/components/HeroImage";
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { FlipWords } from "@/components/ui/flip-words";
 
 const heroPhrases = [
   'Tworzymy najlepsze strony internetowe',
@@ -55,12 +56,30 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
           {/* Hero content on the left */}
           <div className="w-full lg:w-1/2 xl:w-5/12">            
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-              {displayedText}<BlinkingUnderscore />
+            <div className="flex items-center gap-2 bg-white/80 dark:bg-premium-dark/80 px-5 py-2 rounded-full shadow-md w-fit mb-[4rem] text-base font-medium">
+              <span className="text-xl">👋</span>
+              <span className="text-premium-dark dark:text-premium-light">Potrzebujesz nowoczesnej strony? Dobrze trafiłeś!</span>
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-premium-dark dark:text-premium-light leading-tight">
+              Tworzymy {" "}
+              <FlipWords
+                words={[
+                  "strony internetowe",
+                  "Aplikacje webowe",
+                  "sklepy internetowe",
+                  "landing page",
+                  "pozycjonowanie lokalne",
+                  "audyt SEO",
+                  "optymalizacje SEO",
+                  "copywriting SEO",
+                  "Content plan",
+                ]}
+                className="text-premium-purple"
+              />
             </h1>
             
             <p className='text-lg md:text-xl text-premium-light/80 dark:text-premium-light/80 mb-6 md:mb-8 leading-relaxed'>
-              Dostarczamy rozwiązania, które budują online obecność i konwertują odwiedzających w klientów. Specjalizujemy się w tworzeniu stron www, SEO i marketingu cyfrowym.
+            Pomagamy firmom zaistnieć w internecie i skutecznie pozyskiwać klientów. Tworzymy nowoczesne strony www, sklepy internetowe oraz prowadzimy kompleksowe działania SEO.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-10">

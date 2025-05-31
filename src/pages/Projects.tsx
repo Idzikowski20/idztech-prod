@@ -87,8 +87,9 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-premium-dark">
       <Helmet>
-        <title>IDZTECH - Portfolio projektów</title>
-        <meta name="description" content="Poznaj nasze najlepsze realizacje w zakresie stron internetowych, sklepów e-commerce i pozycjonowania." />
+        <title>Projekty | Strony internetowe, sklepy online, SEO | IDZTECH</title>
+        <meta name="description" content="Zobacz nasze realizacje: strony internetowe, sklepy e-commerce, projekty SEO. Tworzenie stron, rozwój aplikacji webowych i pozycjonowanie dla firm z Warszawy i całej Polski." />
+        <meta name="keywords" content="portfolio, realizacje, strony internetowe, sklepy internetowe, e-commerce, SEO, web design, aplikacje webowe, projekty, Warszawa" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Portfolio projektów" />
         <meta property="og:description" content="Poznaj nasze najlepsze realizacje w zakresie stron internetowych, sklepów e-commerce i pozycjonowania." />

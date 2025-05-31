@@ -215,6 +215,7 @@
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-weight: 400;
+    overflow-x: hidden;
   }
   
   @supports (-webkit-touch-callout: none) {
@@ -1408,3 +1409,34 @@ input:-webkit-autofill:active {
   font-weight: 700;
   margin-top: 3em;
 } */
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #111111 #e5e7eb;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  background: #e5e7eb;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 8px;
+}
+.dark .custom-scrollbar {
+  scrollbar-color: #fff #222;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+.dark .custom-scrollbar::-webkit-scrollbar {
+  background: #222;
+}
+
+.pt-9r {
+  padding-top: 9rem !important;
+}
+
+.text-premium-green {
+ color:#33e373 !important;
+}
+

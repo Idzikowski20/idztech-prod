@@ -18,8 +18,9 @@ const SeoCopywriting = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>IDZTECH - Copywriting SEO</title>
-        <meta name="description" content="Profesjonalne teksty, które sprzedają i pozycjonują. Wykorzystaj moc słów do zwiększenia widoczności w Google." />
+        <title>Usługa Copywriting SEO | Teksty na strony, sklepy, blogi | IDZTECH</title>
+        <meta name="description" content="Skuteczny copywriting SEO dla stron internetowych, sklepów online i blogów. Tworzymy treści, które sprzedają i pozycjonują Twoją firmę w Google." />
+        <meta name="keywords" content="copywriting SEO, teksty SEO, treści na strony, treści na sklepy internetowe, artykuły blogowe, opisy produktów, SEO Warszawa, pozycjonowanie stron, content marketing" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Copywriting SEO" />
         <meta property="og:description" content="Profesjonalne teksty, które sprzedają i pozycjonują. Wykorzystaj moc słów do zwiększenia widoczności w Google." />

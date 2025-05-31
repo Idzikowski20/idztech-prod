@@ -18,8 +18,9 @@ const ECommerce = () => {
   return (
     <div className="min-h-screen bg-premium-dark">
       <Helmet>
-        <title>IDZTECH - Tworzenie sklepów internetowych</title>
-        <meta name="description" content="Tworzymy nowoczesne, responsywne i zoptymalizowane strony internetowe, które pomagają osiągać cele biznesowe i wyróżniać się na tle konkurencji." />
+        <title>Sklepy internetowe | E-commerce, sklepy online, WooCommerce, Shopify, optymalizacja e-commerce | IDZTECH</title>
+        <meta name="description" content="Sklepy internetowe, e-commerce, sklepy online, tworzenie sklepów internetowych, WooCommerce, Shopify, optymalizacja e-commerce, rozwój sklepu internetowego." />
+        <meta name="keywords" content="sklepy internetowe, e-commerce, sklepy online, tworzenie sklepów internetowych, Shopify, WooCommerce, sklepy na miarę, rozwój sklepu internetowego, optymalizacja e-commerce" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Tworzenie sklepów internetowych" />
         <meta property="og:description" content="Tworzymy nowoczesne, responsywne i zoptymalizowane strony internetowe, które pomagają osiągać cele biznesowe i wyróżniać się na tle konkurencji." />

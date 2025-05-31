@@ -17,8 +17,9 @@ const LocalSeo = () => {
   return (
     <div className="min-h-screen bg-premium-dark">
       <Helmet>
-        <title>IDZTECH - Pozycjonowanie lokalne</title>
-        <meta name="description" content="Zwiększamy widoczność Twojego biznesu w lokalnych wynikach wyszukiwania Google, przyciągając klientów z Twojego obszaru działania." />
+        <title>Pozycjonowanie lokalne |Local SEO dla firm | IDZTECH</title>
+        <meta name="description" content="Zwiększ widoczność swojej firmy w lokalnych wynikach Google. Skuteczne pozycjonowanie lokalne (Local SEO) w Warszawie – Google Maps, wizytówka Google, opinie." />
+        <meta name="keywords" content="pozycjonowanie lokalne, local SEO, SEO Warszawa, Google Maps, wizytówka Google, pozycjonowanie firm, SEO dla biznesu, optymalizacja lokalna, pozycjonowanie w Google" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Pozycjonowanie lokalne" />
         <meta property="og:description" content="Zwiększamy widoczność Twojego biznesu w lokalnych wynikach wyszukiwania Google, przyciągając klientów z Twojego obszaru działania." />

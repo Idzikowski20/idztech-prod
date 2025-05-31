@@ -10,8 +10,9 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-premium-dark">
       <Helmet>
-        <title>IDZTECH - Umów bezpłatną konsultację</title>
-        <meta name="description" content="Skontaktuj się z nami i omów swoje potrzeby biznesowe. Nasi eksperci są gotowi pomóc Ci osiągnąć Twoje cele marketingowe." />
+        <title>Kontakt | Tworzenie stron, sklepy internetowe, SEO | IDZTECH</title>
+        <meta name="description" content="Skontaktuj się z nami i umów bezpłatną konsultację. Tworzenie stron internetowych, sklepy online, aplikacje webowe, pozycjonowanie SEO – Warszawa i cała Polska." />
+        <meta name="keywords" content="kontakt, tworzenie stron internetowych, sklepy internetowe, aplikacje webowe, SEO, pozycjonowanie, Warszawa" />
         {/* Open Graph */}
         <meta property="og:title" content="IDZTECH - Umów bezpłatną konsultację" />
         <meta property="og:description" content="Skontaktuj się z nami i omów swoje potrzeby biznesowe. Nasi eksperci są gotowi pomóc Ci osiągnąć Twoje cele marketingowe." />

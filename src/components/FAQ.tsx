@@ -36,7 +36,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-premium-purple font-medium">Dlaczego warto</span>
-          <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">z nami pracować:</h2>
+          <h6 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">z nami pracować:</h6>
           <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'} text-lg`}>
             Tutaj znajdziesz kilka kluczowych powodów dlaczego warto z nami współpracować
           </p>

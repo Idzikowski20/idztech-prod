@@ -24,7 +24,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items, title, className }) 
           </div>
         )}
         <div className="grid grid-cols-1 justify-center">
-          <div className="space-y-4 w-full max-w-2xl mx-auto">
+          <div className="space-y-4 w-full max-w-[50rem] mx-auto">
             <Accordion type="single" collapsible className="w-full">
               {items.map((item, index) => (
                 <AccordionItem
