@@ -60,6 +60,7 @@ import OpoleSeoPage from '@/pages/pozycjonowanie/opole';
 import GorzowWielkopolskiSeoPage from '@/pages/pozycjonowanie/gorzow-wielkopolski';
 import WloclawekSeoPage from '@/pages/pozycjonowanie/wloclawek';
 import ZielonaGoraSeoPage from '@/pages/pozycjonowanie/zielona-gora';
+import WebApps from './pages/WebApps';
 
 const App = () => {
   const { loading } = useAuth();
@@ -88,7 +89,7 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/tworzenie-stron-www" element={<WebDevelopment />} />
-        <Route path="/aplikacje-webowe" element={<WebDevelopment />} />
+        <Route path="/aplikacje-webowe" element={<WebApps />} />
         <Route path="/sklepy-internetowe" element={<ECommerce />} />
         <Route path="/pozycjonowanie-stron" element={<Seo />} />
         <Route path="/pozycjonowanie-lokalne" element={<LocalSeo />} />

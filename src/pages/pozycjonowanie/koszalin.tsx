@@ -12,18 +12,18 @@ import { Button } from '@/components/ui/button';
 import LocalSeoSection from "@/components/LocalSeoSection";
 import HeroScrollDemo from "@/components/ui/container-scroll-animation-demo";
 
-const HERO_IMAGE = "/images/rzeszow.jpg";
+const HERO_IMAGE = "/images/koszalin.jpg";
 const CHARTS_IMAGE = "/images/charts.webp";
 
-const RzeszowSeoPage = () => {
+const KoszalinSeoPage = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Pozycjonowanie stron Rzeszów | Pozycjonowanie strony internetowej, SEO, tworzenie stron, sklep internetowy</title>
-        <meta name="description" content="Pozycjonowanie stron internetowych Rzeszów – skuteczne SEO, optymalizacja stron, tworzenie stron internetowych, sklepów internetowych i stron www. Zwiększ widoczność w Google!" />
-        <meta name="keywords" content="pozycjonowanie stron Rzeszów, pozycjonowanie strony, pozycjonowanie stron internetowych, SEO Rzeszów, tworzenie stron internetowych, sklep internetowy, strona internetowa, pozycjonowanie stron SEO, strona www" />
-        <link rel="canonical" href="https://idztech.pl/pozycjonowanie/rzeszow" />
+        <title>Pozycjonowanie stron Koszalin | Pozycjonowanie strony internetowej, SEO, tworzenie stron, sklep internetowy</title>
+        <meta name="description" content="Pozycjonowanie stron internetowych Koszalin – skuteczne SEO, optymalizacja stron, tworzenie stron internetowych, sklepów internetowych i stron www. Zwiększ widoczność w Google!" />
+        <meta name="keywords" content="pozycjonowanie stron Koszalin, pozycjonowanie strony, pozycjonowanie stron internetowych, SEO Koszalin, tworzenie stron internetowych, sklep internetowy, strona internetowa, pozycjonowanie stron SEO, strona www" />
+        <link rel="canonical" href="https://idztech.pl/pozycjonowanie/koszalin" />
       </Helmet>
       <Navbar />
       {/* HERO SECTION - 2 kolumny */}
@@ -33,17 +33,17 @@ const RzeszowSeoPage = () => {
           <div className="flex-1 w-full max-w-xl relative">
             <span className="uppercase text-sm font-semibold tracking-wider text-premium-purple mb-4 block">SEO</span>
             <h1 className="text-2xl md:text-5xl font-bold mb-6 text-premium-dark dark:text-premium-light leading-tight">
-              Pozycjonowanie stron internetowych <span className="text-premium-purple">Rzeszów</span>
+              Pozycjonowanie stron internetowych <span className="text-premium-purple">Koszalin</span>
             </h1>
             <p className="text-lg text-premium-light/80 mb-8">
-              Skuteczne pozycjonowanie strony internetowej w Rzeszowie – zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki online. Oferujemy także tworzenie stron internetowych, sklepów internetowych oraz kompleksowe SEO.
+              Skuteczne pozycjonowanie strony internetowej w Koszalinie – zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki online. Oferujemy także tworzenie stron internetowych, sklepów internetowych oraz kompleksowe SEO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-4 font-semibold text-base shadow-md"
                 onClick={() => navigate('/contact')}
               >
-                Zamów pozycjonowanie stron rzeszów
+                Zamów pozycjonowanie stron koszalin
               </button>
             </div>
           </div>
@@ -52,7 +52,7 @@ const RzeszowSeoPage = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl w-full">
               <img
                 src={HERO_IMAGE}
-                alt="Panorama Rzeszowa"
+                alt="Panorama Koszalina"
                 className="w-full h-72 md:h-96 object-cover object-center"
                 loading="lazy"
               />
@@ -123,7 +123,7 @@ const RzeszowSeoPage = () => {
             </div>
             <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h2>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Pozycjonowanie stron internetowych (SEO) w Rzeszowie to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
+              Pozycjonowanie stron internetowych (SEO) w Koszalinie to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
             </p>
           </div>
 
@@ -132,12 +132,12 @@ const RzeszowSeoPage = () => {
             {/* Karta 1 */}
             <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
               <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Widoczność strony internetowej 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Rzeszowa.</p>
+              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Koszalina.</p>
             </div>
             {/* Karta 2 */}
             <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
             <h3 className="text-2xl">Zwiększymy Twój</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Ruch na stronie www 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Rzeszowa i okolic.</p>
+              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Koszalina i okolic.</p>
             </div>
             {/* Kafelek z wykresem i sprzedażą na całą szerokość */}
             <div className="md:col-span-2 bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-8">
@@ -177,7 +177,7 @@ const RzeszowSeoPage = () => {
               <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center">
               <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Sprzedaż w sklepie internetowym 🔝</h3>
                 <p className="text-premium-dark dark:text-premium-light text-base">
-                  Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Rzeszowie generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.
+                  Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Koszalinie generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.
                 </p>
               </div>
             </div>
@@ -210,11 +210,11 @@ const RzeszowSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania stron internetowych i SEO w Rzeszowie</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania stron internetowych i SEO w Koszalinie</span>
             </div>
             <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Poznaj realne korzyści współpracy z <h4 className="text-premium-purple">IDZTECH</h4></h4>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Oto, co zyskasz wybierając naszą ofertę: pozycjonowanie stron internetowych, SEO, tworzenie stron www i sklepów internetowych w Rzeszowie.
+              Oto, co zyskasz wybierając naszą ofertę: pozycjonowanie stron internetowych, SEO, tworzenie stron www i sklepów internetowych w Koszalinie.
             </p>
           </div>
           <CoZyskujeszExpandableGrid />
@@ -238,7 +238,7 @@ const RzeszowSeoPage = () => {
                   <span className="text-premium-purple font-bold text-lg mr-3">1</span>
                   <span className="font-semibold text-premium-dark dark:text-premium-light">Analiza strony i konkurencji</span>
                 </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Szczegółowa analiza Twojej strony i konkurencji w Rzeszowie.</p>
+                <p className="text-premium-dark/80 dark:text-premium-light/80">Szczegółowa analiza Twojej strony i konkurencji w Koszalinie.</p>
               </div>
             </div>
             {/* Etap 2 */}
@@ -287,10 +287,10 @@ const RzeszowSeoPage = () => {
 
       <section className="mb-12">
         <FAQAccordion
-          title="Najczęściej zadawane pytania o pozycjonowanie stron internetowych, SEO i tworzenie stron w Rzeszowie"
+          title="Najczęściej zadawane pytania o pozycjonowanie stron internetowych, SEO i tworzenie stron w Koszalinie"
           items={[
             {
-              question: 'Na czym polega pozycjonowanie stron internetowych w Rzeszowie?',
+              question: 'Na czym polega pozycjonowanie stron internetowych w Koszalinie?',
               answer: 'Pozycjonowanie stron internetowych (SEO) to działania mające na celu zwiększenie widoczności strony www lub sklepu internetowego w wynikach Google. Obejmuje optymalizację techniczną, content marketing i link building.'
             },
             {
@@ -298,7 +298,7 @@ const RzeszowSeoPage = () => {
               answer: 'Tak, projektujemy i wdrażamy nowoczesne strony internetowe oraz sklepy internetowe zoptymalizowane pod SEO.'
             },
             {
-              question: 'Ile kosztuje pozycjonowanie strony internetowej w Rzeszowie?',
+              question: 'Ile kosztuje pozycjonowanie strony internetowej w Koszalinie?',
               answer: 'Koszt pozycjonowania strony internetowej zależy od wielu czynników, takich jak konkurencyjność branży, zakres prac i cele biznesowe. Skontaktuj się z nami, aby otrzymać indywidualną wycenę.'
             },
             {
@@ -311,7 +311,7 @@ const RzeszowSeoPage = () => {
 
       <LocalSeoSection />
       <GlobalCTA 
-        title="Gotowy na zwiększenie widoczności w Rzeszowie?"
+        title="Gotowy na zwiększenie widoczności w Koszalinie?"
         description="Skontaktuj się z nami i umów się na bezpłatną konsultację. Omówimy Twoje potrzeby i zaproponujemy optymalne rozwiązanie dla Twojego biznesu."
         buttons={[
           <Button 
@@ -335,12 +335,12 @@ const coZyskujeszStats = [
   {
     main: "Wyprzedzisz konkurencję 🔝",
     sub: "Zyskasz przewagę na lokalnym rynku dzięki skutecznym działaniom SEO.",
-    desc: "Będziesz o krok przed konkurencją w Rzeszowie.",
+    desc: "Będziesz o krok przed konkurencją w Koszalinie.",
     more: "Dzięki naszym strategiom SEO nie tylko dogonisz, ale i prześcigniesz największych graczy w Twojej branży. Otrzymasz indywidualne rekomendacje, które pozwolą Ci stale utrzymywać przewagę nad konkurencją.",
   },
   {
     main: "Więcej klientów 🔝",
-    sub: "Zwiększysz ruch na stronie od klientów z Rzeszowa i okolic.",
+    sub: "Zwiększysz ruch na stronie od klientów z Koszalina i okolic.",
     desc: "Dotrzesz do osób realnie zainteresowanych Twoją ofertą.",
     more: "Nasze działania SEO są ukierunkowane na pozyskiwanie wartościowego ruchu, który realnie przekłada się na zapytania i sprzedaż. Skupiamy się na frazach, które generują konwersje, a nie tylko ruch dla statystyk.",
   },
@@ -422,4 +422,4 @@ function CoZyskujeszExpandableGrid() {
   );
 }
 
-export default RzeszowSeoPage; 
+export default KoszalinSeoPage; 

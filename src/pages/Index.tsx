@@ -101,6 +101,94 @@ const Index = () => {
         <title>Tworzenie stron internetowych, sklepy internetowe, pozycjonowanie SEO | IDZTECH</title>
         <meta name="description" content="Nowoczesne strony internetowe, sklepy internetowe, aplikacje webowe i skuteczne pozycjonowanie SEO. Kompleksowa obsługa firm – od projektu po rozwój i optymalizację." />
         <meta name="keywords" content="tworzenie stron internetowych, strony www, sklepy internetowe, e-commerce, aplikacje webowe, web design, SEO, pozycjonowanie stron, Warszawa, projektowanie stron, landing page, optymalizacja SEO" />
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Na czym polega pozycjonowanie stron internetowych?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pozycjonowanie to szereg działań mających na celu zwiększenie widoczności strony w wynikach wyszukiwania Google, m.in. optymalizacja techniczna, content marketing, link building."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak długo trzeba czekać na efekty pozycjonowania?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pierwsze efekty mogą być widoczne po kilku tygodniach, ale pełne rezultaty pojawiają się zwykle po 3-6 miesiącach regularnych działań."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy pozycjonowanie jest jednorazowe?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nie, SEO to proces ciągły. Algorytmy Google i konkurencja stale się zmieniają, dlatego ważna jest regularność działań."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy mogę pozycjonować stronę samodzielnie?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Możesz, ale skuteczne SEO wymaga wiedzy, narzędzi i doświadczenia. Współpraca z nami pozwala osiągnąć lepsze i szybsze efekty."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak mierzycie skuteczność działań SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Monitorujemy pozycje fraz kluczowych, ruch organiczny, liczbę konwersji oraz inne wskaźniki KPI."
+                }
+              }
+            ]
+          }
+        `}</script>
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://idztech.pl/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Strony internetowe",
+                "item": "https://idztech.pl/tworzenie-stron-www"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sklepy internetowe",
+                "item": "https://idztech.pl/sklepy-internetowe"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Pozycjonowanie SEO",
+                "item": "https://idztech.pl/pozycjonowanie-stron"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Kontakt",
+                "item": "https://idztech.pl/contact"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
       <Navbar />
       <Hero />

@@ -485,6 +485,7 @@ const Admin = () => {
             )}
           </div>
         </div>
+        <div data-upvoty-portal></div>
       </div>
     </AdminLayout>
   );

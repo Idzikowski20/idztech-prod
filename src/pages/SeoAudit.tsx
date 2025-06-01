@@ -12,6 +12,7 @@ import GlobalCTA from "@/components/GlobalCTA";
 import { Helmet } from 'react-helmet-async';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ArrowRight } from "lucide-react";
+import LocalSeoSection from "@/components/LocalSeoSection";
 
 const SeoAudit = () => {
   const { theme } = useTheme();
@@ -41,6 +42,45 @@ const SeoAudit = () => {
         <script type="application/ld+json">{`
           {"@context": "https://schema.org","@type": "Organization","name": "IDZTECH","url": "https://idztech.pl","logo": "https://idztech.pl/logo.png"}
         `}</script>
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://idztech.pl/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Strony internetowe",
+                "item": "https://idztech.pl/tworzenie-stron-www"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sklepy internetowe",
+                "item": "https://idztech.pl/sklepy-internetowe"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Pozycjonowanie SEO",
+                "item": "https://idztech.pl/pozycjonowanie-stron"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Kontakt",
+                "item": "https://idztech.pl/contact"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
       <Navbar />
       
@@ -67,8 +107,77 @@ const SeoAudit = () => {
               </div>
             </div>
             <div className="relative animate-slide-up">
-              <div className="w-full h-[220px] sm:h-80 md:h-96 flex items-center justify-center overflow-hidden rounded-lg mt-6">
-                <SplineSEO />
+              {/* Desktop/tablet układ */}
+              <div className="w-full h-[220px] sm:h-80 md:h-96 flex items-center justify-center overflow-hidden rounded-lg mt-6 relative hidden md:flex">
+                {/* SVG statystyki wokół zdjęcia */}
+                <img src="/lovable-uploads/seo1.svg" alt="Statystyka 1" className="m-[10px] absolute left-0 top-8 w-32 md:w-40 z-20 shadow-md rounded-lg animate-float-1" />
+                <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="m-[10px] absolute right-0 top-0 w-24 w-[10rem] mt-[20px] z-20 shadow-md rounded-lg animate-float-2" />
+                <img src="/lovable-uploads/seo3.svg" alt="Statystyka 3" className="m-[10px] absolute right-0 bottom-0 w-28 md:w-36 z-20 shadow-md rounded-lg animate-float-3" />
+                {/* Centralne zdjęcie */}
+                <img src="/lovable-uploads/seo.png" alt="SEO dashboard" className="relative z-10 w-40 w-[20rem] rounded-xl" />
+              </div>
+              {/* Mobile układ */}
+              <div className="w-full flex flex-col items-center justify-center md:hidden">
+                {/* Centralne zdjęcie z opacity 0 */}
+                <img src="/lovable-uploads/seo.png" alt="SEO dashboard" className="w-full w-[18rem] rounded-xl" />
+                {/* Statystyki w rzędzie pod spodem */}
+                <div className="flex flex-row gap-4 w-full h-full justify-center">
+                  <img src="/lovable-uploads/seo1.svg" alt="Statystyka 1" className="w-[10rem] m-[5px] shadow-md rounded-lg" />
+                  <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="w-[10rem] m-[5px] shadow-md rounded-lg" />
+                  <img src="/lovable-uploads/seo3.svg" alt="Statystyka 3" className="w-20 shadow-md rounded-lg display-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
+            <section className="py-16 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+          {/* Lewa kolumna */}
+          <div className="flex-1 max-w-2xl">
+            <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Czym jest SEO i jak może <span className="text-premium-orange">wesprzeć Twój biznes?</span>
+            </h2>
+            <p className="mb-6 text-premium-light/80 text-base">
+              SEO (Search Engine Optimization) to proces optymalizacji stron internetowych pod kątem wyszukiwarek, mający na celu zwiększenie widoczności Twojej firmy w Google. W Polsce często określane jako pozycjonowanie stron.
+            </p>
+            <p className="mb-4 text-premium-light/80 text-base">
+              W praktyce SEO to szereg działań na stronie i poza nią, które mają przekonać Google, że to właśnie Twoja strona powinna być wyżej w wynikach wyszukiwania. Dlaczego to takie istotne?
+            </p>
+            <p className="text-premium-light/70 text-base">
+              Dziś większość klientów szuka rozwiązań swoich problemów w Google. Jeśli Twoja strona pojawia się wysoko, zyskujesz zaufanie i realny ruch, który może przełożyć się na wzrost sprzedaży i rozpoznawalności marki.
+            </p>
+          </div>
+          {/* Prawa kolumna */}
+          <div className="flex-1 flex flex-col gap-8 justify-center">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Realnie zwiększasz ruch na stronie</h3>
+                <p className="text-premium-light/70 text-base">Dzięki skutecznym strategiom SEO zauważysz wzrost odwiedzin, co przekłada się na większą widoczność w sieci.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Pozyskujesz wartościowych klientów</h3>
+                <p className="text-premium-light/70 text-base">Dzięki analizie słów kluczowych docierasz do osób faktycznie zainteresowanych Twoją ofertą, co zwiększa szanse na konwersję.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Budujesz przewagę nad konkurencją</h3>
+                <p className="text-premium-light/70 text-base">Dzięki SEO Twoja strona może wyprzedzić konkurencję w Google i stać się liderem w branży online.</p>
               </div>
             </div>
           </div>
@@ -137,6 +246,7 @@ const SeoAudit = () => {
         </div>
       </section>
 
+      <LocalSeoSection />
 
       <FAQAccordion
         title="Najczęściej zadawane pytania o audyt SEO"

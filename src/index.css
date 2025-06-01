@@ -99,6 +99,10 @@
     animation: float3 6s ease-in-out infinite;
   }
   
+  .animate-float-updown {
+    animation: float-updown 4s ease-in-out infinite;
+  }
+  
   @keyframes float1 {
     0%, 100% {
       transform: translateY(0);
@@ -124,6 +128,11 @@
     50% {
       transform: translateY(-20px);
     }
+  }
+  
+  @keyframes float-updown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
   }
 }
 

@@ -11,47 +11,47 @@ const cities = [
   },
   {
     name: "Kraków",
-    image: "/images/kraków.jpg",
+    image: "/images/krakow.jpg",
     label: "Kraków"
   },
   {
     name: "Łódź",
-    image: "/images/Łódź.jpg",
+    image: "/images/lodz.jpg",
     label: "Łódź"
   },
   {
     name: "Wrocław",
-    image: "/images/wrocław.jpg",
+    image: "/images/wroclaw.jpg",
     label: "Wrocław"
   },
   {
     name: "Poznań",
-    image: "/images/Poznań.jpg",
+    image: "/images/poznan.jpg",
     label: "Poznań"
   },
   {
     name: "Gdańsk",
-    image: "/images/Gdańsk.jpg",
+    image: "/images/gdansk.jpg",
     label: "Gdańsk"
   },
   {
     name: "Szczecin",
-    image: "/images/Szczecin.jpg",
+    image: "/images/szczecin.jpg",
     label: "Szczecin"
   },
   {
     name: "Bydgoszcz",
-    image: "/images/Bydgoszcz.jpg",
+    image: "/images/bydgoszcz.jpg",
     label: "Bydgoszcz"
   },
   {
     name: "Lublin",
-    image: "/images/Lublin.jpg",
+    image: "/images/lublin.jpg",
     label: "Lublin"
   },
   {
     name: "Białystok",
-    image: "/images/Białystok.jpg",
+    image: "/images/bialystok.jpg",
     label: "Białystok"
   },
   {
@@ -61,12 +61,12 @@ const cities = [
   },
   {
     name: "Gdynia",
-    image: "/images/Gdynia.jpg",
+    image: "/images/gdynia.jpg",
     label: "Gdynia"
   },
   {
     name: "Częstochowa",
-    image: "/images/Częstochowa.jpg",
+    image: "/images/czestochowa.jpg",
     label: "Częstochowa"
   },
   {
@@ -76,12 +76,12 @@ const cities = [
   },
   {
     name: "Sosnowiec",
-    image: "/images/Sosnowiec.jpg",
+    image: "/images/sosnowiec.jpg",
     label: "Sosnowiec"
   },
   {
     name: "Toruń",
-    image: "/images/Toruń.jpg",
+    image: "/images/torun.jpg",
     label: "Toruń"
   },
   {
@@ -96,17 +96,17 @@ const cities = [
   },
   {
     name: "Zabrze",
-    image: "/images/Zabrze.webp",
+    image: "/images/zabrze.webp",
     label: "Zabrze"
   },
   {
     name: "Olsztyn",
-    image: "/images/Olsztyn.jpg",
+    image: "/images/olsztyn.jpg",
     label: "Olsztyn"
   },
   {
     name: "Bielsko-Biała",
-    image: "/images/Bielko-biala.jpg",
+    image: "/images/bielsko-biala.jpg",
     label: "Bielsko-Biała"
   },
   {
@@ -156,7 +156,7 @@ const cities = [
   },
   {
     name: "Włocławek",
-    image: "/images/Wloclawek.jpg",
+    image: "/images/wloclawek.jpg",
     label: "Włocławek"
   },
   {

@@ -31,6 +31,45 @@ const ContactPage = () => {
         <script type="application/ld+json">{`
           {"@context": "https://schema.org","@type": "Organization","name": "IDZTECH","url": "https://idztech.pl","logo": "https://idztech.pl/logo.png"}
         `}</script>
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://idztech.pl/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Strony internetowe",
+                "item": "https://idztech.pl/tworzenie-stron-www"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sklepy internetowe",
+                "item": "https://idztech.pl/sklepy-internetowe"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Pozycjonowanie SEO",
+                "item": "https://idztech.pl/pozycjonowanie-stron"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Kontakt",
+                "item": "https://idztech.pl/contact"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
       <Navbar />
       

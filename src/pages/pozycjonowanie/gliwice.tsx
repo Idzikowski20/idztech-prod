@@ -31,7 +31,7 @@ const GliwiceSeoPage = () => {
           <div className="flex-1 w-full max-w-xl relative">
             <span className="uppercase text-sm font-semibold tracking-wider text-premium-purple mb-4 block">SEO</span>
             <h1 className="text-2xl md:text-5xl font-bold mb-6 text-premium-dark dark:text-premium-light leading-tight">
-              Pozycjonowanie lokalne <span className="text-premium-purple">Gliwice</span>
+              Pozycjonowanie stron internetowych <span className="text-premium-purple">Gliwice</span>
             </h1>
             <p className="text-lg text-premium-light/80 mb-8">
               Zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki w Gliwicach.
@@ -59,15 +59,67 @@ const GliwiceSeoPage = () => {
         </div>
       </section>
 
+            {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
+            <section className="py-16 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+          {/* Lewa kolumna */}
+          <div className="flex-1 max-w-2xl">
+            <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Czym jest SEO i jak może <span className="text-premium-orange">wesprzeć Twój biznes?</span>
+            </h2>
+            <p className="mb-6 text-premium-light/80 text-base">
+              SEO (Search Engine Optimization) to proces optymalizacji stron internetowych pod kątem wyszukiwarek, mający na celu zwiększenie widoczności Twojej firmy w Google. W Polsce często określane jako pozycjonowanie stron.
+            </p>
+            <p className="mb-4 text-premium-light/80 text-base">
+              W praktyce SEO to szereg działań na stronie i poza nią, które mają przekonać Google, że to właśnie Twoja strona powinna być wyżej w wynikach wyszukiwania. Dlaczego to takie istotne?
+            </p>
+            <p className="text-premium-light/70 text-base">
+              Dziś większość klientów szuka rozwiązań swoich problemów w Google. Jeśli Twoja strona pojawia się wysoko, zyskujesz zaufanie i realny ruch, który może przełożyć się na wzrost sprzedaży i rozpoznawalności marki.
+            </p>
+          </div>
+          {/* Prawa kolumna */}
+          <div className="flex-1 flex flex-col gap-8 justify-center">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Realnie zwiększasz ruch na stronie</h3>
+                <p className="text-premium-light/70 text-base">Dzięki skutecznym strategiom SEO zauważysz wzrost odwiedzin, co przekłada się na większą widoczność w sieci.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Pozyskujesz wartościowych klientów</h3>
+                <p className="text-premium-light/70 text-base">Dzięki analizie słów kluczowych docierasz do osób faktycznie zainteresowanych Twoją ofertą, co zwiększa szanse na konwersję.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Budujesz przewagę nad konkurencją</h3>
+                <p className="text-premium-light/70 text-base">Dzięki SEO Twoja strona może wyprzedzić konkurencję w Google i stać się liderem w branży online.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DLACZEGO WARTO */}
       <section className="w-full py-16 mb-[8rem]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego my?</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Pozycjonowanie stron internetowych</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Dlaczego warto?</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Dlaczego warto pozycjonować stronę internetową?</h2>
             <p className="text-premium-light/70 text-base max-w-2xl">
               Lata doświadczenia w branży pozwoliły nam wypracować rozwiązania, które są skuteczne i przekładają się na realne wyniki dla firm z Gliwic.
             </p>
@@ -243,7 +295,7 @@ const GliwiceSeoPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      <LocalSeoSection />
       <GlobalCTA 
         title="Zacznij pozycjonowanie w Gliwicach już dziś!"
         description="Skontaktuj się z nami i dowiedz się, jak możemy pomóc Twojej firmie osiągnąć lepsze wyniki w wyszukiwarkach."

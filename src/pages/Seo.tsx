@@ -10,6 +10,7 @@ import GlobalCTA from "@/components/GlobalCTA";
 import { Helmet } from 'react-helmet-async';
 import FAQAccordion from '@/components/FAQAccordion';
 import { useTheme } from '@/utils/themeContext';
+import LocalSeoSection from "@/components/LocalSeoSection";
 
 const Seo = () => {
   const navigate = useNavigate();
@@ -39,6 +40,94 @@ const Seo = () => {
         <script type="application/ld+json">{`
           {"@context": "https://schema.org","@type": "Organization","name": "IDZTECH","url": "https://idztech.pl","logo": "https://idztech.pl/logo.png"}
         `}</script>
+        {/* FAQPage Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Na czym polega pozycjonowanie stron internetowych?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pozycjonowanie to szereg działań mających na celu zwiększenie widoczności strony w wynikach wyszukiwania Google, m.in. optymalizacja techniczna, content marketing, link building."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak długo trzeba czekać na efekty pozycjonowania?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pierwsze efekty mogą być widoczne po kilku tygodniach, ale pełne rezultaty pojawiają się zwykle po 3-6 miesiącach regularnych działań."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy pozycjonowanie jest jednorazowe?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nie, SEO to proces ciągły. Algorytmy Google i konkurencja stale się zmieniają, dlatego ważna jest regularność działań."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Czy mogę pozycjonować stronę samodzielnie?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Możesz, ale skuteczne SEO wymaga wiedzy, narzędzi i doświadczenia. Współpraca z nami pozwala osiągnąć lepsze i szybsze efekty."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Jak mierzycie skuteczność działań SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Monitorujemy pozycje fraz kluczowych, ruch organiczny, liczbę konwersji oraz inne wskaźniki KPI."
+                }
+              }
+            ]
+          }
+        `}</script>
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://idztech.pl/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Strony internetowe",
+                "item": "https://idztech.pl/tworzenie-stron-www"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sklepy internetowe",
+                "item": "https://idztech.pl/sklepy-internetowe"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Pozycjonowanie SEO",
+                "item": "https://idztech.pl/pozycjonowanie-stron"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Kontakt",
+                "item": "https://idztech.pl/contact"
+              }
+            ]
+          }
+        `}</script>
       </Helmet>
       <Navbar />
       
@@ -66,8 +155,25 @@ const Seo = () => {
             </div>
             
             <div className="relative animate-slide-up">
-              <div className="w-full h-[220px] sm:h-80 md:h-96 flex items-center justify-center overflow-hidden rounded-lg mt-6">
-                <SplineSEO />
+              {/* Desktop/tablet układ */}
+              <div className="w-full h-[220px] sm:h-80 md:h-96 flex items-center justify-center overflow-hidden rounded-lg mt-6 relative hidden md:flex">
+                {/* SVG statystyki wokół zdjęcia */}
+                <img src="/lovable-uploads/seo1.svg" alt="Statystyka 1" className="m-[10px] absolute left-0 top-8 w-32 md:w-40 z-20 shadow-md rounded-lg animate-float-1" />
+                <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="m-[10px] absolute right-0 top-0 w-24 w-[10rem] mt-[20px] z-20 shadow-md rounded-lg animate-float-2" />
+                <img src="/lovable-uploads/seo3.svg" alt="Statystyka 3" className="m-[10px] absolute right-0 bottom-0 w-28 md:w-36 z-20 shadow-md rounded-lg animate-float-3" />
+                {/* Centralne zdjęcie */}
+                <img src="/lovable-uploads/seo.png" alt="SEO dashboard" className="relative z-10 w-40 w-[20rem] rounded-xl" />
+              </div>
+              {/* Mobile układ */}
+              <div className="w-full flex flex-col items-center justify-center md:hidden">
+                {/* Centralne zdjęcie z opacity 0 */}
+                <img src="/lovable-uploads/seo.png" alt="SEO dashboard" className="w-full w-[18rem] rounded-xl" />
+                {/* Statystyki w rzędzie pod spodem */}
+                <div className="flex flex-row gap-4 w-full h-full justify-center">
+                  <img src="/lovable-uploads/seo1.svg" alt="Statystyka 1" className="w-[10rem] m-[5px] shadow-md rounded-lg" />
+                  <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="w-[10rem] m-[5px] shadow-md rounded-lg" />
+                  <img src="/lovable-uploads/seo3.svg" alt="Statystyka 3" className="w-20 shadow-md rounded-lg display-none" />
+                </div>
               </div>
             </div>
           </div>
@@ -125,6 +231,49 @@ const Seo = () => {
           </div>
         </div>
       </section>
+      
+      {/* Dlaczego warto inwestować w SEO? */}
+      <section className="py-20 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col gap-12">
+          <div className="text-center mb-12">
+            <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Opłaca się?</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4 leading-tight">
+              Dlaczego warto <span className="text-premium-orange">inwestować w SEO?</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex items-start gap-4">
+              <span className="text-premium-orange text-2xl mt-1">🏆</span>
+              <div>
+                <h3 className="font-bold mb-1">75% użytkowników zostaje na pierwszej stronie Google</h3>
+                <p className="text-premium-light/80 text-base">Aż 75 procent internautów nigdy nie zagląda poza pierwszą stronę wyników wyszukiwania. Jeśli Twoja witryna nie znajduje się wśród tych pierwszych pozycji, jest to jakby nie istniała dla większości użytkowników internetu.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-premium-orange text-2xl mt-1">🔍</span>
+              <div>
+                <h3 className="font-bold mb-1">93% działań w sieci zaczyna się od wyszukiwarki</h3>
+                <p className="text-premium-light/80 text-base">Podkreślając istotę posiadania wysokiej pozycji w wynikach wyszukiwania, warto zauważyć, że 93% użytkowników rozpoczyna swoje poszukiwania w sieci od właśnie tego narzędzia.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-premium-orange text-2xl mt-1">🚫</span>
+              <div>
+                <h3 className="font-bold mb-1">70–80% użytkowników omija reklamy w wyszukiwarce</h3>
+                <p className="text-premium-light/80 text-base">Zdecydowana większość internautów, około 70–80 procent, ignoruje płatne reklamy, skupiając się głównie na organicznych wynikach wyszukiwania.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <span className="text-premium-orange text-2xl mt-1">📈</span>
+              <div>
+                <h3 className="font-bold mb-1">10-krotnie więcej ruchu niż z mediów społecznościowych</h3>
+                <p className="text-premium-light/80 text-base">Statystyki ruchu w wyszukiwarkach wyraźnie wskazują, że wyszukiwanie jest głównym źródłem ruchu w e-commerce.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       
       {/* Services Section */}
       <section className="py-16">
@@ -349,6 +498,64 @@ const Seo = () => {
           </div>
         </div>
       </section>
+
+      {/* Porównanie: SEO vs Google Ads */}
+      <section className="py-16 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <span className="font-semibold uppercase text-premium-purple text-sm mb-4 block tracking-wider">SEO vs Google Ads</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+              SEO czy Google Ads? <span className="text-premium-orange">Co wybrać?</span>
+            </h2>
+            <p className="text-premium-light/70 text-lg max-w-2xl mx-auto">
+              Zobacz, dlaczego długoterminowa inwestycja w SEO przynosi większe korzyści niż płatne kampanie reklamowe Google Ads.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-separate border-spacing-y-4">
+              <thead>
+                <tr>
+                  <th className="w-1/3 text-premium-light/80 text-base font-semibold"></th>
+                  <th className="w-1/3 text-premium-purple text-lg font-bold text-left">SEO</th>
+                  <th className="w-1/3 text-premium-orange text-lg font-bold text-center border-l border-gray-500/30">Google Ads</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="py-3 pr-4 font-medium">Koszty w długim okresie</td>
+                  <td className="text-left py-3 font-semibold">Niskie</td>
+                  <td className="text-center py-3 border-l border-gray-500/30">Wysokie</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-medium">Efekt po zakończeniu działań</td>
+                  <td className="text-left py-3 font-semibold">Długotrwały</td>
+                  <td className="text-center py-3 border-l border-gray-500/30">Natychmiast zanika</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-medium">Zaufanie użytkowników</td>
+                  <td className="text-left py-3 font-semibold">Wysokie</td>
+                  <td className="text-center py-3 border-l border-gray-500/30">Niskie (oznaczenie reklamy)</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-medium">Ruch organiczny</td>
+                  <td className="text-left py-3 font-semibold">Stały wzrost</td>
+                  <td className="text-center py-3 border-l border-gray-500/30">Brak wzrostu po wyłączeniu kampanii</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-medium">Budowa marki</td>
+                  <td className="text-left py-3 font-semibold">Silna, długofalowa</td>
+                  <td className="text-center py-3 border-l border-gray-500/30">Ograniczona do czasu trwania kampanii</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-10 text-center max-w-2xl mx-auto">
+            <p className="text-premium-light/80 text-lg mb-4">
+              <span className="font-bold text-premium-orange">Wniosek:</span> Długoterminowe inwestowanie w SEO buduje trwałą widoczność, zaufanie i przewagę konkurencyjną, podczas gdy Google Ads daje szybkie, ale krótkotrwałe efekty i generuje stałe koszty.
+            </p>
+          </div>
+        </div>
+      </section>
       
       {/* Process Section */}
       <section className="py-16">
@@ -547,6 +754,8 @@ const Seo = () => {
           </div>
         </div>
       </section>
+
+      <LocalSeoSection />
       
       {/* CTA Section */}
       <FAQAccordion

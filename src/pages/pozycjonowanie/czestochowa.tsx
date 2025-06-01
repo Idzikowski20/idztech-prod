@@ -15,13 +15,14 @@ import HeroScrollDemo from "@/components/ui/container-scroll-animation-demo";
 const HERO_IMAGE = "/images/czestochowa.jpg";
 const CHARTS_IMAGE = "/images/charts.webp";
 
-const CzestochowaSeoPage = () => {
+const CzęstochowaSeoPage = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Pozycjonowanie Częstochowa - Skuteczne SEO lokalne | IDZTECH</title>
-        <meta name="description" content="Zwiększ widoczność swojej firmy w Częstochowie. Skuteczne pozycjonowanie lokalne, które przyciąga klientów z Twojego miasta. Sprawdź ofertę!" />
+        <title>Pozycjonowanie stron Częstochowa | Pozycjonowanie strony internetowej, SEO, tworzenie stron, sklep internetowy</title>
+        <meta name="description" content="Pozycjonowanie stron internetowych Częstochowa – skuteczne SEO, optymalizacja stron, tworzenie stron internetowych, sklepów internetowych i stron www. Zwiększ widoczność w Google!" />
+        <meta name="keywords" content="pozycjonowanie stron Częstochowa, pozycjonowanie strony, pozycjonowanie stron internetowych, SEO Częstochowa, tworzenie stron internetowych, sklep internetowy, strona internetowa, pozycjonowanie stron SEO, strona www" />
         <link rel="canonical" href="https://idztech.pl/pozycjonowanie/czestochowa" />
       </Helmet>
       <Navbar />
@@ -32,17 +33,17 @@ const CzestochowaSeoPage = () => {
           <div className="flex-1 w-full max-w-xl relative">
             <span className="uppercase text-sm font-semibold tracking-wider text-premium-purple mb-4 block">SEO</span>
             <h1 className="text-2xl md:text-5xl font-bold mb-6 text-premium-dark dark:text-premium-light leading-tight">
-              Pozycjonowanie lokalne <span className="text-premium-purple">Częstochowa</span>
+              Pozycjonowanie stron internetowych <span className="text-premium-purple">Częstochowa</span>
             </h1>
             <p className="text-lg text-premium-light/80 mb-8">
-              Zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki w Częstochowie.
+              Skuteczne pozycjonowanie strony internetowej w Częstochowie – zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki online. Oferujemy także tworzenie stron internetowych, sklepów internetowych oraz kompleksowe SEO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-4 font-semibold text-base shadow-md"
                 onClick={() => navigate('/contact')}
               >
-                Zamów pozycjonowanie
+                Zamów pozycjonowanie stron częstochowa
               </button>
             </div>
           </div>
@@ -60,17 +61,69 @@ const CzestochowaSeoPage = () => {
         </div>
       </section>
 
+            {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
+            <section className="py-16 bg-premium-dark text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+          {/* Lewa kolumna */}
+          <div className="flex-1 max-w-2xl">
+            <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Czym jest SEO i jak może <span className="text-premium-orange">wesprzeć Twój biznes?</span>
+            </h2>
+            <p className="mb-6 text-premium-light/80 text-base">
+              SEO (Search Engine Optimization) to proces optymalizacji stron internetowych pod kątem wyszukiwarek, mający na celu zwiększenie widoczności Twojej firmy w Google. W Polsce często określane jako pozycjonowanie stron.
+            </p>
+            <p className="mb-4 text-premium-light/80 text-base">
+              W praktyce SEO to szereg działań na stronie i poza nią, które mają przekonać Google, że to właśnie Twoja strona powinna być wyżej w wynikach wyszukiwania. Dlaczego to takie istotne?
+            </p>
+            <p className="text-premium-light/70 text-base">
+              Dziś większość klientów szuka rozwiązań swoich problemów w Google. Jeśli Twoja strona pojawia się wysoko, zyskujesz zaufanie i realny ruch, który może przełożyć się na wzrost sprzedaży i rozpoznawalności marki.
+            </p>
+          </div>
+          {/* Prawa kolumna */}
+          <div className="flex-1 flex flex-col gap-8 justify-center">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Realnie zwiększasz ruch na stronie</h3>
+                <p className="text-premium-light/70 text-base">Dzięki skutecznym strategiom SEO zauważysz wzrost odwiedzin, co przekłada się na większą widoczność w sieci.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Pozyskujesz wartościowych klientów</h3>
+                <p className="text-premium-light/70 text-base">Dzięki analizie słów kluczowych docierasz do osób faktycznie zainteresowanych Twoją ofertą, co zwiększa szanse na konwersję.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-premium-light mb-1">Budujesz przewagę nad konkurencją</h3>
+                <p className="text-premium-light/70 text-base">Dzięki SEO Twoja strona może wyprzedzić konkurencję w Google i stać się liderem w branży online.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DLACZEGO WARTO */}
       <section className="w-full py-16 mb-[8rem]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego my?</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego warto pozycjonować stronę internetową?</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Dlaczego warto?</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h2>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Lata doświadczenia w branży pozwoliły nam wypracować rozwiązania, które są skuteczne i przekładają się na realne wyniki dla firm z Częstochowy.
+              Pozycjonowanie stron internetowych (SEO) w Częstochowie to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
             </p>
           </div>
 
@@ -78,15 +131,13 @@ const CzestochowaSeoPage = () => {
           <div className="grid md:grid-cols-2 gap-14">
             {/* Karta 1 */}
             <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-              <h3 className="text-2xl">Zwiększymy twoją<h3 className="text-2xl font-bold text-premium-purple mb-2">Widoczność 🔝</h3></h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO pozwoli Ci prześcignąć konkurencję na lokalnym rynku Częstochowy.</p>
-              <img src="/images/widocznosc.webp" alt="Widoczność" className="w-full h-[16rem] object-contain self-end opacity-80" />
+              <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Widoczność strony internetowej 🔝</h3>
+              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Częstochowy.</p>
             </div>
             {/* Karta 2 */}
             <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-            <h3 className="text-2xl">Zwiekszymy twój</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Ruch 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO ściągną na Twoją stronę klientów z Częstochowy i okolic.</p>
-              <img src="/images/ruch.webp" alt="Ruch" className="w-full [16rem] object-contain self-start opacity-80" />
+            <h3 className="text-2xl">Zwiększymy Twój</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Ruch na stronie www 🔝</h3>
+              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Częstochowy i okolic.</p>
             </div>
             {/* Kafelek z wykresem i sprzedażą na całą szerokość */}
             <div className="md:col-span-2 bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-8">
@@ -124,9 +175,9 @@ const CzestochowaSeoPage = () => {
                 </ResponsiveContainer>
               </div>
               <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center">
-              <h3 className="text-2xl">Zwiekszymy twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Sprzedaż 🔝</h3>
+              <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Sprzedaż w sklepie internetowym 🔝</h3>
                 <p className="text-premium-dark dark:text-premium-light text-base">
-                  Wiemy, jakie kroki wykonać, by Twój biznes w Częstochowie generował większe przychody i rozwijał się z miesiąca na miesiąc.
+                  Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Częstochowie generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.
                 </p>
               </div>
             </div>
@@ -159,11 +210,11 @@ const CzestochowaSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Co zyskujesz</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania stron internetowych i SEO w Częstochowie</span>
             </div>
             <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Poznaj realne korzyści współpracy z <h4 className="text-premium-purple">IDZTECH</h4></h4>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Oto, co zyskasz wybierając naszą oferte <span className="text-premium-purple">Pozycjonowanie Częstochowa</span>.
+              Oto, co zyskasz wybierając naszą ofertę: pozycjonowanie stron internetowych, SEO, tworzenie stron www i sklepów internetowych w Częstochowie.
             </p>
           </div>
           <CoZyskujeszExpandableGrid />
@@ -236,34 +287,30 @@ const CzestochowaSeoPage = () => {
 
       <section className="mb-12">
         <FAQAccordion
-          title="Najczęściej zadawane pytania o pozycjonowanie w Częstochowie"
+          title="Najczęściej zadawane pytania o pozycjonowanie stron internetowych, SEO i tworzenie stron w Częstochowie"
           items={[
             {
-              question: 'Czy pozycjonowanie lokalne w Częstochowie jest skuteczne?',
-              answer: 'Tak, SEO lokalne pozwala dotrzeć do klientów z Twojego miasta, którzy są realnie zainteresowani Twoją ofertą.'
+              question: 'Na czym polega pozycjonowanie stron internetowych w Częstochowie?',
+              answer: 'Pozycjonowanie stron internetowych (SEO) to działania mające na celu zwiększenie widoczności strony www lub sklepu internetowego w wynikach Google. Obejmuje optymalizację techniczną, content marketing i link building.'
             },
             {
-              question: 'Ile kosztuje pozycjonowanie w Częstochowie?',
-              answer: 'Koszt zależy od branży, konkurencji i zakresu działań. Skontaktuj się z nami, a przygotujemy indywidualną wycenę.'
+              question: 'Czy oferujecie także tworzenie stron internetowych i sklepów internetowych?',
+              answer: 'Tak, projektujemy i wdrażamy nowoczesne strony internetowe oraz sklepy internetowe zoptymalizowane pod SEO.'
             },
             {
-              question: 'Jak długo trzeba czekać na efekty?',
-              answer: 'Pierwsze efekty są widoczne zwykle po kilku tygodniach, ale pełny potencjał SEO rozwija się w ciągu kilku miesięcy.'
+              question: 'Ile kosztuje pozycjonowanie strony internetowej w Częstochowie?',
+              answer: 'Koszt pozycjonowania strony internetowej zależy od wielu czynników, takich jak konkurencyjność branży, zakres prac i cele biznesowe. Skontaktuj się z nami, aby otrzymać indywidualną wycenę.'
             },
             {
-              question: 'Czy mogę liczyć na wsparcie ekspertów?',
-              answer: 'Tak, zapewniamy stały kontakt i partnerską współpracę na każdym etapie działań SEO.'
+              question: 'Jak długo trwa pozycjonowanie strony internetowej?',
+              answer: 'Pierwsze efekty pozycjonowania mogą być widoczne już po 3-6 miesiącach, ale pełne rezultaty wymagają systematycznej pracy przez 6-12 miesięcy.'
             }
           ]}
-          className="mb-0"
         />
       </section>
 
-      {/* Lista pozycjonowań lokalnych */}
       <LocalSeoSection />
-
-      {/* CTA przed stopką */}
-      <GlobalCTA
+      <GlobalCTA 
         title="Gotowy na zwiększenie widoczności w Częstochowie?"
         description="Skontaktuj się z nami i umów się na bezpłatną konsultację. Omówimy Twoje potrzeby i zaproponujemy optymalne rozwiązanie dla Twojego biznesu."
         buttons={[
@@ -375,4 +422,4 @@ function CoZyskujeszExpandableGrid() {
   );
 }
 
-export default CzestochowaSeoPage; 
+export default CzęstochowaSeoPage; 

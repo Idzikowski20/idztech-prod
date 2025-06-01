@@ -1,54 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useTheme } from "@/utils/themeContext";
-import { BlinkingUnderscore } from "@/components/ui/BlinkingUnderscore";
 import { useMobile } from '@/hooks/use-mobile';
 import HeroImage from "@/components/HeroImage";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { FlipWords } from "@/components/ui/flip-words";
-
-const heroPhrases = [
-  'Tworzymy najlepsze strony internetowe',
-  'Tworzymy najlepsze sklepy internetowe',
-  'Tworzymy skuteczne landing page',
-  'Tworzymy nowoczesne aplikacje webowe',
-];
 
 const Hero = () => {
   const { theme } = useTheme();
   const isMobile = useMobile();
   const navigate = useNavigate();
-  const [currentPhrase, setCurrentPhrase] = useState(0);
-  const [displayedText, setDisplayedText] = useState(heroPhrases[0]);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [charIndex, setCharIndex] = useState(heroPhrases[0].length);
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    if (isDeleting) {
-      if (charIndex > 0) {
-        timeout = setTimeout(() => setCharIndex(charIndex - 1), 50);
-      } else {
-        setIsDeleting(false);
-        setCurrentPhrase((prev) => (prev + 1) % heroPhrases.length);
-      }
-    } else {
-      if (charIndex < heroPhrases[currentPhrase].length) {
-        timeout = setTimeout(() => setCharIndex(charIndex + 1), 80);
-      } else {
-        timeout = setTimeout(() => setIsDeleting(true), 30000);
-      }
-    }
-    setDisplayedText(heroPhrases[currentPhrase].slice(0, charIndex));
-    return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, currentPhrase]);
-
-  useEffect(() => {
-    if (!isDeleting && charIndex === 0) {
-      setCharIndex(0);
-    }
-  }, [currentPhrase]);
   
   return (
     <section id="hero" className={`${isMobile ? 'pt-28' : 'pt-20'} pb-16 md:pt-28 md:pb-32 relative overflow-hidden`}>
@@ -60,28 +22,28 @@ const Hero = () => {
               <span className="text-xl">👋</span>
               <span className="text-premium-dark dark:text-premium-light">Potrzebujesz nowoczesnej strony? Dobrze trafiłeś!</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-premium-dark dark:text-premium-light leading-tight">
-              Tworzymy {" "}
-              <FlipWords
-                words={[
-                  "strony internetowe",
-                  "Aplikacje webowe",
-                  "sklepy internetowe",
-                  "landing page",
-                  "pozycjonowanie lokalne",
-                  "audyt SEO",
-                  "optymalizacje SEO",
-                  "copywriting SEO",
-                  "Content plan",
-                ]}
-                className="text-premium-purple"
-              />
-            </h1>
-            
+            <div className="mb-6">
+              <span className="block text-3xl md:text-5xl font-bold text-premium-dark dark:text-premium-light leading-tight">
+                Tworzymy
+              </span>
+              <span className="block relative text-3xl md:text-5xl font-extrabold text-premium-purple leading-tight">
+                <span className="relative z-10">
+                  <FlipWords
+                    words={[
+                      "strony internetowe",
+                      "sklepy internetowe",
+                      "landing page",
+                      "aplikacje webowe"
+                    ]}
+                    duration={10000}
+                    className="bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent"
+                  />
+                </span>
+              </span>
+            </div>
             <p className='text-lg md:text-xl text-premium-light/80 dark:text-premium-light/80 mb-6 md:mb-8 leading-relaxed'>
             Pomagamy firmom zaistnieć w internecie i skutecznie pozyskiwać klientów. Tworzymy nowoczesne strony www, sklepy internetowe oraz prowadzimy kompleksowe działania SEO.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Skontaktuj się z nami
@@ -91,7 +53,6 @@ const Hero = () => {
                   Zobacz nasze realizacje
                 </Button>
               </div>
-            
             <div className='flex flex-wrap gap-3 md:gap-4 transition-opacity duration-500'>
               {[
                 'Szybka wydajność',
@@ -108,7 +69,6 @@ const Hero = () => {
               ))}
             </div>
           </div>
-          
           {/* Hero image on the right */}
           <div className="w-full lg:w-1/2 mt-6 lg:mt-0 h-[400px] sm:h-[450px] md:h-[480px] flex items-center justify-center" style={{ minHeight: "300px" }}>
             <HeroImage />
