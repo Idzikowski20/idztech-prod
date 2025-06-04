@@ -56,6 +56,7 @@ export default defineConfig({
       },
     },
     chunkSizeWarningLimit: 1000,
+    outDir: 'dist',
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lodash.debounce'],
