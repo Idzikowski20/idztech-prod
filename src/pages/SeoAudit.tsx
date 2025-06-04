@@ -97,7 +97,7 @@ const SeoAudit = () => {
                 Profesjonalny audyt SEO to podstawa skutecznej optymalizacji. Sprawdź, co blokuje widoczność Twojej strony w Google.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Zamów audyt SEO
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -133,7 +133,7 @@ const SeoAudit = () => {
       </section>
 
             {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
-            <section className="py-16 bg-premium-dark text-premium-light">
+            <section className="py-16 text-premium-light">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
           {/* Lewa kolumna */}
           <div className="flex-1 max-w-2xl">
@@ -208,7 +208,7 @@ const SeoAudit = () => {
               key={idx}
               className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col items-center text-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}
             >
-              <div className="h-14 w-14 bg-premium-gradient rounded-full flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300 p-2">
+              <div className="h-14 w-14 bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300 p-2">
                 {item.icon}
               </div>
               <h3 className="font-medium mb-2">{item.title}</h3>
@@ -276,14 +276,13 @@ const SeoAudit = () => {
           description="Zrób pierwszy krok do skutecznego pozycjonowania. Zamów profesjonalny audyt SEO!"
           buttons={[
             <Button 
-              className="bg-premium-gradient hover:bg-transparent transition-opacity animate-fade-in group relative overflow-hidden"
+              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
               style={{animationDelay: "0.4s"}}
               size="lg"
               onClick={() => navigate('/contact')}
               key="cta-audit"
             >
               <span className="relative z-10 text-white">Zamów bezpłatną wycenę</span>
-              <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </Button>
           ]}
         />

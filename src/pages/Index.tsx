@@ -209,10 +209,11 @@ const Index = () => {
         <LocalSeoSection />
       </Suspense>
 
+
       <div data-lazy>
         <Suspense fallback={<LoadingFallback />}>
           <div className="mt-8 md:mt-0">
-            <Testimonials />
+            <FAQ />
           </div>
         </Suspense>
       </div>
@@ -220,7 +221,7 @@ const Index = () => {
       <div data-lazy>
         <Suspense fallback={<LoadingFallback />}>
           <div className="mt-8 md:mt-0">
-            <FAQ />
+            <Testimonials />
           </div>
         </Suspense>
       </div>

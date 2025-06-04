@@ -16,7 +16,7 @@ const LocalSeo = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       <Helmet>
         <title>Pozycjonowanie lokalne |Local SEO dla firm | IDZTECH</title>
         <meta name="description" content="Zwiększ widoczność swojej firmy w lokalnych wynikach Google. Skuteczne pozycjonowanie lokalne (Local SEO) w Warszawie – Google Maps, wizytówka Google, opinie." />
@@ -94,7 +94,7 @@ const LocalSeo = () => {
                 przyciągając klientów z Twojego obszaru działania.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Skontaktuj się z nami
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -131,7 +131,7 @@ const LocalSeo = () => {
       </section>
 
             {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
-            <section className="py-16 bg-premium-dark text-premium-light">
+            <section className="py-16  text-premium-light">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
           {/* Lewa kolumna */}
           <div className="flex-1 max-w-2xl">
@@ -247,7 +247,7 @@ const LocalSeo = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-purple to-premium-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Building className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Optymalizacja Google Business Profile</h3>
@@ -272,7 +272,7 @@ const LocalSeo = () => {
             
             {/* Service 2 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-blue to-premium-pink flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Star className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Zarządzanie opiniami</h3>
@@ -297,7 +297,7 @@ const LocalSeo = () => {
             
             {/* Service 3 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-pink to-premium-purple flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Cyfrowy NAP</h3>
@@ -322,7 +322,7 @@ const LocalSeo = () => {
             
             {/* Service 4 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-purple to-premium-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Phone className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Katalogi lokalne</h3>
@@ -347,7 +347,7 @@ const LocalSeo = () => {
             
             {/* Service 5 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-blue to-premium-pink flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <FileText className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Lokalny content marketing</h3>
@@ -372,7 +372,7 @@ const LocalSeo = () => {
             
             {/* Service 6 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-pink to-premium-purple flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Settings className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Optymalizacja on-page</h3>
@@ -412,7 +412,7 @@ const LocalSeo = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Benefit 1 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-purple to-premium-blue mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="text-premium-light" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Dotarcie do lokalnych klientów</h3>
@@ -423,7 +423,7 @@ const LocalSeo = () => {
             
             {/* Benefit 2 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-blue to-premium-pink mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Star className="text-premium-light" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Budowa zaufania</h3>
@@ -434,7 +434,7 @@ const LocalSeo = () => {
             
             {/* Benefit 3 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-pink to-premium-purple mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Phone className="text-premium-light" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Więcej telefonów i wizyt</h3>
@@ -445,7 +445,7 @@ const LocalSeo = () => {
             
             {/* Benefit 4 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-purple to-premium-blue mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Target className="text-premium-light" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Wysoka konwersja</h3>
@@ -456,7 +456,7 @@ const LocalSeo = () => {
             
             {/* Benefit 5 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-blue to-premium-pink mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="text-premium-light" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Przewaga konkurencyjna</h3>
@@ -467,7 +467,7 @@ const LocalSeo = () => {
             
             {/* Benefit 6 */}
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col  group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-pink to-premium-purple mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Settings className="text-premium-light" size={32} />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">Optymalizacja mobilna</h3>
@@ -492,57 +492,57 @@ const LocalSeo = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-purple to-premium-blue mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Utensils size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Restauracje i kawiarnie</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-blue to-premium-pink mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Store size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Sklepy stacjonarne</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-pink to-premium-purple mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Flower size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Salony piękności</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-blue to-premium-purple mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Stethoscope size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Gabinety medyczne</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-purple to-premium-blue mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Gavel size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Kancelarie prawne</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-blue to-premium-pink mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <HardHat size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Firmy budowlane</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-pink to-premium-purple mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Car size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Warsztaty samochodowe</h3>
             </div>
             
             <div className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col justify-center items-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
-              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-premium-purple to-premium-blue mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Dumbbell size={32} className="text-premium-light" />
+                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-pink-500 via-premium-purple-500 to-premium-blue-500 mx-auto flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Dumbbell size={32} className="text-premium-light" />
               </div>
               <h3 className="font-medium mb-2 text-center">Siłownie i kluby fitness</h3>
             </div>
@@ -590,14 +590,13 @@ const LocalSeo = () => {
         description="Skontaktuj się z nami, aby otrzymać bezpłatną analizę lokalnej widoczności Twojej firmy i indywidualną ofertę pozycjonowania."
         buttons={[
           <Button 
-            className="bg-premium-gradient hover:opacity-90 transition-opacity animate-fade-in group relative overflow-hidden"
+            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             style={{animationDelay: "0.4s"}}
             size="lg"
             onClick={() => navigate('/contact')}
             key="cta-localseo"
           >
             <span className="relative z-10 text-white">Zamów darmową analizę</span>
-            <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
           </Button>
         ]}
       />

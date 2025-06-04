@@ -26,7 +26,7 @@ const OurServices = () => {
   const services = [
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <Code className="text-white" size={28} />
         </div>
       ),
@@ -36,7 +36,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <ShoppingCart className="text-white" size={28} />
         </div>
       ),
@@ -46,7 +46,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <Search className="text-white" size={28} />
         </div>
       ),
@@ -56,7 +56,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <MapPin className="text-white" size={28} />
         </div>
       ),
@@ -66,7 +66,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <FileText className="text-white" size={28} />
         </div>
       ),
@@ -76,7 +76,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <BarChart3 className="text-white" size={28} />
         </div>
       ),
@@ -86,7 +86,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <Component className="text-white" size={28} />
         </div>
       ),
@@ -96,7 +96,7 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
           <BarChart3 className="text-white" size={28} />
         </div>
       ),
@@ -110,7 +110,7 @@ const OurServices = () => {
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-premium-purple font-medium mb-3">Co oferujemy</p>
+          <p className="text-premium-purple font-medium mb-3 uppercase">Co oferujemy</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Nasze usługi webowe</h2>
           <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
             Oferujemy kompleksowe rozwiązania, które pomogą Twojej firmie zyskać przewagę konkurencyjną w internecie.

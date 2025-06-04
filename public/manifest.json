@@ -1,6 +1,6 @@
 {
   "short_name": "IDZTECH",
-  "name": "IDZTECH - Tworzenie stron internetowych",
+  "name": "IDZTECH – Strony internetowe, Sklepy internetowe, Aplikacje webowe, SEO",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -23,6 +23,6 @@
   "display": "standalone",
   "scope": "/",
   "theme_color": "#A259FF",
-  "description": "IDZTECH to nowoczesne strony internetowe, aplikacje webowe i sklepy internetowe oraz profesjonalne pozycjonowanie SEO.",
+  "description": "Tworzenie stron internetowych, projektowanie stron, rozwój stron, responsywne strony, web design, strony firmowe, landing page, projektowanie UI/UX, aplikacje webowe, aplikacje internetowe, web app development, aplikacje na zamówienie, platformy webowe, sklepy internetowe, e-commerce, sklepy online, WooCommerce, Shopify, rozwój sklepu internetowego, optymalizacja e-commerce, SEO, pozycjonowanie stron, optymalizacja SEO, audyt SEO, link building, SEO on-page, SEO off-page, strategie SEO, Google SEO, pozycjonowanie w Google – IDZTECH.",
   "lang": "pl"
 } 

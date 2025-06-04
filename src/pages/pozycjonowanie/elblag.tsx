@@ -119,67 +119,48 @@ const ElblagSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego warto pozycjonować stronę internetową?</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego warto?</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h2>
+            <h3 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h3>
             <p className="text-premium-light/70 text-base max-w-2xl">
               Pozycjonowanie stron internetowych (SEO) w Elblągu to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
             </p>
           </div>
 
           {/* GRID 2x2 */}
-          <div className="grid md:grid-cols-2 gap-14">
-            {/* Karta 1 */}
-            <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-              <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Widoczność strony internetowej 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Elbląga.</p>
-            </div>
-            {/* Karta 2 */}
-            <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-            <h3 className="text-2xl">Zwiększymy Twój</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Ruch na stronie www 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Elbląga i okolic.</p>
-            </div>
-            {/* Kafelek z wykresem i sprzedażą na całą szerokość */}
-            <div className="md:col-span-2 bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-full md:w-2/3">
-                <ResponsiveContainer width="100%" height={220}>
-                  <LineChart data={[
-                    { name: 'STY', konkurencja: 120, idztech: 120 },
-                    { name: 'LUT', konkurencja: 110, idztech: 140 },
-                    { name: 'MAR', konkurencja: 115, idztech: 170 },
-                    { name: 'KWI', konkurencja: 100, idztech: 200 },
-                    { name: 'MAJ', konkurencja: 105, idztech: 240 },
-                    { name: 'CZE', konkurencja: 110, idztech: 300 },
-                    { name: 'LIP', konkurencja: 120, idztech: 340 },
-                    { name: 'SIE', konkurencja: 130, idztech: 380 },
-                    { name: 'WRZ', konkurencja: 140, idztech: 420 },
-                  ]} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="colorIdztech" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#8350e8" stopOpacity={0.3} />
-                        <stop offset="100%" stopColor="#8350e8" stopOpacity={1} />
-                      </linearGradient>
-                      <linearGradient id="colorKonkurencja" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#bdbdbd" stopOpacity={0.2} />
-                        <stop offset="100%" stopColor="#bdbdbd" stopOpacity={0.7} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#ececec" />
-                    <XAxis dataKey="name" tick={{ fill: '#8884d8', fontWeight: 600 }} />
-                    <YAxis hide />
-                    <Tooltip contentStyle={{ background: '#fff', borderRadius: 8, border: 'none', color: '#222' }} />
-                    <Legend verticalAlign="top" align="right" iconType="plainline" wrapperStyle={{ paddingBottom: 10 }} />
-                    <Line type="monotone" dataKey="konkurencja" stroke="#bdbdbd" strokeWidth={3} dot={false} strokeDasharray="5 5" name="Konkurencja" />
-                    <Line type="monotone" dataKey="idztech" stroke="url(#colorIdztech)" strokeWidth={4} dot={false} name="IDZTECH" />
-                  </LineChart>
-                </ResponsiveContainer>
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+            {/* Kafelek 1 */}
+            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+                <FaChartLine className="text-white text-2xl" />
+              </span>
+              <div>
+                <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twoją</span>
+                <span className="block font-bold text-lg text-premium-purple">Widoczność strony internetowej</span>
+                <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Elbląga.</p>
               </div>
-              <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center">
-              <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Sprzedaż w sklepie internetowym 🔝</h3>
-                <p className="text-premium-dark dark:text-premium-light text-base">
-                  Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Elblągu generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.
-                </p>
+            </div>
+            {/* Kafelek 2 */}
+            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+                <FaUserCheck className="text-white text-2xl" />
+              </span>
+              <div>
+                <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twój</span>
+                <span className="block font-bold text-lg text-premium-purple">Ruch na stronie www</span>
+                <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Elbląga i okolic.</p>
               </div>
+            </div>
+          </div>
+          {/* Kafelek szeroki na całą szerokość */}
+          <div className="mt-8 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-10 flex items-center gap-5 min-w-[260px]">
+            <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+              <FaClipboardCheck className="text-white text-2xl" />
+            </span>
+            <div>
+              <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twoją</span>
+              <span className="block font-bold text-lg text-premium-purple">Sprzedaż w sklepie internetowym</span>
+              <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Elblągu generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.</p>
             </div>
           </div>
         </div>

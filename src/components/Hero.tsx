@@ -23,11 +23,9 @@ const Hero = () => {
               <span className="text-premium-dark dark:text-premium-light">Potrzebujesz nowoczesnej strony? Dobrze trafiłeś!</span>
             </div>
             <div className="mb-6">
-              <span className="block text-3xl md:text-5xl font-bold text-premium-dark dark:text-premium-light leading-tight">
-                Tworzymy
-              </span>
-              <span className="block relative text-3xl md:text-5xl font-extrabold text-premium-purple leading-tight">
-                <span className="relative z-10">
+              <h1 className="text-3xl md:text-5xl font-extrabold text-premium-dark dark:text-premium-light leading-tight">
+                Tworzymy{' '}
+                <span className="relative z-10 bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent">
                   <FlipWords
                     words={[
                       "strony internetowe",
@@ -39,13 +37,13 @@ const Hero = () => {
                     className="bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent"
                   />
                 </span>
-              </span>
+              </h1>
             </div>
             <p className='text-lg md:text-xl text-premium-light/80 dark:text-premium-light/80 mb-6 md:mb-8 leading-relaxed'>
             Pomagamy firmom zaistnieć w internecie i skutecznie pozyskiwać klientów. Tworzymy nowoczesne strony www, sklepy internetowe oraz prowadzimy kompleksowe działania SEO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Skontaktuj się z nami
                   <ArrowRight size={18} className="ml-2" />
                 </Button>

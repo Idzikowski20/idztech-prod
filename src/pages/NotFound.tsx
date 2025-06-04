@@ -55,8 +55,8 @@ const NotFound = () => {
   const errorDetails = getErrorDetails();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-premium-dark">
-      <div className="max-w-md w-full px-6 py-12 bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl text-center">
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="max-w-md w-full px-6 py-12 /60 backdrop-blur-sm border border-white/10 rounded-xl text-center">
         <div className="mb-8">
           <div className="flex justify-center">
             <div className="w-24 h-24 rounded-full bg-red-500/10 flex items-center justify-center">
@@ -74,8 +74,8 @@ const NotFound = () => {
           <Button 
             className={`${
               theme === 'dark' 
-                ? 'bg-white text-black hover:bg-gray-300' 
-                : 'bg-premium-gradient text-white hover:opacity-90'
+                ? 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6' 
+                : 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6'
             } transition-all duration-300 w-full sm:w-auto`}
             onClick={() => navigate('/')}
           >

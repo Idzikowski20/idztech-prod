@@ -283,9 +283,6 @@ const Admin = () => {
               </div>
               <div className="flex items-center justify-end mb-6">
                 <div className="flex gap-4">
-                  <Button size="sm" onClick={handleGenerateSitemap} disabled={isGeneratingSitemap} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
-                    {isGeneratingSitemap ? 'Generowanie...' : 'Generuj sitemapę'}
-                  </Button>
                   <div className="flex items-center gap-4">
                     <Select
                       value={statusFilter}
@@ -304,22 +301,22 @@ const Admin = () => {
                       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-premium-light/50" size={16} />
                       <Input
                         placeholder="Wyszukaj po tytule..."
-                        className="pl-10 bg-premium-dark/30 border-premium-light/10 w-64"
+                        className="pl-10 /30 border-premium-light/10 w-64"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                       />
                     </div>
                   </div>
-                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
                     <Plus size={16} className="mr-2" /> Dodaj nowy post
                   </Button>
-                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-premium-gradient hover:text-white hover:scale-105 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
                     <Plus size={16} className="mr-2" /> Generuj z AI
                   </Button>
                 </div>
               </div>
 
-          <div className="bg-premium-dark/50 border border-premium-light/10 rounded-xl overflow-hidden">
+          <div className="/50 border border-premium-light/10 rounded-xl overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className=" border-premium-light/10 sticky top-0 bg-transparent z-10">
@@ -459,7 +456,7 @@ const Admin = () => {
                             isActive={currentPostsPage === pageNum}
                             className={
                               currentPostsPage === pageNum
-                                ? `${theme === 'dark' ? 'bg-premium-dark text-white border border-premium-light/10' : 'bg-white text-black border border-gray-300'} !shadow-none`
+                                ? `${theme === 'dark' ? ' text-white border border-premium-light/10' : 'bg-white text-black border border-gray-300'} !shadow-none`
                                 : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:bg-premium-light/10`
                             }
                           >

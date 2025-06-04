@@ -272,10 +272,10 @@ const LocalSeoSection = () => {
                 >
                   <span className="text-xl font-normal group-hover:text-premium-purple transition-colors">Pozycjonowanie {city.name}</span>
                   <Button 
-                    className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} 
+                    className={`border border-gray-200 rounded-full transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black' : 'borderborder-gray-200 text-slate-50 hover:text-white'}`} 
                     onClick={() => navigate(`/pozycjonowanie/${formatCityPath(city.name)}`)}
                   >
-                    Zobacz szczegóły
+                    →
                   </Button>
                 </li>
               ))}

@@ -16,7 +16,7 @@ const ECommerce = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       <Helmet>
         <title>Sklepy internetowe | E-commerce, sklepy online, WooCommerce, Shopify, optymalizacja e-commerce | IDZTECH</title>
         <meta name="description" content="Sklepy internetowe, e-commerce, sklepy online, tworzenie sklepów internetowych, WooCommerce, Shopify, optymalizacja e-commerce, rozwój sklepu internetowego." />
@@ -61,7 +61,7 @@ const ECommerce = () => {
                 i zapewniają doskonałe doświadczenia zakupowe dla Twoich klientów.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Skontaktuj się z nami
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -97,8 +97,8 @@ const ECommerce = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-blue to-premium-pink flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <ShoppingCart className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Intuicyjny panel administracyjny</h3>
@@ -122,8 +122,8 @@ const ECommerce = () => {
             </div>
             
             {/* Feature 2 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-pink to-premium-purple flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <CreditCard className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Integracje płatności</h3>
@@ -147,8 +147,8 @@ const ECommerce = () => {
             </div>
             
             {/* Feature 3 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-purple to-premium-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <Truck className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Opcje dostawy</h3>
@@ -172,8 +172,8 @@ const ECommerce = () => {
             </div>
             
             {/* Feature 4 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-blue to-premium-pink flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <Package className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Zarządzanie magazynem</h3>
@@ -197,8 +197,8 @@ const ECommerce = () => {
             </div>
             
             {/* Feature 5 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-pink to-premium-purple flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <BarChart className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Analityka i raporty</h3>
@@ -222,8 +222,8 @@ const ECommerce = () => {
             </div>
             
             {/* Feature 6 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-premium-purple to-premium-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <Shield className="text-premium-light" size={24} />
               </div>
               <h3 className="text-xl font-semibold mb-3">Bezpieczeństwo</h3>
@@ -262,7 +262,7 @@ const ECommerce = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Platform 1 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-premium-blue/30 transition-colors text-center group">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-premium-blue/30 transition-colors text-center group">
               <div className="h-20 flex items-center justify-center mb-6">
                 <WooCommerceIcon />
               </div>
@@ -274,7 +274,7 @@ const ECommerce = () => {
             </div>
             
             {/* Platform 2 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-premium-purple/30 transition-colors text-center transform scale-105 relative group">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-premium-purple/30 transition-colors text-center transform scale-105 relative group">
               <div className="absolute -top-4 -right-4">
                 <span className="bg-premium-gradient text-white text-xs font-medium px-3 py-1 rounded-full">Polecane</span>
               </div>
@@ -289,7 +289,7 @@ const ECommerce = () => {
             </div>
             
             {/* Platform 3 */}
-            <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-premium-pink/30 transition-colors text-center group">
+            <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-premium-pink/30 transition-colors text-center group">
               <div className="h-20 flex items-center justify-center mb-6">
                 <MagentoIcon />
               </div>
@@ -318,9 +318,9 @@ const ECommerce = () => {
             {/* Step 1 */}
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-full md:w-1/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center text-white font-bold">1</div>
+                    <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">1</div>
                     <h3 className="text-xl font-semibold ml-4">Analiza i planowanie</h3>
                   </div>
                   <p className="text-premium-light/70">
@@ -329,7 +329,7 @@ const ECommerce = () => {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
@@ -351,9 +351,9 @@ const ECommerce = () => {
             {/* Step 2 */}
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-full md:w-1/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center text-white font-bold">2</div>
+                    <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">2</div>
                     <h3 className="text-xl font-semibold ml-4">UX/UI Design</h3>
                   </div>
                   <p className="text-premium-light/70">
@@ -362,7 +362,7 @@ const ECommerce = () => {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
@@ -384,9 +384,9 @@ const ECommerce = () => {
             {/* Step 3 */}
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-full md:w-1/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center text-white font-bold">3</div>
+                    <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">3</div>
                     <h3 className="text-xl font-semibold ml-4">Rozwój i wdrożenie</h3>
                   </div>
                   <p className="text-premium-light/70">
@@ -395,7 +395,7 @@ const ECommerce = () => {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
@@ -417,9 +417,9 @@ const ECommerce = () => {
             {/* Step 4 */}
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-full md:w-1/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center text-white font-bold">4</div>
+                    <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">4</div>
                     <h3 className="text-xl font-semibold ml-4">Testy i optymalizacja</h3>
                   </div>
                   <p className="text-premium-light/70">
@@ -428,7 +428,7 @@ const ECommerce = () => {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
@@ -450,9 +450,9 @@ const ECommerce = () => {
             {/* Step 5 */}
             <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="w-full md:w-1/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center text-white font-bold">5</div>
+                    <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">5</div>
                     <h3 className="text-xl font-semibold ml-4">Launch i wsparcie</h3>
                   </div>
                   <p className="text-premium-light/70">
@@ -461,7 +461,7 @@ const ECommerce = () => {
                 </div>
               </div>
               <div className="w-full md:w-2/3">
-                <div className="bg-premium-dark/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
+                <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
@@ -520,12 +520,11 @@ const ECommerce = () => {
         buttons={[
           <Button 
             size="lg" 
-            className="bg-premium-gradient hover:opacity-90 transition-opacity animate-fade-in group relative overflow-hidden"
+            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             style={{animationDelay: "0.4s"}}
             onClick={() => navigate('/contact')}
           >
             <span className="relative z-10 text-white">Skontaktuj się z nami</span>
-            <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
           </Button>
         ]}
       />

@@ -60,7 +60,7 @@ const BlogPost = () => {
           'border-premium-light/20',
           'rounded-lg',
           'overflow-hidden',
-          'bg-premium-dark/80',
+          '/80',
           'text-sm',
           'text-left'
         );
@@ -136,7 +136,7 @@ const BlogPost = () => {
   
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-premium-dark">
+      <div className="min-h-screen ">
         <Navbar />
         <div className="container max-w-4xl mx-auto px-4 py-32">
           <Skeleton className="h-12 w-3/4 mb-4" />
@@ -158,7 +158,7 @@ const BlogPost = () => {
   }
   
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       {notification && (
         <Notification
           sender={notification.sender}
@@ -186,11 +186,11 @@ const BlogPost = () => {
               <Button 
                 variant="ghost" 
                 onClick={() => navigate('/blog')}
-                className="text-premium-light/80 hover:text-white hover:bg-premium-light/10"
+                className=""
                 size="sm"
               >
                 <ArrowLeft size={16} className="mr-2" />
-                Wróć do bloga
+                <span className="dark:text-white light:text-black">Wróć do bloga</span>
               </Button>
             </div>
 
@@ -199,7 +199,7 @@ const BlogPost = () => {
             <header className="mb-10">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
               
-              <div className="flex flex-wrap items-center gap-4 text-premium-light/80 mb-6">
+              <div className="flex flex-wrap items-center gap-4 dark:text-premium-light/80 light:text-black mb-6">
                 <div className="flex items-center">
                   <Calendar size={16} className="mr-2" />
                   <span>{formatDate(post.created_at)}</span>
@@ -225,7 +225,7 @@ const BlogPost = () => {
             
             {/* Post content */}
             <section className="mb-10 toc-section">
-            <div className="mt-10 bg-gradient-to-br from-premium-purple/20 to-indigo-900/20 border border-premium-light/10 rounded-lg p-6">
+            <div className="mt-10 blog-bg border dark:border-premium-light/10 light:border-premium-light rounded-lg p-6">
               <h2 className="text-lg font-bold mb-2">Z tego artykułu dowiesz się:</h2>
               <ul className="list-disc pl-6">
                 {tableOfContents.map(heading => (
@@ -279,16 +279,16 @@ const BlogPost = () => {
               </div>
                    {/* CTA Box */}
                   <div
-                    className={`mt-10 border border-premium-light/10 rounded-lg p-6 text-center ${theme === 'light' ? 'bg-[#f5f5f5]' : 'bg-premium-dark/80'}`}
+                    className={`mt-10 border border-premium-light/10 rounded-lg p-6 text-center ${theme === 'light' ? 'bg-[#f5f5f5]' : '/80'}`}
                   >
                     <h3 className="font-semibold text-lg mb-3">Potrzebujesz pomocy z SEO?</h3>
                     <p className="text-sm text-gray-300 mb-4">
                       Chcesz zlecić stronę internetową profesjonalistom? Skorzystaj z naszych usług 😊</p>
-                    <Button className="bg-premium-gradient hover:bg-premium-purple hover:text-white" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
+                    <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
                   </div>
             </div>
             
-            <Separator className="my-12" />
+            <Separator className="my-12 border dark:border-premium-light/10 light:border-premium-light" />
             
           </div>
          
@@ -322,7 +322,7 @@ const BlogPost = () => {
             </div>
             {hasMoreRelated && (
               <div className="flex justify-center">
-                <Button onClick={() => setRelatedPage(relatedPage + 1)} className="btn-next">Załaduj więcej</Button>
+                <Button onClick={() => setRelatedPage(relatedPage + 1)} className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6t">Załaduj więcej</Button>
               </div>
             )}
           </section>

@@ -20,8 +20,9 @@ const GdyniaSeoPage = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Pozycjonowanie Gdynia - Skuteczne SEO lokalne | IDZTECH</title>
-        <meta name="description" content="Zwiększ widoczność swojej firmy w Gdyni. Skuteczne pozycjonowanie lokalne, które przyciąga klientów z Twojego miasta. Sprawdź ofertę!" />
+        <title>Pozycjonowanie stron Gdynia | Pozycjonowanie strony internetowej, SEO, tworzenie stron, sklep internetowy</title>
+        <meta name="description" content="Pozycjonowanie stron internetowych Gdynia – skuteczne SEO, optymalizacja stron, tworzenie stron internetowych, sklepów internetowych i stron www. Zwiększ widoczność w Google!" />
+        <meta name="keywords" content="pozycjonowanie stron Gdynia, pozycjonowanie strony, pozycjonowanie stron internetowych, SEO Gdynia, tworzenie stron internetowych, sklep internetowy, strona internetowa, pozycjonowanie stron SEO, strona www" />
         <link rel="canonical" href="https://idztech.pl/pozycjonowanie/gdynia" />
       </Helmet>
       <Navbar />
@@ -35,34 +36,55 @@ const GdyniaSeoPage = () => {
               Pozycjonowanie stron internetowych <span className="text-premium-purple">Gdynia</span>
             </h1>
             <p className="text-lg text-premium-light/80 mb-8">
-              Zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki w Gdyni.
+              Skuteczne pozycjonowanie strony internetowej w Gdyni – zwiększamy widoczność Twojej firmy w Google, pozyskujemy lokalnych klientów i budujemy trwałą obecność Twojej marki online. Oferujemy także tworzenie stron internetowych, sklepów internetowych oraz kompleksowe SEO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-4 font-semibold text-base shadow-md"
                 onClick={() => navigate('/contact')}
               >
-                Zamów pozycjonowanie
+                Zamów pozycjonowanie stron Gdynia
               </button>
             </div>
           </div>
           {/* Prawa kolumna */}
           <div className="flex-1 w-full flex items-center justify-center relative">
-            <div className="rounded-2xl overflow-hidden shadow-xl w-full">
+            <div className="rounded-2xl overflow-hidden shadow-xl w-full relative">
               <img
                 src={HERO_IMAGE}
                 alt="Panorama Gdyni"
                 className="w-full h-72 md:h-96 object-cover object-center"
                 loading="lazy"
               />
+              {/* Kafelki */}
+              <div className="absolute inset-0 p-4">
+                {/* Lewy górny kafelek */}
+                <div className="absolute top-4 left-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
+                  <div className="flex items-center gap-3 ">
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <FaChartLine className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-premium-dark dark:text-premium-light">Wzrost ruchu</h3>
+                  </div>
+                </div>
+                {/* Prawy dolny kafelek */}
+                <div className="absolute bottom-4 right-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
+                  <div className="flex items-center gap-3 ">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center">
+                      <FaUserCheck className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-premium-dark dark:text-premium-light">Więcej klientów</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-            {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
-            <section className="py-16 bg-premium-dark text-premium-light">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+      {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
+      <section className="py-16 text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl p-10">
           {/* Lewa kolumna */}
           <div className="flex-1 max-w-2xl">
             <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
@@ -118,69 +140,48 @@ const GdyniaSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Pozycjonowanie stron internetowych</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego warto?</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Dlaczego warto pozycjonować stronę internetową?</h2>
+            <h3 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h3>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Lata doświadczenia w branży pozwoliły nam wypracować rozwiązania, które są skuteczne i przekładają się na realne wyniki dla firm z Gdyni.
+              Pozycjonowanie stron internetowych (SEO) w Gdyni to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
             </p>
           </div>
 
           {/* GRID 2x2 */}
-          <div className="grid md:grid-cols-2 gap-14">
-            {/* Karta 1 */}
-            <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-              <h3 className="text-2xl">Zwiększymy twoją<h3 className="text-2xl font-bold text-premium-purple mb-2">Widoczność 🔝</h3></h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO pozwoli Ci prześcignąć konkurencję na lokalnym rynku Gdyni.</p>
-              <img src="/images/widocznosc.webp" alt="Widoczność" className="w-full h-[16rem] object-contain self-end opacity-80" />
-            </div>
-            {/* Karta 2 */}
-            <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-            <h3 className="text-2xl">Zwiekszymy twój</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Ruch 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO ściągną na Twoją stronę klientów z Gdyni i okolic.</p>
-              <img src="/images/ruch.webp" alt="Ruch" className="w-full [16rem] object-contain self-start opacity-80" />
-            </div>
-            {/* Kafelek z wykresem i sprzedażą na całą szerokość */}
-            <div className="md:col-span-2 bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-full md:w-2/3">
-                <ResponsiveContainer width="100%" height={220}>
-                  <LineChart data={[
-                    { name: 'STY', konkurencja: 120, idztech: 120 },
-                    { name: 'LUT', konkurencja: 110, idztech: 140 },
-                    { name: 'MAR', konkurencja: 115, idztech: 170 },
-                    { name: 'KWI', konkurencja: 100, idztech: 200 },
-                    { name: 'MAJ', konkurencja: 105, idztech: 240 },
-                    { name: 'CZE', konkurencja: 110, idztech: 300 },
-                    { name: 'LIP', konkurencja: 120, idztech: 340 },
-                    { name: 'SIE', konkurencja: 130, idztech: 380 },
-                    { name: 'WRZ', konkurencja: 140, idztech: 420 },
-                  ]} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="colorIdztech" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#8350e8" stopOpacity={0.3} />
-                        <stop offset="100%" stopColor="#8350e8" stopOpacity={1} />
-                      </linearGradient>
-                      <linearGradient id="colorKonkurencja" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#bdbdbd" stopOpacity={0.2} />
-                        <stop offset="100%" stopColor="#bdbdbd" stopOpacity={0.7} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#ececec" />
-                    <XAxis dataKey="name" tick={{ fill: '#8884d8', fontWeight: 600 }} />
-                    <YAxis hide />
-                    <Tooltip contentStyle={{ background: '#fff', borderRadius: 8, border: 'none', color: '#222' }} />
-                    <Legend verticalAlign="top" align="right" iconType="plainline" wrapperStyle={{ paddingBottom: 10 }} />
-                    <Line type="monotone" dataKey="konkurencja" stroke="#bdbdbd" strokeWidth={3} dot={false} strokeDasharray="5 5" name="Konkurencja" />
-                    <Line type="monotone" dataKey="idztech" stroke="url(#colorIdztech)" strokeWidth={4} dot={false} name="IDZTECH" />
-                  </LineChart>
-                </ResponsiveContainer>
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+            {/* Kafelek 1 */}
+            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+                <FaChartLine className="text-white text-2xl" />
+              </span>
+              <div>
+                <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twoją</span>
+                <span className="block font-bold text-lg text-premium-purple">Widoczność strony internetowej</span>
+                <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Gdyni.</p>
               </div>
-              <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center">
-              <h3 className="text-2xl">Zwiekszymy twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Sprzedaż 🔝</h3>
-                <p className="text-premium-dark dark:text-premium-light text-base">
-                  Wiemy, jakie kroki wykonać, by Twój biznes w Gdyni generował większe przychody i rozwijał się z miesiąca na miesiąc.
-                </p>
+            </div>
+            {/* Kafelek 2 */}
+            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+                <FaUserCheck className="text-white text-2xl" />
+              </span>
+              <div>
+                <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twój</span>
+                <span className="block font-bold text-lg text-premium-purple">Ruch na stronie www</span>
+                <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Gdyni i okolic.</p>
               </div>
+            </div>
+          </div>
+          {/* Kafelek szeroki na całą szerokość */}
+          <div className="mt-8 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-10 flex items-center gap-5 min-w-[260px]">
+            <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+              <FaClipboardCheck className="text-white text-2xl" />
+            </span>
+            <div>
+              <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twoją</span>
+              <span className="block font-bold text-lg text-premium-purple">Sprzedaż w sklepie internetowym</span>
+              <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Gdyni generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.</p>
             </div>
           </div>
         </div>
@@ -194,7 +195,7 @@ const GdyniaSeoPage = () => {
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
               <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Działamy skutecznie</span>
             </div>
-            <h3 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Wiemy, gdzie są Twoi klienci</h3>
+            <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Wiemy, gdzie są Twoi klienci</h4>
             <p className="text-premium-light/70 text-base max-w-2xl">
               Wiemy też, jak do nich dotrzeć i na jakie rozwiązania postawić, by Twój biznes generował jeszcze lepsze wyniki.
             </p>
@@ -206,16 +207,16 @@ const GdyniaSeoPage = () => {
       </section>
 
       {/* CO ZYSKUJESZ - w stylu statystyk */}
-      <section className="">
+      <section className="w-full py-16 mb-[8rem]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Co zyskujesz</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Co zyskujesz?</span>
             </div>
-            <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Poznaj realne korzyści współpracy z <h4 className="text-premium-purple">IDZTECH</h4></h4>
+            <h3 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Realne korzyści z SEO i pozycjonowania</h3>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Oto, co zyskasz wybierając naszą oferte <span className="text-premium-purple">Pozycjonowanie Gdynia</span>.
+              Oto, co zyskasz wybierając naszą ofertę: pozycjonowanie stron internetowych, SEO, tworzenie stron www i sklepów internetowych w Gdyni.
             </p>
           </div>
           <CoZyskujeszExpandableGrid />
@@ -223,104 +224,40 @@ const GdyniaSeoPage = () => {
       </section>
 
       <section className="w-full py-16">
-      <HeroScrollDemo />
-      </section>
-
-      <section className="mb-12">
-        <h5 className="text-2xl font-semibold mb-8 text-premium-dark dark:text-premium-light text-center">Jak wygląda współpraca?</h5>
-        <div className="relative max-w-[60rem] mx-auto">
-          {/* pionowa linia */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-premium-purple/20 -translate-x-1/2 z-0 hidden md:block" />
-          <div className="flex flex-col gap-10">
-            {/* Etap 1 */}
-            <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
-                <div className="flex items-center mb-2">
-                  <span className="text-premium-purple font-bold text-lg mr-3">1</span>
-                  <span className="font-semibold text-premium-dark dark:text-premium-light">Analiza strony i konkurencji</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Szczegółowa analiza Twojej strony i konkurencji w Gdyni.</p>
-              </div>
-            </div>
-            {/* Etap 2 */}
-            <div className="flex md:justify-end md:pl-16 md:pr-0 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
-                <div className="flex items-center mb-2 md:justify-end">
-                  <span className="font-semibold text-premium-dark dark:text-premium-light mr-3 md:mr-0 md:ml-3">Opracowanie strategii SEO</span>
-                  <span className="text-premium-purple font-bold text-lg pl-2">2</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Tworzymy indywidualną strategię SEO dopasowaną do Twoich celów.</p>
-              </div>
-            </div>
-            {/* Etap 3 */}
-            <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
-                <div className="flex items-center mb-2">
-                  <span className="text-premium-purple font-bold text-lg mr-3">3</span>
-                  <span className="font-semibold text-premium-dark dark:text-premium-light">Optymalizacja strony</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Wdrażamy techniczne i contentowe zmiany na stronie.</p>
-              </div>
-            </div>
-            {/* Etap 4 */}
-            <div className="flex md:justify-end md:pl-16 md:pr-0 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
-                <div className="flex items-center mb-2 md:justify-end">
-                  <span className="font-semibold text-premium-dark dark:text-premium-light mr-3 md:mr-0 md:ml-3">Budowa profilu linków</span>
-                  <span className="text-premium-purple font-bold text-lg pl-2">4</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Tworzymy i rozwijamy profil linków lokalnych dla Twojej firmy.</p>
-              </div>
-            </div>
-            {/* Etap 5 */}
-            <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
-                <div className="flex items-center mb-2">
-                  <span className="text-premium-purple font-bold text-lg mr-3">5</span>
-                  <span className="font-semibold text-premium-dark dark:text-premium-light">Monitoring i raportowanie</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Stały monitoring efektów i regularne raporty z postępów.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroScrollDemo />
       </section>
 
       <section className="mb-12">
         <FAQAccordion
-          title="Najczęściej zadawane pytania o pozycjonowanie w Gdyni"
+          title="Najczęściej zadawane pytania o pozycjonowanie stron internetowych, SEO i tworzenie stron w Gdyni"
           items={[
             {
-              question: 'Czy pozycjonowanie lokalne w Gdyni jest skuteczne?',
-              answer: 'Tak, SEO lokalne pozwala dotrzeć do klientów z Twojego miasta, którzy są realnie zainteresowani Twoją ofertą.'
+              question: 'Na czym polega pozycjonowanie stron internetowych w Gdyni?',
+              answer: 'Pozycjonowanie stron internetowych (SEO) to działania mające na celu zwiększenie widoczności strony www lub sklepu internetowego w wynikach Google. Obejmuje optymalizację techniczną, content marketing i link building.'
             },
             {
-              question: 'Ile kosztuje pozycjonowanie w Gdyni?',
-              answer: 'Koszt zależy od branży, konkurencji i zakresu działań. Skontaktuj się z nami, a przygotujemy indywidualną wycenę.'
+              question: 'Czy oferujecie także tworzenie stron internetowych i sklepów internetowych?',
+              answer: 'Tak, projektujemy i wdrażamy nowoczesne strony internetowe oraz sklepy internetowe zoptymalizowane pod SEO.'
             },
             {
-              question: 'Jak długo trzeba czekać na efekty?',
-              answer: 'Pierwsze efekty są widoczne zwykle po kilku tygodniach, ale pełny potencjał SEO rozwija się w ciągu kilku miesięcy.'
+              question: 'Ile kosztuje pozycjonowanie strony internetowej w Gdyni?',
+              answer: 'Koszt pozycjonowania strony internetowej zależy od wielu czynników, takich jak konkurencyjność branży, zakres prac i cele biznesowe. Skontaktuj się z nami, aby otrzymać indywidualną wycenę.'
             },
             {
-              question: 'Czy mogę liczyć na wsparcie ekspertów?',
-              answer: 'Tak, zapewniamy stały kontakt i partnerską współpracę na każdym etapie działań SEO.'
+              question: 'Jak długo trwa pozycjonowanie strony internetowej?',
+              answer: 'Pierwsze efekty pozycjonowania mogą być widoczne już po 3-6 miesiącach, ale pełne rezultaty wymagają systematycznej pracy przez 6-12 miesięcy.'
             }
           ]}
-          className="mb-0"
         />
       </section>
 
-      {/* Lista pozycjonowań lokalnych */}
       <LocalSeoSection />
-
-      {/* CTA przed stopką */}
       <GlobalCTA
         title="Gotowy na zwiększenie widoczności w Gdyni?"
         description="Skontaktuj się z nami i umów się na bezpłatną konsultację. Omówimy Twoje potrzeby i zaproponujemy optymalne rozwiązanie dla Twojego biznesu."
         buttons={[
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-premium-gradient hover:opacity-90 transition-opacity animate-fade-in group relative overflow-hidden"
             style={{animationDelay: "0.4s"}}
             onClick={() => window.location.href = '/contact'}
@@ -341,88 +278,50 @@ const coZyskujeszStats = [
     main: "Wyprzedzisz konkurencję 🔝",
     sub: "Zyskasz przewagę na lokalnym rynku dzięki skutecznym działaniom SEO.",
     desc: "Będziesz o krok przed konkurencją w Gdyni.",
-    more: "Dzięki naszym strategiom SEO nie tylko dogonisz, ale i prześcigniesz największych graczy w Twojej branży. Otrzymasz indywidualne rekomendacje, które pozwolą Ci stale utrzymywać przewagę nad konkurencją.",
   },
   {
     main: "Więcej klientów 🔝",
     sub: "Zwiększysz ruch na stronie od klientów z Gdyni i okolic.",
     desc: "Dotrzesz do osób realnie zainteresowanych Twoją ofertą.",
-    more: "Nasze działania SEO są ukierunkowane na pozyskiwanie wartościowego ruchu, który realnie przekłada się na zapytania i sprzedaż. Skupiamy się na frazach, które generują konwersje, a nie tylko ruch dla statystyk.",
   },
   {
     main: "Indywidualna strategia",
     sub: "Otrzymasz plan SEO dopasowany do Twojej branży i celów biznesowych.",
     desc: "Działania szyte na miarę Twojego biznesu.",
-    more: "Nie stosujemy gotowych szablonów. Każda strategia powstaje w oparciu o analizę Twojej branży, konkurencji i celów. Dzięki temu masz pewność, że działania SEO są maksymalnie skuteczne.",
   },
   {
     main: "Partnerskie wsparcie",
     sub: "Stały kontakt, raportowanie efektów i wsparcie ekspertów na każdym etapie.",
     desc: "Masz pewność, że nie zostaniesz sam z wyzwaniami SEO.",
-    more: "Otrzymasz dedykowanego opiekuna, regularne raporty i szybkie odpowiedzi na pytania. Jesteśmy z Tobą na każdym etapie współpracy, dbając o Twój spokój i rozwój biznesu.",
   },
 ];
 
-const CheckIcon = (
-  <span className="inline-block w-6 h-6 rounded-full bg-[#886be2] flex items-center justify-center mr-3 text-lg font-bold transition-all duration-300">
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 9.5L8 12.5L13 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  </span>
-);
-
-const PlusIcon = (
-  <span className="inline-block w-6 h-6 rounded-full bg-[#886be2] text-white flex items-center justify-center mr-3 text-lg font-bold transition-all duration-300 group-hover:scale-125 group-hover:shadow-lg transition-transform duration-200">
-    +
-  </span>
-);
-
 function CoZyskujeszExpandableGrid() {
-  const [open, setOpen] = useState<number | null>(null);
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
-
   return (
-    <div className="grid md:grid-cols-2 gap-14">
-      {coZyskujeszStats.map((stat, i) => {
-        const isOpen = open === i;
-        return (
-          <div
-            key={i}
-            className={`bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 p-8 flex items-start gap-6 shadow-xl min-h-[180px] transition-all duration-300 cursor-pointer group ${isOpen ? 'ring-2 ring-premium-purple/40' : ''}`}
-            onClick={() => setOpen(isOpen ? null : i)}
-            tabIndex={0}
-            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpen(isOpen ? null : i); }}
-            aria-expanded={isOpen}
-            ref={el => refs.current[i] = el}
-          >
-            <span className="icon-wrapper transition-all duration-300 mt-1">
-              {isOpen ? (
-                PlusIcon
-              ) : (
-                <>
-                  <span className="block group-hover:hidden">{CheckIcon}</span>
-                  <span className="hidden group-hover:block">{PlusIcon}</span>
-                </>
-              )}
-            </span>
-            <div>
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-2xl font-extrabold text-premium-dark dark:text-premium-light">{stat.main}</span>
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-premium-dark dark:text-premium-light mb-1">{stat.sub}</h3>
-              <div
-                className="text-premium-dark/60 dark:text-premium-light/60 text-base transition-all duration-500 overflow-hidden"
-                style={isOpen ? { maxHeight: refs.current[i]?.scrollHeight ?? 200, opacity: 1, marginTop: 8 } : { maxHeight: 0, opacity: 0, marginTop: 0 }}
-              >
-                {stat.more}
-              </div>
-              {!isOpen && (
-                <p className="text-premium-dark/60 dark:text-premium-light/60 text-base">{stat.desc}</p>
-              )}
+    <div className="grid md:grid-cols-2 gap-8">
+      {coZyskujeszStats.map((stat, i) => (
+        <div
+          key={i}
+          className="flex bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 gap-5 items-start min-w-[260px]"
+        >
+          {/* Gradientowa ikona */}
+          <span className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff] mt-1">
+            <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
+          {/* Teksty */}
+          <div>
+            <div className="font-bold text-premium-dark dark:text-premium-light text-base md:text-lg mb-1">
+              {stat.main.replace(' 🔝', '')}
+            </div>
+            <div className="font-semibold text-premium-purple text-base md:text-lg mb-1">
+              {stat.sub}
+            </div>
+            <div className="text-premium-dark/70 dark:text-premium-light/80 text-base">
+              {stat.desc}
             </div>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

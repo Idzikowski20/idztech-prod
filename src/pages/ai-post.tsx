@@ -485,7 +485,7 @@ export default function AIPostPage() {
             {/* Lewa kolumna - miniaturka */}
             <div className={`w-1/3 rounded-xl p-6 border ${
               isDark 
-                ? 'bg-premium-dark/50 border-premium-light/10' 
+                ? '/50 border-premium-light/10' 
                 : 'bg-white border-gray-200'
             }`}>
               <div className="flex flex-col items-center gap-4">
@@ -508,7 +508,7 @@ export default function AIPostPage() {
             {/* Prawa kolumna - kreator */}
             <div className={`w-2/3 rounded-xl p-6 border ${
               isDark 
-                ? 'bg-premium-dark/50 border-premium-light/10' 
+                ? '/50 border-premium-light/10' 
                 : 'bg-white border-gray-200'
             }`}>
               <div className="flex flex-col gap-8">

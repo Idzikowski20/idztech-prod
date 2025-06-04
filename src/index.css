@@ -1089,6 +1089,13 @@ input:-internal-autofill-selected {
   background: transparent;
 }
 
+.bg-wave {
+  background-color: #c5faff;
+}
+
+.blog-bg {
+  background-color: #312e8133 var(--tw-gradient-to-position) !important;
+}
 
 /* Style dla przycisków nawigacji */
 .btn-next {

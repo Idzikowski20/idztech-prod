@@ -8,7 +8,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       <Helmet>
         <title>Kontakt | Tworzenie stron, sklepy internetowe, SEO | IDZTECH</title>
         <meta name="description" content="Skontaktuj się z nami i umów bezpłatną konsultację. Tworzenie stron internetowych, sklepy online, aplikacje webowe, pozycjonowanie SEO – Warszawa i cała Polska." />
@@ -85,7 +85,7 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
             <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-8">
+              <div className="/60 border border-white/10 rounded-xl p-8">
                 <h3 className="text-2xl font-semibold mb-6">Wypełnij formularz</h3>
                 <ContactForm />
               </div>
@@ -93,7 +93,7 @@ const ContactPage = () => {
             
             {/* Contact Details */}
             <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-8 h-full">
+              <div className="/60 border border-white/10 rounded-xl p-8 h-full">
                 <h3 className="text-2xl font-semibold mb-6">Informacje o spotkaniu</h3>
                 
                 <div className="space-y-6">

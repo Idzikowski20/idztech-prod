@@ -23,7 +23,7 @@ const ErrorPage = ({ code = 500, title = "Wystąpił błąd", message = "Przepra
     message;
 
   return (
-    <div className="min-h-screen bg-premium-dark flex flex-col">
+    <div className="min-h-screen  flex flex-col">
       <Navbar />
       <PageDotAnimation />
       
@@ -51,7 +51,7 @@ const ErrorPage = ({ code = 500, title = "Wystąpił błąd", message = "Przepra
             
             <Button 
               onClick={() => navigate('/')} 
-              className="bg-premium-gradient hover:bg-white hover:text-black"
+              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             >
               Strona główna
             </Button>

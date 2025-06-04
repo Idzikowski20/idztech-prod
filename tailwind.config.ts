@@ -1,5 +1,4 @@
-
-import type { Config } from "tailwindcss";
+	import type { Config } from "tailwindcss";
 
 export default {
 	darkMode: ["class"],
@@ -66,9 +65,21 @@ export default {
 				// Custom Premium Digital colors
 				'premium-dark': '#0a0a0a',
 				'premium-light': '#f7f7f7',
-				'premium-purple': '#784dff',
-				'premium-blue': '#00a0ff',
-				'premium-pink': '#ff4d8c',
+				'premium-purple': {
+					DEFAULT: '#784dff',
+					500: '#784dff',
+					20: 'rgba(120, 77, 255, 0.2)',
+				},
+				'premium-blue': {
+					DEFAULT: '#00a0ff',
+					500: '#00a0ff',
+					20: 'rgba(0, 160, 255, 0.2)',
+				},
+				'premium-pink': {
+					DEFAULT: '#ff4d8c',
+					500: '#ff4d8c',
+					20: 'rgba(255, 77, 140, 0.2)',
+				},
 			},
 			fontFamily: {
 				montserrat: ['Montserrat', 'sans-serif'],

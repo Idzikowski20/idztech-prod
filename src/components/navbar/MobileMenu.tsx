@@ -120,13 +120,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                       </div>
                       <ul className="flex flex-col gap-1 pl-6">
                         <li>
-                          <Link to="/aplikacje-webowe" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
+                          <Link to="/tworzenie-stron-www" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
                             <Layout className="text-black dark:text-white" size={18} />
                             Tworzenie stron www
                           </Link>
                         </li>
                         <li>
-                          <Link to="/tworzenie-stron-www" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
+                          <Link to="/aplikacje-webowe" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
                             <Layout className="text-black dark:text-white" size={18} />
                             Tworzenie aplikacji webowych
                           </Link>

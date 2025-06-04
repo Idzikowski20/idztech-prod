@@ -211,7 +211,7 @@ const ContactForm = () => {
         
         <Button 
           type="submit" 
-          className="w-full bg-premium-gradient hover:bg-black hover:text-white transition-colors"
+          className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full w-full px-8 py-6"
           disabled={form.formState.isSubmitting || formspreeState.submitting}
         >
           <Send size={16} className="mr-2" />

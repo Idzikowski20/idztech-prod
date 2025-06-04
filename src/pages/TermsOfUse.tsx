@@ -9,7 +9,7 @@ const TermsOfUse = () => {
   const { theme } = useTheme();
   
   return (
-    <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : 'bg-premium-dark'}`}>
+    <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : ''}`}>
       <Navbar />
       <PageDotAnimation />
       

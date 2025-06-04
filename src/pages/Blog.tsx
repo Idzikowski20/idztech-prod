@@ -31,7 +31,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       <Helmet>
         <title>IDZTECH - Dev blog</title>
         <meta name="description" content="Najnowsze informacje, porady i trendy ze świata IT." />
@@ -177,7 +177,7 @@ const Blog = () => {
         title="Potrzebujesz profesjonalnych usług SEO?"
         description="Skontaktuj się z nami, aby omówić jak możemy pomóc Twojej stronie osiągnąć lepsze wyniki w wyszukiwarkach."
         buttons={[
-          <Button className="bg-premium-gradient hover:bg-premium-purple hover:text-white" key="cta-blog">
+          <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" key="cta-blog">
             Skontaktuj się z nami
           </Button>
         ]}

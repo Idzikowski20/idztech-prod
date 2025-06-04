@@ -57,7 +57,7 @@ const WebDevelopment = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       <Helmet>
         <title>Tworzenie stron internetowych | Strony www, projektowanie, web design, landing page | IDZTECH</title>
         <meta name="description" content="Tworzenie stron internetowych, projektowanie stron, responsywne strony www, landing page, UI/UX, strony firmowe. Profesjonalne strony dla biznesu." />
@@ -136,7 +136,7 @@ const WebDevelopment = () => {
                 pomagają osiągać cele biznesowe i wyróżniać się na tle konkurencji.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Skontaktuj się z nami
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -159,7 +159,7 @@ const WebDevelopment = () => {
       </section>
 
       {/* Features List */}
-      <section className="py-16 bg-premium-dark/50">
+      <section className="py-16 /50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <p className="text-premium-purple font-medium mb-3">Co oferujemy</p>
@@ -171,8 +171,8 @@ const WebDevelopment = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="bg-premium-dark/60 border border-premium-light/10 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
-              <div className="w-14 h-14 rounded-full bg-premium-gradient flex items-center justify-center mb-6">
+            <div className="/60 border border-premium-light/10 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                   <path d="M12 8v8" />
@@ -199,8 +199,8 @@ const WebDevelopment = () => {
               </ul>
             </div>
             
-            <div className="bg-premium-dark/60 border border-premium-light/10 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
-              <div className="w-14 h-14 rounded-full bg-premium-gradient flex items-center justify-center mb-6">
+            <div className="/60 border border-premium-light/10 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                   <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
                   <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
@@ -226,8 +226,8 @@ const WebDevelopment = () => {
               </ul>
             </div>
             
-            <div className="bg-premium-dark/60 border border-premium-light/10 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
-              <div className="w-14 h-14 rounded-full bg-premium-gradient flex items-center justify-center mb-6">
+            <div className="/60 border border-premium-light/10 rounded-xl p-8 hover:transform hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
                   <circle cx="12" cy="12" r="10" />
                   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
@@ -326,9 +326,9 @@ const WebDevelopment = () => {
               {processSteps.map((step, idx) => (
                 <div key={idx} className={`relative flex flex-col md:flex-row items-center w-full ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
                   <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pr-8 md:order-1' : 'md:pl-8 md:order-2'} flex ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} justify-center`}> 
-                    <div className="bg-premium-dark/60 border border-premium-light/10 rounded-xl p-6 shadow-lg max-w-md w-full z-10">
+                    <div className="/60 border border-premium-light/10 rounded-xl p-6 shadow-lg max-w-md w-full z-10">
                       <div className="flex items-center mb-2">
-                        <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center text-white font-bold text-lg mr-3">
+                        <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center text-white m-4">
                           {idx + 1}
                         </div>
                         <h3 className="text-xl font-bold">{step.title}</h3>
@@ -354,8 +354,8 @@ const WebDevelopment = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {features.map((feature, index) => (
-              <div key={index} className="bg-premium-dark/60 border border-premium-light/10 rounded-xl p-6 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-premium-gradient flex items-center justify-center mb-4">
+              <div key={index} className="/60 border border-premium-light/10 rounded-xl p-6 flex flex-col items-center text-center">
+                <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
                   <Check size={20} className="text-white" />
                 </div>
                 <p className="text-lg text-white/90 font-medium">{feature}</p>
@@ -377,7 +377,7 @@ const WebDevelopment = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-premium-dark/60 border-premium-light/10">
+            <Card className="/60 border-premium-light/10">
               <CardHeader>
                 <CardTitle>1. Analiza i strategia</CardTitle>
               </CardHeader>
@@ -403,7 +403,7 @@ const WebDevelopment = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-premium-dark/60 border-premium-light/10">
+            <Card className="/60 border-premium-light/10">
               <CardHeader>
                 <CardTitle>2. Projektowanie UX/UI</CardTitle>
               </CardHeader>
@@ -429,7 +429,7 @@ const WebDevelopment = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-premium-dark/60 border-premium-light/10">
+            <Card className="/60 border-premium-light/10">
               <CardHeader>
                 <CardTitle>3. Implementacja i rozwój</CardTitle>
               </CardHeader>
@@ -455,7 +455,7 @@ const WebDevelopment = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-premium-dark/60 border-premium-light/10">
+            <Card className="/60 border-premium-light/10">
               <CardHeader>
                 <CardTitle>4. SEO i treści</CardTitle>
               </CardHeader>
@@ -481,7 +481,7 @@ const WebDevelopment = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-premium-dark/60 border-premium-light/10">
+            <Card className="/60 border-premium-light/10">
               <CardHeader>
                 <CardTitle>5. Wdrożenie i testy</CardTitle>
               </CardHeader>
@@ -507,7 +507,7 @@ const WebDevelopment = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-premium-dark/60 border-premium-light/10">
+            <Card className="/60 border-premium-light/10">
               <CardHeader>
                 <CardTitle>6. Wsparcie i rozwój</CardTitle>
               </CardHeader>
@@ -573,7 +573,7 @@ const WebDevelopment = () => {
         buttons={[
           <Button 
             onClick={() => navigate('/contact')} 
-            className="px-8 py-6 bg-premium-gradient text-white  hover:text-white"
+            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             size="lg"
             key="cta-contact"
           >

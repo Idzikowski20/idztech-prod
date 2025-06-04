@@ -11,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useAuth } from '@/utils/firebaseAuth';
 import AdminLayout from '@/components/AdminLayout';
 import TipTapEditor from '@/components/TipTapEditor';
-import { doc, getDoc, collection } from 'firebase/firestore';
+import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
 import { db } from '@/integrations/firebase/client';
 import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
 import { useTheme } from '@/utils/themeContext';
@@ -22,7 +22,7 @@ const blogPostSchema = z.object({
   title: z.string().min(5, 'Tytuł musi mieć co najmniej 5 znaków'),
   slug: z.string().min(5, 'Slug musi mieć co najmniej 5 znaków').regex(/^[a-z0-9-]+$/, 'Slug może zawierać tylko małe litery, cyfry i myślniki'),
   summary: z.string().min(10, 'Zajawka musi mieć co najmniej 10 znaków'),
-  content: z.string().min(50, 'Treść musi mieć co najmniej 50 znaków'),
+  content: z.string(),
   categories: z.string().min(2, 'Kategorie są wymagane'),
   tags: z.string().min(2, 'Tagi są wymagane')
 });
@@ -49,6 +49,11 @@ function slugify(str: string) {
     .replace(/^-|-$/g, '');
 }
 
+function stripHtml(html: string) {
+  // Usuwa tagi HTML, ale zostawia spacje i znaki nowej linii
+  return html.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').trim();
+}
+
 const BlogPostEditor = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -62,6 +67,7 @@ const BlogPostEditor = () => {
   const [editorContent, setEditorContent] = useState('');
   const { theme } = useTheme();
   const { showNotification } = useNotification();
+  const [isDirty, setIsDirty] = useState(false);
 
   // Fetch post from database if editing
   useEffect(() => {
@@ -228,12 +234,93 @@ const BlogPostEditor = () => {
     }
   };
 
+  // Funkcja do zapisywania draftu
+  const saveDraft = async () => {
+    if (!user) return;
+    const values = form.getValues();
+    const postData = {
+      title: values.title,
+      slug: values.slug,
+      summary: values.summary,
+      excerpt: values.summary,
+      content: editorContent,
+      featured_image: imagePreview || '',
+      author_id: user.uid,
+      categories: (values.categories || '').split(',').map(cat => cat.trim()),
+      tags: (values.tags || '').split(',').map(tag => tag.trim()),
+      published: false,
+      published_at: null,
+      created_at: existingPost?.created_at || new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    if (isEditing && id) {
+      await updatePost({ id, ...postData });
+    } else {
+      // Tworzymy nowy szkic w Firestore
+      await createPost(postData);
+    }
+  };
+
+  // Ustaw isDirty na true przy każdej zmianie w formularzu lub edytorze
+  useEffect(() => {
+    const subscription = form.watch(() => setIsDirty(true));
+    return () => subscription.unsubscribe();
+  }, [form]);
+  useEffect(() => {
+    setIsDirty(true);
+  }, [editorContent]);
+
+  // Zapisz draft przy opuszczaniu strony
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (isDirty) {
+        saveDraft();
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [isDirty, editorContent]);
+
+  // Zapisz draft przy przejściu do panelu admina
+  const handleGoToAdmin = async () => {
+    if (isDirty) {
+      await saveDraft();
+    }
+    navigate('/admin');
+  };
+
+  useEffect(() => {
+    // Jeśli nie edytujemy konkretnego posta (brak id), sprawdź czy istnieje szkic tego użytkownika
+    if (!id && user) {
+      const fetchDraft = async () => {
+        try {
+          const postsCollection = collection(db, 'blog_posts');
+          const postsSnapshot = await getDocs(postsCollection);
+          const drafts = postsSnapshot.docs
+            .map(docSnap => ({ id: docSnap.id, ...docSnap.data() }))
+            .filter(post => post.author_id === user.uid && post.published === false);
+          if (drafts.length > 0) {
+            // Załaduj najnowszy szkic
+            const latestDraft = drafts.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())[0];
+            setExistingPost(latestDraft);
+            setEditorContent(latestDraft.content || '');
+          }
+        } catch (error) {
+          console.error('Błąd podczas ładowania szkicu:', error);
+        }
+      };
+      fetchDraft();
+    }
+  }, [id, user]);
+
   return (
     <AdminLayout>
       <div className="p-6">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <Button variant="ghost" onClick={() => navigate('/admin')} className="hover:bg-premium-light/5 mb-2">
+            <Button variant="ghost" onClick={handleGoToAdmin} className="hover:bg-premium-light/5 mb-2">
               <ArrowLeft size={18} className="mr-2" /> Wróć do panelu
             </Button>
             <h1 className="text-2xl font-bold">
@@ -248,7 +335,7 @@ const BlogPostEditor = () => {
           </div>
         </div>
 
-        <div className="bg-premium-dark/50 border border-premium-light/10 rounded-xl p-6">
+        <div className="/50 border border-premium-light/10 rounded-xl p-6">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -257,10 +344,9 @@ const BlogPostEditor = () => {
                   name="title" 
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Tytuł</FormLabel>
+                      <FormLabel htmlFor="title" className={`${theme === 'dark' ? 'text-white' : ''}`}>Tytuł</FormLabel>
                       <FormControl>
-                        <Input 
-                          {...field} 
+                        <Input id="title" {...field} 
                           placeholder="Tytuł posta" 
                           onBlur={() => {
                             if (!isEditing && !form.getValues('slug')) {
@@ -280,9 +366,9 @@ const BlogPostEditor = () => {
                   name="slug" 
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Slug (URL)</FormLabel>
+                      <FormLabel htmlFor="slug" className={`${theme === 'dark' ? 'text-white' : ''}`}>Slug (URL)</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="url-posta" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
+                        <Input id="slug" {...field} placeholder="url-posta" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -295,9 +381,9 @@ const BlogPostEditor = () => {
                 name="summary" 
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Zajawka</FormLabel>
+                    <FormLabel htmlFor="summary" className={`${theme === 'dark' ? 'text-white' : ''}`}>Zajawka</FormLabel>
                     <FormControl>
-                      <Textarea {...field} placeholder="Krótki opis posta (będzie widoczny na liście postów)" rows={2} className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''} shadow-sm`} />
+                      <Textarea id="summary" {...field} placeholder="Krótki opis posta (będzie widoczny na liście postów)" rows={2} className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''} shadow-sm`} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -309,7 +395,7 @@ const BlogPostEditor = () => {
                 name="content" 
                 render={() => (
                   <FormItem>
-                    <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Treść (HTML)</FormLabel>
+                    <FormLabel htmlFor="content" className={`${theme === 'dark' ? 'text-white' : ''}`}>Treść (HTML)</FormLabel>
                     <FormControl>
                       <TipTapEditor 
                         value={editorContent}
@@ -325,7 +411,7 @@ const BlogPostEditor = () => {
               
               {/* Featured Image Upload */}
               <div className="space-y-2">
-                <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Zdjęcie główne</FormLabel>
+                <FormLabel htmlFor="featuredImage" className={`${theme === 'dark' ? 'text-white' : ''}`}>Zdjęcie główne</FormLabel>
                 <div className="flex flex-col space-y-4">
                   <div className="flex items-center space-x-4">
                     <label className="cursor-pointer">
@@ -334,6 +420,7 @@ const BlogPostEditor = () => {
                         <span>Wybierz plik</span>
                       </div>
                       <input 
+                        id="featuredImage"
                         type="file" 
                         accept="image/*"
                         className="hidden" 
@@ -386,9 +473,9 @@ const BlogPostEditor = () => {
                   name="categories" 
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Kategorie (oddzielone przecinkami)</FormLabel>
+                      <FormLabel htmlFor="categories" className={`${theme === 'dark' ? 'text-white' : ''}`}>Kategorie (oddzielone przecinkami)</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="IT, Programowanie, AI" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
+                        <Input id="categories" {...field} placeholder="IT, Programowanie, AI" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -401,9 +488,9 @@ const BlogPostEditor = () => {
                 name="tags" 
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Tagi (oddzielone przecinkami)</FormLabel>
+                    <FormLabel htmlFor="tags" className={`${theme === 'dark' ? 'text-white' : ''}`}>Tagi (oddzielone przecinkami)</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="pozycjonowanie, SEO, Google" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
+                      <Input id="tags" {...field} placeholder="pozycjonowanie, SEO, Google" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

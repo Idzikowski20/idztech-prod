@@ -45,7 +45,7 @@ const AboutUs = () => {
   ];
   
   return (
-    <div className="min-h-screen bg-premium-dark">
+    <div className="min-h-screen ">
       <Navbar />
       
       <section className="pt-32 pb-16 relative overflow-hidden">
@@ -61,7 +61,7 @@ const AboutUs = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Umów spotkanie
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -100,7 +100,7 @@ const AboutUs = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
                 <Users size={24} className="text-white" />
               </div>
@@ -110,7 +110,7 @@ const AboutUs = () => {
               </p>
             </div>
             
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
               <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
                 <Award size={24} className="text-white" />
               </div>
@@ -120,7 +120,7 @@ const AboutUs = () => {
               </p>
             </div>
             
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
                 <Lightbulb size={24} className="text-white" />
               </div>
@@ -130,7 +130,7 @@ const AboutUs = () => {
               </p>
             </div>
             
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
               <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
                 <Clock size={24} className="text-white" />
               </div>
@@ -145,13 +145,11 @@ const AboutUs = () => {
       
       {/* Team section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-premium-purple/20 rounded-full blur-[100px] -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[100px] -z-10"></div>
         
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <span className="text-premium-purple font-medium">Nasz Zespół</span>
-            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Poznaj ekspertów IDZ.TECH</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Poznaj ekspertów IDZTECH</h2>
             <p className="text-premium-light/70 text-lg">
               Nasz zespół to doświadczeni specjaliści z dziedziny tworzenia stron internetowych i SEO, którzy łączą swoje umiejętności, aby zapewnić Ci najlepsze wyniki.
             </p>
@@ -161,7 +159,7 @@ const AboutUs = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-premium-dark/60 border border-white/10 rounded-xl overflow-hidden duration-300 animate-fade-in w-64"
+                className="/60 border border-white/10 rounded-xl overflow-hidden duration-300 animate-fade-in w-64"
                 style={{ animationDelay: `${0.6 + index * 0.1}s` }}
               >
                 <div className="relative">
@@ -195,22 +193,22 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
               <CheckCircle size={32} className="text-premium-purple mb-4" />
               <h3 className="text-xl font-semibold mb-2">Indywidualne podejście</h3>
               <p className="text-premium-light/70">Każdy projekt traktujemy indywidualnie, dopasowując rozwiązania do potrzeb klienta.</p>
             </div>
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
               <CheckCircle size={32} className="text-premium-purple mb-4" />
               <h3 className="text-xl font-semibold mb-2">Kompleksowa obsługa</h3>
               <p className="text-premium-light/70">Zajmujemy się wszystkim: od projektu, przez wdrożenie, po wsparcie i rozwój.</p>
             </div>
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
               <CheckCircle size={32} className="text-premium-purple mb-4" />
               <h3 className="text-xl font-semibold mb-2">Transparentność</h3>
               <p className="text-premium-light/70">Zapewniamy jasne zasady współpracy i regularne raportowanie postępów.</p>
             </div>
-            <div className="bg-premium-dark/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
               <CheckCircle size={32} className="text-premium-purple mb-4" />
               <h3 className="text-xl font-semibold mb-2">Zespół ekspertów</h3>
               <p className="text-premium-light/70">Nasz zespół to certyfikowani specjaliści z wieloletnim doświadczeniem.</p>
@@ -225,12 +223,11 @@ const AboutUs = () => {
         buttons={[
           <Button 
             size="lg" 
-            className="bg-premium-gradient hover:opacity-90 transition-opacity animate-fade-in group relative overflow-hidden"
+            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             style={{animationDelay: "0.4s"}}
             onClick={() => navigate('/contact')}
           >
             <span className="relative z-10 text-white">Skontaktuj się z nami</span>
-            <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
           </Button>
         ]}
       />

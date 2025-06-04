@@ -26,8 +26,8 @@ const DesktopControls = () => {
       className={`
         transition-colors 
         ${theme === 'light' 
-          ? 'text-black hover:bg-gray-100 hover:text-black' 
-          : 'text-white hover:bg-white/10 hover:text-white'}
+          ? 'hover:scale-105' 
+          : 'hover:scale-105'}
       `}
     >
       {theme === 'light' ? (

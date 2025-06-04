@@ -43,27 +43,48 @@ const BielskoBialaSeoPage = () => {
                 className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-4 font-semibold text-base shadow-md"
                 onClick={() => navigate('/contact')}
               >
-                Zamów pozycjonowanie stron bielsko-biala
+                Zamów pozycjonowanie stron Bielsko-Biała
               </button>
             </div>
           </div>
           {/* Prawa kolumna */}
           <div className="flex-1 w-full flex items-center justify-center relative">
-            <div className="rounded-2xl overflow-hidden shadow-xl w-full">
+            <div className="rounded-2xl overflow-hidden shadow-xl w-full relative">
               <img
                 src={HERO_IMAGE}
                 alt="Panorama Bielska-Białej"
                 className="w-full h-72 md:h-96 object-cover object-center"
                 loading="lazy"
               />
+              {/* Kafelki */}
+              <div className="absolute inset-0 p-4">
+                {/* Lewy górny kafelek */}
+                <div className="absolute top-4 left-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
+                  <div className="flex items-center gap-3 ">
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <FaChartLine className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-premium-dark dark:text-premium-light">Wzrost ruchu</h3>
+                  </div>
+                </div>
+                {/* Prawy dolny kafelek */}
+                <div className="absolute bottom-4 right-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
+                  <div className="flex items-center gap-3 ">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center">
+                      <FaUserCheck className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-premium-dark dark:text-premium-light">Więcej klientów</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-            {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
-            <section className="py-16 bg-premium-dark text-premium-light">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
+      {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
+      <section className="py-16 text-premium-light">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl p-10">
           {/* Lewa kolumna */}
           <div className="flex-1 max-w-2xl">
             <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
@@ -119,67 +140,48 @@ const BielskoBialaSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego warto pozycjonować stronę internetową?</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Dlaczego warto?</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h2>
+            <h3 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Pozycjonowanie stron internetowych</h3>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Pozycjonowanie stron internetowych (SEO) w Bielsku-Białej to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
+              Pozycjonowanie stron internetowych (SEO) w Bielsko-Białej to gwarancja większej widoczności w Google, większej liczby klientów i przewagi nad konkurencją. Oferujemy także tworzenie stron www oraz sklepów internetowych, które są zoptymalizowane pod SEO.
             </p>
           </div>
 
           {/* GRID 2x2 */}
-          <div className="grid md:grid-cols-2 gap-14">
-            {/* Karta 1 */}
-            <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-              <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Widoczność strony internetowej 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Bielska-Białej.</p>
-            </div>
-            {/* Karta 2 */}
-            <div className="bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-8 transition-all duration-300  relative group">
-            <h3 className="text-2xl">Zwiększymy Twój</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Ruch na stronie www 🔝</h3>
-              <p className="text-premium-dark dark:text-premium-light mb-4">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Bielska-Białej i okolic.</p>
-            </div>
-            {/* Kafelek z wykresem i sprzedażą na całą szerokość */}
-            <div className="md:col-span-2 bg-white dark:bg-premium-dark/80 rounded-2xl border border-premium-light/30 shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-full md:w-2/3">
-                <ResponsiveContainer width="100%" height={220}>
-                  <LineChart data={[
-                    { name: 'STY', konkurencja: 120, idztech: 120 },
-                    { name: 'LUT', konkurencja: 110, idztech: 140 },
-                    { name: 'MAR', konkurencja: 115, idztech: 170 },
-                    { name: 'KWI', konkurencja: 100, idztech: 200 },
-                    { name: 'MAJ', konkurencja: 105, idztech: 240 },
-                    { name: 'CZE', konkurencja: 110, idztech: 300 },
-                    { name: 'LIP', konkurencja: 120, idztech: 340 },
-                    { name: 'SIE', konkurencja: 130, idztech: 380 },
-                    { name: 'WRZ', konkurencja: 140, idztech: 420 },
-                  ]} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="colorIdztech" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#8350e8" stopOpacity={0.3} />
-                        <stop offset="100%" stopColor="#8350e8" stopOpacity={1} />
-                      </linearGradient>
-                      <linearGradient id="colorKonkurencja" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#bdbdbd" stopOpacity={0.2} />
-                        <stop offset="100%" stopColor="#bdbdbd" stopOpacity={0.7} />
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#ececec" />
-                    <XAxis dataKey="name" tick={{ fill: '#8884d8', fontWeight: 600 }} />
-                    <YAxis hide />
-                    <Tooltip contentStyle={{ background: '#fff', borderRadius: 8, border: 'none', color: '#222' }} />
-                    <Legend verticalAlign="top" align="right" iconType="plainline" wrapperStyle={{ paddingBottom: 10 }} />
-                    <Line type="monotone" dataKey="konkurencja" stroke="#bdbdbd" strokeWidth={3} dot={false} strokeDasharray="5 5" name="Konkurencja" />
-                    <Line type="monotone" dataKey="idztech" stroke="url(#colorIdztech)" strokeWidth={4} dot={false} name="IDZTECH" />
-                  </LineChart>
-                </ResponsiveContainer>
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+            {/* Kafelek 1 */}
+            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+                <FaChartLine className="text-white text-2xl" />
+              </span>
+              <div>
+                <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twoją</span>
+                <span className="block font-bold text-lg text-premium-purple">Widoczność strony internetowej</span>
+                <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Kompleksowa strategia SEO i pozycjonowania stron internetowych pozwoli Ci prześcignąć konkurencję na rynku Bielska-Białej.</p>
               </div>
-              <div className="w-full md:w-1/3 flex flex-col items-center md:items-start justify-center">
-              <h3 className="text-2xl">Zwiększymy Twoją</h3><h3 className="text-2xl font-bold text-premium-purple mb-2">Sprzedaż w sklepie internetowym 🔝</h3>
-                <p className="text-premium-dark dark:text-premium-light text-base">
-                  Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Bielsku-Białej generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.
-                </p>
+            </div>
+            {/* Kafelek 2 */}
+            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+                <FaUserCheck className="text-white text-2xl" />
+              </span>
+              <div>
+                <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twój</span>
+                <span className="block font-bold text-lg text-premium-purple">Ruch na stronie www</span>
+                <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Odpowiednie działania SEO i pozycjonowanie strony internetowej ściągną na Twoją stronę www oraz sklep internetowy klientów z Bielska-Białej i okolic.</p>
               </div>
+            </div>
+          </div>
+          {/* Kafelek szeroki na całą szerokość */}
+          <div className="mt-8 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-10 flex items-center gap-5 min-w-[260px]">
+            <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+              <FaClipboardCheck className="text-white text-2xl" />
+            </span>
+            <div>
+              <span className="block font-semibold text-premium-dark dark:text-premium-light text-base">Zwiększamy Twoją</span>
+              <span className="block font-bold text-lg text-premium-purple">Sprzedaż w sklepie internetowym</span>
+              <p className="text-premium-dark/80 dark:text-premium-light/80 text-base mt-2">Wiemy, jakie kroki wykonać, by Twój sklep internetowy i strona internetowa w Bielsko-Białej generowały większe przychody i rozwijały się z miesiąca na miesiąc dzięki skutecznemu pozycjonowaniu stron SEO.</p>
             </div>
           </div>
         </div>
@@ -193,7 +195,7 @@ const BielskoBialaSeoPage = () => {
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
               <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Działamy skutecznie</span>
             </div>
-            <h3 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Wiemy, gdzie są Twoi klienci</h3>
+            <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Wiemy, gdzie są Twoi klienci</h4>
             <p className="text-premium-light/70 text-base max-w-2xl">
               Wiemy też, jak do nich dotrzeć i na jakie rozwiązania postawić, by Twój biznes generował jeszcze lepsze wyniki.
             </p>
@@ -210,11 +212,11 @@ const BielskoBialaSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania stron internetowych i SEO w Bielsku-Białej</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania stron internetowych i SEO w Bielsko-Białej</span>
             </div>
-            <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Poznaj realne korzyści współpracy z <h4 className="text-premium-purple">IDZTECH</h4></h4>
+            <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Poznaj realne korzyści współpracy z <span className="text-premium-purple">IDZTECH</span></h4>
             <p className="text-premium-light/70 text-base max-w-2xl">
-              Oto, co zyskasz wybierając naszą ofertę: pozycjonowanie stron internetowych, SEO, tworzenie stron www i sklepów internetowych w Bielsku-Białej.
+              Oto, co zyskasz wybierając naszą ofertę: pozycjonowanie stron internetowych, SEO, tworzenie stron www i sklepów internetowych w Bielsko-Białej.
             </p>
           </div>
           <CoZyskujeszExpandableGrid />
@@ -238,7 +240,7 @@ const BielskoBialaSeoPage = () => {
                   <span className="text-premium-purple font-bold text-lg mr-3">1</span>
                   <span className="font-semibold text-premium-dark dark:text-premium-light">Analiza strony i konkurencji</span>
                 </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Szczegółowa analiza Twojej strony i konkurencji w Bielsku-Białej.</p>
+                <p className="text-premium-dark/80 dark:text-premium-light/80">Szczegółowa analiza Twojej strony i konkurencji w Bielsko-Białej.</p>
               </div>
             </div>
             {/* Etap 2 */}
