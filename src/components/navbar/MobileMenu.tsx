@@ -109,7 +109,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
             
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="offer" className={theme === 'light' ? 'border-gray-200' : 'border-white/10'}>
-                <AccordionTrigger className={`${textColor} text-lg px-3 py-2 ${(isActive('/tworzenie-stron-www') || isActive('/sklepy-internetowe') || isActive('/pozycjonowanie-stron') || isActive('/pozycjonowanie-lokalne') || isActive('/audyt-seo') || isActive('/optymalizacja-seo') || isActive('/copywriting-seo') || isActive('/content-plan')) ? 'font-bold' : ''}`}>Oferta</AccordionTrigger>
+                <AccordionTrigger className={`${textColor} text-lg px-3 py-2 ${(isActive('/tworzenie-stron-internetowych') || isActive('/sklepy-internetowe') || isActive('/pozycjonowanie-stron') || isActive('/pozycjonowanie-lokalne') || isActive('/audyt-seo') || isActive('/optymalizacja-seo') || isActive('/copywriting-seo') || isActive('/content-plan')) ? 'font-bold' : ''}`}>Oferta</AccordionTrigger>
                 <AccordionContent className="px-0 py-0">
                   <div className="bg-neutral-50 dark:bg-neutral-900 border border-gray-200 dark:border-white/10 rounded-xl p-3 flex flex-col gap-6 overflow-x-hidden">
                     {/* Strony www */}
@@ -120,15 +120,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                       </div>
                       <ul className="flex flex-col gap-1 pl-6">
                         <li>
-                          <Link to="/tworzenie-stron-www" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
+                          <Link to="/tworzenie-stron-internetowych" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
                             <Layout className="text-black dark:text-white" size={18} />
-                            Tworzenie stron www
+                            Tworzenie stron internetowych
                           </Link>
                         </li>
                         <li>
                           <Link to="/aplikacje-webowe" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
                             <Layout className="text-black dark:text-white" size={18} />
-                            Tworzenie aplikacji webowych
+                            Aplikacje webowe SaaS
                           </Link>
                         </li>
                         <li>

@@ -98,7 +98,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Tworzenie stron internetowych, sklepy internetowe, pozycjonowanie SEO | IDZTECH</title>
+        <title>Tworzenie stron internetowych sklepy internetowe pozycjonowanie</title>
         <meta name="description" content="Nowoczesne strony internetowe, sklepy internetowe, aplikacje webowe i skuteczne pozycjonowanie SEO. Kompleksowa obsługa firm – od projektu po rozwój i optymalizację." />
         <meta name="keywords" content="tworzenie stron internetowych, strony www, sklepy internetowe, e-commerce, aplikacje webowe, web design, SEO, pozycjonowanie stron, Warszawa, projektowanie stron, landing page, optymalizacja SEO" />
         {/* FAQPage Schema */}

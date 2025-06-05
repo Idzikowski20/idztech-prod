@@ -60,12 +60,15 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lodash.debounce'],
-    exclude: ['@splinetool/react-spline'],
+    exclude: ['@splinetool/react-spline', '@stagewise/toolbar-react'],
   },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
       'lodash.debounce': 'lodash.debounce/index.js'
     },
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   },
 });

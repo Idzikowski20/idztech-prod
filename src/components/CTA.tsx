@@ -14,7 +14,7 @@ const CTA = () => {
         
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 animate-fade-in">Wymagasz więcej od strony internetowej?</h2>
+            <h6 className="text-3xl lg:text-4xl font-bold mb-6 animate-fade-in">Wymagasz więcej od strony internetowej?</h6>
             <p className="text-premium-light/70 text-lg mb-8 animate-fade-in" style={{animationDelay: "0.3s"}}>
               Skontaktuj się z nami i umów się na bezpłatną konsultację. Omówimy Twoje potrzeby i zaproponujemy optymalne rozwiązanie.
             </p>

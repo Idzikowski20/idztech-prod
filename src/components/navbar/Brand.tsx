@@ -1,10 +1,16 @@
-
 import { Link } from 'react-router-dom';
 
 const Brand = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <Link to="/" className="flex items-center text-white font-bold text-xl">
-      <span className="flex items-center">
+    <Link to="/" onClick={scrollToTop} className="flex items-center text-white font-bold text-xl">
+      <span className="flex items-center border-b-2 border-[#8959e7] hover:scale-105 transition-all duration-300">
         IDZTECH
       </span>
     </Link>

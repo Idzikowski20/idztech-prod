@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Index from '@/pages/Index';
 import Login from '@/pages/Login';
@@ -28,43 +28,64 @@ import CookieBanner from './components/CookieBanner';
 import { useAuth } from '@/utils/firebaseAuth';
 import { useTheme } from '@/utils/themeContext';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import WarszawaSeoPage from '@/pages/pozycjonowanie/warszawa';
-import KrakowSeoPage from '@/pages/pozycjonowanie/krakow';
-import LodzSeoPage from '@/pages/pozycjonowanie/lodz';
-import WroclawSeoPage from '@/pages/pozycjonowanie/wroclaw';
-import PoznanSeoPage from '@/pages/pozycjonowanie/poznan';
-import GdanskSeoPage from '@/pages/pozycjonowanie/gdansk';
-import SzczecinSeoPage from '@/pages/pozycjonowanie/szczecin';
-import BydgoszczSeoPage from '@/pages/pozycjonowanie/bydgoszcz';
-import LublinSeoPage from '@/pages/pozycjonowanie/lublin';
+// import WarszawaSeoPage from '@/pages/pozycjonowanie/warszawa';
+// import KrakowSeoPage from '@/pages/pozycjonowanie/krakow';
+// import LodzSeoPage from '@/pages/pozycjonowanie/lodz';
+// import WroclawSeoPage from '@/pages/pozycjonowanie/wroclaw';
+// import PoznanSeoPage from '@/pages/pozycjonowanie/poznan';
+// import GdanskSeoPage from '@/pages/pozycjonowanie/gdansk';
+// import SzczecinSeoPage from '@/pages/pozycjonowanie/szczecin';
+// import BydgoszczSeoPage from '@/pages/pozycjonowanie/bydgoszcz';
+// import LublinSeoPage from '@/pages/pozycjonowanie/lublin';
 import BialystokSeoPage from '@/pages/pozycjonowanie/bialystok';
-import KatowiceSeoPage from '@/pages/pozycjonowanie/katowice';
-import GdyniaSeoPage from '@/pages/pozycjonowanie/gdynia';
-import CzestochowaSeoPage from '@/pages/pozycjonowanie/czestochowa';
-import RadomSeoPage from '@/pages/pozycjonowanie/radom';
-import SosnowiecSeoPage from '@/pages/pozycjonowanie/sosnowiec';
-import TorunSeoPage from '@/pages/pozycjonowanie/torun';
-import KielceSeoPage from '@/pages/pozycjonowanie/kielce';
-import GliwiceSeoPage from '@/pages/pozycjonowanie/gliwice';
-import ZabrzeSeoPage from '@/pages/pozycjonowanie/zabrze';
-import OlsztynSeoPage from '@/pages/pozycjonowanie/olsztyn';
-import BielskoBialaSeoPage from '@/pages/pozycjonowanie/bielsko-biala';
-import RzeszowSeoPage from '@/pages/pozycjonowanie/rzeszow';
-import RudaSlaskaSeoPage from '@/pages/pozycjonowanie/ruda-slaska';
-import RybnikSeoPage from '@/pages/pozycjonowanie/rybnik';
-import TychySeoPage from '@/pages/pozycjonowanie/tychy';
-import DabrowaGorniczaSeoPage from '@/pages/pozycjonowanie/dabrowa-gornicza';
-import PlockSeoPage from '@/pages/pozycjonowanie/plock';
-import ElblagSeoPage from '@/pages/pozycjonowanie/elblag';
-import OpoleSeoPage from '@/pages/pozycjonowanie/opole';
-import GorzowWielkopolskiSeoPage from '@/pages/pozycjonowanie/gorzow-wielkopolski';
-import WloclawekSeoPage from '@/pages/pozycjonowanie/wloclawek';
-import ZielonaGoraSeoPage from '@/pages/pozycjonowanie/zielona-gora';
+// import KatowiceSeoPage from '@/pages/pozycjonowanie/katowice';
+// import GdyniaSeoPage from '@/pages/pozycjonowanie/gdynia';
+// import CzestochowaSeoPage from '@/pages/pozycjonowanie/czestochowa';
+// import RadomSeoPage from '@/pages/pozycjonowanie/radom';
+// import SosnowiecSeoPage from '@/pages/pozycjonowanie/sosnowiec';
+// import TorunSeoPage from '@/pages/pozycjonowanie/torun';
+// import KielceSeoPage from '@/pages/pozycjonowanie/kielce';
+// import GliwiceSeoPage from '@/pages/pozycjonowanie/gliwice';
+// import ZabrzeSeoPage from '@/pages/pozycjonowanie/zabrze';
+// import OlsztynSeoPage from '@/pages/pozycjonowanie/olsztyn';
+// import BielskoBialaSeoPage from '@/pages/pozycjonowanie/bielsko-biala';
+// import RzeszowSeoPage from '@/pages/pozycjonowanie/rzeszow';
+// import RudaSlaskaSeoPage from '@/pages/pozycjonowanie/ruda-slaska';
+// import RybnikSeoPage from '@/pages/pozycjonowanie/rybnik';
+// import TychySeoPage from '@/pages/pozycjonowanie/tychy';
+// import DabrowaGorniczaSeoPage from '@/pages/pozycjonowanie/dabrowa-gornicza';
+// import PlockSeoPage from '@/pages/pozycjonowanie/plock';
+// import ElblagSeoPage from '@/pages/pozycjonowanie/elblag';
+// import OpoleSeoPage from '@/pages/pozycjonowanie/opole';
+// import GorzowWielkopolskiSeoPage from '@/pages/pozycjonowanie/gorzow-wielkopolski';
+// import WloclawekSeoPage from '@/pages/pozycjonowanie/wloclawek';
+// import ZielonaGoraSeoPage from '@/pages/pozycjonowanie/zielona-gora';
 import WebApps from './pages/WebApps';
+import { StagewiseToolbar } from '@stagewise/toolbar-react';
 
 const App = () => {
   const { loading } = useAuth();
   const { theme } = useTheme();
+  const [showToolbar, setShowToolbar] = useState(false);
+  const toolbarInitialized = useRef(false);
+
+  const stagewiseConfig = {
+    plugins: []
+  };
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development' && !toolbarInitialized.current) {
+      setShowToolbar(true);
+      toolbarInitialized.current = true;
+    }
+
+    return () => {
+      if (toolbarInitialized.current) {
+        setShowToolbar(false);
+        toolbarInitialized.current = false;
+      }
+    };
+  }, []);
 
   if (loading) {
     return (
@@ -79,6 +100,9 @@ const App = () => {
 
   return (
     <>
+      {showToolbar && !toolbarInitialized.current && (
+        <StagewiseToolbar config={stagewiseConfig} />
+      )}
       <Routes>
         {/* Statyczne strony */}
         <Route path="/" element={<Index />} errorElement={<ErrorPage />} />
@@ -88,7 +112,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/tworzenie-stron-www" element={<WebDevelopment />} />
+        <Route path="/tworzenie-stron-internetowych" element={<WebDevelopment />} />
         <Route path="/aplikacje-webowe" element={<WebApps />} />
         <Route path="/sklepy-internetowe" element={<ECommerce />} />
         <Route path="/pozycjonowanie-stron" element={<Seo />} />
@@ -108,8 +132,8 @@ const App = () => {
         <Route path="/admin/edit-post/:id" element={<RequireAuth><BlogPostEditor /></RequireAuth>} />
 
         {/* Pozycjonowanie lokalne */}
-        <Route path="/pozycjonowanie/warszawa" element={<WarszawaSeoPage />} />
-        <Route path="/pozycjonowanie/krakow" element={<KrakowSeoPage />} />
+        <Route path="/pozycjonowanie/bialystok" element={<BialystokSeoPage />} />
+        {/* <Route path="/pozycjonowanie/krakow" element={<KrakowSeoPage />} />
         <Route path="/pozycjonowanie/lodz" element={<LodzSeoPage />} />
         <Route path="/pozycjonowanie/wroclaw" element={<WroclawSeoPage />} />
         <Route path="/pozycjonowanie/poznan" element={<PoznanSeoPage />} />
@@ -139,7 +163,7 @@ const App = () => {
         <Route path="/pozycjonowanie/opole" element={<OpoleSeoPage />} />
         <Route path="/pozycjonowanie/gorzow-wielkopolski" element={<GorzowWielkopolskiSeoPage />} />
         <Route path="/pozycjonowanie/wloclawek" element={<WloclawekSeoPage />} />
-        <Route path="/pozycjonowanie/zielona-gora" element={<ZielonaGoraSeoPage />} />
+        <Route path="/pozycjonowanie/zielona-gora" element={<ZielonaGoraSeoPage />} /> */}
         
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -68,7 +68,7 @@ const DesktopNavigation = () => {
                   <ul className="flex flex-col gap-4 w-full">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/tworzenie-stron-www" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
+                        <Link to="/tworzenie-stron-internetowych" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <Layout className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
                             <span className="font-semibold text-black dark:text-neutral-100">Tworzenie stron internetowych</span>
@@ -82,7 +82,7 @@ const DesktopNavigation = () => {
                         <Link to="/aplikacje-webowe" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <Layout className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
                           <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Tworzenie aplikacji webowych</span>
+                            <span className="font-semibold text-black dark:text-neutral-100">Aplikacje webowe SaaS</span>
                             <div className="text-xs text-neutral-600 dark:text-neutral-300">Nowoczesne aplikacje webowe na zamówienie – rozwój aplikacji internetowych, platformy webowe i oprogramowanie dla firm - Aplikacje internetowe</div>
                           </div>
                         </Link>

@@ -38,7 +38,7 @@ const BialystokSeoPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                className="bg-premium-gradient hover:text-white transition-opacity text-white rounded-full px-8 py-4 font-semibold text-base shadow-md"
+                className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full"
                 onClick={() => navigate('/contact')}
               >
                 Zamów pozycjonowanie stron Białystok
@@ -57,19 +57,19 @@ const BialystokSeoPage = () => {
               {/* Kafelki */}
               <div className="absolute inset-0 p-4">
                 {/* Lewy górny kafelek */}
-                <div className="absolute top-4 left-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
+                <div className="absolute top-4 left-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-sm transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
                   <div className="flex items-center gap-3 ">
                     <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                      <FaChartLine className="text-white" />
+                      <FaChartLine className="light:text-black dark:text-white" />
                     </div>
                     <h3 className="font-bold text-premium-dark dark:text-premium-light">Wzrost ruchu</h3>
                   </div>
                 </div>
                 {/* Prawy dolny kafelek */}
-                <div className="absolute bottom-4 right-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-lg transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
+                <div className="absolute bottom-4 right-4 bg-white/90 dark:bg-premium-dark/90 backdrop-blur-sm rounded-xl p-2 shadow-sm transform hover:scale-105 transition-transform duration-300 max-w-[200px]">
                   <div className="flex items-center gap-3 ">
                     <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center">
-                      <FaUserCheck className="text-white" />
+                      <FaUserCheck className="light:text-black dark:text-white" />
                     </div>
                     <h3 className="font-bold text-premium-dark dark:text-premium-light">Więcej klientów</h3>
                   </div>
@@ -82,7 +82,7 @@ const BialystokSeoPage = () => {
 
       {/* Nowa sekcja: Czym jest SEO i jak może pomóc Twojej firmie? */}
       <section className="py-16 text-premium-light">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl p-10">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12 bg-[#f9f9f9] dark:bg-[#181818] rounded-2xl p-10">
           {/* Lewa kolumna */}
           <div className="flex-1 max-w-2xl">
             <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
@@ -149,8 +149,8 @@ const BialystokSeoPage = () => {
           {/* GRID 2x2 */}
           <div className="flex flex-col md:flex-row gap-6 md:gap-8">
             {/* Kafelek 1 */}
-            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
-              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+            <div className="flex-1 bg-[#f9f9f9] dark:bg-[#181818] rounded-2xl shadow-sm p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
                 <FaChartLine className="text-white text-2xl" />
               </span>
               <div>
@@ -160,8 +160,8 @@ const BialystokSeoPage = () => {
               </div>
             </div>
             {/* Kafelek 2 */}
-            <div className="flex-1 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
-              <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+            <div className="flex-1 bg-[#f9f9f9] dark:bg-[#181818] rounded-2xl shadow-sm p-6 md:p-8 flex items-center gap-5 min-w-[260px]">
+              <span className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
                 <FaUserCheck className="text-white text-2xl" />
               </span>
               <div>
@@ -172,8 +172,8 @@ const BialystokSeoPage = () => {
             </div>
           </div>
           {/* Kafelek szeroki na całą szerokość */}
-          <div className="mt-8 bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-10 flex items-center gap-5 min-w-[260px]">
-            <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff]">
+          <div className="mt-8 bg-[#f9f9f9] dark:bg-[#181818] rounded-2xl shadow-sm p-6 md:p-10 flex items-center gap-5 min-w-[260px]">
+            <span className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
               <FaClipboardCheck className="text-white text-2xl" />
             </span>
             <div>
@@ -210,7 +210,7 @@ const BialystokSeoPage = () => {
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
               <span className="w-3 h-3 rounded-sm bg-premium-purple block" />
-              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania stron internetowych i SEO w Białymstoku</span>
+              <span className="uppercase text-xs font-semibold tracking-wider text-premium-purple">Korzyści z pozycjonowania</span>
             </div>
             <h4 className="text-2xl md:text-4xl font-bold mb-2 text-premium-dark dark:text-premium-light">Poznaj realne korzyści współpracy z <span className="text-premium-purple">IDZTECH</span></h4>
             <p className="text-premium-light/70 text-base max-w-2xl">
@@ -233,7 +233,7 @@ const BialystokSeoPage = () => {
           <div className="flex flex-col gap-10">
             {/* Etap 1 */}
             <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
+              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
                 <div className="flex items-center mb-2">
                   <span className="text-premium-purple font-bold text-lg mr-3">1</span>
                   <span className="font-semibold text-premium-dark dark:text-premium-light">Analiza strony i konkurencji</span>
@@ -243,7 +243,7 @@ const BialystokSeoPage = () => {
             </div>
             {/* Etap 2 */}
             <div className="flex md:justify-end md:pl-16 md:pr-0 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
+              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
                 <div className="flex items-center mb-2 md:justify-end">
                   <span className="font-semibold text-premium-dark dark:text-premium-light mr-3 md:mr-0 md:ml-3">Opracowanie strategii SEO</span>
                   <span className="text-premium-purple font-bold text-lg pl-2">2</span>
@@ -253,7 +253,7 @@ const BialystokSeoPage = () => {
             </div>
             {/* Etap 3 */}
             <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
+              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
                 <div className="flex items-center mb-2">
                   <span className="text-premium-purple font-bold text-lg mr-3">3</span>
                   <span className="font-semibold text-premium-dark dark:text-premium-light">Optymalizacja strony</span>
@@ -263,7 +263,7 @@ const BialystokSeoPage = () => {
             </div>
             {/* Etap 4 */}
             <div className="flex md:justify-end md:pl-16 md:pr-0 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
+              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
                 <div className="flex items-center mb-2 md:justify-end">
                   <span className="font-semibold text-premium-dark dark:text-premium-light mr-3 md:mr-0 md:ml-3">Budowa profilu linków</span>
                   <span className="text-premium-purple font-bold text-lg pl-2">4</span>
@@ -273,7 +273,7 @@ const BialystokSeoPage = () => {
             </div>
             {/* Etap 5 */}
             <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-lg p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
+              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
                 <div className="flex items-center mb-2">
                   <span className="text-premium-purple font-bold text-lg mr-3">5</span>
                   <span className="font-semibold text-premium-dark dark:text-premium-light">Monitoring i raportowanie</span>
@@ -316,12 +316,11 @@ const BialystokSeoPage = () => {
         buttons={[
           <Button
             size="lg"
-            className="bg-premium-gradient hover:opacity-90 transition-opacity animate-fade-in group relative overflow-hidden"
+            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full"
             onClick={() => window.location.href = '/contact'}
             key="cta-contact"
           >
             <span className="relative z-10 text-white">Bezpłatna wycena</span>
-            <span className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
           </Button>
         ]}
       />
@@ -363,10 +362,10 @@ function CoZyskujeszExpandableGrid() {
       {coZyskujeszStats.map((stat, i) => (
         <div
           key={i}
-          className="flex bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-6 md:p-8 gap-5 items-start min-w-[260px]"
+          className="flex bg-[#f9f9f9] dark:bg-[#181818] rounded-2xl shadow-sm p-6 md:p-8 gap-5 items-start min-w-[260px]"
         >
           {/* Gradientowa ikona */}
-          <span className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#8350e8] to-[#7f6aff] mt-1">
+          <span className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
             <svg width="28" height="28" viewBox="0 0 20 20" fill="none"><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </span>
           {/* Teksty */}

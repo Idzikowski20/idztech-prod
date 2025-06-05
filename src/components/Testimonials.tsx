@@ -43,7 +43,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
       <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/80'} flex-grow mb-6`}>"{testimonial.content}"</p>
       <div className="flex items-center mt-auto">
         <div>
-          <h4 className="font-medium">{testimonial.author}</h4>
+          <h5 className="font-medium">{testimonial.author}</h5>
           <p className={`text-sm ${theme === 'light' ? 'text-premium-dark/70' : 'text-premium-light/60'}`}>{testimonial.position}</p>
         </div>
       </div>

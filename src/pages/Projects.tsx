@@ -232,7 +232,7 @@ const Projects = () => {
               Chcesz dołączyć do grona naszych zadowolonych klientów? Skontaktuj się z nami, aby omówić szczegóły Twojego projektu.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-premium-gradient hover:bg-transparent transition-opacity text-white rounded-full px-8 py-6 hover:text-white" onClick={() => navigate('/contact')}>
+              <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full" onClick={() => navigate('/contact')}>
                 Darmowa konsultacja
                 <ArrowRight size={18} className="ml-2" />
               </Button>

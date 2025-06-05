@@ -49,9 +49,9 @@ const WhyWorkWithUs = () => {
         {/* Nagłówek i opis na całą szerokość */}
         <div className="mb-20 max-w-4xl mx-auto text-center">
           <span className="text-premium-purple font-medium block mb-2">O IDZTECH</span>
-          <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h4 className="text-3xl lg:text-4xl font-bold mb-4">
             Kompleksowa firma tworząca strony i sklepy internetowe
-          </h3>
+          </h4>
           <p className="text-premium-light/70 mb-6">
             IDZTECH to zespół doświadczonych specjalistów z pasją do tworzenia nowoczesnych stron i sklepów internetowych. Łączymy kreatywność z analitycznym podejściem, aby dostarczać rozwiązania, które nie tylko wyglądają dobrze, ale przede wszystkim działają efektywnie.
           </p>
@@ -129,7 +129,7 @@ const WhyWorkWithUs = () => {
           </div>
           {/* Prawa kolumna: eksperci */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">Nasz zespół ekspertów</h3>
+            <h4 className="text-2xl font-bold mb-6">Nasz zespół ekspertów</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {teamMembers.map((member, index) => (
                 <div 

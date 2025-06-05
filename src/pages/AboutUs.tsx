@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, Users, Award, Lightbulb, Clock } from 'lucide-
 import { useTheme } from '@/utils/themeContext';
 import GlobalCTA from '@/components/GlobalCTA';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const AboutUs = () => {
   const { theme } = useTheme();
@@ -21,7 +22,7 @@ const AboutUs = () => {
     { 
       name: 'Aleksandra Górecka', 
       role: 'Sales Director',
-      description: 'Doświadczony Specjalista w zakresie sprzedaży i marketingu',
+      description: 'Doświadczony Handlowiec i Specjalista w zakresie sprzedaży i marketingu',
       image: 'https://media.licdn.com/dms/image/v2/D4D03AQGXIT6Ts4PNKA/profile-displayphoto-shrink_200_200/B4DZOGr_alG0Ac-/0/1733131499592?e=1753315200&v=beta&t=pG5ndvFbqCngCLfXaRdUm7mpm_RQdcHjWfvoJn8uwy8'
     },
     { 
@@ -39,13 +40,57 @@ const AboutUs = () => {
     { 
       name: 'Jan Śliwa', 
       role: 'Key Account Manager',
-      description: 'Doświadczony dyrektor sprzedaży z szeroką wiedzą w zakresie sprzedaży rozwiązań IT i marketingowych.',
+      description: 'Doświadczony handlowiec z szeroką wiedzą w zakresie sprzedaży rozwiązań IT i marketingowych.',
       image: 'https://media.licdn.com/dms/image/v2/D4E03AQEODWoax6O9kQ/profile-displayphoto-shrink_200_200/B4EZTNI7ExGYAY-/0/1738608456657?e=1753315200&v=beta&t=xSesI6rQTiqm13EsbJL-xN9vN5ye5aFNoz2__83lG9U'
     }
   ];
   
   return (
     <div className="min-h-screen ">
+      <Helmet>
+        <title>Poznaj zespół IDZTECH | web development, SEO, projektowanie stron</title>
+        <meta name="description" content="Poznaj zespół IDZTECH ekspertów od tworzenia stron internetowych, SEO, web designu i rozwoju aplikacji webowych. Sprawdź, dlaczego warto nam zaufać!" />
+        <meta name="keywords" content="o nas, zespół, IDZTECH, web development, projektowanie stron, SEO, aplikacje webowe, strony internetowe, web design, doświadczenie, eksperci" />
+        {/* Open Graph */}
+        <meta property="og:title" content="IDZTECH - O nas" />
+        <meta property="og:description" content="Poznaj zespół IDZTECH – ekspertów od tworzenia stron internetowych, SEO, web designu i rozwoju aplikacji webowych. Sprawdź, dlaczego warto nam zaufać!" />
+        <meta property="og:image" content="https://idztech.pl/banner.png" />
+        <meta property="og:url" content="https://idztech.pl/o-nas" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="IDZTECH - O nas" />
+        <meta name="twitter:description" content="Poznaj zespół IDZTECH – ekspertów od tworzenia stron internetowych, SEO, web designu i rozwoju aplikacji webowych. Sprawdź, dlaczego warto nam zaufać!" />
+        <meta name="twitter:image" content="https://idztech.pl/banner.png" />
+        {/* Robots */}
+        <meta name="robots" content="index, follow" />
+        {/* Canonical */}
+        <link rel="canonical" href="https://idztech.pl/o-nas" />
+        {/* Schema.org Organization */}
+        <script type="application/ld+json">{`
+          {"@context": "https://schema.org","@type": "Organization","name": "IDZTECH","url": "https://idztech.pl","logo": "https://idztech.pl/logo.png"}
+        `}</script>
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://idztech.pl/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "O nas",
+                "item": "https://idztech.pl/o-nas"
+              }
+            ]
+          }
+        `}</script>
+      </Helmet>
       <Navbar />
       
       <section className="pt-32 pb-16 relative overflow-hidden">
@@ -101,7 +146,7 @@ const AboutUs = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
                 <Users size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Partnerstwo</h3>
@@ -111,7 +156,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
                 <Award size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Jakość</h3>
@@ -121,7 +166,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
                 <Lightbulb size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Innowacyjność</h3>
@@ -131,7 +176,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
-              <div className="w-12 h-12 rounded-lg bg-premium-gradient flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
                 <Clock size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Terminowość</h3>

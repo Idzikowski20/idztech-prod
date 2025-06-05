@@ -24,18 +24,20 @@ const Hero = () => {
             </div>
             <div className="mb-6">
               <h1 className="text-3xl md:text-5xl font-extrabold text-premium-dark dark:text-premium-light leading-tight">
-                Tworzymy{' '}
-                <span className="relative z-10 bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent">
-                  <FlipWords
-                    words={[
-                      "strony internetowe",
-                      "sklepy internetowe",
-                      "landing page",
-                      "aplikacje webowe"
-                    ]}
-                    duration={10000}
-                    className="bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent"
-                  />
+                <span aria-hidden="true">
+                  Tworzymy{' '}
+                  <span className="relative z-10 bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent">
+                    <FlipWords
+                      words={[
+                        "strony internetowe",
+                        "sklepy internetowe",
+                        "landing page",
+                        "aplikacje webowe"
+                      ]}
+                      duration={10000}
+                      className="bg-gradient-to-r from-[#8350e8] to-[#ff6b6b] bg-clip-text text-transparent"
+                    />
+                  </span>
                 </span>
               </h1>
             </div>

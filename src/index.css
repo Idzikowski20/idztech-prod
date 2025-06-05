@@ -908,6 +908,10 @@ input:-internal-autofill-selected {
   overflow: auto;
 }
 
+.bg-card {
+  background: transparent !important;
+}
+
 .tiptap.ProseMirror pre {
   -webkit-box-shadow: 0px 0px 24px -17px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 0px 24px -17px rgba(66, 68, 90, 1);
@@ -1095,6 +1099,18 @@ input:-internal-autofill-selected {
 
 .blog-bg {
   background-color: #312e8133 var(--tw-gradient-to-position) !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Style dla przycisków nawigacji */

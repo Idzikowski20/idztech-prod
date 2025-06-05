@@ -31,53 +31,6 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-// Funkcja do aktualizacji liczników użycia API
-async function updateApiUsage(apiName) {
-  const envFile = '.env';
-  let envContent = '';
-  
-  try {
-    envContent = fs.readFileSync(envFile, 'utf8');
-  } catch (err) {
-    console.error('Błąd odczytu pliku .env:', err);
-    return;
-  }
-
-  const totalRequestsKey = `${apiName.toUpperCase()}_TOTAL_REQUESTS`;
-  const lastUsedKey = `${apiName.toUpperCase()}_LAST_USED`;
-  
-  // Aktualizuj licznik zapytań
-  const currentTotal = parseInt(process.env[totalRequestsKey] || '0');
-  const newTotal = currentTotal + 1;
-  
-  // Aktualizuj zawartość pliku .env
-  envContent = envContent.replace(
-    new RegExp(`${totalRequestsKey}=.*`, 'g'),
-    `${totalRequestsKey}=${newTotal}`
-  );
-  envContent = envContent.replace(
-    new RegExp(`${lastUsedKey}=.*`, 'g'),
-    `${lastUsedKey}=${new Date().toISOString()}`
-  );
-  
-  // Jeśli zmienne nie istnieją, dodaj je
-  if (!envContent.includes(totalRequestsKey)) {
-    envContent += `\n${totalRequestsKey}=${newTotal}`;
-  }
-  if (!envContent.includes(lastUsedKey)) {
-    envContent += `\n${lastUsedKey}=${new Date().toISOString()}`;
-  }
-  
-  try {
-    fs.writeFileSync(envFile, envContent);
-    // Aktualizuj zmienne środowiskowe
-    process.env[totalRequestsKey] = newTotal.toString();
-    process.env[lastUsedKey] = new Date().toISOString();
-  } catch (err) {
-    console.error('Błąd zapisu do pliku .env:', err);
-  }
-}
-
 // Uniwersalna funkcja do pobierania odpowiedzi z LLM z fallbackami
 async function fetchFromLLM({ prompt, system, extractJson = false, extractLine = false }) {
   const apiKeyGroq = process.env.GROQ_API_KEY;
@@ -108,7 +61,6 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       let cleanText = text.replace(/```json|```/g, '').trim();
       // Zamień znaki nowej linii i tabulatory w stringach na spacje
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
-      await updateApiUsage('GROQ');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi Groq');
@@ -138,7 +90,6 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       let cleanText = text.replace(/```json|```/g, '').trim();
       // Zamień znaki nowej linii i tabulatory w stringach na spacje
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
-      await updateApiUsage('GEMINI');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi Gemini');
@@ -178,7 +129,6 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       let cleanText = text.replace(/```json|```/g, '').trim();
       // Zamień znaki nowej linii i tabulatory w stringach na spacje
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
-      await updateApiUsage('OPENAI');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi OpenAI');
@@ -218,7 +168,6 @@ async function fetchFromLLM({ prompt, system, extractJson = false, extractLine =
       const text = data.choices?.[0]?.message?.content || '';
       let cleanText = text.replace(/```json|```/g, '').trim();
       cleanText = cleanText.replace(/\\n|\\t|\\r/g, ' ');
-      await updateApiUsage('MISTRAL');
       if (extractJson) {
         const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('Nie znaleziono fragmentu JSON w odpowiedzi Mistral');

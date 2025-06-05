@@ -21,7 +21,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1 - About */}
           <div>
-            <h3 className="text-lg font-bold mb-4">IDZTECH</h3>
+            <div>
+              <h3 className="text-lg font-bold mb-4 border-b-2 border-[#8959e7] w-fit hover:scale-105 transition-all duration-300">IDZTECH</h3>
+            </div>
             <p className="text-gray-400 mb-6">
               Tworzymy skuteczne strony internetowe i zapewniamy kompleksowe rozwiązania SEO dla klientów w całej Polsce.
             </p>
