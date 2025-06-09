@@ -7,6 +7,7 @@ import { useTheme } from '@/utils/themeContext';
 import GlobalCTA from '@/components/GlobalCTA';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import FAQ from '@/components/FAQ';
 
 const AboutUs = () => {
   const { theme } = useTheme();
@@ -229,37 +230,11 @@ const AboutUs = () => {
       
       {/* Why Us section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <span className="text-premium-purple font-medium">Dlaczego my?</span>
-            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Co nas wyróżnia</h2>
-            <p className="text-premium-light/70 text-lg">
-              Wybierając IDZTECH, wybierasz firmę, która naprawdę dba o Twój biznes w sieci. Oto, co nas wyróżnia:
-            </p>
+      <div data-lazy>
+          <div className="mt-8 md:mt-0">
+            <FAQ />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
-            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
-              <CheckCircle size={32} className="text-premium-purple mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Indywidualne podejście</h3>
-              <p className="text-premium-light/70">Każdy projekt traktujemy indywidualnie, dopasowując rozwiązania do potrzeb klienta.</p>
-            </div>
-            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
-              <CheckCircle size={32} className="text-premium-purple mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Kompleksowa obsługa</h3>
-              <p className="text-premium-light/70">Zajmujemy się wszystkim: od projektu, przez wdrożenie, po wsparcie i rozwój.</p>
-            </div>
-            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
-              <CheckCircle size={32} className="text-premium-purple mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Transparentność</h3>
-              <p className="text-premium-light/70">Zapewniamy jasne zasady współpracy i regularne raportowanie postępów.</p>
-            </div>
-            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
-              <CheckCircle size={32} className="text-premium-purple mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Zespół ekspertów</h3>
-              <p className="text-premium-light/70">Nasz zespół to certyfikowani specjaliści z wieloletnim doświadczeniem.</p>
-            </div>
-          </div>
-        </div>
+      </div>
       </section>
 
       <GlobalCTA

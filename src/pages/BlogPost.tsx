@@ -167,8 +167,10 @@ const BlogPost = () => {
         />
       )}
       <Helmet>
-        <title>{post.title} | IDZTECH Blog</title>
-        <meta name="description" content={post.excerpt || ''} />
+        <title>{post?.title ? `${post.title} | IDZTECH Blog` : 'Blog Post | IDZTECH'}</title>
+        <meta name="description" content="Szczegóły wpisu na blogu IDZTECH – web development, SEO, tworzenie stron internetowych, sklepy online." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={post?.slug ? `https://idztech.pl/blog/${post.slug}` : 'https://idztech.pl/blog/post'} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt || ''} />
         {post.featured_image && <meta property="og:image" content={post.featured_image} />}

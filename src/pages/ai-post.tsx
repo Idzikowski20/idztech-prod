@@ -210,7 +210,7 @@ export default function AIPostPage() {
           style: selectedStyle, 
           presentation: selectedPresentation,
           length: postLength,
-          lengthPrompt: `Napisz artykuł o długości około ${postLength} słów.`,
+          lengthPrompt: `Napisz artykuł o długości około ${postLength} słów. Nie używaj formatowania typu **Backlink**: ani nie pogrubiaj pojedynczych słów z dwukropkiem na końcu.`,
           audience, 
           cta, 
           meta, 

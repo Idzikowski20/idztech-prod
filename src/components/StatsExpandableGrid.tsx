@@ -113,7 +113,7 @@ const StatsExpandableGrid = () => {
       {stats.map((stat, i) => (
         <div
           key={i}
-          className="flex bg-[#f6f8ff] dark:bg-[#23213a] rounded-2xl shadow-lg p-8 md:p-12 gap-7 items-start min-w-[260px]"
+          className="flex bg-[#f9f9f9] dark:bg-[#181818] rounded-2xl shadow-sm p-8 md:p-12 gap-7 items-start min-w-[260px]"
         >
           {/* Gradientowy progress */}
           <div className="flex flex-col items-center justify-center">

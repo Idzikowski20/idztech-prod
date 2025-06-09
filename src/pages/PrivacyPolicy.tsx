@@ -1,15 +1,21 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageDotAnimation from '@/components/PageDotAnimation';
 import { useTheme } from '@/utils/themeContext';
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
   const { theme } = useTheme();
   
   return (
     <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : ''}`}>
+      <Helmet>
+        <title>Polityka prywatności | IDZTECH</title>
+        <meta name="description" content="Polityka prywatności IDZTECH – dowiedz się, jak chronimy Twoje dane osobowe podczas korzystania z naszych usług." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://idztech.pl/polityka-prywatnosci" />
+      </Helmet>
       <Navbar />
       <PageDotAnimation />
       

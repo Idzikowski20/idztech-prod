@@ -1,15 +1,21 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageDotAnimation from '@/components/PageDotAnimation';
 import { useTheme } from '@/utils/themeContext';
+import { Helmet } from 'react-helmet';
 
 const TermsOfUse = () => {
   const { theme } = useTheme();
   
   return (
     <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : ''}`}>
+      <Helmet>
+        <title>Regulamin | IDZTECH</title>
+        <meta name="description" content="Regulamin korzystania z serwisu IDZTECH – zasady, prawa i obowiązki użytkowników." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://idztech.pl/regulamin" />
+      </Helmet>
       <Navbar />
       <PageDotAnimation />
       

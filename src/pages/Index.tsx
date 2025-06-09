@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import OurServices from "@/components/OurServices";
 import { applyMobileOptimizations } from "@/utils/performanceUtils";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import LocalSeoSection from "@/components/LocalSeoSection";
 import { Helmet } from 'react-helmet-async';
 
@@ -208,15 +207,6 @@ const Index = () => {
       <Suspense fallback={<LoadingFallback />}>
         <LocalSeoSection />
       </Suspense>
-
-
-      <div data-lazy>
-        <Suspense fallback={<LoadingFallback />}>
-          <div className="mt-8 md:mt-0">
-            <FAQ />
-          </div>
-        </Suspense>
-      </div>
 
       <div data-lazy>
         <Suspense fallback={<LoadingFallback />}>

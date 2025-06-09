@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate, useRouteError } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageDotAnimation from "@/components/PageDotAnimation";
 import { ArrowLeft, AlertTriangle } from "lucide-react";
+import { Helmet } from 'react-helmet';
 
 interface ErrorPageProps {
   code?: number;
@@ -24,39 +24,27 @@ const ErrorPage = ({ code = 500, title = "Wystąpił błąd", message = "Przepra
 
   return (
     <div className="min-h-screen  flex flex-col">
+      <Helmet>
+        <title>Błąd | IDZTECH</title>
+        <meta name="description" content="Wystąpił błąd. Spróbuj ponownie później lub skontaktuj się z administratorem." />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://idztech.pl/error" />
+      </Helmet>
       <Navbar />
       <PageDotAnimation />
       
-      <div className="flex-1 flex flex-col items-center justify-center px-4 text-center">
-        <div className="neo-blur p-10 rounded-2xl max-w-xl mx-auto">
-          <div className="mx-auto w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-6">
-            <AlertTriangle className="h-8 w-8 text-red-500" />
-          </div>
-          
-          <h1 className="text-6xl font-bold text-white mb-4">{code}</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6">{title}</h2>
-          <p className="text-white/70 mb-8 max-w-md mx-auto">
-            {errorMessage}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={() => navigate(-1)} 
-              variant="outline" 
-              className="border-white/10 hover:bg-white hover:text-black"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Wróć do poprzedniej strony
-            </Button>
-            
-            <Button 
-              onClick={() => navigate('/')} 
-              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
-            >
-              Strona główna
-            </Button>
-          </div>
-        </div>
+      <div className="text-center px-4">
+        <h1 className="text-6xl font-bold text-white mb-4">404</h1>
+        <h2 className="text-2xl font-semibold text-premium-light/70 mb-6">
+          Strona nie została znaleziona
+        </h2>
+        <p className="text-premium-light/50 mb-8 max-w-md mx-auto">
+          Przepraszamy, ale strona której szukasz nie istnieje lub została przeniesiona.aa
+        </p>
+        <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/')}>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Wróć do strony głównej
+        </Button>
       </div>
       
       <Footer />

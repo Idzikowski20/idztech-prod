@@ -147,7 +147,7 @@ const WebApps = () => {
               <div className="w-full lg:w-1/2 flex justify-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 <div className="w-full h-auto overflow-hidden rounded-lg">
                   <img 
-                    src="/lovable-uploads/2b029775-9244-410f-a9c5-b9b1e5f16c59.png" 
+                    src="/lovable-uploads/webaps.png" 
                     alt="Aplikacje webowe - mockup" 
                     className="w-full h-auto object-contain rounded-lg"
                   />
@@ -293,7 +293,7 @@ const WebApps = () => {
                 <div className="w-16 h-16 mb-3">
                   <ReactIcon />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>React + Native</p>
+                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>React</p>
               </div>
             </div>
           </div>

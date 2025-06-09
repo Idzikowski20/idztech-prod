@@ -17,6 +17,7 @@ import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
 import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
 import { useNotification } from '@/components/ui/NotificationContext';
+import { Helmet } from 'react-helmet';
 
 const blogPostSchema = z.object({
   title: z.string().min(5, 'Tytuł musi mieć co najmniej 5 znaków'),
@@ -317,6 +318,12 @@ const BlogPostEditor = () => {
 
   return (
     <AdminLayout>
+      <Helmet>
+        <title>Edytor Bloga | IDZTECH</title>
+        <meta name="description" content="Edytor wpisów blogowych IDZTECH – web development, SEO, tworzenie stron internetowych, sklepy online." />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://idztech.pl/blog/editor" />
+      </Helmet>
       <div className="p-6">
         <div className="flex items-center justify-between mb-8">
           <div>

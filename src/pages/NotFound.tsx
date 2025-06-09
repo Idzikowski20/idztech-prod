@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { LucideHome, ArrowLeft, AlertTriangle } from "lucide-react";
 import { useTheme } from "@/utils/themeContext";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 type ErrorType = "404" | "500" | "403" | "unknown";
 
@@ -56,6 +57,12 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center ">
+      <Helmet>
+        <title>Błąd 404 | IDZTECH</title>
+        <meta name="description" content="Nie znaleziono strony. Sprawdź adres URL lub wróć na stronę główną." />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://idztech.pl/404" />
+      </Helmet>
       <div className="max-w-md w-full px-6 py-12 /60 backdrop-blur-sm border border-white/10 rounded-xl text-center">
         <div className="mb-8">
           <div className="flex justify-center">
@@ -81,15 +88,6 @@ const NotFound = () => {
           >
             <LucideHome className="mr-2 h-4 w-4" />
             Powrót do strony głównej
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            onClick={() => window.history.back()} 
-            className={`border-white/10 ${theme === 'light' ? 'text-black hover:bg-black hover:text-white' : 'text-gray-300 hover:bg-white/5'} w-full sm:w-auto`}
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Wstecz
           </Button>
         </div>
       </div>

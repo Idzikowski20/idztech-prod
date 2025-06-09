@@ -10,6 +10,7 @@ import GlobalCTA from "@/components/GlobalCTA";
 import { Button } from '@/components/ui/button';
 import LocalSeoSection from "@/components/LocalSeoSection";
 import HeroScrollDemo from "@/components/ui/container-scroll-animation-demo";
+import { Award, CheckCircle, Clock, Lightbulb, Users, Sparkles } from "lucide-react";
 
 const HERO_IMAGE = "/images/bialystok.jpg";
 
@@ -132,6 +133,61 @@ const BialystokSeoPage = () => {
         </div>
       </section>
 
+            {/* Values section */}
+            <section className="py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <span className="text-premium-purple font-medium">Nasze wartości</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Na czym opieramy naszą pracę</h2>
+            <p className="text-premium-light/70 text-lg">
+              Nasze podejście do każdego projektu jest zorientowane na osiąganie wymiernych rezultatów. Kierujemy się następującymi wartościami:
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+                <Users size={24} className="text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Partnerstwo</h3>
+              <p className="text-premium-light/70">
+                Traktujemy naszych klientów jak partnerów biznesowych. Twój sukces jest naszym sukcesem.
+              </p>
+            </div>
+            
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+                <Award size={24} className="text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Jakość</h3>
+              <p className="text-premium-light/70">
+                Dostarczamy usługi najwyższej jakości, dążąc do perfekcji w każdym aspekcie naszej pracy.
+              </p>
+            </div>
+            
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+                <Lightbulb size={24} className="text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Innowacyjność</h3>
+              <p className="text-premium-light/70">
+                Nieustannie śledzimy trendy i wprowadzamy innowacyjne rozwiązania do naszych projektów stron.
+              </p>
+            </div>
+            
+            <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+                <Clock size={24} className="text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Terminowość</h3>
+              <p className="text-premium-light/70">
+                Szanujemy czas naszych klientów i zawsze dotrzymujemy ustalonych terminów realizacji projektów.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* DLACZEGO WARTO */}
       <section className="w-full py-16 mb-[8rem]">
         <div className="max-w-7xl mx-auto px-4">
@@ -205,7 +261,7 @@ const BialystokSeoPage = () => {
       </section>
 
       {/* CO ZYSKUJESZ - w stylu statystyk */}
-      <section className="">
+      <section className="w-full py-16 mb-[8rem]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-10">
             <div className="flex items-center gap-2 mb-2">
@@ -221,66 +277,78 @@ const BialystokSeoPage = () => {
         </div>
       </section>
 
-      <section className="w-full py-16">
-      <HeroScrollDemo />
+            {/* Why Us section */}
+            <section className="relative overflow-hidden w-full py-16 mb-[8rem]">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <span className="text-premium-purple font-medium">Dlaczego my?</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Co nas wyróżnia</h2>
+            <p className="text-premium-light/70 text-lg">
+              Wybierając IDZTECH, wybierasz firmę, która naprawdę dba o Twój biznes w sieci. Oto, co nas wyróżnia:
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+              <CheckCircle size={32} className="text-premium-purple mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Indywidualne podejście</h3>
+              <p className="text-premium-light/70">Każdy projekt traktujemy indywidualnie, dopasowując rozwiązania do potrzeb klienta.</p>
+            </div>
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+              <CheckCircle size={32} className="text-premium-purple mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Kompleksowa obsługa</h3>
+              <p className="text-premium-light/70">Zajmujemy się wszystkim: od projektu, przez wdrożenie, po wsparcie i rozwój.</p>
+            </div>
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+              <CheckCircle size={32} className="text-premium-purple mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Transparentność</h3>
+              <p className="text-premium-light/70">Zapewniamy jasne zasady współpracy i regularne raportowanie postępów.</p>
+            </div>
+            <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
+              <CheckCircle size={32} className="text-premium-purple mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Zespół ekspertów</h3>
+              <p className="text-premium-light/70">Nasz zespół to certyfikowani specjaliści z wieloletnim doświadczeniem.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="mb-12">
         <h5 className="text-2xl font-semibold mb-8 text-premium-dark dark:text-premium-light text-center">Jak wygląda współpraca?</h5>
-        <div className="relative max-w-[60rem] mx-auto">
-          {/* pionowa linia */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-premium-purple/20 -translate-x-1/2 z-0 hidden md:block" />
-          <div className="flex flex-col gap-10">
-            {/* Etap 1 */}
-            <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
-                <div className="flex items-center mb-2">
-                  <span className="text-premium-purple font-bold text-lg mr-3">1</span>
-                  <span className="font-semibold text-premium-dark dark:text-premium-light">Analiza strony i konkurencji</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Szczegółowa analiza Twojej strony i konkurencji w Białymstoku.</p>
-              </div>
-            </div>
-            {/* Etap 2 */}
-            <div className="flex md:justify-end md:pl-16 md:pr-0 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
-                <div className="flex items-center mb-2 md:justify-end">
-                  <span className="font-semibold text-premium-dark dark:text-premium-light mr-3 md:mr-0 md:ml-3">Opracowanie strategii SEO</span>
-                  <span className="text-premium-purple font-bold text-lg pl-2">2</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Tworzymy indywidualną strategię SEO dopasowaną do Twoich celów.</p>
-              </div>
-            </div>
-            {/* Etap 3 */}
-            <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
-                <div className="flex items-center mb-2">
-                  <span className="text-premium-purple font-bold text-lg mr-3">3</span>
-                  <span className="font-semibold text-premium-dark dark:text-premium-light">Optymalizacja strony</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Wdrażamy techniczne i contentowe zmiany na stronie.</p>
-              </div>
-            </div>
-            {/* Etap 4 */}
-            <div className="flex md:justify-end md:pl-16 md:pr-0 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-r-4 border-premium-purple md:text-right">
-                <div className="flex items-center mb-2 md:justify-end">
-                  <span className="font-semibold text-premium-dark dark:text-premium-light mr-3 md:mr-0 md:ml-3">Budowa profilu linków</span>
-                  <span className="text-premium-purple font-bold text-lg pl-2">4</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Tworzymy i rozwijamy profil linków lokalnych dla Twojej firmy.</p>
-              </div>
-            </div>
-            {/* Etap 5 */}
-            <div className="flex md:justify-start md:pl-0 md:pr-16 relative z-10">
-              <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 w-full md:w-2/3 border-l-4 border-premium-purple">
-                <div className="flex items-center mb-2">
-                  <span className="text-premium-purple font-bold text-lg mr-3">5</span>
-                  <span className="font-semibold text-premium-dark dark:text-premium-light">Monitoring i raportowanie</span>
-                </div>
-                <p className="text-premium-dark/80 dark:text-premium-light/80">Stały monitoring efektów i regularne raporty z postępów.</p>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          {/* Etap 1 */}
+          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+            <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
+            <span className="text-premium-purple font-bold text-lg mb-1">1</span>
+            <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Analiza strony i konkurencji</span>
+            <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Szczegółowa analiza Twojej strony i konkurencji w Białymstoku.</p>
+          </div>
+          {/* Etap 2 */}
+          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+            <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
+            <span className="text-premium-purple font-bold text-lg mb-1">2</span>
+            <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Opracowanie strategii SEO</span>
+            <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Tworzymy indywidualną strategię SEO dopasowaną do Twoich celów.</p>
+          </div>
+          {/* Etap 3 */}
+          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+            <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
+            <span className="text-premium-purple font-bold text-lg mb-1">3</span>
+            <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Optymalizacja strony</span>
+            <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Wdrażamy techniczne i contentowe zmiany na stronie.</p>
+          </div>
+          {/* Etap 4 */}
+          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+            <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
+            <span className="text-premium-purple font-bold text-lg mb-1">4</span>
+            <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Budowa profilu linków</span>
+            <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Tworzymy i rozwijamy profil linków lokalnych dla Twojej firmy.</p>
+          </div>
+          {/* Etap 5 */}
+          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+            <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
+            <span className="text-premium-purple font-bold text-lg mb-1">5</span>
+            <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Monitoring i raportowanie</span>
+            <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Stały monitoring efektów i regularne raporty z postępów.</p>
           </div>
         </div>
       </section>

@@ -69,8 +69,18 @@ const CookieBanner: React.FC = () => {
 
   if (!showBanner) return null;
 
+  // Detekcja mobile (max-width: 640px)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 640;
+
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-full max-w-xl pointer-events-auto">
+    <div
+      className={
+        isMobile
+          ? 'fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-auto'
+          : 'fixed bottom-6 right-0 z-50 pointer-events-auto'
+      }
+      style={isMobile ? { margin: 10 } : { maxWidth: '30rem', margin: '10px' }}
+    >
       <div
         className={`rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 transition-colors
           ${theme === 'dark' ? 'bg-[#0e0e11] text-white' : 'bg-white text-gray-900'}`}
@@ -88,7 +98,7 @@ const CookieBanner: React.FC = () => {
             {open ? 'Ukryj preferencje' : 'Zobacz preferencje'}
           </button>
           {open && (
-            <div className="space-y-2 mb-4">
+            <div className="space-y-2 mb-4 p-4 rounded-lg bg-white/80 dark:bg-[#18181b]/80 shadow-sm">
               <AccordionSection
                 title="Funkcjonalne"
                 description="Zawsze aktywne. Niezbędne do działania strony."
@@ -115,22 +125,22 @@ const CookieBanner: React.FC = () => {
               />
             </div>
           )}
-          <div className="flex flex-col sm:flex-row gap-2 mt-4">
+          <div className="flex flex-col sm:flex-row gap-2 mt-4 justify-center">
             <button
-              className="flex-1 py-2 rounded-lg font-semibold bg-premium-gradient text-white transition hover:text-white"
+              className="bg-wave w-auto min-w-[120px] bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:text-white transition-opacity text-white rounded-xl  font-semibold"
               onClick={handleAccept}
             >
               Akceptuj
             </button>
             <button
-              className={`flex-1 py-2 rounded-lg font-semibold bg-gray-200 hover:bg-gray-200 ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-700 hover:scale-102' : ''}`}
+              className={`border border-gray-200 rounded-xl w-auto min-w-[120px]  font-semibold transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`}
               onClick={handleReject}
             >
               Odrzuć
             </button>
             {open && (
               <button
-              className="flex-1 py-2 rounded-lg font-semibold bg-premium-gradient text-white transition hover:text-white"
+                className="bg-wave w-auto min-w-[120px] bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:text-white transition-opacity text-white rounded-xl  font-semibold"
                 onClick={handleSave}
               >
                 Zapisz preferencje

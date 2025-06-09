@@ -35,6 +35,7 @@ import {
 import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
 import { useNotification } from '@/components/ui/NotificationContext';
+import { Helmet } from 'react-helmet';
 
 const API_BASE = 'https://idztech.onrender.com';
 
@@ -268,6 +269,12 @@ const Admin = () => {
 
   return (
     <AdminLayout>
+      <Helmet>
+        <title>Panel administracyjny | IDZTECH</title>
+        <meta name="description" content="Panel administracyjny IDZTECH – zarządzaj stronami internetowymi, sklepami online, aplikacjami webowymi i pozycjonowaniem SEO." />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://idztech.pl/admin" />
+      </Helmet>
       <div className="p-6">
         <div className="mb-8 flex justify-between items-center">
           <div>
@@ -482,7 +489,6 @@ const Admin = () => {
             )}
           </div>
         </div>
-        <div data-upvoty-portal></div>
       </div>
     </AdminLayout>
   );
