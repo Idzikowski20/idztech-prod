@@ -13,7 +13,7 @@ const AboutUs = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  const teamMembers = [
+  const people = [
     { 
       name: 'Patryk Idzikowski', 
       role: 'SEO',
@@ -191,39 +191,30 @@ const AboutUs = () => {
       
       {/* Team section */}
       <section className="py-20 relative overflow-hidden">
-        
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <span className="text-premium-purple font-medium">Nasz Zespół</span>
-            <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Poznaj ekspertów IDZTECH</h2>
-            <p className="text-premium-light/70 text-lg">
+        <div className=" py-24 sm:py-32">
+          <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+            <div className="max-w-xl">
+            <span className="text-premium-purple font-medium">Zespół</span>
+              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
+                Poznaj nas 🤝
+              </h2>
+              <p className="mt-6 text-lg/8 text-gray-600">
               Nasz zespół to doświadczeni specjaliści z dziedziny tworzenia stron internetowych i SEO, którzy łączą swoje umiejętności, aby zapewnić Ci najlepsze wyniki.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[3rem] justify-items-center">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="/60 border border-white/10 rounded-xl overflow-hidden duration-300 animate-fade-in w-64"
-                style={{ animationDelay: `${0.6 + index * 0.1}s` }}
-              >
-                <div className="relative">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} - ${member.role}`}
-                    className="w-64 rounded-t-xl object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-premium-purple mb-3">{member.role}</p>
-                  <p className="text-premium-light/70 text-sm">
-                    {member.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              </p>
+            </div>
+            <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+              {people.map((person) => (
+                <li key={person.name}>
+                  <div className="flex items-center gap-x-6">
+                    <img alt="" src={person.image} className="size-16 rounded-full" />
+                    <div>
+                      <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">{person.name}</h3>
+                      <p className="text-sm/6 font-semibold text-indigo-600">{person.role}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

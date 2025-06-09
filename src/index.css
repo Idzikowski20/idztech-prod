@@ -90,19 +90,19 @@
   .animate-float-1 {
     animation: float1 4s ease-in-out infinite;
   }
-  
+
   .animate-float-2 {
     animation: float2 5s ease-in-out infinite;
   }
-  
+
   .animate-float-3 {
     animation: float3 6s ease-in-out infinite;
   }
-  
+
   .animate-float-updown {
     animation: float-updown 4s ease-in-out infinite;
   }
-  
+
   @keyframes float1 {
     0%, 100% {
       transform: translateY(0);
@@ -111,7 +111,7 @@
       transform: translateY(-10px);
     }
   }
-  
+
   @keyframes float2 {
     0%, 100% {
       transform: translateY(0);
@@ -120,7 +120,7 @@
       transform: translateY(-15px);
     }
   }
-  
+
   @keyframes float3 {
     0%, 100% {
       transform: translateY(0);
@@ -129,7 +129,7 @@
       transform: translateY(-20px);
     }
   }
-  
+
   @keyframes float-updown {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
@@ -226,48 +226,48 @@
     font-weight: 400;
     overflow-x: hidden;
   }
-  
+
   @supports (-webkit-touch-callout: none) {
     body {
       min-height: -webkit-fill-available;
     }
-    
+
     input, select, textarea {
       font-size: 16px !important;
     }
-    
+
     a, button {
       -webkit-tap-highlight-color: transparent;
     }
   }
-  
+
   @supports not (-webkit-touch-callout: none) {
     body {
       overscroll-behavior: contain;
     }
-    
+
     input, select, textarea {
       font-size: 16px !important;
     }
   }
-  
+
   img {
     @apply will-change-transform;
     content-visibility: auto;
     aspect-ratio: attr(width) / attr(height);
   }
-  
+
   button, a, input[type="button"], input[type="submit"], [role="button"] {
     min-height: 44px;
     min-width: 44px;
     padding: 0.5rem 1rem;
   }
-  
+
   :focus {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
   }
-  
+
   .animate-fade-in,
   .animate-float-1,
   .animate-float-2,
@@ -279,24 +279,24 @@
     width: 6px;
     height: 6px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: transparent;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background-color: #000000;
     border-radius: 4px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background-color: #333333;
   }
-  
+
   .light {
     @apply bg-white text-premium-dark;
   }
-  
+
   /* Style dla tabeli w jasnej wersji */
   .light td,
   .light th {
@@ -350,21 +350,21 @@
   .light .text-black {
     color: #000000 !important;
   }
-  
+
   .dark {
     @apply text-premium-light;
   }
-  
+
   .light h1, .light h2, .light h3, .light h4, .light h5, .light h6, 
   .light p, .light span {
     @apply text-premium-dark;
   }
-  
+
   .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
   .dark p, .dark span {
     @apply text-premium-light;
   }
-  
+
   .light .hover\:bg-white:hover,
   .light .hover\:bg-black:hover {
     color: #FFFFFF !important;
@@ -384,7 +384,7 @@
   .dark .hover\:text-black:hover {
     color: #FFFFFF !important;
   }
-  
+
   .light .bg-black\/80 .text-white,
   .light .bg-black\/80 p {
     color: #FFFFFF !important;
@@ -393,11 +393,11 @@
   .light .bg-black\/80 .hover\:bg-white\/10:hover .text-white {
     color: #FFFFFF !important;
   }
-  
+
   .light .bg-premium-dark {
     background-color: #FFFFFF;
   }
-  
+
   .light .w-80.bg-premium-dark\/95 {
     background-color: #FFFFFF;
     border: 1px solid #e5e7eb;
@@ -415,32 +415,32 @@
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
-  
+
   .light .accordion-content {
     color: #000000;
   }
-  
+
   .light .bg-black\/80 {
     background-color: rgba(255, 255, 255, 0.9);
     border-color: #e5e7eb;
   }
-  
+
   .light .text-premium-light\/70 {
     color: rgba(0, 0, 0, 0.7);
   }
-  
+
   .light .text-premium-light\/60 {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   .light .hover\:text-premium-light:hover {
     color: #000000;
   }
-  
+
   .light .border-black {
     border-color: #000000;
   }
-  
+
   .light .bg-black.text-white {
     color: #FFFFFF !important;
   }
@@ -456,7 +456,6 @@
     color: #000000;
   }
 
-
   .light .bg-premium-dark\/30 {
     background-color: #FFFFFF;
     border: 1px solid #e5e7eb;
@@ -468,12 +467,12 @@
   .light .portfolio-item:hover .portfolio-overlay p {
     color: #FFFFFF !important;
   }
-  
+
   .light .portfolio-category {
     background-color: white;
     color: #000000;
   }
-  
+
   .light .portfolio-category:hover {
     background-color: #000000;
     color: #FFFFFF;
@@ -483,7 +482,7 @@
   .light a:hover svg {
     color: #FFFFFF;
   }
-  
+
   .dark button,
   .dark .button,
   .dark [role="button"] {
@@ -503,17 +502,17 @@
     transform: scale(1.05);
     border: none !important;
   }
-  
+
   .light input,
   .light textarea {
     border: 1px solid #ccc;
   }
-  
+
   .footer a.hover\:scale-110:hover,
   .footer a:hover svg {
     transform: scale(1.1);
   }
-  
+
   .light .hover\:bg-black {
     transition: transform 0.3s ease;
   }
@@ -533,7 +532,7 @@
     background-color: transparent !important;
     color: #FFFFFF !important;
   }
-  
+
   @keyframes float-1 {
     0%, 100% {
       transform: translateY(0);
@@ -542,7 +541,7 @@
       transform: translateY(-10px);
     }
   }
-  
+
   @keyframes float-2 {
     0%, 100% {
       transform: translateY(0);
@@ -551,7 +550,7 @@
       transform: translateY(-15px);
     }
   }
-  
+
   @keyframes float-3 {
     0%, 100% {
       transform: translateY(0);
@@ -560,15 +559,15 @@
       transform: translateY(-8px);
     }
   }
-  
+
   .animate-float-1 {
     animation: float-1 5s ease-in-out infinite;
   }
-  
+
   .animate-float-2 {
     animation: float-2 6s ease-in-out infinite;
   }
-  
+
   .animate-float-3 {
     animation: float-3 4s ease-in-out infinite;
   }
@@ -581,7 +580,7 @@
       transform: translate(20px, -20px);
     }
   }
-  
+
   @keyframes floating-light-2 {
     0%, 100% {
       transform: translate(0, 0) translateX(-50%);
@@ -590,7 +589,7 @@
       transform: translate(15px, 20px) translateX(-50%);
     }
   }
-  
+
   @keyframes floating-light-3 {
     0%, 100% {
       transform: translate(0, 0);
@@ -599,15 +598,15 @@
       transform: translate(-20px, -15px);
     }
   }
-  
+
   .animate-floating-light-1 {
     animation: floating-light-1 15s ease-in-out infinite;
   }
-  
+
   .animate-floating-light-2 {
     animation: floating-light-2 18s ease-in-out infinite;
   }
-  
+
   .animate-floating-light-3 {
     animation: floating-light-3 20s ease-in-out infinite;
   }
@@ -719,45 +718,49 @@
   .dark li::marker {
     color: #fff; /* White in dark mode */
   }
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  }
 }
 
 @media (max-width: 768px) {
   html, body {
     font-size: 14px;
   }
-  
+
   button, a, input, select, textarea {
     min-height: 44px;
     padding: 0.75rem 1rem;
   }
-  
+
   .animate-float-1,
   .animate-float-2,
   .animate-float-3 {
     animation-duration: 6s;
   }
-  
+
   nav {
     height: auto;
     padding: 0.75rem 1rem;
   }
-  
+
   .container {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
     overflow-x: hidden;
   }
-  
+
   section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .pt-32 {
     padding-top: 8rem !important;
   }
-  
+
   .overflow-y-auto,
   .overflow-x-auto {
     -webkit-overflow-scrolling: touch;
@@ -1472,3 +1475,37 @@ input:-webkit-autofill:active {
  color:#33e373 !important;
 }
 
+@theme inline {
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes marquee-vertical {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}

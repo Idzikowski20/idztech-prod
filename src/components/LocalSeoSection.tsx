@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { useTheme } from "@/utils/themeContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const cities = [
   {
@@ -236,10 +236,6 @@ const LocalSeoSection = () => {
               Zdobądź klientów w swoim mieście.<br />Rozwiń biznes lokalnie i online!
             </h4>
           </div>
-          <div className="flex-1 md:text-right mt-6 md:mt-0 max-w-xl text-premium-light/70 text-base">
-            Dzięki skutecznemu SEO Twoja firma będzie widoczna tam, gdzie szukają jej klienci. Zwiększ ruch i zyski dzięki lokalnemu pozycjonowaniu.<br />
-            <a href="#" onClick={() => navigate('/pozycjonowanie-lokalne')} className="text-premium-purple underline hover:no-underline mt-2 inline-block">Dowiedz się więcej o pozycjonowaniu</a>
-          </div>
         </div>
         <hr className="my-8 border-0 h-px light:bg-premium-dark/10 dark:bg-transparent dark:border dark:border-white/10" />
         {/* Główna sekcja */}
@@ -282,9 +278,18 @@ const LocalSeoSection = () => {
             </ul>
           </div>
         </div>
-        {/* Szary tekst pod listą miast */}
+        <div className="flex flex-col justify-center items-center">
         <div className="text-center mt-8 text-premium-light/70 text-base">
           Brakuje Twojego miasta? Nic się nie martw – u Ciebie też zadziałamy!
+        </div>
+        <Link to="/pozycjonowanie-lokalne">
+                <Button
+                  className={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-md mt-4
+                    ${theme === 'light' ? 'bg-black text-white hover:bg-black hover:text-white' : 'text-black-important'}`}
+                >
+                  Dowiedz się więcej
+                </Button>
+              </Link>
         </div>
       </div>
     </section>

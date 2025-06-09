@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Code, ShoppingCart, Search, MapPin, FileText, Component, BarChart3 } from 'lucide-react';
 import { useTheme } from '@/utils/themeContext';
-import { Button } from '@/components/ui/button';
+
 
 const OurServices = () => {
   const { theme } = useTheme();
@@ -32,7 +32,7 @@ const OurServices = () => {
       ),
       title: "Tworzenie stron internetowych",
       description: "Projektujemy i tworzymy profesjonalne, szybkie i responsywne strony internetowe.",
-      link: "/tworzenie-stron-www"
+      link: "/tworzenie-stron-internetowych"
     },
     {
       icon: (
@@ -43,6 +43,16 @@ const OurServices = () => {
       title: "Tworzenie sklepów internetowych",
       description: "Kompleksowe rozwiązania e-commerce dostosowane do potrzeb Twojego biznesu.",
       link: "/sklepy-internetowe"
+    },
+    {
+      icon: (
+        <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+          <Component className="text-white" size={28} />
+        </div>
+      ),
+      title: "Aplikacje Webowe SaaS",
+      description: "Projektujemy i wdrażamy nowoczesne aplikacje webowe oraz platformy SaaS dla firm.",
+      link: "/aplikacje-webowe"
     },
     {
       icon: (

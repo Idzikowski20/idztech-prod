@@ -71,6 +71,7 @@
     "lottie-react": "^2.4.1",
     "lowlight": "^3.3.0",
     "lucide-react": "^0.331.0",
+    "motion": "^12.16.0",
     "next-themes": "^0.2.1",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",

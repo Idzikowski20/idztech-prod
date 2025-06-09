@@ -1,4 +1,5 @@
 	import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ["class"],
@@ -19,6 +20,7 @@ export default {
 		},
 		extend: {
 			colors: {
+				...defaultTheme.colors,
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -162,5 +164,12 @@ export default {
 		function({ addVariant }) {
 			addVariant('light', '.light &')
 		}
+	],
+	safelist: [
+		'from-white',
+		'to-transparent',
+		'from-neutral-900',
+		'bg-gradient-to-r',
+		'bg-gradient-to-l',
 	],
 } satisfies Config;
