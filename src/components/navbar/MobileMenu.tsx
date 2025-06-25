@@ -49,7 +49,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
         <Button 
           variant="ghost" 
           size="icon" 
-          className={`md:hidden ${textColor} bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent`}
+          className={`lg:hidden ${textColor} bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent`}
         >
           <Menu className={`h-[1.2rem] w-[1.2rem] ${theme === 'light' ? 'text-black' : 'text-white'}`} />
           <span className="sr-only">Menu</span>

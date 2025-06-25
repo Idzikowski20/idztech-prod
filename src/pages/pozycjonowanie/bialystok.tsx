@@ -316,35 +316,35 @@ const BialystokSeoPage = () => {
         <h5 className="text-2xl font-semibold mb-8 text-premium-dark dark:text-premium-light text-center">Jak wygląda współpraca?</h5>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
           {/* Etap 1 */}
-          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+          <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
             <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
             <span className="text-premium-purple font-bold text-lg mb-1">1</span>
             <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Analiza strony i konkurencji</span>
             <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Szczegółowa analiza Twojej strony i konkurencji w Białymstoku.</p>
           </div>
           {/* Etap 2 */}
-          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+          <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
             <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
             <span className="text-premium-purple font-bold text-lg mb-1">2</span>
             <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Opracowanie strategii SEO</span>
             <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Tworzymy indywidualną strategię SEO dopasowaną do Twoich celów.</p>
           </div>
           {/* Etap 3 */}
-          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+          <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
             <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
             <span className="text-premium-purple font-bold text-lg mb-1">3</span>
             <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Optymalizacja strony</span>
             <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Wdrażamy techniczne i contentowe zmiany na stronie.</p>
           </div>
           {/* Etap 4 */}
-          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+          <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
             <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
             <span className="text-premium-purple font-bold text-lg mb-1">4</span>
             <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Budowa profilu linków</span>
             <p className="text-premium-dark/80 dark:text-premium-light/80 text-center text-sm">Tworzymy i rozwijamy profil linków lokalnych dla Twojej firmy.</p>
           </div>
           {/* Etap 5 */}
-          <div className="bg-white dark:bg-premium-dark rounded-2xl shadow-sm p-6 flex flex-col items-center border-t-2  transition-transform duration-300 hover:-translate-y-2">
+          <div className="/60 border border-white/10 rounded-xl p-6 flex flex-col items-center text-center">
             <span className="bg-premium-purple/10 rounded-full p-3 mb-3"><Sparkles className="text-premium-purple w-7 h-7" /></span>
             <span className="text-premium-purple font-bold text-lg mb-1">5</span>
             <span className="font-semibold text-premium-dark dark:text-premium-light mb-2 text-center">Monitoring i raportowanie</span>

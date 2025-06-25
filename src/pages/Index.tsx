@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import LocalSeoSection from "@/components/LocalSeoSection";
 import { Helmet } from 'react-helmet-async';
 import MarqueeDemo from "@/components/magicui/marqueedemo";
+import WelcomeHero from "@/components/WelcomeHero";
 
 // Lazy load components with prefetch
 const WhyWorkWithUs = lazy(() => import("@/components/WhyWorkWithUs"));
@@ -98,7 +99,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Strony internetowe, sklep internetowy, pozycjonowanie Audyt Seo</title>
+        <title>Nowoczesne strony internetowe, sklep internetowy, pozycjonowanie, Audyt Seo</title>
         <meta name="description" content="Nowoczesne strony internetowe, sklepy internetowe, aplikacje webowe i skuteczne pozycjonowanie SEO. Kompleksowa obsługa firm – od projektu po rozwój i optymalizację." />
         <meta name="keywords" content="tworzenie stron internetowych, strony www, sklepy internetowe, e-commerce, aplikacje webowe, web design, SEO, pozycjonowanie stron, Warszawa, projektowanie stron, landing page, optymalizacja SEO" />
         {/* FAQPage Schema */}
@@ -192,6 +193,10 @@ const Index = () => {
       </Helmet>
       <Navbar />
       <Hero />
+
+      <div className="mt-8 md:mt-0">
+        <WelcomeHero />
+      </div>
       
       <div className="mt-8 md:mt-0">
         <OurServices />

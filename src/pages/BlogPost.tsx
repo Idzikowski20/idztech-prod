@@ -252,7 +252,7 @@ const BlogPost = () => {
                     <div
                       key={`${tag}-${index}`}
                       className={`px-3 py-1 rounded-full text-sm ${
-                        theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-gray-200'
+                        theme === 'dark' ? 'bg-transparent text-white border border-white' : 'bg-gray-800 text-gray-200'
                       }`}
                     >
                       {tag}
@@ -269,15 +269,15 @@ const BlogPost = () => {
                 <span className="font-medium">Udostępnij:</span>
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="rounded-full w-10 h-10 p-0 hover:bg-blue-600 hover:text-white">
+                <Button variant="outline" size="sm" className="bg-transparent rounded-full w-10 h-10 p-0 hover:bg-blue-600 hover:text-white">
                   <Facebook size={18} />
                 </Button>
-                <Button variant="outline" size="sm" className="rounded-full w-10 h-10 p-0 hover:bg-sky-500 hover:text-white">
+                <Button variant="outline" size="sm" className="bg-transparent rounded-full w-10 h-10 p-0 hover:bg-sky-500 hover:text-white">
                   <Twitter size={18} />
                 </Button>
-                <Button variant="outline" size="sm" className="rounded-full w-10 h-10 p-0 hover:bg-blue-700 hover:text-white">
+                <Button variant="outline" size="sm" className="bg-transparent rounded-full w-10 h-10 p-0 hover:bg-blue-700 hover:text-white">
                   <Linkedin size={18} />
-                </Button>
+                </Button> 
               </div>
                    {/* CTA Box */}
                   <div
@@ -290,7 +290,6 @@ const BlogPost = () => {
                   </div>
             </div>
             
-            <Separator className="my-12 border dark:border-premium-light/10 light:border-premium-light" />
             
           </div>
          

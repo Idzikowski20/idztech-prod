@@ -129,7 +129,7 @@ const Footer = () => {
                 className="bg-transparent text-white px-4 py-2 rounded-l outline-none flex-grow"
               />
               <button 
-                className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r transition-colors"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 duration-200 hover:scale-105 hover:bg-primary/90 h-11 bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
                 aria-label="Zapisz się do newslettera"
               >
                 →

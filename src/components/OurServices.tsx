@@ -4,6 +4,7 @@ import { ArrowRight, Code, ShoppingCart, Search, MapPin, FileText, Component, Ba
 import { useTheme } from '@/utils/themeContext';
 
 
+
 const OurServices = () => {
   const { theme } = useTheme();
   const touchStartYRef = React.useRef(0);
@@ -131,7 +132,7 @@ const OurServices = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`${theme === 'light' ? 'bg-white shadow-md border border-gray-100' : 'bg-premium-dark/40'} 
+              className={`${theme === 'light' ? 'bg-white shadow-md border border-gray-100' : ''} 
                 rounded-xl p-6 flex flex-col transition-all duration-300 hover:scale-105`}
             >
               <div className="mb-4 flex justify-start">

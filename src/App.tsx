@@ -27,7 +27,6 @@ import AIPostPage from './pages/ai-post';
 import CookieBanner from './components/CookieBanner';
 import { useAuth } from '@/utils/firebaseAuth';
 import { useTheme } from '@/utils/themeContext';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 // import WarszawaSeoPage from '@/pages/pozycjonowanie/warszawa';
 // import KrakowSeoPage from '@/pages/pozycjonowanie/krakow';
 // import LodzSeoPage from '@/pages/pozycjonowanie/lodz';
@@ -61,7 +60,6 @@ import BialystokSeoPage from '@/pages/pozycjonowanie/bialystok';
 // import WloclawekSeoPage from '@/pages/pozycjonowanie/wloclawek';
 // import ZielonaGoraSeoPage from '@/pages/pozycjonowanie/zielona-gora';
 import WebApps from './pages/WebApps';
-import { StagewiseToolbar } from '@stagewise/toolbar-react';
 
 const App = () => {
   const { loading } = useAuth();
@@ -90,19 +88,12 @@ const App = () => {
   if (loading) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center">
-        <div className="flex flex-col items-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-t-4 border-premium-purple border-solid mb-6"></div>
-          <span className={`${theme === 'dark' ? 'text-white' : 'text-black'} text-lg font-semibold`}>Ładowanie...</span>
-        </div>
       </div>
     );
   }
 
   return (
     <>
-      {showToolbar && !toolbarInitialized.current && (
-        <StagewiseToolbar config={stagewiseConfig} />
-      )}
       <Routes>
         {/* Statyczne strony */}
         <Route path="/" element={<Index />} errorElement={<ErrorPage />} />
@@ -168,7 +159,6 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />
-      <SpeedInsights/>
     </>
   );
 };

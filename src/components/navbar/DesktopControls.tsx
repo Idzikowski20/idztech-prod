@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { useAuth } from '@/utils/AuthProvider';
 import { useTheme } from '@/utils/themeContext';
-import { Moon, Sun, LogIn } from 'lucide-react';
+import { Moon, Sun, LogIn, ArrowRight } from 'lucide-react';
 import { trackEvent } from '@/utils/analytics';
-
+import { useNavigate } from "react-router-dom";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 const DesktopControls = () => {
   const { isAuthenticated } = useAuth();
   const { theme, toggleDarkMode } = useTheme();
-  
+  const navigate = useNavigate();
   return (
     <div className="hidden md:flex items-center space-x-4">
-    <Button
+    {/* <Button
       variant="ghost"
       size="sm"
       onClick={() => {
@@ -40,21 +41,20 @@ const DesktopControls = () => {
         <Sun className="h-[1.2rem] w-[1.2rem]" stroke="currentColor" />
       )}
       <span className="sr-only">Toggle theme</span>
-    </Button>
+    </Button> */}
     
-      <Link to="/contact" className="hidden md:block">
-        <Button 
-          className="bg-black text-white hover:bg-black hover:text-white transition-colors"
-        >
-          Umów spotkanie
-        </Button>
-      </Link>
+
+      <ShimmerButton
+      onClick={() => navigate('/contact')}
+      >Umów spotkanie
+      </ShimmerButton>
+
       
       <Link to={isAuthenticated ? "/admin" : "/login"}>
         <Button 
           variant="ghost" 
           size="icon" 
-          className={`transition-colors ${theme === 'light' 
+          className={`transition-colors hover:scale-110 ${theme === 'light' 
             ? 'hover:bg-gray-100 hover:text-black text-black' 
             : 'hover:bg-white/10 hover:text-white text-white bg-transparent'}`}
         >
@@ -66,7 +66,7 @@ const DesktopControls = () => {
             />
           ) : (
             <LogIn 
-              className="h-[1.2rem] w-[1.2rem]" 
+              className="h-[1.2rem] w-[1.2rem] " 
               stroke="#FFFFFF" 
               fill="none"
             />

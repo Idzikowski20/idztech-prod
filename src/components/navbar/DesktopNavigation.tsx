@@ -25,19 +25,20 @@ const DesktopNavigation = () => {
   const { theme } = useTheme();
   const location = useLocation();
 
-  const activeClass = theme === 'light' ? 'bg-gray-100 text-black' : 'bg-white/20 text-white';
+  const activeClass =
+    'border border-[#ffffff42] text-white hover:bg-white/10 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
 
   const linkClass = cn(
-    "transition-colors duration-300 px-4 py-2 rounded-md",
+    "transition-colors duration-300 px-4 py-2 rounded-full",
     theme === 'light'
       ? 'text-black hover:bg-gray-100 hover:text-black'
-      : 'text-white hover:bg-white/20 hover:text-white'
+      : 'text-white hover:bg-white/10 hover:text-white'
   );
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <div className="hidden lg:flex items-center gap-1">
+    <div className="hidden lg:flex items-center gap-3">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -49,7 +50,7 @@ const DesktopNavigation = () => {
           <NavigationMenuItem>
             <NavigationMenuTrigger
               className={cn(
-                'transition-colors duration-300',
+                'transition-colors duration-300 px-4 py-2 rounded-full',
                 theme === 'light'
                   ? 'text-black hover:bg-gray-100 hover:text-black'
                   : 'text-white hover:bg-white/10 hover:text-white'

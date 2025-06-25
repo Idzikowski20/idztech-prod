@@ -80,7 +80,7 @@ const WhyWorkWithUs = () => {
           </div>
         </div>
         {/* Grid 2 kolumny: lewa - film + statystyki, prawa - eksperci */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-start">
+        <div className="lg:grid-cols-2 gap-14 lg:gap-16 items-start">
           {/* Lewa kolumna: film + statystyki */}
           <div>
             <div className="flex justify-center">
@@ -128,7 +128,7 @@ const WhyWorkWithUs = () => {
             </div>
           </div>
           {/* Prawa kolumna: eksperci */}
-          <div>
+          {/* <div>
             <h4 className="text-2xl font-bold mb-6">Nasz zespół ekspertów</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {teamMembers.map((member, index) => (
@@ -151,7 +151,7 @@ const WhyWorkWithUs = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
