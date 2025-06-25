@@ -1,11 +1,9 @@
 import React from 'react';
+import { BentoGrid } from "@/components/ui/bento-grid";
 
 const WelcomeHero = () => {
   return (
-    <div className="w-full h-full justify-center align-center">
-        <div className="flex w-full justify-center align-center">
-        <img src="/images/welcome-hero.webp" alt="Welcome Hero" className="w-[50%] h-[50%] object-cover"/>
-        </div>
+    <div className="py-16 md:py-24">
     </div>
   );
 };

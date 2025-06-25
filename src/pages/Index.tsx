@@ -8,6 +8,7 @@ import LocalSeoSection from "@/components/LocalSeoSection";
 import { Helmet } from 'react-helmet-async';
 import MarqueeDemo from "@/components/magicui/marqueedemo";
 import WelcomeHero from "@/components/WelcomeHero";
+import BentoGridThirdDemo from "@/components/bento-grid-demo-3";
 
 // Lazy load components with prefetch
 const WhyWorkWithUs = lazy(() => import("@/components/WhyWorkWithUs"));
@@ -199,7 +200,7 @@ const Index = () => {
       </div>
       
       <div className="mt-8 md:mt-0">
-        <OurServices />
+        <BentoGridThirdDemo />
       </div>
 
       <div data-lazy>
