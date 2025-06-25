@@ -118,7 +118,7 @@ const OurServices = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="md:py-24 relative top-[10rem]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <p className="text-premium-purple font-medium mb-3 uppercase">Co oferujemy</p>

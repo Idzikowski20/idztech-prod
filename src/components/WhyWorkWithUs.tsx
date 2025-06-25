@@ -44,7 +44,7 @@ const WhyWorkWithUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden top-[-15rem]">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Nagłówek i opis na całą szerokość */}
         <div className="mb-20 max-w-4xl mx-auto text-center">
@@ -84,7 +84,7 @@ const WhyWorkWithUs = () => {
           {/* Lewa kolumna: film + statystyki */}
           <div>
             <div className="flex justify-center">
-              <div className="relative w-full max-w-3xl aspect-video mx-auto">
+              {/* <div className="relative w-full max-w-3xl aspect-video mx-auto">
                 <video
                   ref={videoRef}
                   src="/video/0524.mp4"
@@ -96,7 +96,7 @@ const WhyWorkWithUs = () => {
                   className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
                   style={{ background: '#000' }}
                 />
-              </div>
+              </div> */}
             </div>
             <div className="flex justify-center mt-8">
               <div className="grid grid-cols-4 gap-4 rounded-xl py-6 px-4 relative z-10 shadow-md">

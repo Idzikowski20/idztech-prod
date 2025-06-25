@@ -50,7 +50,7 @@ const DesktopNavigation = () => {
           <NavigationMenuItem>
             <NavigationMenuTrigger
               className={cn(
-                'transition-colors duration-300 px-4 py-2 rounded-full',
+                'transition-colors duration-300 px-4 py-2 rounded-full bg-transparent',
                 theme === 'light'
                   ? 'text-black hover:bg-gray-100 hover:text-black'
                   : 'text-white hover:bg-white/10 hover:text-white'
@@ -59,7 +59,7 @@ const DesktopNavigation = () => {
               Usługi
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="flex flex-row bg-white dark:bg-neutral-900 rounded-xl px-0 py-0 min-w-[700px] max-w-[900px]">
+              <div className="flex flex-row dark:bg-neutral-900 rounded-xl px-0 py-0 min-w-[700px] max-w-[900px]">
                 {/* Strony www - lewa kolumna */}
                 <div className="flex flex-col flex-1 items-start justify-start px-8 py-8 text-left">
                   <div className="flex items-center gap-3 mb-4">

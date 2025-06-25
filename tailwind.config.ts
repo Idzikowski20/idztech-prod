@@ -21,6 +21,8 @@ export default {
 		extend: {
 			colors: {
 				...defaultTheme.colors,
+				pink: "var(--pink)",
+				purple: "var(--purple)",
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,7 +86,15 @@ export default {
 				},
 			},
 			fontFamily: {
-				montserrat: ['Montserrat', 'sans-serif'],
+				sans: [
+					"ui-sans-serif",
+					"system-ui",
+					"sans-serif",
+					'"Apple Color Emoji"',
+					'"Segoe UI Emoji"',
+					'"Segoe UI Symbol"',
+					'"Noto Color Emoji"',
+				],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

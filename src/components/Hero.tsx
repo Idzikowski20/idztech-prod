@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-[340px] w-full lg:h-[250px] md:h-44 sm:left-0 sm:h-[170px] sm:w-[107%] xs:h-[28%] gradient-hero-bottom">
+      <div className="gradient-bottom-hero pointer-events-none absolute bottom-0 left-0 z-20 h-[340px] w-full lg:h-[250px] md:h-44 sm:left-0 sm:h-[170px] sm:w-[107%] xs:h-[28%] gradient-hero-bottom">
       </div>
     </section>
   );

@@ -1615,6 +1615,9 @@ input:-webkit-autofill:active {
   .hero-video {
     height: 130%;
   }
+  #about {
+    top: 0px !important;
+  }
 }
 
 @media (max-width: 660px) {
@@ -1625,7 +1628,7 @@ input:-webkit-autofill:active {
 
 @media (max-width: 450px) {
   .hero-video {
-    height: 130%;
+    height: 120%;
   }
 }
 
