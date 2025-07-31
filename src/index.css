@@ -1643,3 +1643,8 @@ input:-webkit-autofill:active {
 .text-main {
 color: #b98dff !important;
 }
+
+.wobble {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

@@ -48,15 +48,18 @@ const WhyWorkWithUs = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Nagłówek i opis na całą szerokość */}
         <div className="mb-20 max-w-4xl mx-auto text-center">
-        <div className='flex justify-center items-center '>
-              <h2 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">O IDZTECH</h2>
+        <div className="text-center mb-12">
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2>Kompleksowy zespół</h2>
+          <div className="flex justify-center items-center w-full">
+            <h2 className="relative z-10 p-1 text-main">tworzący</h2><br></br>
+            <h2 className="p-1">strony i sklepy internetowe</h2>
           </div>
-          <h4 className="text-3xl lg:text-4xl font-bold mb-4">
-            Kompleksowy zespół tworzący strony i sklepy internetowe
-          </h4>
-          <p className="text-premium-light/70 mb-6">
-            IDZTECH to zespół doświadczonych specjalistów z pasją do tworzenia nowoczesnych stron i sklepów internetowych. Łączymy kreatywność z analitycznym podejściem, aby dostarczać rozwiązania, które nie tylko wyglądają dobrze, ale przede wszystkim działają efektywnie.
+        </div>
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
+          Jesteśmy zespołem doświadczonych specjalistów z pasją do tworzenia nowoczesnych stron i sklepów internetowych. Łączymy kreatywność z analitycznym podejściem, aby dostarczać rozwiązania, które nie tylko wyglądają dobrze, ale przede wszystkim działają efektywnie.
           </p>
+        </div>
           <div className="flex flex-col md:grid md:grid-cols-3 justify-center gap-6">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3 justify-center text-center md:text-left">
               <CheckCircle size={32} className="text-premium-purple mb-2 md:mb-0 md:mt-1 mx-auto md:mx-0" />

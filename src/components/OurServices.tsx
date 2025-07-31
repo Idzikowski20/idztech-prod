@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Code, ShoppingCart, Search, MapPin, FileText, Component, BarChart3 } from 'lucide-react';
 import { useTheme } from '@/utils/themeContext';
-
-
+import { WobbleCard } from "@/components/ui/wobble-card";
 
 const OurServices = () => {
   const { theme } = useTheme();
@@ -24,46 +23,38 @@ const OurServices = () => {
     // Jeśli diff >= 10, to był scroll – nie rób nic
   };
 
+  const handleCardClick = (link) => {
+    window.location.href = link;
+  };
+
   const services = [
     {
-      icon: (
-        <div className="w-12 h-12 flex items-center justify-center mb-4">
-          <Code className="text-[#a4a6fe]" size={28} />
-        </div>
-      ),
+      icon: <Code className="text-[#a4a6fe]" size={32} />,
       title: "Tworzenie stron internetowych",
       description: "Projektujemy i tworzymy profesjonalne, szybkie i responsywne strony internetowe.",
-      link: "/tworzenie-stron-internetowych"
+      link: "/tworzenie-stron-internetowych",
+      containerClass: "col-span-1 lg:col-span-2 h-full bg-gray-800 min-h-[400px] lg:min-h-[300px] cursor-pointer"
     },
     {
-      icon: (
-        <div className="w-12 h-12 flex items-center justify-center mb-4">
-          <ShoppingCart className="text-[#a4a6fe]" size={28} />
-        </div>
-      ),
-      title: "Tworzenie sklepów internetowych",
-      description: "Kompleksowe rozwiązania e-commerce dostosowane do potrzeb Twojego biznesu.",
-      link: "/sklepy-internetowe"
-    },
-    {
-      icon: (
-        <div className="w-12 h-12 flex items-center justify-center mb-4">
-          <Component className="text-[#a4a6fe]" size={28} />
-        </div>
-      ),
+      icon: <Component className="text-[#a4a6fe]" size={32} />,
       title: "Aplikacje Webowe SaaS",
       description: "Projektujemy i wdrażamy nowoczesne aplikacje webowe oraz platformy SaaS dla firm.",
-      link: "/aplikacje-webowe"
+      link: "/aplikacje-webowe",
+      containerClass: "col-span-1 min-h-[300px] bg-gradient-to-br from-indigo-600 to-purple-600 cursor-pointer"
     },
     {
-      icon: (
-        <div className="w-12 h-12 flex items-center justify-center mb-4">
-          <Search className="text-[#a4a6fe]" size={28} />
-        </div>
-      ),
+      icon: <Search className="text-[#a4a6fe]" size={32} />,
       title: "Pozycjonowanie SEO",
       description: "Poprawimy widoczność Twojej strony w wyszukiwarce Google i zwiększymy organiczny ruch.",
-      link: "/pozycjonowanie-stron"
+      link: "/pozycjonowanie-stron",
+      containerClass: "col-span-1 min-h-[300px] bg-gradient-to-br from-blue-600 to-cyan-600 cursor-pointer"
+    },
+    {
+      icon: <ShoppingCart className="text-[#a4a6fe]" size={32} />,
+      title: "Tworzenie sklepów internetowych",
+      description: "Kompleksowe rozwiązania e-commerce dostosowane do potrzeb Twojego biznesu.",
+      link: "/sklepy-internetowe",
+      containerClass: "col-span-1 lg:col-span-2 h-full bg-gray-800 min-h-[400px] lg:min-h-[300px] cursor-pointer"
     }
   ];
 
@@ -85,47 +76,38 @@ const OurServices = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full overflow-hidden">
           {services.map((service, index) => (
-            <div 
+            <WobbleCard
               key={index}
-              className={`${theme === 'light' ? 'bg-white/80' : 'bg-[#13151a]/90'} 
-                rounded-xl p-6 flex flex-col transition-all duration-300 hover:scale-105 
-                relative overflow-hidden backdrop-blur-sm border border-white/10`}
+              containerClassName={`${service.containerClass} cursor-pointer`}
+              className=""
             >
-              {/* Shine effect overlay */}
-              {/* <div 
-                className="absolute bottom-35 left-0 w-32 h-32 opacity-90 pointer-events-none"
-                style={{
-                  background: 'radial-gradient(circle at center, rgba(231, 105, 248, 0.4) 0%, transparent 39%)',
-                  filter: 'blur(20px)'
-                }}
-              /> */}
-              
-              {/* Content */}
-              <div className="relative z-10">
-                <div className="mb-4 flex justify-start">
-                  {service.icon}
+              <div 
+                className="max-w-xs h-full flex flex-col justify-between"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={(e) => handleTouchEnd(e, service.link)}
+                onClick={() => handleCardClick(service.link)}
+              >
+                <div>
+                  <div className="mb-4 flex justify-start">
+                    {service.icon}
+                  </div>
+                  <h2 className="text-left text-balance text-base md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white mb-4">
+                    {service.title}
+                  </h2>
+                  <p className="text-left text-base/6 text-neutral-200 mb-6">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className={`mb-4 flex-grow ${theme === 'light' ? 'text-gray-700' : 'text-premium-light/70'}`}>
-                  {service.description}
-                </p>
                 <div className="flex justify-start w-full">
-                  <span
-                    className="inline-flex items-center text-premium-purple hover:bg-premium-light/5 border-radius20 cursor-pointer w-auto"
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={(e) => handleTouchEnd(e, service.link)}
-                    onClick={() => window.location.href = service.link}
-                    role="link"
-                    tabIndex={0}
-                  >
+                  <span className="inline-flex items-center text-white hover:text-neutral-200 transition-colors duration-200">
                     Dowiedz się więcej
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </span>
                 </div>
               </div>
-            </div>
+            </WobbleCard>
           ))}
         </div>
       </div>

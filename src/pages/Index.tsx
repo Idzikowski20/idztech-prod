@@ -210,9 +210,9 @@ const Index = () => {
         <WelcomeHero />
       </LazySection>
 
-      <LazySection className="mt-8 mb-8 md:mt-0" delay={100}>
+      {/* <LazySection className="mt-8 mb-8 md:mt-0" delay={100}>
         <WobbleCardDemo />
-      </LazySection>
+      </LazySection> */}
 
       <LazySection className="mt-8 mb-8 md:mt-0" delay={100}>
         <OurServices />
@@ -223,9 +223,9 @@ const Index = () => {
         <BentoDemo />
       </LazySection> */}
       
-      <LazySection className="md:mt-0" delay={400}>
+      {/* <LazySection className="md:mt-0" delay={400}>
         <BentoGridThirdDemo />
-      </LazySection>
+      </LazySection> */}
 
       <LazySection data-lazy delay={500}>
         <Suspense fallback={<LoadingFallback />}>
