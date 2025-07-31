@@ -26,7 +26,7 @@ const DesktopNavigation = () => {
   const location = useLocation();
 
   const activeClass =
-    'bg-gradient-to-br from-premium-blue-500 via-[#9288ff] bg-wave shadow-md text-white hover:bg-white/10 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
+    'bg-gradient-to-br from-premium-blue-500 via-[#9288ff] shadow-md text-white hover:bg-white/10 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
 
   const linkClass = cn(
     "transition-colors duration-300 px-4 py-2 rounded-full",

@@ -131,7 +131,6 @@ export const optimizeFonts = () => {
 export const eliminateRenderBlocking = () => {
   // Inject critical CSS inline
   const criticalCSS = `
-    body { font-family: system-ui, -apple-system, sans-serif; }
     .container { width: 100%; max-width: 1200px; margin: 0 auto; }
     .hero { min-height: 50vh; display: flex; align-items: center; }
   `;

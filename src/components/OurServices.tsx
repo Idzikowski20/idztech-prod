@@ -27,8 +27,8 @@ const OurServices = () => {
   const services = [
     {
       icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <Code className="text-white" size={28} />
+        <div className="w-12 h-12 flex items-center justify-center mb-4">
+          <Code className="text-[#a4a6fe]" size={28} />
         </div>
       ),
       title: "Tworzenie stron internetowych",
@@ -37,8 +37,8 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <ShoppingCart className="text-white" size={28} />
+        <div className="w-12 h-12 flex items-center justify-center mb-4">
+          <ShoppingCart className="text-[#a4a6fe]" size={28} />
         </div>
       ),
       title: "Tworzenie sklepów internetowych",
@@ -47,8 +47,8 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <Component className="text-white" size={28} />
+        <div className="w-12 h-12 flex items-center justify-center mb-4">
+          <Component className="text-[#a4a6fe]" size={28} />
         </div>
       ),
       title: "Aplikacje Webowe SaaS",
@@ -57,53 +57,13 @@ const OurServices = () => {
     },
     {
       icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <Search className="text-white" size={28} />
+        <div className="w-12 h-12 flex items-center justify-center mb-4">
+          <Search className="text-[#a4a6fe]" size={28} />
         </div>
       ),
       title: "Pozycjonowanie SEO",
       description: "Poprawimy widoczność Twojej strony w wyszukiwarce Google i zwiększymy organiczny ruch.",
       link: "/pozycjonowanie-stron"
-    },
-    {
-      icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <MapPin className="text-white" size={28} />
-        </div>
-      ),
-      title: "Pozycjonowanie lokalne",
-      description: "Zwiększ widoczność swojego biznesu w lokalnych wynikach wyszukiwania Google.",
-      link: "/pozycjonowanie-lokalne"
-    },
-    {
-      icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <FileText className="text-white" size={28} />
-        </div>
-      ),
-      title: "Audyt SEO",
-      description: "Szczegółowa analiza Twojej strony pod kątem SEO z konkretnymi rekomendacjami zmian.",
-      link: "/audyt-seo"
-    },
-    {
-      icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <BarChart3 className="text-white" size={28} />
-        </div>
-      ),
-      title: "Optymalizacja SEO",
-      description: "Kompleksowa optymalizacja techniczna Twojej strony pod kątem wymagań wyszukiwarek.",
-      link: "/optymalizacja-seo"
-    },
-    {
-      icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <Component className="text-white" size={28} />
-        </div>
-      ),
-      title: "Copywriting SEO",
-      description: "Tworzenie angażujących treści zoptymalizowanych pod kątem wyszukiwarek.",
-      link: "/copywriting-seo"
     }
   ];
 
@@ -113,12 +73,15 @@ const OurServices = () => {
     >
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <div className='flex justify-center items-center '>
-              <h2 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">Co oferujemy</h2>
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2>Co możemy</h2>
+          <div className="flex justify-center items-center w-full">
+            <h2 className="relative z-10 p-1 text-main">zaoferować</h2><br></br>
+            <h2 className="p-1">twojej firmie?</h2>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Nasze usługi webowe</h2>
+        </div>
           <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
-            Oferujemy kompleksowe rozwiązania, które pomogą Twojej firmie zyskać przewagę konkurencyjną w internecie.
+          Kompleksowe rozwiązania, które pomogą Twojej firmie zyskać przewagę konkurencyjną w internecie.
           </p>
         </div>
 
@@ -126,28 +89,41 @@ const OurServices = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`${theme === 'light' ? 'bg-white shadow-md border border-gray-100' : ''} 
-                rounded-xl p-6 flex flex-col transition-all duration-300 hover:scale-105`}
+              className={`${theme === 'light' ? 'bg-white/80' : 'bg-[#13151a]/90'} 
+                rounded-xl p-6 flex flex-col transition-all duration-300 hover:scale-105 
+                relative overflow-hidden backdrop-blur-sm border border-white/10`}
             >
-              <div className="mb-4 flex justify-start">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-              <p className={`mb-4 flex-grow ${theme === 'light' ? 'text-gray-700' : 'text-premium-light/70'}`}>
-                {service.description}
-              </p>
-              <div className="flex justify-start w-full">
-                <span
-                  className="inline-flex items-center text-premium-purple hover:bg-premium-light/5 border-radius20 cursor-pointer w-auto"
-                  onTouchStart={handleTouchStart}
-                  onTouchEnd={(e) => handleTouchEnd(e, service.link)}
-                  onClick={() => window.location.href = service.link}
-                  role="link"
-                  tabIndex={0}
-                >
-                  Dowiedz się więcej
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </span>
+              {/* Shine effect overlay */}
+              {/* <div 
+                className="absolute bottom-35 left-0 w-32 h-32 opacity-90 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle at center, rgba(231, 105, 248, 0.4) 0%, transparent 39%)',
+                  filter: 'blur(20px)'
+                }}
+              /> */}
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="mb-4 flex justify-start">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className={`mb-4 flex-grow ${theme === 'light' ? 'text-gray-700' : 'text-premium-light/70'}`}>
+                  {service.description}
+                </p>
+                <div className="flex justify-start w-full">
+                  <span
+                    className="inline-flex items-center text-premium-purple hover:bg-premium-light/5 border-radius20 cursor-pointer w-auto"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={(e) => handleTouchEnd(e, service.link)}
+                    onClick={() => window.location.href = service.link}
+                    role="link"
+                    tabIndex={0}
+                  >
+                    Dowiedz się więcej
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </span>
+                </div>
               </div>
             </div>
           ))}

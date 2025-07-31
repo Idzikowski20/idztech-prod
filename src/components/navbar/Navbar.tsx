@@ -46,7 +46,7 @@ const Navbar = () => {
   
   return (
     <nav className='fixed w-full z-50 transition-all duration-300 top-0 mt-3'>
-      <div className="container backdrop-blur-sm shadow-xl mx-auto px-4 md:px-6 flex items-center justify-between bg-gradient-to-br from-premium-blue-500 via-[#000000] transition-opacity text-white rounded-full py-2">
+      <div className="border border-width-[1px] border-[#80808030] container backdrop-blur-sm shadow-xl mx-auto px-4 md:px-6 flex items-center justify-between bg-gradient-to-br from-premium-blue-500 via-[#000000] transition-opacity text-white rounded-full py-2">
         <Brand />
         
         {/* Desktop Navigation */}

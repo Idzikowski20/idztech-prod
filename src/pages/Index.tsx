@@ -9,6 +9,8 @@ import MarqueeDemo from "@/components/magicui/marqueedemo";
 import WelcomeHero from "@/components/WelcomeHero";
 import BentoGridThirdDemo from "@/components/bento-grid-demo-3";
 import BentoDemo from "@/components/bento-demo";
+import { WobbleCard } from "@/components/ui/wobble-card";
+import { WobbleCardDemo } from "@/components/Wobble";
 
 // Lazy load components with prefetch
 const WhyWorkWithUs = lazy(() => import("@/components/WhyWorkWithUs"));
@@ -206,6 +208,10 @@ const Index = () => {
 
       <LazySection className="mt-8 md:mt-0" delay={200}>
         <WelcomeHero />
+      </LazySection>
+
+      <LazySection className="mt-8 mb-8 md:mt-0" delay={100}>
+        <WobbleCardDemo />
       </LazySection>
 
       <LazySection className="mt-8 mb-8 md:mt-0" delay={100}>

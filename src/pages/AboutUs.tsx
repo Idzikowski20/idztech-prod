@@ -97,7 +97,7 @@ const AboutUs = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="w-full lg:w-1/2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                Poznaj <span className="bg-premium-gradient text-transparent bg-clip-text">IDZTECH</span> - Twojego partnera w web developmencie
+                Poznaj nas 💪
               </h1>
               
               <p className="text-xl text-premium-light/80 mb-8">
@@ -194,7 +194,7 @@ const AboutUs = () => {
             <div className="max-w-xl">
             <span className="text-premium-purple font-medium">Zespół</span>
               <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
-                Poznaj nas 🤝
+                Kto go tworzy? 🤝
               </h2>
               <p className="mt-6 text-lg/8 text-gray-600">
               Nasz zespół to doświadczeni specjaliści z dziedziny tworzenia stron internetowych i SEO, którzy łączą swoje umiejętności, aby zapewnić Ci najlepsze wyniki.

@@ -62,6 +62,7 @@ import BialystokSeoPage from '@/pages/pozycjonowanie/bialystok';
 // import ZielonaGoraSeoPage from '@/pages/pozycjonowanie/zielona-gora';
 import WebApps from './pages/WebApps';
 import Navbar from './components/Navbar';
+import { useScrollToTop } from '@/hooks/useScrollToTop';
 
 const App = () => {
   const { loading } = useAuth();
@@ -70,6 +71,9 @@ const App = () => {
   const toolbarInitialized = useRef(false);
   const scrollRef = useRef<any>(null);
   const location = useLocation();
+
+  // Use the scroll to top hook
+  useScrollToTop();
 
   const stagewiseConfig = {
     plugins: []
