@@ -44,13 +44,15 @@ const WhyWorkWithUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden top-[-15rem]">
+    <section id="about" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Nagłówek i opis na całą szerokość */}
         <div className="mb-20 max-w-4xl mx-auto text-center">
-          <span className="text-premium-purple font-medium block mb-2">O IDZTECH</span>
+        <div className='flex justify-center items-center '>
+              <h2 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">O IDZTECH</h2>
+          </div>
           <h4 className="text-3xl lg:text-4xl font-bold mb-4">
-            Kompleksowa firma tworząca strony i sklepy internetowe
+            Kompleksowy zespół tworzący strony i sklepy internetowe
           </h4>
           <p className="text-premium-light/70 mb-6">
             IDZTECH to zespół doświadczonych specjalistów z pasją do tworzenia nowoczesnych stron i sklepów internetowych. Łączymy kreatywność z analitycznym podejściem, aby dostarczać rozwiązania, które nie tylko wyglądają dobrze, ale przede wszystkim działają efektywnie.

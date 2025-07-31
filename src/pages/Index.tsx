@@ -1,5 +1,4 @@
-import React, { useEffect, lazy, Suspense } from "react";
-import Navbar from "@/components/Navbar";
+import React, { useEffect, lazy, Suspense, useRef, useState } from "react";
 import Hero from "@/components/Hero";
 import OurServices from "@/components/OurServices";
 import { applyMobileOptimizations } from "@/utils/performanceUtils";
@@ -9,6 +8,7 @@ import { Helmet } from 'react-helmet-async';
 import MarqueeDemo from "@/components/magicui/marqueedemo";
 import WelcomeHero from "@/components/WelcomeHero";
 import BentoGridThirdDemo from "@/components/bento-grid-demo-3";
+import BentoDemo from "@/components/bento-demo";
 
 // Lazy load components with prefetch
 const WhyWorkWithUs = lazy(() => import("@/components/WhyWorkWithUs"));
@@ -17,28 +17,45 @@ const FAQ = lazy(() => import("@/components/FAQ"));
 const CTA = lazy(() => import("@/components/CTA"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-// Preload critical components
-const preloadComponents = () => {
-  const componentsToPreload = [
-    () => import("@/components/WhyWorkWithUs"),
-  ];
+// Komponent LazySection
+const LazySection = ({ children, className = "", delay = 0 }) => {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  if ('requestIdleCallback' in window) {
-    componentsToPreload.forEach(component => {
-      requestIdleCallback(() => {
-        const prefetchLink = document.createElement('link');
-        prefetchLink.rel = 'prefetch';
-        prefetchLink.as = 'script';
-        prefetchLink.href = component.toString().match(/import\("([^"]+)"\)/)?.[1] || '';
-        document.head.appendChild(prefetchLink);
-        component();
-      });
-    });
-  } else {
-    componentsToPreload.forEach(component => {
-      setTimeout(() => component(), 1000);
-    });
-  }
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    let observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Ustaw na true i nie resetuj na false
+          observer.unobserve(node); // Przestań obserwować po pierwszym pojawieniu się
+        }
+      },
+      { rootMargin: "0px", threshold: 0.15 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={
+        className +
+        " transition-all duration-700 ease-out will-change-transform" +
+        (isVisible
+          ? " opacity-100 translate-y-0 pointer-events-auto"
+          : " opacity-0 translate-y-10 pointer-events-none select-none")
+      }
+      style={{
+        minHeight: 40,
+        transitionDelay: isVisible ? `${delay}ms` : "0ms"
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 // Minimal loading fallback with skeleton
@@ -52,13 +69,6 @@ const Index = () => {
   useEffect(() => {
     // Apply mobile optimizations
     applyMobileOptimizations();
-
-    // Preload critical components
-    if (document.readyState === 'complete') {
-      preloadComponents();
-    } else {
-      window.addEventListener('load', preloadComponents);
-    }
 
     // Setup intersection observer for lazy loading
     const setupIntersectionObserver = () => {
@@ -93,7 +103,7 @@ const Index = () => {
     }
 
     return () => {
-      window.removeEventListener('load', preloadComponents);
+      // window.removeEventListener('load', preloadComponents); // Removed as per edit hint
     };
   }, []);
 
@@ -192,46 +202,52 @@ const Index = () => {
           }
         `}</script>
       </Helmet>
-      <Navbar />
       <Hero />
 
-      <div className="mt-8 md:mt-0">
+      <LazySection className="mt-8 md:mt-0" delay={200}>
         <WelcomeHero />
-      </div>
-      
-      <div className="mt-8 md:mt-0">
-        <BentoGridThirdDemo />
-      </div>
+      </LazySection>
 
-      <div data-lazy>
+      <LazySection className="mt-8 mb-8 md:mt-0" delay={100}>
+        <OurServices />
+      </LazySection>
+
+
+      {/* <LazySection className="mt-8 p-[20px] md:mt-0 flex justify-center align-center w-full" delay={300}>
+        <BentoDemo />
+      </LazySection> */}
+      
+      <LazySection className="md:mt-0" delay={400}>
+        <BentoGridThirdDemo />
+      </LazySection>
+
+      <LazySection data-lazy delay={500}>
         <Suspense fallback={<LoadingFallback />}>
-          <div className="mt-8 md:mt-0">
+          <div className="md:mt-0">
             <WhyWorkWithUs />
           </div>
         </Suspense>
-      </div>
+      </LazySection>
 
-      <Suspense fallback={<LoadingFallback />}>
-        <LocalSeoSection />
-      </Suspense>
+      <LazySection delay={600}>
+        <Suspense fallback={<LoadingFallback />}>
+          <LocalSeoSection />
+        </Suspense>
+      </LazySection>
 
-      <div data-lazy>
+      <LazySection data-lazy delay={700}>
         <Suspense fallback={<LoadingFallback />}>
           <MarqueeDemo />
         </Suspense>
-      </div>
+      </LazySection>
 
-      <div data-lazy>
         <Suspense fallback={<LoadingFallback />}>
           <CTA />
         </Suspense>
-      </div>
 
-      <div data-lazy>
         <Suspense fallback={<LoadingFallback />}>
           <Footer />
         </Suspense>
-      </div>
     </div>
   );
 };

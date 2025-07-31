@@ -62,7 +62,7 @@ const TermsOfUse = () => {
           <p>Niniejsze Warunki korzystania podlegają i są interpretowane zgodnie z prawem polskim, bez względu na jego przepisy dotyczące konfliktu praw.</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Kontakt</h2>
-          <p>Jeśli masz jakiekolwiek pytania dotyczące niniejszych Warunków korzystania, skontaktuj się z nami pod adresem patryk.idzikowski@idztech.pl.</p>
+          <p>Jeśli masz jakiekolwiek pytania dotyczące niniejszych Warunków korzystania, skontaktuj się z nami pod adresem kontakt@idztech.pl</p>
         </div>
       </div>
       

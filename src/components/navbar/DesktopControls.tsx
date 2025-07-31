@@ -50,7 +50,7 @@ const DesktopControls = () => {
       </ShimmerButton>
 
       
-      <Link to={isAuthenticated ? "/admin" : "/login"}>
+      {/* <Link to={isAuthenticated ? "/admin" : "/login"}>
         <Button 
           variant="ghost" 
           size="icon" 
@@ -73,7 +73,7 @@ const DesktopControls = () => {
           )}
           <span className="sr-only">{isAuthenticated ? "Panel administracyjny" : "Zaloguj"}</span>
         </Button>
-      </Link>
+      </Link> */}
     </div>
   );
 };

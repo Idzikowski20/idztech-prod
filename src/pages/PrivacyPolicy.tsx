@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mt-8 mb-4">Dane kontaktowe</h2>
           <p>W przypadku pytań dotyczących niniejszej Polityki Prywatności lub naszych praktyk związanych z danymi, prosimy o kontakt:</p>
           <p>IDZTECH<br/>
-          E-mail: patryk.idzikowski@idztech.pl</p>
+          E-mail: kontakt@idztech.pl</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Informacje, które gromadzimy</h2>
           <p>Możemy gromadzić następujące rodzaje informacji:</p>

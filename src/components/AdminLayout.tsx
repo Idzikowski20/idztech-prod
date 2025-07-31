@@ -62,11 +62,11 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'da
         
         <div className="flex items-center space-x-4 relative z-10">
           <div className="flex items-center">
-            <span className="font-mono">IDZ.TECH</span>
+            <span className="font-mono">IDZTECH</span>
           </div>
 
           {/* Theme Toggle Button */}
-          <Button
+          {/* <Button
             variant="ghost"
             size="sm"
             onClick={() => {
@@ -94,7 +94,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'da
               <Sun className="h-[1.2rem] w-[1.2rem]" stroke="currentColor" />
             )}
             <span className="sr-only">Toggle theme</span>
-          </Button>
+          </Button> */}
 
           <div className="flex items-center ml-4">
             <DropdownMenu>
@@ -131,10 +131,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'da
 
         {/* Main content */}
         <div
-          className={`flex-1 transition-all duration-300 ease-in-out ${
-            isSidebarOpen ? "ml-64" : "ml-16"
-          }`}
-        >
+          className="flex-1 transition-all duration-300 ease-in-out px-10">
           {children}
         </div>
       </div>

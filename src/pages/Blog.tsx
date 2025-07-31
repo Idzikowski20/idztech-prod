@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
@@ -94,7 +93,6 @@ const Blog = () => {
         `}</script>
       </Helmet>
       
-      <Navbar />
       
       {/* Hero section - simplified with CyberFolks style */}
       <section className="pt-32 pb-12 relative">

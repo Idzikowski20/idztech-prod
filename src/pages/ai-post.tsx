@@ -462,7 +462,7 @@ export default function AIPostPage() {
                   <StepperIndicator 
                     className={cn(
                       "mb-2 transition-transform duration-500 hover:scale-110",
-                      currentStep === index + 1 && "ring-2 ring-premium-purple ring-offset-2 scale-110 bg-white text-premium-purple",
+                      currentStep === index + 1 && "ring-2 ring-premium-purple ring-offset-2 scale-110  text-premium-purple",
                       currentStep > index + 1 && "bg-premium-purple scale-100 text-white",
                       currentStep < index + 1 && "bg-muted scale-90 text-muted-foreground",
                       "w-8 h-8 md:w-10 md:h-10",
@@ -532,7 +532,7 @@ export default function AIPostPage() {
                 onClick={handleGoPanel}
                 className={`${
                   isDark 
-                    ? 'text-white hover:bg-white/10' 
+                    ? 'text-white hover:/10' 
                     : 'text-black hover:bg-gray-100'
                 }`}
               >
@@ -597,7 +597,7 @@ export default function AIPostPage() {
               <div className={`w-1/3 rounded-xl p-6 border ${
                 isDark 
                   ? '/50 border-premium-light/10' 
-                  : 'bg-white border-gray-200'
+                  : ' border-gray-200'
               }`}>
                 <div className="flex flex-col items-center gap-4">
                   <div className="space-y-4">
@@ -620,7 +620,7 @@ export default function AIPostPage() {
               <div className={`w-2/3 rounded-xl p-6 border ${
                 isDark 
                   ? '/50 border-premium-light/10' 
-                  : 'bg-white border-gray-200'
+                  : ' border-gray-200'
               }`}>
                 <div className="flex flex-col gap-8">
                   {/* Krok 1 - Temat */}
@@ -697,7 +697,7 @@ export default function AIPostPage() {
                           defaultValue={[600]}
                           value={[postLength]}
                           onValueChange={(values) => setPostLength(values[0])}
-                          className="w-full [&_[role=slider]]:bg-white [&_[role=slider]]:border-white [&_[role=track]]:bg-gray-700/50 [&_[role=track].data-[orientation=horizontal]]:h-2 [&_[role=range]]:bg-white [&_[role=range]]:data-[orientation=horizontal]:bg-white [&_[role=track]]:data-[orientation=horizontal]:bg-gray-700/50"
+                          className="w-full [&_[role=slider]]: [&_[role=slider]]:border-white [&_[role=track]]:bg-gray-700/50 [&_[role=track].data-[orientation=horizontal]]:h-2 [&_[role=range]]: [&_[role=range]]:data-[orientation=horizontal]: [&_[role=track]]:data-[orientation=horizontal]:bg-gray-700/50"
                         />
                         <div className={`text-center ${isDark ? 'text-white' : 'text-gray-700'}`}>
                             Aktualnie: <span className={`font-semibold ${isDark ? 'text-white' : 'text-black'}`}>{postLength}</span> słów
@@ -822,11 +822,10 @@ export default function AIPostPage() {
         <Dialog open={isGeneratingModalOpen}>
           <DialogContent
             onInteractOutside={e => e.preventDefault()}
-            hideCloseButton={true}
             className={`p-8 rounded-xl max-w-lg w-full ${
               isDark 
                 ? 'bg-black/95 border border-gray-200' 
-                : 'bg-white border border-gray-200'
+                : ' border border-gray-200'
             }`}
           >
             <DialogHeader>
@@ -851,7 +850,7 @@ export default function AIPostPage() {
           <DialogContent className={`p-4 rounded-xl w-[90vw] max-w-[1400px] h-[90vh] overflow-hidden ${
             isDark 
               ? 'bg-black/50 backdrop-blur-[5px] border border-purple-500/30' 
-              : 'bg-white border border-gray-200'
+              : ' border border-gray-200'
           }`}>
             <DialogHeader className="pb-4">
               <div className="flex items-center justify-between">
@@ -876,7 +875,7 @@ export default function AIPostPage() {
             <div className="flex gap-4 h-[calc(90vh-120px)] mt-4">
               <div className="flex-1 flex flex-col">
                 <div className={`sticky top-0 z-10 rounded-lg border-0 ${
-                  isDark ? 'bg-black/50 backdrop-blur-[5px]' : 'bg-white'
+                  isDark ? 'bg-black/50 backdrop-blur-[5px]' : ''
                 }`}>
                   <div className="tiptap-toolbar-container p-2">
                     {/* Toolbar będzie tutaj */}
@@ -884,7 +883,7 @@ export default function AIPostPage() {
                 </div>
                 <div className="flex-1 overflow-y-auto mt-4 pr-4">
                   <div className={`rounded-lg border-0 ${
-                    isDark ? 'bg-black/50 backdrop-blur-[5px]' : 'bg-white'
+                    isDark ? 'bg-black/50 backdrop-blur-[5px]' : ''
                   }`}>
                     <SimpleEditor
                       value={editedPost}
@@ -916,7 +915,7 @@ export default function AIPostPage() {
           <DialogContent className={`p-8 rounded-xl max-w-lg w-full ${
             isDark 
               ? 'bg-black/95 border border-purple-500/30' 
-              : 'bg-white border border-gray-200'
+              : ' border border-gray-200'
           }`}>
             <DialogHeader>
               <DialogTitle className={`text-xl font-semibold text-center ${
@@ -962,7 +961,7 @@ export default function AIPostPage() {
           <DialogContent className={`p-8 rounded-xl max-w-lg w-full ${
             isDark 
               ? 'bg-black/95 border border-gray-700' 
-              : 'bg-white border border-gray-200'
+              : ' border border-gray-200'
           }`}>
             <DialogHeader>
               <DialogTitle className={`text-xl font-semibold text-center ${

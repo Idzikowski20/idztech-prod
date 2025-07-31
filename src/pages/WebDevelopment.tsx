@@ -381,7 +381,7 @@ const WebDevelopment = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card className="/60 border-premium-light/10">
                 <CardHeader>
-                  <CardTitle>1. Analiza i strategia</CardTitle>
+                  <CardTitle className='text-white'>1. Analiza i strategia</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -407,7 +407,7 @@ const WebDevelopment = () => {
               
               <Card className="/60 border-premium-light/10">
                 <CardHeader>
-                  <CardTitle>2. Projektowanie UX/UI</CardTitle>
+                <CardTitle className='text-white'>2. Projektowanie UX/UI</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -433,7 +433,7 @@ const WebDevelopment = () => {
               
               <Card className="/60 border-premium-light/10">
                 <CardHeader>
-                  <CardTitle>3. Implementacja i rozwój</CardTitle>
+                <CardTitle className='text-white'>3. Implementacja i rozwój</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -459,7 +459,7 @@ const WebDevelopment = () => {
               
               <Card className="/60 border-premium-light/10">
                 <CardHeader>
-                  <CardTitle>4. SEO i treści</CardTitle>
+                <CardTitle className='text-white'>4. SEO i treści</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -485,7 +485,7 @@ const WebDevelopment = () => {
               
               <Card className="/60 border-premium-light/10">
                 <CardHeader>
-                  <CardTitle>5. Wdrożenie i testy</CardTitle>
+                <CardTitle className='text-white'>5. Wdrożenie i testy</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -511,7 +511,7 @@ const WebDevelopment = () => {
               
               <Card className="/60 border-premium-light/10">
                 <CardHeader>
-                  <CardTitle>6. Wsparcie i rozwój</CardTitle>
+                <CardTitle className='text-white'>6. Wsparcie i rozwój</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">

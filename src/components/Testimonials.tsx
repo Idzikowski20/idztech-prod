@@ -59,7 +59,9 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
           <div className="max-w-2xl">
-            <span className="text-premium-purple font-medium">Opinie klientów</span>
+          <div className='flex justify-center items-center '>
+              <h4 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">Opinie klientów</h4>
+          </div>
             <h5 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">
               Co mówią o nas nasi klienci
             </h5>

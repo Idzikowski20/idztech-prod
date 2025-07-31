@@ -9,7 +9,6 @@ import { useAuth } from '@/utils/AuthProvider';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Helmet } from 'react-helmet-async';
 import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
@@ -137,7 +136,6 @@ const BlogPost = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen ">
-        <Navbar />
         <div className="container max-w-4xl mx-auto px-4 py-32">
           <Skeleton className="h-12 w-3/4 mb-4" />
           <Skeleton className="h-6 w-1/2 mb-8" />
@@ -176,30 +174,27 @@ const BlogPost = () => {
         {post.featured_image && <meta property="og:image" content={post.featured_image} />}
       </Helmet>
       
-      <Navbar />
       
       <div className="pt-32 pb-20">
         {/* Main content */}
-        <div className="mx-auto max-w-5xl px-4 flex flex-col gap-10">
+        <div className="mx-auto max-w-[55rem] px-4 flex flex-col gap-10">
           {/* Article content */}
           <div className="w-full">
             {/* Back button */}
             <div className="mb-6">
-              <Button 
-                variant="ghost" 
+              <button
                 onClick={() => navigate('/blog')}
-                className=""
-                size="sm"
+                className="border border-w-[1px] border-premium-light/10 flex gap-2 justify-center items-center rounded-[10px] p-3 hover:scale-105"
               >
-                <ArrowLeft size={16} className="mr-2" />
-                <span className="dark:text-white light:text-black">Wróć do bloga</span>
-              </Button>
+                <ArrowLeft size={16} className="hover:scale-105" />
+                Wróć do bloga
+              </button>
             </div>
 
             
             {/* Post header */}
-            <header className="mb-10">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
+            <header className="mb-5">
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">{post.title}</h1>
               
               <div className="flex flex-wrap items-center gap-4 dark:text-premium-light/80 light:text-black mb-6">
                 <div className="flex items-center">
@@ -209,10 +204,23 @@ const BlogPost = () => {
                 
                 <div className="flex items-center">
                   <Clock size={16} className="mr-2" />
-                  <span>{formatReadingTime(post.content)}</span>
+                  <span>{formatReadingTime(post.content)} Czytania</span>
                 </div>
               </div>
             </header>
+
+            {/* Author Banner */}
+            <div className="flex items-center justify-start gap-3 mb-6 mx-auto py-2 rounded-xl shadow-sm">
+              <img
+                src="https://media.licdn.com/dms/image/v2/D4D03AQFN5Z-Q4Ty3tw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709119468661?e=1753315200&v=beta&t=MD-IXRwVN_OjQQf96usS4ZJBJ80W5MAMnbZzOu9aUDw"
+                alt="Patryk Idzikowski"
+                className="w-10 h-10 rounded-full object-cover shadow"
+              />
+              <div className="text-left">
+                <div className="font-semibold text-premium-purple dark:text-white text-base leading-tight">Patryk Idzikowski</div>
+                <div className="text-xs text-gray-500 dark:text-premium-light/70">Autor</div>
+              </div>
+            </div>
             
             {/* Featured image */}
             {post.featured_image && (
@@ -281,12 +289,17 @@ const BlogPost = () => {
               </div>
                    {/* CTA Box */}
                   <div
-                    className={`mt-10 border border-premium-light/10 rounded-lg p-6 text-center ${theme === 'light' ? 'bg-[#f5f5f5]' : '/80'}`}
+                    className={`mt-10 border border-premium-light/10 rounded-lg p-6 text-center relative ${theme === 'light' ? 'bg-[#f5f5f5]' : '/80'}`}
                   >
                     <h3 className="font-semibold text-lg mb-3">Potrzebujesz pomocy z SEO?</h3>
                     <p className="text-sm text-gray-300 mb-4">
                       Chcesz zlecić stronę internetową profesjonalistom? Skorzystaj z naszych usług 😊</p>
                     <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
+                    <img 
+                      src="/images/seo-icon.png" 
+                      alt="SEO Icon" 
+                      className="absolute right-2 bottom-2 w-20 h-20 md:right-4 md:bottom-4 md:w-32 md:h-32 object-contain pointer-events-none select-none opacity-90" 
+                    />
                   </div>
             </div>
             

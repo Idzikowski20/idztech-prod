@@ -223,7 +223,7 @@ const LocalSeoSection = () => {
   };
 
   return (
-    <section className="w-full py-12 md:py-20">
+    <section className="w-full py-12 md:py-24 relative max-md:px-5">
       <div className="max-w-7xl mx-auto px-4">
         {/* Nagłówek i opis */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12">
@@ -255,7 +255,7 @@ const LocalSeoSection = () => {
             </div>
           </div>
           {/* Lista miast */}
-          <div className="flex-1 flex flex-col justify-center">
+          <div className="flex-1 flex flex-col justify-center max-md:max-h-[270px]">
             <ul className="divide-y divide-premium-light/20 max-h-[420px] overflow-y-auto custom-scrollbar pr-[30px]">
               {cities.map(city => (
                 <li

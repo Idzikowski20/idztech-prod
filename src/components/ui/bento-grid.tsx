@@ -50,7 +50,7 @@ export const BentoGridItem = ({
 
       {/* Shine mask */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="pointer-events-none absolute -top-1/2 left-0 w-full h-[200%] bg-center bg-no-repeat opacity-0 transition-all duration-700 group-hover/bento:opacity-30"
         style={{
           backgroundImage: "url(/images/bg-shine.png)",
           backgroundSize: "cover",

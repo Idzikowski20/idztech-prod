@@ -56,14 +56,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
         </Button>
       </DrawerTrigger>
       <DrawerContent className={`h-[85vh] ${theme === 'light' ? 'bg-white' : 'bg-black'} border-t ${theme === 'light' ? 'border-gray-200' : 'border-white/10'} overflow-x-hidden`}>
-        <div className="px-6 py-8 flex flex-col h-full">
+        <div className="px-6 py-8 flex flex-col h-full overflow-hidden">
           <div className="flex items-center justify-between mb-2">
             <DrawerTitle className={`text-xl font-bold ${textColor}`}>Menu</DrawerTitle>
           </div>
           <DrawerDescription className="mb-6 text-base text-premium-light/70">Wybierz stronę, do której chcesz przejść.</DrawerDescription>
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-4">
-              <Button 
+              {/* <Button 
                 variant="ghost" 
                 size="sm" 
                 onClick={() => {
@@ -77,9 +77,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                   <Sun className="h-[1.2rem] w-[1.2rem] text-white" />
                 }
                 <span className="sr-only">Toggle theme</span>
-              </Button>
+              </Button> */}
               
-              <Link to={isAuthenticated ? "/admin" : "/login"} onClick={() => {
+              {/* <Link to={isAuthenticated ? "/admin" : "/login"} onClick={() => {
                 setIsMenuOpen(false);
                 // Ensure scrolling is restored
                 document.body.style.overflow = '';
@@ -92,7 +92,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                   <LogIn className={`h-[1.2rem] w-[1.2rem] ${theme === 'light' ? 'text-black' : 'text-white'}`} />
                   <span className="sr-only">{isAuthenticated ? "Panel administracyjny" : "Zaloguj"}</span>
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -174,12 +174,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                           <Link to="/copywriting-seo" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
                             <PenLine className="text-black dark:text-white" size={18} />
                             Copywriting SEO
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/content-plan" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
-                            <ListChecks className="text-black dark:text-white" size={18} />
-                            Content Plan
                           </Link>
                         </li>
                       </ul>

@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom"
 export default function BentoGridThirdDemo() {
 	const navigate = useNavigate()
 	return (
-		<section className="md:py-24">
-			<div className="container mx-auto px-4">
+		<section className="">
+			{/* <div className="container mx-auto px-4">
 				<div className="text-center mb-12">
 					<p className="text-premium-purple font-medium mb-3 uppercase">Co oferujemy</p>
 					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white">Nasze usługi webowe</h2>
@@ -29,14 +29,14 @@ export default function BentoGridThirdDemo() {
 						onClick={() => navigate(item.link)}
 					/>
 				))}
-			</BentoGrid>
-			<div className="ml-5 w-full">
+			</BentoGrid> */}
+			{/* <div className="w-full">
 				<img
 					src="/images/speedometr2.png"
 					alt="Gallery image"
 					className="object-contain grow w-full aspect-[1.36]"
 				/>
-			</div>
+			</div> */}
 		</section>
 	)
 }

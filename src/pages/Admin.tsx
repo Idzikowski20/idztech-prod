@@ -72,7 +72,7 @@ const Admin = () => {
   const [error, setError] = useState<string | null>(null);
   
   // Sorting and filtering state
-  const [sortField, setSortField] = useState<'title' | 'date'>('date');
+  const [sortField, setSortField] = useState<'title' | 'date' | 'status'>('date');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [statusFilter, setStatusFilter] = useState<'all' | 'published' | 'draft'>('all');
   
@@ -167,7 +167,11 @@ const Admin = () => {
           : post
       ));
       
-      showNotification({ sender: 'IDZTECH', message: `Post został ${newStatus ? 'opublikowany' : 'oznaczony jako szkic'}.` });
+      if (newStatus) {
+        showNotification({ sender: 'IDZTECH', message: 'Post został opublikowany.' });
+      } else {
+        showNotification({ sender: 'IDZTECH', message: 'Post został oznaczony jako szkic.' });
+      }
     } catch (err) {
       console.error(err);
       showNotification({ sender: 'IDZTECH', message: 'Nie udało się zmienić statusu posta.' });
@@ -203,6 +207,11 @@ const Admin = () => {
         return sortDirection === 'asc' 
           ? a.title.localeCompare(b.title)
           : b.title.localeCompare(a.title);
+      } else if (sortField === 'status') {
+        // Opublikowany > Szkic
+        const statusA = a.published ? 1 : 0;
+        const statusB = b.published ? 1 : 0;
+        return sortDirection === 'asc' ? statusA - statusB : statusB - statusA;
       } else {
         // Sortuj po published_at jeśli istnieje, w przeciwnym razie po created_at
         const dateA = new Date(a.published_at || a.created_at).getTime();
@@ -275,7 +284,19 @@ const Admin = () => {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://idztech.pl/admin" />
       </Helmet>
-      <div className="p-6">
+      {/* BG SMOKE */}
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 0,
+        backgroundImage: 'url(/images/bg-smoke.png)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        opacity: 0.35,
+        pointerEvents: 'none',
+      }} />
+      <div className="p-6 relative z-10">
         <div className="mb-8 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
@@ -291,24 +312,11 @@ const Admin = () => {
               <div className="flex items-center justify-end mb-6">
                 <div className="flex gap-4">
                   <div className="flex items-center gap-4">
-                    <Select
-                      value={statusFilter}
-                      onValueChange={(value: 'all' | 'published' | 'draft') => setStatusFilter(value)}
-                    >
-                      <SelectTrigger className="w-[180px] dark:bg-transparent bg-white">
-                        <SelectValue placeholder="Filtruj po statusie" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">Wszystkie</SelectItem>
-                        <SelectItem value="published">Opublikowane</SelectItem>
-                        <SelectItem value="draft">Szkice</SelectItem>
-                      </SelectContent>
-                    </Select>
                     <div className="relative">
                       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-premium-light/50" size={16} />
                       <Input
                         placeholder="Wyszukaj po tytule..."
-                        className="pl-10 /30 border-premium-light/10 w-64"
+                        className="pl-10 !bg-transparent !text-white placeholder-white border-premium-light/10 w-full max-w-[500px]"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                       />
@@ -328,42 +336,46 @@ const Admin = () => {
               <table className="w-full">
                 <thead className=" border-premium-light/10 sticky top-0 bg-transparent z-10">
                   <tr>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                      <Button
-                        variant="ghost"
-                        className="hover:bg-transparent p-0"
-                        onClick={() => {
-                          if (sortField === 'title') {
-                            setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
-                          } else {
-                            setSortField('title');
-                            setSortDirection('asc');
-                          }
-                        }}
-                      >
-                        Tytuł
-                        <ArrowUpDown size={16} className="ml-2" />
-                      </Button>
+                    <th
+                      onClick={() => {
+                        if (sortField === 'title') {
+                          setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+                        } else {
+                          setSortField('title');
+                          setSortDirection('asc');
+                        }
+                      }}
+                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none ${theme === 'dark' ? 'text-white' : 'text-black'} ${sortField === 'title' ? '!border-b-0' : 'border-b'}`}
+                    >
+                      <span className="inline-flex items-center">Tytuł <ArrowUpDown size={16} className="ml-2" /></span>
                     </th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                      <Button
-                        variant="ghost"
-                        className="hover:bg-transparent p-0"
-                        onClick={() => {
-                          if (sortField === 'date') {
-                            setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
-                          } else {
-                            setSortField('date');
-                            setSortDirection('desc');
-                          }
-                        }}
-                      >
-                        Data
-                        <ArrowUpDown size={16} className="ml-2" />
-                      </Button>
+                    <th
+                      onClick={() => {
+                        if (sortField === 'date') {
+                          setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+                        } else {
+                          setSortField('date');
+                          setSortDirection('desc');
+                        }
+                      }}
+                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none ${theme === 'dark' ? 'text-white' : 'text-black'} ${sortField === 'date' ? '!border-b-0' : 'border-b'}`}
+                    >
+                      <span className="inline-flex items-center">Data <ArrowUpDown size={16} className="ml-2" /></span>
                     </th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Status</th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-left whitespace-nowrap  border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Akcje</th>
+                    <th
+                      onClick={() => {
+                        if (sortField === 'status') {
+                          setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+                        } else {
+                          setSortField('status');
+                          setSortDirection('desc');
+                        }
+                      }}
+                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none ${theme === 'dark' ? 'text-white' : 'text-black'} ${sortField === 'status' ? '!border-b-0' : 'border-b'}`}
+                    >
+                      <span className="inline-flex items-center">Status <ArrowUpDown size={16} className="ml-2" /></span>
+                    </th>
+                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'} border-b`}>Akcje</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-premium-light/10">
@@ -437,8 +449,8 @@ const Admin = () => {
                         onClick={() => setCurrentPostsPage(prev => Math.max(prev - 1, 1))}
                         className={
                           currentPostsPage === 1
-                            ? 'pointer-events-none opacity-50'
-                            : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:underline`
+                            ? 'pointer opacity-50 border border-w-[1px]'
+                            : `${theme === 'dark' ? 'text-white' : 'text-white'} hover:none`
                         }
                       />
                     </PaginationItem>
@@ -462,9 +474,7 @@ const Admin = () => {
                             onClick={() => setCurrentPostsPage(pageNum)}
                             isActive={currentPostsPage === pageNum}
                             className={
-                              currentPostsPage === pageNum
-                                ? `${theme === 'dark' ? ' text-white border border-premium-light/10' : 'bg-white text-black border border-gray-300'} !shadow-none`
-                                : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:bg-premium-light/10`
+                              `${theme === 'dark' ? 'text-white' : 'text-black'} !bg-transparent !border-none !shadow-none !hover:bg-transparent !hover:text-inherit`
                             }
                           >
                             {pageNum}

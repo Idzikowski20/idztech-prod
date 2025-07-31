@@ -6,7 +6,7 @@ import HeroImage from "@/components/HeroImage";
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { FlipWords } from "@/components/ui/flip-words";
-import video from '@/styles/background-video.mp4';
+import video from '@/styles/0620.mp4';
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 
 const Hero = () => {
@@ -17,15 +17,14 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="hero relative overflow-hidden bg-grey-1 pt-[184px] px-safe lg:h-[950px] lg:pt-28 md:h-auto md:pt-24 sm:pt-[92px] mb-[150px]"
+      className="hero relative overflow-hidden bg-grey-1 pt-[184px] px-safe lg:h-[950px] lg:pt-28 md:h-auto md:pt-24 sm:pt-[92px]"
     >
       <video
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover mix-blend-lighten z-0 hero-video"
+        className="absolute top-0 left-0 w-full h-full max-md:object-cover object-fill mix-blend-lighten z-0 hero-video"
         poster="/images/heroimage.png"
-        preload="none"
       >
         <source src={video} type="video/mp4" />
       </video>
@@ -59,7 +58,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="gradient-bottom-hero pointer-events-none absolute bottom-0 left-0 z-20 h-[340px] w-full lg:h-[250px] md:h-44 sm:left-0 sm:h-[170px] sm:w-[107%] xs:h-[28%] gradient-hero-bottom">
+      <div className="gradient-bottom-hero pointer-events-none absolute bottom-0 left-0 z-20 max-md:h-[140px] w-full md:h-44 sm:left-0 sm:h-[170px] sm:w-[107%] xs:h-[28%] gradient-hero-bottom">
       </div>
     </section>
   );

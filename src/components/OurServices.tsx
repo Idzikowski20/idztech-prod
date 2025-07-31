@@ -104,24 +104,18 @@ const OurServices = () => {
       title: "Copywriting SEO",
       description: "Tworzenie angażujących treści zoptymalizowanych pod kątem wyszukiwarek.",
       link: "/copywriting-seo"
-    },
-    {
-      icon: (
-        <div className="w-12 h-12 rounded-xl bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
-          <BarChart3 className="text-white" size={28} />
-        </div>
-      ),
-      title: "Content Plan",
-      description: "Strategiczne planowanie treści, które przyciągną czytelników i zwiększą konwersje.",
-      link: "/content-plan"
     }
   ];
 
   return (
-    <section className="md:py-24 relative top-[10rem]">
-      <div className="container mx-auto px-4">
+    <section className="md:py-24 relative top-[5rem] max-md:px-5 bg-center max-md:bg-[length:300%_100%] bg-[length:100%_100%]"
+    style={{ backgroundImage: "url('/images/bg-smoke.png')"}}
+    >
+      <div className="container mx-auto">
         <div className="text-center mb-12">
-          <p className="text-premium-purple font-medium mb-3 uppercase">Co oferujemy</p>
+          <div className='flex justify-center items-center '>
+              <h2 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">Co oferujemy</h2>
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Nasze usługi webowe</h2>
           <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
             Oferujemy kompleksowe rozwiązania, które pomogą Twojej firmie zyskać przewagę konkurencyjną w internecie.
@@ -142,7 +136,7 @@ const OurServices = () => {
               <p className={`mb-4 flex-grow ${theme === 'light' ? 'text-gray-700' : 'text-premium-light/70'}`}>
                 {service.description}
               </p>
-              <div className="flex justify-start md:justify-center w-full">
+              <div className="flex justify-start w-full">
                 <span
                   className="inline-flex items-center text-premium-purple hover:bg-premium-light/5 border-radius20 cursor-pointer w-auto"
                   onTouchStart={handleTouchStart}

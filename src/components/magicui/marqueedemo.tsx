@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Marquee } from "@/components/magicui/marquee";
+import { Marquee } from "@/components/magicui/Marquee";
 
 const reviews = [
   {
@@ -77,7 +77,6 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {author}
@@ -96,7 +95,9 @@ export default function MarqueeDemo() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row justify-center items-center mb-12">
           <div className="max-w-2xl text-center">
-            <span className="text-premium-purple font-medium">Opinie klientów</span>
+          <div className='flex justify-center items-center '>
+              <h4 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">Opinie klientów</h4>
+          </div>
             <h5 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">
               Co mówią o nas nasi klienci
             </h5>

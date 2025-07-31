@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, Users, Award, Lightbulb, Clock } from 'lucide-react';
@@ -92,7 +91,6 @@ const AboutUs = () => {
           }
         `}</script>
       </Helmet>
-      <Navbar />
       
       <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">

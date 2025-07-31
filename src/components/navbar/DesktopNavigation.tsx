@@ -26,13 +26,13 @@ const DesktopNavigation = () => {
   const location = useLocation();
 
   const activeClass =
-    'border border-[#ffffff42] text-white hover:bg-white/10 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
+    'bg-gradient-to-br from-premium-blue-500 via-[#9288ff] bg-wave shadow-md text-white hover:bg-white/10 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
 
   const linkClass = cn(
     "transition-colors duration-300 px-4 py-2 rounded-full",
     theme === 'light'
-      ? 'text-black hover:bg-gray-100 hover:text-black'
-      : 'text-white hover:bg-white/10 hover:text-white'
+      ? 'text-black hover:bg-gray-100 hover:text-black hover:shadow-md'
+      : 'text-white hover:bg-white/10 hover:text-white hover:shadow-md'
   );
 
   const isActive = (path: string) => location.pathname === path;
@@ -59,7 +59,7 @@ const DesktopNavigation = () => {
               Usługi
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="flex flex-row dark:bg-neutral-900 rounded-xl px-0 py-0 min-w-[700px] max-w-[900px]">
+              <div className="flex flex-row rounded-xl px-0 py-0 min-w-[700px] max-w-[900px] bg-neutral-900">
                 {/* Strony www - lewa kolumna */}
                 <div className="flex flex-col flex-1 items-start justify-start px-8 py-8 text-left">
                   <div className="flex items-center gap-3 mb-4">
@@ -162,17 +162,6 @@ const DesktopNavigation = () => {
                           <div>
                             <span className="font-semibold text-black dark:text-neutral-100">Copywriting Seo</span>
                             <div className="text-xs text-neutral-600 dark:text-neutral-300">Profesjonalny copywriting SEO - treści pod pozycjonowanie dla stron, sklepów i blogów</div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link to="/content-plan" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
-                          <ListChecks className="text-neutral-700 dark:text-neutral-200 mt-1" size={22} />
-                          <div>
-                            <span className="font-semibold text-black dark:text-neutral-100">Content Plan</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Strategia content marketing - plan treści i harmonogram publikacji pod SEO</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
