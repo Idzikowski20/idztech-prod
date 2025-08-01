@@ -151,8 +151,8 @@
   --secondary-foreground: 240 10% 3.9%;
   --accent: 220 14.3% 95.9%;
   --accent-foreground: 240 10% 3.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2% !important;
+  --destructive-foreground: 0 0% 98% !important;
   --muted: 0 0% 96%;
   --muted-foreground: 240 3.8% 46.1%;
   --border: 262.1 12.5% 90%;
@@ -618,7 +618,7 @@
   .dark .SelectContent,
   .dark select,
   .dark [role="listbox"] {
-    background-color: rgba(0, 0, 0, 0.9) !important;
+    background-color: #0c0c14 !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     color: white !important;
   }
@@ -998,7 +998,7 @@ input:-internal-autofill-selected {
 .dark .SelectContent,
 .dark [role="listbox"],
 .dark select {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: #0c0c14 !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   color: white !important;
 }
@@ -1687,4 +1687,8 @@ color: #b98dff !important;
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.text-destructive {
+    color: hsl(var(--destructive)) !important;
 }

@@ -36,21 +36,21 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]">
       </div>
       
-      <div className="container px-4 relative z-10 text-center max-w-4xl mx-auto">
+      <div className="container relative z-10 text-center max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="gap-2 text-xl md:text-6xl max-md:text-2xl font-bold text-white leading-tight mb-6">Strony internetowe i sklepy online</h1>
-          <SparklesText>
-          <h2 className="text-main gap-2 text-xl  md:text-6xl max-md:text-3xl font-extrabold text-white leading-tight mb-6 uppercase">
+          <h1 className="text-xl md:text-6xl max-md:text-2xl font-bold text-white leading-tight max-md:mb-1 mb-4">Strony internetowe i sklepy online</h1>
+          <SparklesText className="max-md:bottom-5 relative">
+          <h2 className="text-main text-xl p-0  md:text-6xl max-md:text-3xl font-extrabold text-white leading-tight mb-6 uppercase">
             Które sprzedają
           </h2>
           </SparklesText>
         </div>
         
-        <p className="p-2 text-left text-xl md:text-2xl text-gray-200 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto">
+        <p className="max-md:bottom-5 relative p-2 text-left text-xl md:text-2xl text-gray-200 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto">
           Pomagamy firmom zaistnieć w internecie i skutecznie pozyskiwać klientów. Tworzymy nowoczesne strony www, sklepy internetowe oraz prowadzimy kompleksowe działania SEO.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="max-md:bottom-5 relative flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             className="m-3 rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             onClick={() => navigate('/contact')}

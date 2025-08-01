@@ -56,7 +56,7 @@ const WhyWorkWithUs = () => {
               <h2>Kompleksowy zespół</h2>
               <div className="flex justify-center items-center w-full">
                 <h2 className="relative z-10 p-1 text-main">tworzący</h2>
-                <h2 className="p-1">strony i sklepy internetowe</h2>
+                <h2 className="p-1">strony</h2>
               </div>
             </div>
             <p className="text-left mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">

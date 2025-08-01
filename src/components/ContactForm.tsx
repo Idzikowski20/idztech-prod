@@ -176,13 +176,10 @@ const ContactForm = () => {
                 >
                   <option value="">Wybierz usługę</option>
                   <option value="web-dev">Tworzenie stron www</option>
+                  <option value="web-dev">Aplikacje SaaS</option>
                   <option value="ecommerce">Tworzenie sklepów internetowych</option>
                   <option value="seo">Pozycjonowanie stron internetowych</option>
-                  <option value="local-seo">Pozycjonowanie lokalne</option>
                   <option value="audyt-seo">Audyt Seo</option>
-                  <option value="optymalizacja-seo">Optymalizacja Seo</option>
-                  <option value="copywriting-seo">Copywriting Seo</option>
-                  <option value="content-plan">Content Plan</option>
                 </select>
               </FormControl>
               <FormMessage />

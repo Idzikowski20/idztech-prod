@@ -26,20 +26,22 @@ function WelcomeHero() {
           Projektujemy nowoczesne, przyjazne dla użytkownika strony internetowe, które łączą kreatywność z funkcjonalnością. Gwarantuję płynne, angażujące wrażenia, które przyciągają uwagę <br></br> i  skutecznie konwertują.
           </p>
         </div>
-        <div className="max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col">
-            <div className="max-md:ml-0 max-md:w-full">
+
+        <div className="max-md:h-[1250px] max-md:max-w-full">
+          <div className="h-full flex gap-5 max-md:flex-col">
+            <div className="h-full max-md:ml-0 max-md:w-full">
               <picture>
                 <source srcSet="/images/bentogrid2mobile.svg" media="(max-width: 768px)" />
                 <img
                   src="/images/bentogrid2.svg"
                   alt="Featured gallery image"
-                  className="object-contain grow w-full rounded-2xl aspect-[1.52]"
+                  className="h-full object-contain max-md:object-cover grow w-full rounded-2xl aspect-[1.52]"
                 />
               </picture>
             </div>
           </div>
         </div>
+
       </div>
     </section>
     <section
@@ -52,7 +54,7 @@ function WelcomeHero() {
       <div className="text-center mb-12">
 
           <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
-          <h2>Ożywiamy Twoją wizję dzięki nowoczesnemu</h2>
+          <h2 className="w-full">Ożywiamy Twoją wizję dzięki nowoczesnemu</h2>
           <div className="flex justify-center items-center w-full">
             <h2 className="relative z-10 p-1 text-main">designowi</h2><br></br>
             <h2 className="p-1">oraz technologii</h2>
@@ -62,20 +64,24 @@ function WelcomeHero() {
           Twoje pomysły zasługują na perfekcyjne wykonanie. Łącząc świeże spojrzenie z innowacyjnym podejściem do projektowania i wdrażania stron, pomagam Ci wyróżnić się w cyfrowym świecie.
           </p>
         </div>
-        <div className="max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col">
-            <div className="max-md:ml-0 max-md:w-full">
+
+        <div className="max-md:h-[1150px] max-md:max-w-full">
+          <div className="h-full flex gap-5 max-md:flex-col">
+
+            <div className="h-full max-md:ml-0 max-md:w-full">
+
               <picture>
                 <source srcSet="/images/bentogrid1mobile.svg" media="(max-width: 768px)" />
                 <img
                   src="/images/bentogrid1.svg"
                   alt="Featured gallery image"
-                  className="object-contain grow w-full rounded-2xl aspect-[1.52]"
+                  className="h-full object-cover grow w-full rounded-2xl aspect-[1.52]"
                 />
               </picture>
             </div>
           </div>
         </div>
+
       </div>
     </section>
     </>
