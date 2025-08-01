@@ -196,12 +196,12 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-premium-dark/90 to-transparent opacity-70 group-hover:opacity-90 transition-opacity"></div>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-white-important">{item.title}</h3>
-                  <p className="text-sm text-white-important mb-4">
+                  <h3 className="absolute left-4 bottom-4 bg-premium-light/50 backdrop-blur-sm dark:text-black px-6 py-2 rounded-md font-semibold shadow">{item.title}</h3>
+                  {/* <p className="absolute left-4 bottom-4 bg-premium-light/50 bg-[#938affb0] backdrop-blur-sm dark:text-black px-6 py-2 rounded-md font-semibold shadow">
                     {item.category === 'web' && 'Strona internetowa'}
                     {item.category === 'ecommerce' && 'Sklep internetowy'}
                     {item.category === 'seo' && 'Pozycjonowanie'}
-                  </p>
+                  </p> */}
                   <a 
                     href={item.link} 
                     className="inline-flex items-center text-premium-purple hover:text-premium-blue transition-colors opacity-0 group-hover:opacity-100"

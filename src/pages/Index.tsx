@@ -235,11 +235,11 @@ const Index = () => {
         </Suspense>
       </LazySection>
 
-      <LazySection delay={600}>
+      {/* <LazySection delay={600}>
         <Suspense fallback={<LoadingFallback />}>
           <LocalSeoSection />
         </Suspense>
-      </LazySection>
+      </LazySection> */}
 
       <LazySection data-lazy delay={700}>
         <Suspense fallback={<LoadingFallback />}>

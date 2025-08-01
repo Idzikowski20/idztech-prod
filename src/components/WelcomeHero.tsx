@@ -22,8 +22,8 @@ function WelcomeHero() {
             <h2 className="p-1">doświadczenia</h2>
           </div>
         </div>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
-          Projektujemy nowoczesne, przyjazne dla użytkownika strony internetowe, które łączą kreatywność z funkcjonalnością. Gwarantuję płynne, angażujące wrażenia, które przyciągają uwagę i skutecznie konwertują.
+          <p className="text-left mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
+          Projektujemy nowoczesne, przyjazne dla użytkownika strony internetowe, które łączą kreatywność z funkcjonalnością. Gwarantuję płynne, angażujące wrażenia, które przyciągają uwagę <br></br> i  skutecznie konwertują.
           </p>
         </div>
         <div className="max-md:max-w-full">
@@ -58,7 +58,7 @@ function WelcomeHero() {
             <h2 className="p-1">oraz technologii</h2>
           </div>
         </div>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
+          <p className="text-left mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
           Twoje pomysły zasługują na perfekcyjne wykonanie. Łącząc świeże spojrzenie z innowacyjnym podejściem do projektowania i wdrażania stron, pomagam Ci wyróżnić się w cyfrowym świecie.
           </p>
         </div>

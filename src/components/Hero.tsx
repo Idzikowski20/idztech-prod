@@ -1,17 +1,24 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useTheme } from "@/utils/themeContext";
 import { useMobile } from '@/hooks/use-mobile';
-import HeroImage from "@/components/HeroImage";
-import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { FlipWords } from "@/components/ui/flip-words";
-import { LineShadowText } from "@/components/magicui/line-shadow-text";
+import { Marquee } from "@/components/marquee";
+import { SparklesText } from "@/components/magicui/sparkles-text";
 
 const Hero = () => {
   const { theme } = useTheme();
   const isMobile = useMobile();
   const navigate = useNavigate();
+  
+  // Loga firm które nam zaufały
+  const trustedCompanies = [
+    { name: "Google Analytics", logo: "/images/google--analytic.svg" },
+    { name: "Google Cloud", logo: "/images/google--cloud.svg" },
+    { name: "Google Data Studio", logo: "/images/google--data-studio.svg" },
+    { name: "Google Maps", logo: "/images/google--gmp.svg" },
+    { name: "Ruch", logo: "/images/ruch.webp" },
+    { name: "Restauracja Warszawa", logo: "/images/restauracja-warszawa.png" }
+  ];
   
   return (
     <section
@@ -31,23 +38,57 @@ const Hero = () => {
       
       <div className="container px-4 relative z-10 text-center max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="gap-2 text-xl md:text-6xl  font-extrabold text-white leading-tight mb-6">Strony internetowe i sklepy online</h1>
-          <h2 className="text-main gap-2 text-xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+          <h1 className="gap-2 text-xl md:text-6xl max-md:text-2xl font-bold text-white leading-tight mb-6">Strony internetowe i sklepy online</h1>
+          <SparklesText>
+          <h2 className="text-main gap-2 text-xl  md:text-6xl max-md:text-3xl font-extrabold text-white leading-tight mb-6 uppercase">
             Które sprzedają
           </h2>
+          </SparklesText>
         </div>
         
-        <p className="text-xl md:text-2xl text-gray-200 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto">
+        <p className="p-2 text-left text-xl md:text-2xl text-gray-200 mb-8 md:mb-12 leading-relaxed max-w-3xl mx-auto">
           Pomagamy firmom zaistnieć w internecie i skutecznie pozyskiwać klientów. Tworzymy nowoczesne strony www, sklepy internetowe oraz prowadzimy kompleksowe działania SEO.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
-            className="rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="m-3 rounded-full px-8 py-6 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             onClick={() => navigate('/contact')}
           >
             Skontaktuj się z nami
           </Button>
+        </div>
+      </div>
+      
+      {/* Slider z logami firm - na środku na dole */}
+      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-6xl z-20">
+        <div className="text-center mb-4">
+          <p className="text-sm text-gray-300 font-medium">Marki, które nam zaufały.</p>
+        </div>
+        <div className="relative overflow-hidden logo-slider">
+          {/* Gradient fade na lewej stronie */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-900 via-purple-900/80 to-transparent z-10 pointer-events-none"></div>
+
+          {/* Gradient fade na prawej stronie */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-900 via-purple-900/80 to-transparent z-10 pointer-events-none"></div>
+          
+          <Marquee
+            className="[--duration:30s] py-4"
+            pauseOnHover={true}
+          >
+            {trustedCompanies.map((company, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center mx-8 min-w-[120px] h-16"
+              >
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="max-h-10 max-w-[120px] object-contain filter brightness-0 invert opacity-60 hover:opacity-90 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </Marquee>
         </div>
       </div>
       

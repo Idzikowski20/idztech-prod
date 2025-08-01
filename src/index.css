@@ -158,6 +158,11 @@
   --border: 262.1 12.5% 90%;
   --input: 262.1 12.5% 90%;
   --ring: 262.1 83.3% 57.8%;
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 .dark {
@@ -175,11 +180,16 @@
   --accent-foreground: 0 0% 98%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --muted: 224 71.4% 15%;
+  --muted: 0 0% 27%;
   --muted-foreground: 0 0% 63.9%;
   --border: 262.1 12.5% 15.9%;
   --input: 262.1 12.5% 15.9%;
   --ring: 263.4 70% 50.4%;
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
   @font-face {
@@ -1548,6 +1558,22 @@ input:-webkit-autofill:active {
     background-position: 100% -100%;
     }
   }
+  @keyframes line-shadow {
+  0% {
+    background-position: 0 0;
+    }
+  100% {
+    background-position: 100% -100%;
+    }
+  }
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;
+    }
+  100% {
+    background-position: 200%;
+    }
+  }
 }
 
 @keyframes marquee {
@@ -1613,7 +1639,7 @@ input:-webkit-autofill:active {
 
 @theme inline {
   --animate-line-shadow: line-shadow 15s linear infinite;
- 
+
   @keyframes line-shadow {
     0% {
       background-position: 0 0;
@@ -1647,4 +1673,18 @@ color: #b98dff !important;
 .wobble {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+.logo-slider {
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 17.5%, rgb(0, 0, 0) 82.5%, rgba(0, 0, 0, 0) 100%);
+  overflow: hidden;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

@@ -66,7 +66,7 @@ const OurServices = () => {
     <section className="md:py-24 relative top-[5rem] max-md:px-5 bg-center max-md:bg-[length:300%_100%] bg-[length:100%_100%] overflow-hidden"
     style={{ backgroundImage: "url('/images/bg-smoke.png')"}}
     >
-      <div className="container mx-auto">
+      <div className="mx-auto">
         <div className="text-center mb-12">
           <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
           <h2>Co możemy</h2>
@@ -75,7 +75,7 @@ const OurServices = () => {
             <h2 className="p-1">twojej firmie?</h2>
           </div>
         </div>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
+          <p className="text left mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
           Kompleksowe rozwiązania, które pomogą Twojej firmie zyskać przewagę konkurencyjną w internecie.
           </p>
         </div>
@@ -97,19 +97,19 @@ const OurServices = () => {
                   <div className="mb-4 flex justify-start">
                     {service.icon}
                   </div>
-                  <h2 className="text-left text-balance md:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white mb-4">
+                  <h2 className="text-left text-balance max-md:text-2xl md:text-2xl lg:text-2xl font-semibold tracking-[-0.015em] text-white mb-4">
                     {service.title}
                   </h2>
                   <p className="text-left text-base/6 text-gray-50-! mb-6">
                     {service.description}
                   </p>
                 </div>
-                <div className="flex justify-start w-full">
+                {/* <div className="flex justify-start w-full">
                   <span className="inline-flex items-center text-white hover:text-neutral-200 transition-colors duration-200">
                     Dowiedz się więcej
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </span>
-                </div>
+                </div> */}
               </div>
               
               {/* Zdjęcie tylko dla kart z hasImage */}

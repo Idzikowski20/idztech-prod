@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "motion/react";
- 
+
 interface LineShadowTextProps
   extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,
     MotionProps {
   shadowColor?: string;
   as?: React.ElementType;
 }
- 
+
 export function LineShadowText({
   children,
   shadowColor = "black",
@@ -17,11 +17,11 @@ export function LineShadowText({
 }: LineShadowTextProps) {
   const MotionComponent = motion.create(Component);
   const content = typeof children === "string" ? children : null;
- 
+
   if (!content) {
     throw new Error("LineShadowText only accepts string content");
   }
- 
+
   return (
     <MotionComponent
       style={{ "--shadow-color": shadowColor } as React.CSSProperties}
