@@ -94,17 +94,18 @@ export default function MarqueeDemo() {
     <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row justify-center items-center mb-12">
-          <div className="max-w-2xl text-center">
-          <div className='flex justify-center items-center '>
-              <h4 className="text-white font-medium mb-3 pl-3 py-2 pr-3 bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 rounded-full">Opinie klientów</h4>
+          <div className="text-center mb-12">
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2>Co mówią o nas </h2>
+          <div className="flex justify-center items-center w-full">
+            <h2 className="relative z-10 p-1 text-main">nasi</h2>
+            <h2 className="p-1">klienci 🤝</h2>
           </div>
-            <h5 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">
-              Co mówią o nas nasi klienci
-            </h5>
-            <p className="text-premium-dark dark:text-premium-light/70">
-              Zaufało nam już ponad 10 firm z różnych branż. Poznaj opinie naszych klientów i przekonaj się, że jesteśmy właściwym wyborem dla Twojego biznesu.
-            </p>
-          </div>
+        </div>
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">
+          Zaufało nam już ponad 10 firm z różnych branż. Poznaj opinie naszych klientów i przekonaj się, że jesteśmy właściwym wyborem dla Twojego biznesu.
+          </p>
+        </div>
         </div>
         <div className="relative flex w-[70%] max-w-3xl flex-col items-center justify-center overflow-hidden mx-auto">
           <Marquee pauseOnHover className="[--duration:20s]">
