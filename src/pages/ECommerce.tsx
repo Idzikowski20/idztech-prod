@@ -45,25 +45,25 @@ const ECommerce = () => {
         <Navbar />
         
         {/* Hero Section */}
-        <section className="pt-32 pb-16 relative overflow-hidden">
+        <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
           {/* Background elements */}
-          <div className="absolute top-32 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div>
+          <div className="absolute bottom-[10rem] left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
           
-          <div className="container mx-auto px-4 lg:px-8">
+          <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
           
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in">
-                <span className="text-premium-blue font-medium">E-commerce</span>
-                <h1 className={`text-4xl lg:text-5xl font-bold mt-4 mb-6 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-                  Tworzenie sklepów internetowych
+              <div className="w-full h-full animate-fade-in">
+                <span className="text-main font-medium">E-commerce</span>
+                <h1 className="text-4xl lg:text-4xl font-bold mt-4 mb-6 ">
+                Tworzymy <mark className="text-main">sklepy internetowe</mark>, które przyciągają klientów i maksymalizują zyski.
                 </h1>
-                <p className={`${theme === 'dark' ? 'text-premium-light/70' : 'text-gray-700'} text-lg mb-8`}>
+                <p className="text-lg mb-8">
                   Projektujemy i wdrażamy profesjonalne sklepy internetowe, które zwiększają sprzedaż 
                   i zapewniają doskonałe doświadczenia zakupowe dla Twoich klientów.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <div className="w-full h-full flex flex-col sm:flex-row gap-4 mb-10">
+                  <Button className="bg-wave from-[#00a0ff00] bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                     Skontaktuj się z nami
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
@@ -73,12 +73,12 @@ const ECommerce = () => {
                 </div>
               </div>
               
-              <div className="relative animate-slide-up">
-                <div className="w-full h-auto overflow-hidden rounded-lg">
+              <div className="w-full h-full relative animate-slide-up">
+                <div className="w-full h-full overflow-hidden rounded-lg animate-float-1 aspect-[1.3]">
                   <img 
-                    src="/lovable-uploads/6eb584a3-25d1-4841-9431-fc42bf17168e.png" 
+                    src="/images/shop-image.svg" 
                     alt="Sklep internetowy - mockup" 
-                    className="w-full h-auto object-contain rounded-lg"
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ const ECommerce = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-premium-blue font-medium">Funkcjonalności</span>
+              <span className="text-main font-medium">Funkcjonalności</span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Kompleksowe rozwiązania e-commerce</h2>
               <p className="text-premium-light/70 text-lg">
                 Nasze sklepy internetowe są wyposażone w najnowocześniejsze funkcje, które ułatwiają zarządzanie i zwiększają sprzedaż.
@@ -100,7 +100,7 @@ const ECommerce = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Feature 1 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4">
                   <ShoppingCart className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Intuicyjny panel administracyjny</h3>
@@ -125,7 +125,7 @@ const ECommerce = () => {
               
               {/* Feature 2 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4">
                   <CreditCard className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Integracje płatności</h3>
@@ -150,7 +150,7 @@ const ECommerce = () => {
               
               {/* Feature 3 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4">
                   <Truck className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Opcje dostawy</h3>
@@ -175,7 +175,7 @@ const ECommerce = () => {
               
               {/* Feature 4 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4">
                   <Package className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Zarządzanie magazynem</h3>
@@ -200,7 +200,7 @@ const ECommerce = () => {
               
               {/* Feature 5 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4">
                   <BarChart className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Analityka i raporty</h3>
@@ -225,7 +225,7 @@ const ECommerce = () => {
               
               {/* Feature 6 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4">
                   <Shield className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Bezpieczeństwo</h3>
@@ -255,7 +255,7 @@ const ECommerce = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-premium-blue font-medium">Platformy</span>
+              <span className="text-main font-medium">Platformy</span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Platformy e-commerce, które wdrażamy</h2>
               <p className="text-premium-light/70 text-lg">
                 Dobieramy najlepsze rozwiązania w zależności od potrzeb, skali biznesu i specyfiki branży.
@@ -309,7 +309,7 @@ const ECommerce = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-premium-blue font-medium">Jak działamy</span>
+              <span className="text-main font-medium">Jak działamy</span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Proces tworzenia sklepu internetowego</h2>
               <p className="text-premium-light/70 text-lg">
                 Nasze podejście zapewnia stworzenie sklepu, który będzie spełniał wszystkie wymagania biznesowe i techniczne.
@@ -322,7 +322,7 @@ const ECommerce = () => {
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">1</div>
+                      <div className="w-12 h-12 rounded-full from-premium-blue-500 bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 text-white">1</div>
                       <h3 className="text-xl font-semibold ml-4">Analiza i planowanie</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -355,7 +355,7 @@ const ECommerce = () => {
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">2</div>
+                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">2</div>
                       <h3 className="text-xl font-semibold ml-4">UX/UI Design</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -388,7 +388,7 @@ const ECommerce = () => {
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">3</div>
+                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">3</div>
                       <h3 className="text-xl font-semibold ml-4">Rozwój i wdrożenie</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -421,7 +421,7 @@ const ECommerce = () => {
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">4</div>
+                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">4</div>
                       <h3 className="text-xl font-semibold ml-4">Testy i optymalizacja</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -454,7 +454,7 @@ const ECommerce = () => {
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 text-white">5</div>
+                      <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">5</div>
                       <h3 className="text-xl font-semibold ml-4">Launch i wsparcie</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -522,7 +522,7 @@ const ECommerce = () => {
           buttons={[
             <Button 
               size="lg" 
-              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
+              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
               style={{animationDelay: "0.4s"}}
               onClick={() => navigate('/contact')}
             >

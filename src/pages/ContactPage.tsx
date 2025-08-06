@@ -98,7 +98,7 @@ const ContactPage = () => {
                   {/* Removed the image here */}
                   
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[5px] mr-[10px]">
+                    <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[5px] mr-[10px]">
                       <Clock size={20} className="text-white" />
                     </div>
                     <div>
@@ -108,7 +108,7 @@ const ContactPage = () => {
                   </div>
                   
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[5px] mr-[10px]">
+                    <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[5px] mr-[10px]">
                       <Calendar size={20} className="text-white" />
                     </div>
                     <div>
@@ -153,7 +153,7 @@ const ContactPage = () => {
                       <span className="text-premium-light/80">NIP: 123-456-78-90</span>
                     </div> */}
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center p-[10px]">
+                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[10px]">
                         <Mail size={20} className="text-white" />
                       </div>
                       <span className="text-premium-light/80">kontakt@idztech.pl</span>

@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/form";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Notification from './ui/Notification';
-import { useTheme } from '@/utils/themeContext';
 import { useNotification } from './ui/NotificationContext';
 
 const formSchema = z.object({
@@ -48,7 +47,6 @@ const ContactForm = () => {
   });
 
   const { showNotification } = useNotification();
-  const { theme } = useTheme();
 
   const onSubmit = async (data: FormValues) => {
     try {
@@ -208,7 +206,7 @@ const ContactForm = () => {
         
         <Button 
           type="submit" 
-          className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full w-full px-8 py-6"
+          className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full w-full px-8 py-6"
           disabled={form.formState.isSubmitting || formspreeState.submitting}
         >
           <Send size={16} className="mr-2" />

@@ -21,7 +21,7 @@ const CTA = () => {
             <Link to="/contact">
             <Button 
               size="lg" 
-              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
+              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
               style={{animationDelay: "0.4s"}}
             >
               <span className="relative z-10 text-white">Skontaktuj się z nami</span>

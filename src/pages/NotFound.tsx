@@ -81,8 +81,8 @@ const NotFound = () => {
           <Button 
             className={`${
               theme === 'dark' 
-                ? 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6' 
-                : 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6'
+                ? 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6' 
+                : 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6'
             } transition-all duration-300 w-full sm:w-auto`}
             onClick={() => navigate('/')}
           >

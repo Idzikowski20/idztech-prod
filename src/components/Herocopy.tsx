@@ -55,7 +55,7 @@ const Hero = () => {
             Pomagamy firmom zaistnieć w internecie i skutecznie pozyskiwać klientów. Tworzymy nowoczesne strony www, sklepy internetowe oraz prowadzimy kompleksowe działania SEO.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button className="bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave bg-gradient-to-br  via-premium-purple-500  hover:text-white transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Skontaktuj się z nami
                   <ArrowRight size={18} className="ml-2" />
                 </Button>

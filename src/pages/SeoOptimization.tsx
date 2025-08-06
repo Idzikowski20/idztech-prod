@@ -98,7 +98,7 @@ const SeoOptimization = () => {
                   Profesjonalna optymalizacja strony to klucz do wysokich pozycji. Wykorzystaj naszą wiedzę, aby poprawić widoczność w Google.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                  <Button className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                     Zamów optymalizację SEO
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
@@ -206,7 +206,7 @@ const SeoOptimization = () => {
                 key={idx}
                 className={`backdrop-blur-sm border rounded-xl p-6 flex flex-col items-center text-center group ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}
               >
-                <div className="h-14 w-14 bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300 p-2">
+                <div className="h-14 w-14 bg-wave bg-gradient-to-br  via-premium-purple-500  rounded-full flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300 p-2">
                   {item.icon}
                 </div>
                 <h3 className="font-medium mb-2">{item.title}</h3>
@@ -277,7 +277,7 @@ const SeoOptimization = () => {
           description="Zamów profesjonalną optymalizację SEO i zacznij przyciągać więcej klientów!"
           buttons={[
             <Button 
-              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
+              className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
               style={{animationDelay: "0.4s"}}
               size="lg"
               onClick={() => navigate('/contact')}

@@ -98,9 +98,9 @@ const Blog = () => {
       <section className="pt-32 pb-12 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Dev blog.</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Dev <mark className="text-main">blog.</mark></h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl">
-              Najnowsze informacje, porady i trendy ze świata IT. 
+              Najnowsze informacje, porady i trendy ze świata IT i biznesu. 
             </p>
           </div>
         </div>
@@ -175,7 +175,7 @@ const Blog = () => {
         title="Potrzebujesz profesjonalnych usług SEO?"
         description="Skontaktuj się z nami, aby omówić jak możemy pomóc Twojej stronie osiągnąć lepsze wyniki w wyszukiwarkach."
         buttons={[
-          <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" key="cta-blog">
+          <Button className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" key="cta-blog">
             Skontaktuj się z nami
           </Button>
         ]}

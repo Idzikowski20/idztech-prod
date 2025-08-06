@@ -110,13 +110,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="offer" className={theme === 'light' ? 'border-gray-200' : 'border-white/10'}>
                 <AccordionTrigger className={`${textColor} text-lg px-3 py-2 ${(isActive('/tworzenie-stron-internetowych') || isActive('/sklepy-internetowe') || isActive('/pozycjonowanie-stron') || isActive('/pozycjonowanie-lokalne') || isActive('/audyt-seo') || isActive('/optymalizacja-seo') || isActive('/copywriting-seo') || isActive('/content-plan')) ? 'font-bold' : ''}`}>Oferta</AccordionTrigger>
-                <AccordionContent className="px-0 py-0">
-                  <div className="bg-neutral-50 dark:bg-neutral-900 border border-gray-200 dark:border-white/10 rounded-xl p-3 flex flex-col gap-6 overflow-x-hidden">
+                <AccordionContent className="px-0 pt-2">
+                  <div className="bg-neutral-900 bg-gradient-to-br  via-[#000000] border border-width-[1px] border-[#80808030] rounded-xl p-3 flex flex-col gap-6 overflow-x-hidden">
                     {/* Strony www */}
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center justify-center gap-2 mb-4">
                         <Globe className="text-black dark:text-white" size={22} />
-                        <span className="font-bold text-base text-premium-purple">Strony www</span>
+                        <span className="font-bold text-xl text-premium-purple dark:text-neutral-100">Development</span>
                       </div>
                       <ul className="flex flex-col gap-1 pl-6">
                         <li>
@@ -141,39 +141,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMenuOpen, setIsMenuOpen }) =>
                     </div>
                     {/* Pozycjonowanie SEO */}
                     <div>
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center justify-center gap-2 mb-2">
                         <TrendingUp className="text-black dark:text-white" size={22} />
-                        <span className="font-bold text-base text-premium-purple">Pozycjonowanie (SEO)</span>
+                        <span className="font-bold text-xl text-premium-purple dark:text-neutral-100">Seo</span>
                       </div>
                       <ul className="flex flex-col gap-1 pl-6">
                         <li>
                           <Link to="/pozycjonowanie-stron" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
                             <Search className="text-black dark:text-white" size={18} />
                             Pozycjonowanie stron internetowych
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/pozycjonowanie-lokalne" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
-                            <MapPin className="text-black dark:text-white" size={18} />
-                            Pozycjonowanie lokalne
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/audyt-seo" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
-                            <FileText className="text-black dark:text-white" size={18} />
-                            Audyt SEO strony
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/optymalizacja-seo" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
-                            <Settings className="text-black dark:text-white" size={18} />
-                            Optymalizacja SEO strony
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/copywriting-seo" className="flex items-center gap-2 py-2 text-sm font-medium text-black dark:text-white transition" onClick={() => setIsMenuOpen(false)}>
-                            <PenLine className="text-black dark:text-white" size={18} />
-                            Copywriting SEO
                           </Link>
                         </li>
                       </ul>

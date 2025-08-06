@@ -146,7 +146,7 @@ const Seo = () => {
                   i budujemy trwałą obecność Twojej firmy w Internecie.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                  <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                     Skontaktuj się z nami
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
@@ -189,13 +189,13 @@ const Seo = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                 Czym jest SEO i jak może <span className="text-premium-orange">wesprzeć Twój biznes?</span>
               </h2>
-              <p className="mb-6 text-premium-light/80 text-base">
+              <p className="mb-6 text-premium-light/80 ">
                 SEO (Search Engine Optimization) to proces optymalizacji stron internetowych pod kątem wyszukiwarek, mający na celu zwiększenie widoczności Twojej firmy w Google. W Polsce często określane jako pozycjonowanie stron.
               </p>
-              <p className="mb-4 text-premium-light/80 text-base">
+              <p className="mb-4 text-premium-light/80 ">
                 W praktyce SEO to szereg działań na stronie i poza nią, które mają przekonać Google, że to właśnie Twoja strona powinna być wyżej w wynikach wyszukiwania. Dlaczego to takie istotne?
               </p>
-              <p className="text-premium-light/70 text-base">
+              <p className="text-premium-light/70 ">
                 Dziś większość klientów szuka rozwiązań swoich problemów w Google. Jeśli Twoja strona pojawia się wysoko, zyskujesz zaufanie i realny ruch, który może przełożyć się na wzrost sprzedaży i rozpoznawalności marki.
               </p>
             </div>
@@ -207,7 +207,7 @@ const Seo = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-premium-light mb-1">Realnie zwiększasz ruch na stronie</h3>
-                  <p className="text-premium-light/70 text-base">Dzięki skutecznym strategiom SEO zauważysz wzrost odwiedzin, co przekłada się na większą widoczność w sieci.</p>
+                  <p className="text-premium-light/70 ">Dzięki skutecznym strategiom SEO zauważysz wzrost odwiedzin, co przekłada się na większą widoczność w sieci.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -216,7 +216,7 @@ const Seo = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-premium-light mb-1">Pozyskujesz wartościowych klientów</h3>
-                  <p className="text-premium-light/70 text-base">Dzięki analizie słów kluczowych docierasz do osób faktycznie zainteresowanych Twoją ofertą, co zwiększa szanse na konwersję.</p>
+                  <p className="text-premium-light/70 ">Dzięki analizie słów kluczowych docierasz do osób faktycznie zainteresowanych Twoją ofertą, co zwiększa szanse na konwersję.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -225,7 +225,7 @@ const Seo = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-premium-light mb-1">Budujesz przewagę nad konkurencją</h3>
-                  <p className="text-premium-light/70 text-base">Dzięki SEO Twoja strona może wyprzedzić konkurencję w Google i stać się liderem w branży online.</p>
+                  <p className="text-premium-light/70 ">Dzięki SEO Twoja strona może wyprzedzić konkurencję w Google i stać się liderem w branży online.</p>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@ const Seo = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Service 1 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <Search className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Audyt SEO</h3>
@@ -314,7 +314,7 @@ const Seo = () => {
               
               {/* Service 2 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <Settings className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Optymalizacja on-site</h3>
@@ -323,15 +323,15 @@ const Seo = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Optymalizacja meta tagów</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Optymalizacja struktury strony</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Poprawa szybkości ładowania</span>
                   </li>
                 </ul>
@@ -339,7 +339,7 @@ const Seo = () => {
               
               {/* Service 3 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <FileText className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Content marketing</h3>
@@ -348,15 +348,15 @@ const Seo = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Strategia contentowa</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Copywriting SEO</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Optymalizacja istniejących treści</span>
                   </li>
                 </ul>
@@ -364,7 +364,7 @@ const Seo = () => {
               
               {/* Service 4 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <Globe className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Link building</h3>
@@ -389,7 +389,7 @@ const Seo = () => {
               
               {/* Service 5 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <Target className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">SEO lokalne</h3>
@@ -398,15 +398,15 @@ const Seo = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Optymalizacja Google Business Profile</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Lokalne katalogi firm</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Recenzje i opinie</span>
                   </li>
                 </ul>
@@ -414,7 +414,7 @@ const Seo = () => {
               
               {/* Service 6 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-white/20 transition-colors group hover:-translate-y-1 duration-300">
-                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <BarChart4 className="text-premium-light" size={24} />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Analityka i raportowanie</h3>
@@ -423,15 +423,15 @@ const Seo = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Monitoring pozycji</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Analiza ruchu</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Miesięczne raporty</span>
                   </li>
                 </ul>
@@ -454,7 +454,7 @@ const Seo = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Benefit 1 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-left hover:border-white/20 transition-colors group">
-                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <TrendingUp className="text-premium-light" size={32} />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">Trwały wzrost ruchu</h3>
@@ -465,7 +465,7 @@ const Seo = () => {
               
               {/* Benefit 2 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-left hover:border-white/20 transition-colors group">
-                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <Target className="text-premium-light" size={32} />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">Precyzyjne targetowanie</h3>
@@ -476,7 +476,7 @@ const Seo = () => {
               
               {/* Benefit 3 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-left hover:border-white/20 transition-colors group">
-                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <Award className="text-premium-light" size={32} />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">Budowa wiarygodności</h3>
@@ -487,7 +487,7 @@ const Seo = () => {
               
               {/* Benefit 4 */}
               <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-left hover:border-white/20 transition-colors group">
-                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center mb-4">
                   <BarChart4 className="text-premium-light" size={32} />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">Wysoki zwrot z inwestycji</h3>
@@ -517,7 +517,7 @@ const Seo = () => {
                   <tr>
                     <th className="w-1/3 text-premium-light/80 text-base font-semibold"></th>
                     <th className="w-1/3 text-premium-purple text-lg font-bold text-left">SEO</th>
-                    <th className="w-1/3 text-premium-orange text-lg font-bold text-center border-l border-gray-500/30">Google Ads</th>
+                    <th className="w-1/3 text-premium-purple text-lg font-bold text-center border-l border-gray-500/30">Google Ads</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -572,9 +572,9 @@ const Seo = () => {
               {/* Step 1 */}
               <div className="flex flex-col md:flex-row items-start gap-6 group">
                 <div className="w-full md:w-1/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center m-4 text-white">1</div>
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
+                    <div className="flex-col flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center m-4 text-white">1</div>
                       <h3 className="text-xl font-semibold ml-4">Audyt i analiza</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -583,7 +583,7 @@ const Seo = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
@@ -605,9 +605,9 @@ const Seo = () => {
               {/* Step 2 */}
               <div className="flex flex-col md:flex-row items-start gap-6 group">
                 <div className="w-full md:w-1/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-blue/30 transition-colors">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center m-4 text-white">2</div>
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-blue/30 transition-colors">
+                    <div className="flex-col flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center m-4 text-white">2</div>
                       <h3 className="text-xl font-semibold ml-4">Strategia i planowanie</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -616,18 +616,18 @@ const Seo = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-blue/30 transition-colors">
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-blue/30 transition-colors">
                     <ul className="space-y-3">
                       <li className="flex items-start">
-                        <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
+                        <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
                         <p className="text-premium-light/70">Dobór najlepszych słów kluczowych i fraz</p>
                       </li>
                       <li className="flex items-start">
-                        <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
+                        <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
                         <p className="text-premium-light/70">Planowanie zmian technicznych i contentowych</p>
                       </li>
                       <li className="flex items-start">
-                        <Check className="text-premium-blue mt-1 mr-3 flex-shrink-0" size={18} />
+                        <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
                         <p className="text-premium-light/70">Opracowanie harmonogramu działań i publikacji treści</p>
                       </li>
                     </ul>
@@ -638,9 +638,9 @@ const Seo = () => {
               {/* Step 3 */}
               <div className="flex flex-col md:flex-row items-start gap-6 group">
                 <div className="w-full md:w-1/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-pink/30 transition-colors">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center m-4 text-white">3</div>
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-pink/30 transition-colors">
+                    <div className="flex-col flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center m-4 text-white">3</div>
                       <h3 className="text-xl font-semibold ml-4">Implementacja</h3>
                     </div>
                     <p className="text-premium-light/70">
@@ -649,18 +649,18 @@ const Seo = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-pink/30 transition-colors">
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-pink/30 transition-colors">
                     <ul className="space-y-3">
                       <li className="flex items-start">
-                        <Check className="text-premium-pink mt-1 mr-3 flex-shrink-0" size={18} />
+                        <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
                         <p className="text-premium-light/70">Optymalizacja techniczna strony i struktura URL</p>
                       </li>
                       <li className="flex items-start">
-                        <Check className="text-premium-pink mt-1 mr-3 flex-shrink-0" size={18} />
+                        <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
                         <p className="text-premium-light/70">Tworzenie i optymalizacja treści pod SEO</p>
                       </li>
                       <li className="flex items-start">
-                        <Check className="text-premium-pink mt-1 mr-3 flex-shrink-0" size={18} />
+                        <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
                         <p className="text-premium-light/70">Budowa profilu linków i wzmacnianie autorytetu domeny</p>
                       </li>
                     </ul>
@@ -671,10 +671,10 @@ const Seo = () => {
               {/* Step 4 */}
               <div className="flex flex-col md:flex-row items-start gap-6 group">
                 <div className="w-full md:w-1/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center m-4 text-white">4</div>
-                      <h3 className="text-xl font-semibold ml-4">Monitoring i raportowanie</h3>
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
+                    <div className="flex-col flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 flex items-center justify-center m-4 text-white">4</div>
+                      <h3 className="text-xl font-semibold">Monitoring i raportowanie</h3>
                     </div>
                     <p className="text-premium-light/70">
                       Śledzenie wyników i dostosowywanie strategii na podstawie analizy danych.
@@ -682,7 +682,7 @@ const Seo = () => {
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
-                  <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
+                  <div className="flex-col flex /60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full group-hover:border-premium-purple/30 transition-colors">
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <Check className="text-premium-purple mt-1 mr-3 flex-shrink-0" size={18} />
@@ -755,8 +755,6 @@ const Seo = () => {
           </div>
         </section>
 
-        <LocalSeoSection />
-        
         {/* CTA Section */}
         <FAQAccordion
           title="Najczęściej zadawane pytania o pozycjonowanie SEO"
@@ -789,7 +787,7 @@ const Seo = () => {
           description="Skontaktuj się z nami, aby otrzymać bezpłatny audyt SEO Twojej strony i indywidualną ofertę pozycjonowania."
           buttons={[
             <Button 
-              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
+              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
               style={{animationDelay: "0.4s"}}
               size="lg"
               onClick={() => navigate('/contact')}

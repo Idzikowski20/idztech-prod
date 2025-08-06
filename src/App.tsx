@@ -26,7 +26,6 @@ import Admin from '@/pages/Admin';
 import AIPostPage from './pages/ai-post';
 import CookieBanner from './components/CookieBanner';
 import { useAuth } from '@/utils/firebaseAuth';
-import { useTheme } from '@/utils/themeContext';
 import LocomotiveScroll from 'locomotive-scroll';
 // import WarszawaSeoPage from '@/pages/pozycjonowanie/warszawa';
 // import KrakowSeoPage from '@/pages/pozycjonowanie/krakow';
@@ -66,7 +65,6 @@ import { useScrollToTop } from '@/hooks/useScrollToTop';
 
 const App = () => {
   const { loading } = useAuth();
-  const { theme } = useTheme();
   const [showToolbar, setShowToolbar] = useState(false);
   const toolbarInitialized = useRef(false);
   const scrollRef = useRef<any>(null);
@@ -171,37 +169,6 @@ const App = () => {
 
         {/* Pozycjonowanie lokalne */}
         <Route path="/pozycjonowanie/bialystok" element={<BialystokSeoPage />} />
-        {/* <Route path="/pozycjonowanie/krakow" element={<KrakowSeoPage />} />
-        <Route path="/pozycjonowanie/lodz" element={<LodzSeoPage />} />
-        <Route path="/pozycjonowanie/wroclaw" element={<WroclawSeoPage />} />
-        <Route path="/pozycjonowanie/poznan" element={<PoznanSeoPage />} />
-        <Route path="/pozycjonowanie/gdansk" element={<GdanskSeoPage />} />
-        <Route path="/pozycjonowanie/szczecin" element={<SzczecinSeoPage />} />
-        <Route path="/pozycjonowanie/bydgoszcz" element={<BydgoszczSeoPage />} />
-        <Route path="/pozycjonowanie/lublin" element={<LublinSeoPage />} />
-        <Route path="/pozycjonowanie/bialystok" element={<BialystokSeoPage />} />
-        <Route path="/pozycjonowanie/katowice" element={<KatowiceSeoPage />} />
-        <Route path="/pozycjonowanie/gdynia" element={<GdyniaSeoPage />} />
-        <Route path="/pozycjonowanie/czestochowa" element={<CzestochowaSeoPage />} />
-        <Route path="/pozycjonowanie/radom" element={<RadomSeoPage />} />
-        <Route path="/pozycjonowanie/sosnowiec" element={<SosnowiecSeoPage />} />
-        <Route path="/pozycjonowanie/torun" element={<TorunSeoPage />} />
-        <Route path="/pozycjonowanie/kielce" element={<KielceSeoPage />} />
-        <Route path="/pozycjonowanie/gliwice" element={<GliwiceSeoPage />} />
-        <Route path="/pozycjonowanie/zabrze" element={<ZabrzeSeoPage />} />
-        <Route path="/pozycjonowanie/olsztyn" element={<OlsztynSeoPage />} />
-        <Route path="/pozycjonowanie/bielsko-biala" element={<BielskoBialaSeoPage />} />
-        <Route path="/pozycjonowanie/rzeszow" element={<RzeszowSeoPage />} />
-        <Route path="/pozycjonowanie/ruda-slaska" element={<RudaSlaskaSeoPage />} />
-        <Route path="/pozycjonowanie/rybnik" element={<RybnikSeoPage />} />
-        <Route path="/pozycjonowanie/tychy" element={<TychySeoPage />} />
-        <Route path="/pozycjonowanie/dabrowa-gornicza" element={<DabrowaGorniczaSeoPage />} />
-        <Route path="/pozycjonowanie/plock" element={<PlockSeoPage />} />
-        <Route path="/pozycjonowanie/elblag" element={<ElblagSeoPage />} />
-        <Route path="/pozycjonowanie/opole" element={<OpoleSeoPage />} />
-        <Route path="/pozycjonowanie/gorzow-wielkopolski" element={<GorzowWielkopolskiSeoPage />} />
-        <Route path="/pozycjonowanie/wloclawek" element={<WloclawekSeoPage />} />
-        <Route path="/pozycjonowanie/zielona-gora" element={<ZielonaGoraSeoPage />} /> */}
         
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -74,12 +74,14 @@ const CookieBanner: React.FC = () => {
 
   return (
     <div
-      className={
-        isMobile
-          ? 'fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-auto'
-          : 'fixed bottom-6 right-0 z-50 pointer-events-auto'
-      }
-      style={isMobile ? { margin: 10 } : { maxWidth: '30rem', margin: '10px' }}
+      className="sticky z-50 flex justify-center pointer-events-auto w-full sm:w-auto"
+      style={{
+        bottom: isMobile ? 0 : '1.5rem',
+        left: isMobile ? 0 : 'auto',
+        right: isMobile ? 0 : '1.5rem',
+        margin: isMobile ? '10px' : '0',
+        maxWidth: isMobile ? '100%' : '30rem'
+      }}
     >
       <div
         className={`rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 transition-colors
@@ -127,7 +129,7 @@ const CookieBanner: React.FC = () => {
           )}
           <div className="flex flex-col sm:flex-row gap-2 mt-4 justify-center">
             <button
-              className="bg-wave w-auto min-w-[120px] bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:text-white transition-opacity text-white rounded-xl  font-semibold"
+              className="bg-wave w-auto min-w-[120px] bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:text-white transition-opacity text-white rounded-xl  font-semibold"
               onClick={handleAccept}
             >
               Akceptuj
@@ -140,7 +142,7 @@ const CookieBanner: React.FC = () => {
             </button>
             {open && (
               <button
-                className="bg-wave w-auto min-w-[120px] bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:text-white transition-opacity text-white rounded-xl  font-semibold"
+                className="bg-wave w-auto min-w-[120px] bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:text-white transition-opacity text-white rounded-xl  font-semibold"
                 onClick={handleSave}
               >
                 Zapisz preferencje

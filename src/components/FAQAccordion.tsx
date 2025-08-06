@@ -33,7 +33,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items, title, className }) 
                   className={`${theme === 'light' ? 'border-gray-300' : 'border-white/10'}`}
                 >
                   <AccordionTrigger
-                    className={`text-xl font-medium py-4 hover:no-underline hover:text-premium-purple text-left ${theme === 'light' ? 'text-black' : 'text-white'}`}
+                    className={`from-premium-blue-500 text-xl font-medium py-4 hover:no-underline hover:text-main text-left`}
                   >
                     {item.question}
                   </AccordionTrigger>

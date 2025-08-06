@@ -120,7 +120,7 @@ const StatsExpandableGrid = () => {
             {/^\+?\d+%$/.test(stat.value) ? (
               <GradientProgress value={stat.value.replace(/[^\d]/g, '')} label={stat.value.replace('+', '')} />
             ) : (
-              <span className="w-16 h-16 flex items-center justify-center rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 text-white text-2xl font-bold font-mono mb-1">
+              <span className="w-16 h-16 flex items-center justify-center rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  text-white text-2xl font-bold font-mono mb-1">
                 {stat.value}
               </span>
             )}

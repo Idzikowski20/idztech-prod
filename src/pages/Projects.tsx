@@ -170,7 +170,7 @@ const Projects = () => {
                 onClick={() => filterItems(category.id)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
                   activeCategory === category.id 
-                    ? 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full' 
+                    ? 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full' 
                     : 'border border-gray/10 text-premium-light/70 hover:text-premium-light hover:border-white/30'
                 }`}
               >

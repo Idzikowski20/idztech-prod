@@ -140,7 +140,7 @@ const Login = () => {
             </div>
             <Button
               type="submit"
-              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 w-full shadow-sm"
+              className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 w-full shadow-sm"
             >
               Zaloguj się
             </Button>

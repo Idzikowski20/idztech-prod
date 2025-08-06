@@ -41,7 +41,7 @@ const ErrorPage = ({ code = 500, title = "Wystąpił błąd", message = "Przepra
         <p className="text-premium-light/50 mb-8 max-w-md mx-auto">
           Przepraszamy, ale strona której szukasz nie istnieje lub została przeniesiona.aa
         </p>
-        <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/')}>
+        <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/')}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Wróć do strony głównej
         </Button>

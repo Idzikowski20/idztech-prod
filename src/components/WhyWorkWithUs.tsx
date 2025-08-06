@@ -80,7 +80,7 @@ const WhyWorkWithUs = () => {
             </WobbleCard>
             
             {/* Środkowa karta - najwyższa */}
-            <WobbleCard containerClassName="col-span-1 h-[320px] bg-gradient-to-br from-emerald-600 to-teal-600">
+            <WobbleCard containerClassName="h-[320px] col-span-1 h-full bg-gradient-to-br from-indigo-600 to-purple-600">
               <div className="flex flex-col h-full justify-between text-center">
                 <div className="flex-1 flex flex-col justify-center">
                   <CheckCircle size={48} className="text-white mb-4 mx-auto" />
@@ -93,7 +93,7 @@ const WhyWorkWithUs = () => {
             </WobbleCard>
             
             {/* Prawa karta - niższa */}
-            <WobbleCard containerClassName="col-span-1 h-[280px] bg-pink-800 bg-gradient-to-br from-orange-700 to-red-700 transform md:translate-y-4">
+            <WobbleCard containerClassName="col-span-1 h-[280px] bg-ping-800 bg-gradient-to-br from-purple-700 to-indigo-700 transform md:translate-y-4">
               <div className="flex flex-col h-full justify-between text-center">
                 <div className="flex-1 flex flex-col justify-center">
                   <CheckCircle size={48} className="text-white mb-4 mx-auto" />

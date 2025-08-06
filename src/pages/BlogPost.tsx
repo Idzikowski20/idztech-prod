@@ -212,12 +212,12 @@ const BlogPost = () => {
             {/* Author Banner */}
             <div className="flex items-center justify-start gap-3 mb-6 mx-auto py-2 rounded-xl shadow-sm">
               <img
-                src="https://media.licdn.com/dms/image/v2/D4D03AQFN5Z-Q4Ty3tw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709119468661?e=1753315200&v=beta&t=MD-IXRwVN_OjQQf96usS4ZJBJ80W5MAMnbZzOu9aUDw"
+                src="https://media.licdn.com/dms/image/v2/D4D03AQFN5Z-Q4Ty3tw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709119468661?e=1757548800&v=beta&t=VyYoY4sAKCdglHHcM901y8eRu2yyjwKA89TSX4oVHm4"
                 alt="Patryk Idzikowski"
                 className="w-10 h-10 rounded-full object-cover shadow"
               />
               <div className="text-left">
-                <div className="font-semibold text-premium-purple dark:text-white text-base leading-tight">Patryk Idzikowski</div>
+                <div className="font-semibold text-main">Patryk Idzikowski</div>
                 <div className="text-xs text-gray-500 dark:text-premium-light/70">Autor</div>
               </div>
             </div>
@@ -240,7 +240,7 @@ const BlogPost = () => {
               <ul className="list-disc pl-6">
                 {tableOfContents.map(heading => (
                   <li key={heading.id}>
-                    <a href={`#${heading.id}`} className="text-premium-purple hover:underline">{heading.text}</a>
+                    <a href={`#${heading.id}`} className="text-premium-purple hover:underline p-0">{heading.text}</a>
                   </li>
                 ))}
               </ul>
@@ -294,7 +294,7 @@ const BlogPost = () => {
                     <h3 className="font-semibold text-lg mb-3">Potrzebujesz pomocy z SEO?</h3>
                     <p className="text-sm text-gray-300 mb-4">
                       Chcesz zlecić stronę internetową profesjonalistom? Skorzystaj z naszych usług 😊</p>
-                    <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
+                    <Button className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
                     <img 
                       src="/images/seo-icon.png" 
                       alt="SEO Icon" 
@@ -336,7 +336,7 @@ const BlogPost = () => {
             </div>
             {hasMoreRelated && (
               <div className="flex justify-center">
-                <Button onClick={() => setRelatedPage(relatedPage + 1)} className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6t">Załaduj więcej</Button>
+                <Button onClick={() => setRelatedPage(relatedPage + 1)} className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6t">Załaduj więcej</Button>
               </div>
             )}
           </section>

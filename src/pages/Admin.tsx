@@ -322,10 +322,10 @@ const Admin = () => {
                       />
                     </div>
                   </div>
-                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
                     <Plus size={16} className="mr-2" /> Dodaj nowy post
                   </Button>
-                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
                     <Plus size={16} className="mr-2" /> Generuj z AI
                   </Button>
                 </div>

@@ -291,6 +291,10 @@
     @apply bg-white text-premium-dark;
   }
 
+  .bg-white {
+    background: transparent;
+  }
+
   /* Style dla tabeli w jasnej wersji */
   .light td,
   .light th {
@@ -880,7 +884,7 @@ input:-internal-autofill-selected {
 }
 
 .tiptap-toolbar {
-  top: 20px !important;
+  top: 140px !important;
   position: sticky !important;
   border: 1px solid gray;
   border-radius: 20px;
@@ -1293,8 +1297,8 @@ input:-internal-autofill-selected {
 }
 
 mark {
-  padding: 2px;
-  border-radius: 20px !important;
+  padding: 8px;
+  border-radius: 10px !important;
 }
 
 .border-radius999 {
@@ -1434,7 +1438,7 @@ input:-webkit-autofill:active {
 
 .text-base {
   font-size: 1.3rem !important;
-  line-height: 3rem !important;
+  line-height: 2.5rem !important;
   color: rgb(184, 182, 182) !important;
 } 
 
@@ -1667,7 +1671,20 @@ input:-webkit-autofill:active {
 }
 
 .text-main {
-color: #b98dff !important;
+  background: linear-gradient(351deg, rgba(197, 250, 255, 1) 0%, rgba(156, 157, 255, 1) 51%, rgba(197, 250, 255, 1) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important  ;
+  color: transparent !important;
+  display: inline-block !important;
+}
+
+
+.gradient-text {
+  background: linear-gradient(351deg, rgba(197, 250, 255, 1) 0%, rgba(156, 157, 255, 1) 51%, rgba(197, 250, 255, 1) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important  ;
+  color: transparent !important;
+  display: inline-block !important;
 }
 
 .wobble {
@@ -1691,4 +1708,14 @@ color: #b98dff !important;
 
 .text-destructive {
     color: hsl(var(--destructive)) !important;
+}
+
+.to-premium-pink-500 {
+  background: transparent !important;
+}
+
+.from-premium-blue-500 {
+  --tw-gradient-from: #00a2ff00 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 160 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #784dff var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
 }

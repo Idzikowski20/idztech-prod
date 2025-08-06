@@ -38,11 +38,11 @@ const Hero = () => {
       
       <div className="container relative z-10 text-center max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-xl md:text-6xl max-md:text-2xl font-bold text-white leading-tight max-md:mb-1 mb-4">Strony internetowe i sklepy online</h1>
-          <SparklesText className="max-md:bottom-5 relative">
-          <h2 className="text-main text-xl p-0  md:text-6xl max-md:text-3xl font-extrabold text-white leading-tight mb-6 uppercase">
-            Które sprzedają
-          </h2>
+        <SparklesText className="relative">
+          <h1 className=" text-xl p-0  md:text-6xl max-md:text-4xl font-extrabold text-white leading-tight">
+            Nowoczesne 
+          </h1>
+          <h1 className="gradient-text text-xl md:text-6xl max-md:text-2xl font-bold text-white leading-tight max-md:mb-1 mb-4">Strony internetowe i sklepy online</h1>
           </SparklesText>
         </div>
         
@@ -67,10 +67,10 @@ const Hero = () => {
         </div>
         <div className="relative overflow-hidden logo-slider">
           {/* Gradient fade na lewej stronie */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-900 via-purple-900/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r max-md:from-[#101422] max-md:via-[#14162400] from-[#0c0c14] via-[#0c0c14] to-transparent z-10 pointer-events-none"></div>
 
           {/* Gradient fade na prawej stronie */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-900 via-purple-900/80 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l max-md:from-[#101422] max-md:via-[#14162400] from-[#0c0c14] via-[#0c0c14] to-transparent z-10 pointer-events-none"></div>
           
           <Marquee
             className="[--duration:30s] py-4"

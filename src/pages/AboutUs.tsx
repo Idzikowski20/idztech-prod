@@ -105,7 +105,7 @@ const AboutUs = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <Button className="bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                   Umów spotkanie
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -145,7 +145,7 @@ const AboutUs = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
                 <Users size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Partnerstwo</h3>
@@ -155,7 +155,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
                 <Award size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Jakość</h3>
@@ -165,7 +165,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
                 <Lightbulb size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Innowacyjność</h3>
@@ -175,7 +175,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
                 <Clock size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Terminowość</h3>
@@ -232,7 +232,7 @@ const AboutUs = () => {
         buttons={[
           <Button 
             size="lg" 
-            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
+            className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             style={{animationDelay: "0.4s"}}
             onClick={() => navigate('/contact')}
           >

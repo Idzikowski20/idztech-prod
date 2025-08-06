@@ -57,7 +57,6 @@ function WelcomeHero() {
           <h2 className="w-full">Ożywiamy Twoją wizję dzięki nowoczesnemu</h2>
           <div className="flex justify-center items-center w-full">
             <h2 className="relative z-10 p-1 text-main">designowi</h2><br></br>
-            <h2 className="p-1">oraz technologii</h2>
           </div>
         </div>
           <p className="text-left mt-4 text-lg max-w-3xl mx-auto text-premium-light/70 dark:text-premium-light/70 light:text-premium-dark">

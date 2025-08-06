@@ -75,7 +75,7 @@ const FAQ = () => {
               {!isMobile && (
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/contact">
-                    <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 to-premium-pink-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6">
+                    <Button className="bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6">
                       Darmowa konsultacja
                       <ArrowRight size={18} className="ml-2" />
                     </Button>
