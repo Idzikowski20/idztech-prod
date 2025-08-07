@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -94,21 +93,17 @@ const Blog = () => {
       </Helmet>
       
       
-      {/* Hero section - simplified with CyberFolks style */}
-      <section className="pt-32 pb-12 relative">
-        <div className="container mx-auto px-4">
+        {/* Hero Section */}
+        <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+        
+         <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
           <div className="max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Dev <mark className="text-main">blog.</mark></h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl">
               Najnowsze informacje, porady i trendy ze świata IT i biznesu. 
             </p>
           </div>
-        </div>
-      </section>
-      
-      {/* Blog posts grid - Updated design matching reference image */}
-      <section className="pb-24">
-        <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4">
           {isLoadingPosts ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -168,7 +163,9 @@ const Blog = () => {
             </div>
           )}
         </div>
+        </div>
       </section>
+      
       
       {/* CTA Section */}
       <GlobalCTA
@@ -181,7 +178,6 @@ const Blog = () => {
         ]}
       />
       
-      <Footer />
     </div>
   );
 };

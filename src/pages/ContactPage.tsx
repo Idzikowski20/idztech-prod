@@ -1,5 +1,3 @@
-import React from 'react';
-import Footer from '@/components/Footer';
 import { Check, Calendar, Clock, MapPin, Mail, Briefcase } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import { Helmet } from 'react-helmet-async';
@@ -71,8 +69,10 @@ const ContactPage = () => {
         `}</script>
       </Helmet>
       
-      <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Hero Section */}
+      <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+         <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
+
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Umów bezpłatną konsultację</h1>
             <p className="text-xl text-premium-light/70">
@@ -98,7 +98,7 @@ const ContactPage = () => {
                   {/* Removed the image here */}
                   
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[5px] mr-[10px]">
+                    <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center  p-[5px] mr-[10px]">
                       <Clock size={20} className="text-white" />
                     </div>
                     <div>
@@ -108,7 +108,7 @@ const ContactPage = () => {
                   </div>
                   
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[5px] mr-[10px]">
+                    <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center  p-[5px] mr-[10px]">
                       <Calendar size={20} className="text-white" />
                     </div>
                     <div>
@@ -153,7 +153,7 @@ const ContactPage = () => {
                       <span className="text-premium-light/80">NIP: 123-456-78-90</span>
                     </div> */}
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[10px]">
+                      <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[5px] mr-[10px]">
                         <Mail size={20} className="text-white" />
                       </div>
                       <span className="text-premium-light/80">kontakt@idztech.pl</span>
@@ -196,7 +196,6 @@ const ContactPage = () => {
         </div>
       </section>
       
-      <Footer />
     </div>
   );
 };

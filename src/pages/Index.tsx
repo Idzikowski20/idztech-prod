@@ -17,7 +17,6 @@ const WhyWorkWithUs = lazy(() => import("@/components/WhyWorkWithUs"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const CTA = lazy(() => import("@/components/CTA"));
-const Footer = lazy(() => import("@/components/Footer"));
 
 // Komponent LazySection
 const LazySection = ({ children, className = "", delay = 0 }) => {
@@ -249,10 +248,6 @@ const Index = () => {
 
         <Suspense fallback={<LoadingFallback />}>
           <CTA />
-        </Suspense>
-
-        <Suspense fallback={<LoadingFallback />}>
-          <Footer />
         </Suspense>
     </div>
   );

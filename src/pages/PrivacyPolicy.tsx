@@ -1,26 +1,20 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import PageDotAnimation from '@/components/PageDotAnimation';
-import { useTheme } from '@/utils/themeContext';
 import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
-  const { theme } = useTheme();
   
   return (
-    <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : ''}`}>
+    <div className="min-h-screen">
       <Helmet>
         <title>Polityka prywatności | IDZTECH</title>
         <meta name="description" content="Polityka prywatności IDZTECH – dowiedz się, jak chronimy Twoje dane osobowe podczas korzystania z naszych usług." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://idztech.pl/polityka-prywatnosci" />
       </Helmet>
-      <Navbar />
       <PageDotAnimation />
       
       <div className="container mx-auto px-4 py-20">
-        <div className={`prose max-w-4xl mx-auto ${theme === 'light' ? 'prose-black' : 'prose-invert'}`}>
+        <div className="prose max-w-4xl mx-auto prose-invert">
           <h1 className="text-4xl font-bold mb-8">Polityka Prywatności</h1>
           <p className="mb-4">Ostatnia aktualizacja: 18.05.2025</p>
           
@@ -35,8 +29,8 @@ const PrivacyPolicy = () => {
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Informacje, które gromadzimy</h2>
           <p>Możemy gromadzić następujące rodzaje informacji:</p>
-          <p><strong>a) Informacje osobowe:</strong> Imię i nazwisko, adres e-mail, numer telefonu oraz inne dane, które dobrowolnie nam udostępniasz poprzez formularze kontaktowe lub rejestracyjne.</p>
-          <p><strong>b) Dane techniczne:</strong> Adres IP, typ i wersja przeglądarki, ustawienia strefy czasowej, rodzaje i wersje wtyczek przeglądarki, system operacyjny i platforma oraz inne technologie używane na urządzeniach, z których korzystasz, aby uzyskać dostęp do naszej Strony.</p>
+          <p><strong> Informacje osobowe:</strong> Imię i nazwisko, adres e-mail, numer telefonu oraz inne dane, które dobrowolnie nam udostępniasz poprzez formularze kontaktowe lub rejestracyjne.</p>
+          <p><strong> Dane techniczne:</strong> Adres IP, typ i wersja przeglądarki, ustawienia strefy czasowej, rodzaje i wersje wtyczek przeglądarki, system operacyjny i platforma oraz inne technologie używane na urządzeniach, z których korzystasz, aby uzyskać dostęp do naszej Strony.</p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Jak wykorzystujemy Twoje informacje</h2>
           <p>Wykorzystujemy zebrane informacje do:</p>
@@ -80,8 +74,6 @@ const PrivacyPolicy = () => {
           <p>Korzystając z naszej Strony, wyrażasz zgodę na warunki niniejszej Polityki Prywatności.</p>
         </div>
       </div>
-      
-      <Footer />
     </div>
   );
 };

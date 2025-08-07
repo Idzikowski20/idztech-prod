@@ -1,6 +1,5 @@
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useTheme } from '@/utils/themeContext';
 
 export interface FAQItem {
   question: string;
@@ -14,7 +13,6 @@ interface FAQAccordionProps {
 }
 
 const FAQAccordion: React.FC<FAQAccordionProps> = ({ items, title, className }) => {
-  const { theme } = useTheme();
   return (
     <section className={`py-20 relative overflow-hidden ${className || ''}`}>
       <div className="container mx-auto px-4 lg:px-8">
@@ -30,14 +28,14 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items, title, className }) 
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className={`${theme === 'light' ? 'border-gray-300' : 'border-white/10'}`}
+                  className="border-gray-300"
                 >
                   <AccordionTrigger
                     className={`from-premium-blue-500 text-xl font-medium py-4 hover:no-underline hover:text-main text-left`}
                   >
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'} accordion-content`}>
+                  <AccordionContent className="text-premium-light/70 accordion-content">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

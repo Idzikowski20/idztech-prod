@@ -2,11 +2,9 @@ import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/utils/themeContext';
 import { WobbleCard } from '@/components/ui/wobble-card';
 
 const WhyWorkWithUs = () => {
-  const { theme } = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
   
   const stats = [
@@ -131,7 +129,7 @@ const WhyWorkWithUs = () => {
           <Link to="/contact">
             <Button
               className={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-md
-                ${theme === 'light' ? 'bg-black text-white hover:bg-black hover:text-white' : 'text-black-important'}`}
+                `}
             >
               Umów spotkanie
             </Button>

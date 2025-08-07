@@ -1,9 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '@/utils/themeContext';
 
 const LightEffects: React.FC = () => {
-  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

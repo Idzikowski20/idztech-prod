@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { useTheme } from '@/utils/themeContext';
 
 export enum PasswordStrength {
   VeryWeak = "Bardzo słabe",
@@ -94,7 +93,6 @@ export const PasswordStrengthIndicator: React.FC<PasswordStrengthIndicatorProps>
   password, 
   showFeedback = true 
 }) => {
-  const { theme } = useTheme();
   const strength = calculatePasswordStrength(password);
   const feedback = showFeedback ? getPasswordFeedback(password) : [];
   
@@ -117,7 +115,7 @@ export const PasswordStrengthIndicator: React.FC<PasswordStrengthIndicatorProps>
     <div className="mt-2 w-full space-y-1">
       {/* Strength label */}
       <div className="flex justify-between items-center">
-        <p className={`text-xs ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
+        <p className={`text-xs text-gray-600`}>
           Siła hasła: 
         </p>
         <p className={`text-xs font-medium ${
@@ -145,7 +143,7 @@ export const PasswordStrengthIndicator: React.FC<PasswordStrengthIndicatorProps>
           {feedback.map((item, index) => (
             <li 
               key={index} 
-              className={`list-disc ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}
+              className={`list-disc text-gray-700`}
             >
               {item}
             </li>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { MessageCircle, XCircle } from 'lucide-react';
-import { useTheme } from '@/utils/themeContext';
 
 // Hook do detekcji mobile po zamontowaniu (SSR-safe)
 function useIsMobile(breakpoint = 768) {
@@ -25,7 +24,6 @@ interface NotificationProps {
 }
 
 const Notification: React.FC<NotificationProps> = ({ sender, message, time = 'Teraz', onClose, isExiting, onAnimationEnd, type }) => {
-  const { theme } = useTheme();
   const isMobile = useIsMobile();
   if (isMobile === null) return null; // Nie renderuj do czasu poznania szerokości
   return (
@@ -35,9 +33,7 @@ const Notification: React.FC<NotificationProps> = ({ sender, message, time = 'Te
         ${isMobile
           ? `top-0 left-1/2 -translate-x-1/2 w-full max-w-md rounded-b-2xl rounded-t-none px-3 py-3 ${isExiting ? 'animate-slide-out-mobile-top' : 'animate-slide-in-mobile-top'}`
           : `bottom-4 right-4 w-[400px] max-w-[95vw] rounded-2xl px-6 py-4 ${isExiting ? 'animate-slide-out-mobile-bottom' : 'animate-slide-in-mobile-bottom'}`}
-        ${theme === 'dark'
-          ? 'bg-[#23272b] text-white border border-gray-700/40'
-          : 'bg-white text-black border border-gray-200'}
+        bg-[#23272b] text-white border border-gray-700/40
         shadow-2xl shadow-black/20 backdrop-blur-md select-none text-left`
       }
       style={{ fontFamily: 'SF Pro Text, Satoshi, system-ui, sans-serif', minHeight: isMobile ? 64 : 56, backdropFilter: 'blur(5px)' }}
@@ -56,13 +52,13 @@ const Notification: React.FC<NotificationProps> = ({ sender, message, time = 'Te
                 <MessageCircle size={13} className="text-white fill-white" />
               </span>
             )}
-            <span className="uppercase text-[11px] font-semibold tracking-widest text-gray-500 dark:text-gray-300 leading-none">POWIADOMIENIE</span>
+            <span className="uppercase text-[11px] font-semibold tracking-widest text-gray-500 leading-none">POWIADOMIENIE</span>
           </span>
-          <span className="text-[11px] text-gray-400 dark:text-gray-400 leading-none ml-auto">{time}</span>
+          <span className="text-[11px] text-gray-400 leading-none ml-auto">{time}</span>
           {onClose && (
             <button
               onClick={onClose}
-              className="ml-2 text-gray-400 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white text-lg font-bold p-0 bg-transparent border-0 outline-none"
+              className="ml-2 text-gray-400 hover:text-gray-700 text-lg font-bold p-0 bg-transparent border-0 outline-none"
               aria-label="Zamknij powiadomienie"
               style={{ lineHeight: 1 }}
             >

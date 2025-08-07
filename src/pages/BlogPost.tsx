@@ -1,23 +1,18 @@
 import React, { useEffect, useState} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock, Tag, Share2,  Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Facebook, Linkedin, Share2, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { formatDate, formatReadingTime } from '@/utils/dateUtils';
-import { Separator } from '@/components/ui/separator';
 import { useAuth } from '@/utils/AuthProvider';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Helmet } from 'react-helmet-async';
 import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
-import Footer from '@/components/Footer';
-import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { theme } = useTheme();
   const [notification, setNotification] = useState<null | { sender: string; message: string; time?: string }>(null);
   
   // Get blog data
@@ -146,7 +141,6 @@ const BlogPost = () => {
             <Skeleton className="h-6 w-3/4" />
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -254,14 +248,13 @@ const BlogPost = () => {
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
               <div className="mb-6">
-                <h3 className={`text-lg font-semibold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>Tagi:</h3>
+                <h3 className={`text-lg font-semibold mb-2 text-white`}>Tagi:</h3>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag: string, index: number) => (
                     <div
                       key={`${tag}-${index}`}
-                      className={`px-3 py-1 rounded-full text-sm ${
-                        theme === 'dark' ? 'bg-transparent text-white border border-white' : 'bg-gray-800 text-gray-200'
-                      }`}
+                      className="px-3 py-1 rounded-full text-sm
+                        bg-transparent text-white border border-[#282828]"
                     >
                       {tag}
                     </div>
@@ -289,12 +282,12 @@ const BlogPost = () => {
               </div>
                    {/* CTA Box */}
                   <div
-                    className={`mt-10 border border-premium-light/10 rounded-lg p-6 text-center relative ${theme === 'light' ? 'bg-[#f5f5f5]' : '/80'}`}
+                    className={`mt-10 border border-premium-light/10 rounded-lg p-6 text-center relative`}
                   >
-                    <h3 className="font-semibold text-lg mb-3">Potrzebujesz pomocy z SEO?</h3>
+                    <h3 className="font-semibold text-lg mb-3">Potrzebujesz pomocy z Seo?</h3>
                     <p className="text-sm text-gray-300 mb-4">
                       Chcesz zlecić stronę internetową profesjonalistom? Skorzystaj z naszych usług 😊</p>
-                    <Button className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
+                    <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 mt-2" onClick={() => navigate('/contact')}>                  Skontaktuj się z nami                </Button>
                     <img 
                       src="/images/seo-icon.png" 
                       alt="SEO Icon" 
@@ -325,8 +318,8 @@ const BlogPost = () => {
                       className="rounded-xl w-full h-32 object-cover mb-3"
                     />
                   )}
-                  <div className={`font-semibold text-lg text-center mb-2 line-clamp-2 ${theme === 'dark' ? 'text-white' : ''}`}>{rp.title}</div>
-                  <div className="text-sm text-gray-400 text-center mb-2">
+                  <div className={`font-semibold text-lg  mb-2 line-clamp-2 text-white`}>{rp.title}</div>
+                  <div className="text-sm text-gray-400  mb-2">
                     {rp.excerpt && rp.excerpt.length > 100
                       ? rp.excerpt.slice(0, 100).replace(/\s+\S*$/, '') + '...'
                       : rp.excerpt}
@@ -336,7 +329,7 @@ const BlogPost = () => {
             </div>
             {hasMoreRelated && (
               <div className="flex justify-center">
-                <Button onClick={() => setRelatedPage(relatedPage + 1)} className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6t">Załaduj więcej</Button>
+                <Button onClick={() => setRelatedPage(relatedPage + 1)} className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 mt-2">Załaduj więcej</Button>
               </div>
             )}
           </section>
@@ -344,7 +337,6 @@ const BlogPost = () => {
       </div>
       
       
-      <Footer />
     </div>
   );
 };

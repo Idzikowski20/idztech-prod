@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Edit, Trash2, Eye, Search, ArrowUpDown, BarChart2 } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, Search, ArrowUpDown } from 'lucide-react';
 import { useAuth } from '@/utils/firebaseAuth';
 import { Button } from '@/components/ui/button';
 import { db } from '@/integrations/firebase/client';
@@ -32,7 +32,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
 import { useNotification } from '@/components/ui/NotificationContext';
 import { Helmet } from 'react-helmet';
@@ -63,7 +62,6 @@ const Admin = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   // const { toast } = useToast();
-  const { theme } = useTheme();
   const { showNotification } = useNotification();
   
   // State for blog posts
@@ -266,7 +264,7 @@ const Admin = () => {
       <div className="fixed inset-0 z-50 flex items-center justify-center">
         <div className="flex flex-col items-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-t-4 border-premium-purple border-solid mb-6"></div>
-          <span className={`${theme === 'dark' ? 'text-white' : 'text-black'} text-lg font-semibold`}>Ładowanie...</span>
+          <span className="text-white text-lg font-semibold">Ładowanie...</span>
         </div>
       </div>
     );
@@ -322,10 +320,10 @@ const Admin = () => {
                       />
                     </div>
                   </div>
-                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                  <Button onClick={() => navigate('/admin/new-post')} className={`bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 text-white`}>
                     <Plus size={16} className="mr-2" /> Dodaj nowy post
                   </Button>
-                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 ${theme !== 'dark' ? 'text-white' : ''}`}>
+                  <Button onClick={() => navigate('/admin/ai-post')} className={`bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6 text-white`}>
                     <Plus size={16} className="mr-2" /> Generuj z AI
                   </Button>
                 </div>
@@ -345,7 +343,7 @@ const Admin = () => {
                           setSortDirection('asc');
                         }
                       }}
-                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none ${theme === 'dark' ? 'text-white' : 'text-black'} ${sortField === 'title' ? '!border-b-0' : 'border-b'}`}
+                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none text-white ${sortField === 'title' ? '!border-b-0' : 'border-b'}`}
                     >
                       <span className="inline-flex items-center">Tytuł <ArrowUpDown size={16} className="ml-2" /></span>
                     </th>
@@ -358,7 +356,7 @@ const Admin = () => {
                           setSortDirection('desc');
                         }
                       }}
-                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none ${theme === 'dark' ? 'text-white' : 'text-black'} ${sortField === 'date' ? '!border-b-0' : 'border-b'}`}
+                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none text-white ${sortField === 'date' ? '!border-b-0' : 'border-b'}`}
                     >
                       <span className="inline-flex items-center">Data <ArrowUpDown size={16} className="ml-2" /></span>
                     </th>
@@ -371,11 +369,11 @@ const Admin = () => {
                           setSortDirection('desc');
                         }
                       }}
-                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none ${theme === 'dark' ? 'text-white' : 'text-black'} ${sortField === 'status' ? '!border-b-0' : 'border-b'}`}
+                      className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 cursor-pointer select-none text-white ${sortField === 'status' ? '!border-b-0' : 'border-b'}`}
                     >
                       <span className="inline-flex items-center">Status <ArrowUpDown size={16} className="ml-2" /></span>
                     </th>
-                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 ${theme === 'dark' ? 'text-white' : 'text-black'} border-b`}>Akcje</th>
+                    <th className={`py-2 sm:py-3 px-2 sm:px-4 text-center whitespace-nowrap border-l border-r border-gray-400/20 text-white border-b`}>Akcje</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-premium-light/10">
@@ -390,13 +388,13 @@ const Admin = () => {
                   ) : (
                     paginatedPosts.map(post => (
                       <tr key={post.id}>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 font-medium break-words max-w-[180px] text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{post.title}</td>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-premium-light/70' : 'text-gray-600'}`}>
+                        <td className={`py-2 sm:py-3 px-2 sm:px-4 font-medium break-words max-w-[180px] text-left text-white`}>{post.title}</td>
+                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left text-premium-light/70`}>
                           {post.published 
                             ? formatDate(post.published_at || post.created_at)
                             : formatDate(post.created_at)}
                         </td>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left text-white`}>
                           <button
                             onClick={() => handleStatusChange(post.id, !post.published)}
                             className={`${post.published ? 'status-published' : 'status-draft'} cursor-pointer transition-transform hover:scale-105`}
@@ -404,7 +402,7 @@ const Admin = () => {
                             {post.published ? 'Opublikowany' : 'Szkic'}
                           </button>
                         </td>
-                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                        <td className={`py-2 sm:py-3 px-2 sm:px-4 text-left text-white`}>
                           <div className="flex items-center space-x-2 justify-center">
                             <Button
                               variant="outline"
@@ -450,7 +448,7 @@ const Admin = () => {
                         className={
                           currentPostsPage === 1
                             ? 'pointer opacity-50 border border-w-[1px]'
-                            : `${theme === 'dark' ? 'text-white' : 'text-white'} hover:none`
+                            : `text-white hover:none`
                         }
                       />
                     </PaginationItem>
@@ -474,7 +472,7 @@ const Admin = () => {
                             onClick={() => setCurrentPostsPage(pageNum)}
                             isActive={currentPostsPage === pageNum}
                             className={
-                              `${theme === 'dark' ? 'text-white' : 'text-black'} !bg-transparent !border-none !shadow-none !hover:bg-transparent !hover:text-inherit`
+                              `text-white !bg-transparent !border-none !shadow-none !hover:bg-transparent !hover:text-inherit`
                             }
                           >
                             {pageNum}
@@ -489,7 +487,7 @@ const Admin = () => {
                         className={
                           currentPostsPage === totalPostsPages
                             ? 'pointer-events-none opacity-50'
-                            : `${theme === 'dark' ? 'text-white' : 'text-black'} hover:underline`
+                            : `text-white hover:underline`
                         }
                       />
                     </PaginationItem>

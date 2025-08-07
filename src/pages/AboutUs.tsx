@@ -1,50 +1,13 @@
-import React from 'react';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Users, Award, Lightbulb, Clock } from 'lucide-react';
-import { useTheme } from '@/utils/themeContext';
+import { ArrowRight, Users, Award, Lightbulb, Clock } from 'lucide-react';
 import GlobalCTA from '@/components/GlobalCTA';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import FAQ from '@/components/FAQ';
 
 const AboutUs = () => {
-  const { theme } = useTheme();
   const navigate = useNavigate();
 
-  const people = [
-    { 
-      name: 'Patryk Idzikowski', 
-      role: 'SEO',
-      description: 'Ekspert z 4-letnim doświadczeniem w tworzeniu stron internetowych i optymalizacji SEO dla firm z różnych branż.',
-      image: 'https://media.licdn.com/dms/image/v2/D4D03AQFN5Z-Q4Ty3tw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709119468661?e=1753315200&v=beta&t=MD-IXRwVN_OjQQf96usS4ZJBJ80W5MAMnbZzOu9aUDw'
-    },
-    { 
-      name: 'Aleksandra Górecka', 
-      role: 'Sales Director',
-      description: 'Doświadczony Handlowiec i Specjalista w zakresie sprzedaży i marketingu',
-      image: 'https://media.licdn.com/dms/image/v2/D4D03AQGXIT6Ts4PNKA/profile-displayphoto-shrink_200_200/B4DZOGr_alG0Ac-/0/1733131499592?e=1753315200&v=beta&t=pG5ndvFbqCngCLfXaRdUm7mpm_RQdcHjWfvoJn8uwy8'
-    },
-    { 
-      name: 'Lidia Idzikowska-Śliwa', 
-      role: 'Fullstack Developer',
-      description: 'Ekspert z 10-letnim doświadczeniem w tworzeniu aplikacji pełnostackowych wykorzystujących najnowsze technologie.',
-      image: 'https://media.licdn.com/dms/image/v2/D4E03AQEYvQq3t6S4sw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709115564928?e=1753315200&v=beta&t=g0_qDY8HNzH53iK90feqkCEfshLCLuSX4gUz_ZV_I0s'
-    },
-    { 
-      name: 'Przemek Idzikowski', 
-      role: 'QA',
-      description: 'Specjalista od zapewnienia jakości z doświadczeniem w testowaniu aplikacji webowych i mobilnych.',
-      image: 'https://media.licdn.com/dms/image/v2/D4D03AQHnAB-xHjZuzQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709126469495?e=1753315200&v=beta&t=j37jqhIfKlFX0WGqpowFNCQuYsNoV6XZ5SHISjU2Kig'
-    },
-    { 
-      name: 'Jan Śliwa', 
-      role: 'Key Account Manager',
-      description: 'Doświadczony handlowiec z szeroką wiedzą w zakresie sprzedaży rozwiązań IT i marketingowych.',
-      image: 'https://media.licdn.com/dms/image/v2/D4E03AQEODWoax6O9kQ/profile-displayphoto-shrink_200_200/B4EZTNI7ExGYAY-/0/1738608456657?e=1753315200&v=beta&t=xSesI6rQTiqm13EsbJL-xN9vN5ye5aFNoz2__83lG9U'
-    }
-  ];
-  
   return (
     <div className="min-h-screen ">
       <Helmet>
@@ -92,8 +55,9 @@ const AboutUs = () => {
         `}</script>
       </Helmet>
       
-      <section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
+       {/* Hero Section */}
+       <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+         <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             <div className="w-full lg:w-1/2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
@@ -109,7 +73,7 @@ const AboutUs = () => {
                   Umów spotkanie
                   <ArrowRight size={18} className="ml-2" />
                 </Button>
-                <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white`} onClick={() => navigate('/projects')}>
                   Nasze realizacje
                 </Button>
               </div>
@@ -145,7 +109,7 @@ const AboutUs = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[5px] mr-[10px]">
                 <Users size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Partnerstwo</h3>
@@ -155,7 +119,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[5px] mr-[10px]">
                 <Award size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Jakość</h3>
@@ -165,7 +129,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[5px] mr-[10px]">
                 <Lightbulb size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Innowacyjność</h3>
@@ -175,7 +139,7 @@ const AboutUs = () => {
             </div>
             
             <div className="/60 border border-white/10 rounded-xl p-6 transition-transform hover:scale-110 duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
-              <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 p-[10px]">
+              <div className="w-12 h-12 rounded-xl bg-wave from-premium-blue-500 bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center p-[5px] mr-[10px]">
                 <Clock size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Terminowość</h3>
@@ -186,37 +150,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      
-      {/* Team section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className=" py-24 sm:py-32">
-          <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-            <div className="max-w-xl">
-            <span className="text-premium-purple font-medium">Zespół</span>
-              <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">
-                Kto go tworzy? 🤝
-              </h2>
-              <p className="mt-6 text-lg/8 text-gray-600">
-              Nasz zespół to doświadczeni specjaliści z dziedziny tworzenia stron internetowych i SEO, którzy łączą swoje umiejętności, aby zapewnić Ci najlepsze wyniki.
-              </p>
-            </div>
-            <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-              {people.map((person) => (
-                <li key={person.name}>
-                  <div className="flex items-center gap-x-6">
-                    <img alt="" src={person.image} className="size-16 rounded-full" />
-                    <div>
-                      <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">{person.name}</h3>
-                      <p className="text-sm/6 font-semibold text-indigo-600">{person.role}</p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-      
+       
       {/* Why Us section */}
       <section className="py-20 relative overflow-hidden">
       <div data-lazy>
@@ -232,7 +166,7 @@ const AboutUs = () => {
         buttons={[
           <Button 
             size="lg" 
-            className="bg-wave  bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
+            className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6"
             style={{animationDelay: "0.4s"}}
             onClick={() => navigate('/contact')}
           >
@@ -240,8 +174,7 @@ const AboutUs = () => {
           </Button>
         ]}
       />
-      
-      <Footer />
+    
     </div>
   );
 };

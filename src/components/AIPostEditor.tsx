@@ -10,7 +10,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { TipTapEditor } from '@/components/TipTapEditor';
 import { toast } from 'sonner';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { useTheme } from '@/utils/themeContext';
 import { useNotification } from '@/components/ui/NotificationContext';
 
 const blogPostSchema = z.object({
@@ -58,7 +57,6 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
   const [imagePreview, setImagePreview] = useState<string>(initialData.featured_image || '');
   const [editorContent, setEditorContent] = useState(initialData.content || '');
   const [showExitModal, setShowExitModal] = useState(false);
-  const { theme } = useTheme();
   const { showNotification } = useNotification();
 
   const form = useForm<FormValues>({
@@ -172,7 +170,7 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
               name="title" 
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Tytuł</FormLabel>
+                  <FormLabel className="text-white">Tytuł</FormLabel>
                   <FormControl>
                     <Input 
                       {...field} 
@@ -182,7 +180,7 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
                           generateSlug();
                         }
                       }} 
-                      className={theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : 'bg-white border-gray-300 text-black'}
+                      className="bg-black text-white border-gray-700 placeholder-gray-400"
                     />
                   </FormControl>
                   <FormMessage />
@@ -194,10 +192,10 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
               name="slug" 
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Slug (URL)</FormLabel>
+                  <FormLabel className="text-white">Slug (URL)</FormLabel>
                   <FormControl>
                     <Input {...field} placeholder="url-posta" 
-                      className={theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : 'bg-white border-gray-300 text-black'}
+                      className="bg-black text-white border-gray-700 placeholder-gray-400"
                     />
                   </FormControl>
                   <FormMessage />
@@ -210,10 +208,10 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
             name="summary" 
             render={({ field }) => (
               <FormItem>
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Zajawka</FormLabel>
+                <FormLabel className="text-white">Zajawka</FormLabel>
                 <FormControl>
                   <Textarea {...field} placeholder="Krótki opis posta (będzie widoczny na liście postów)" rows={2} 
-                    className={theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : 'bg-white border-gray-300 text-black resize-none'}
+                    className="bg-black text-white border-gray-700 placeholder-gray-400"
                   />
                 </FormControl>
                 <FormMessage />
@@ -225,13 +223,13 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
             name="content" 
             render={() => (
               <FormItem>
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Treść (HTML)</FormLabel>
+                <FormLabel className="text-white">Treść (HTML)</FormLabel>
                 <FormControl>
                   <TipTapEditor 
                     value={editorContent}
                     onChange={setEditorContent}
                     placeholder="Treść posta w formacie HTML"
-                    className={theme === 'dark' ? 'editor-force-text-color' : 'shadow-sm'}
+                    className="editor-force-text-color" 
                   />
                 </FormControl>
                 <FormMessage />
@@ -282,9 +280,9 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
               name="target" 
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Target (grupa docelowa, oddzielone przecinkami)</FormLabel>
+                  <FormLabel className="text-white">Target (grupa docelowa, oddzielone przecinkami)</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="np. właściciele firm, marketerzy, blogerzy" className={theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''} />
+                    <Input {...field} placeholder="np. właściciele firm, marketerzy, blogerzy" className="bg-black text-white border-gray-700 placeholder-gray-400" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -295,9 +293,9 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
               name="categories" 
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Kategorie (oddzielone przecinkami)</FormLabel>
+                  <FormLabel className="text-white">Kategorie (oddzielone przecinkami)</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="IT, Programowanie, AI" className={theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''} />
+                    <Input {...field} placeholder="IT, Programowanie, AI" className="bg-black text-white border-gray-700 placeholder-gray-400" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -309,9 +307,9 @@ const AIPostEditor: React.FC<AIPostEditorProps> = ({ postId, initialData, onSave
             name="tags" 
             render={({ field }) => (
               <FormItem>
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Tagi (oddzielone przecinkami)</FormLabel>
+                <FormLabel className= "text-white">Tagi (oddzielone przecinkami)</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="pozycjonowanie, SEO, Google" className={theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''} />
+                  <Input {...field} placeholder="pozycjonowanie, SEO, Google" className="bg-black text-white border-gray-700 placeholder-gray-400" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

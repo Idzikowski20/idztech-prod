@@ -1,26 +1,22 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import PageDotAnimation from '@/components/PageDotAnimation';
-import { useTheme } from '@/utils/themeContext';
 import { Helmet } from 'react-helmet';
 
 const TermsOfUse = () => {
-  const { theme } = useTheme();
   
   return (
-    <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : ''}`}>
+    <div className={`min-h-screen`}>
       <Helmet>
         <title>Regulamin | IDZTECH</title>
         <meta name="description" content="Regulamin korzystania z serwisu IDZTECH – zasady, prawa i obowiązki użytkowników." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://idztech.pl/regulamin" />
       </Helmet>
-      <Navbar />
       <PageDotAnimation />
       
-      <div className="container mx-auto px-4 py-20">
-        <div className={`prose max-w-4xl mx-auto ${theme === 'light' ? 'prose-black' : 'prose-invert'}`}>
+          {/* Hero Section */}
+        <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+         <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
+        <div className={`prose max-w-4xl mx-auto prose-invert`}>
           <h1 className="text-4xl font-bold mb-8">Warunki korzystania</h1>
           <p className="mb-4">Ostatnia aktualizacja: 18.05.2025</p>
           
@@ -65,9 +61,8 @@ const TermsOfUse = () => {
           <p>Jeśli masz jakiekolwiek pytania dotyczące niniejszych Warunków korzystania, skontaktuj się z nami pod adresem kontakt@idztech.pl</p>
         </div>
       </div>
-      
-      <Footer />
-    </div>
+    </section>
+    </div>  
   );
 };
 

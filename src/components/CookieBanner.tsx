@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useTheme } from '../utils/themeContext';
 
 const COOKIE_KEY = 'cookieConsent';
 
@@ -29,7 +28,6 @@ function updateConsentMode(consent: Consent) {
 }
 
 const CookieBanner: React.FC = () => {
-  const { theme } = useTheme();
   const [open, setOpen] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [consent, setConsent] = useState<Consent>(defaultConsent);
@@ -85,7 +83,7 @@ const CookieBanner: React.FC = () => {
     >
       <div
         className={`rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 transition-colors
-          ${theme === 'dark' ? 'bg-[#0e0e11] text-white' : 'bg-white text-gray-900'}`}
+          bg-[#0e0e11] text-white`}
       >
         <div className="p-6">
           <h2 className="text-lg font-semibold mb-2">Zarządzaj zgodą</h2>
@@ -135,7 +133,7 @@ const CookieBanner: React.FC = () => {
               Akceptuj
             </button>
             <button
-              className={`border border-gray-200 rounded-xl w-auto min-w-[120px]  font-semibold transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`}
+              className={`border border-gray-200 rounded-xl w-auto min-w-[120px]  font-semibold transition-all duration-800 bg-transparent border border-gray-200 text-black hover:scale-105`}
               onClick={handleReject}
             >
               Odrzuć

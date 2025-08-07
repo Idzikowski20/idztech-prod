@@ -2,7 +2,6 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { LucideHome, ArrowLeft, AlertTriangle } from "lucide-react";
-import { useTheme } from "@/utils/themeContext";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -10,7 +9,6 @@ type ErrorType = "404" | "500" | "403" | "unknown";
 
 const NotFound = () => {
   const location = useLocation();
-  const { theme } = useTheme();
   const navigate = useNavigate();
   
   // Extract error type from location state if available
@@ -79,11 +77,9 @@ const NotFound = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            className={`${
-              theme === 'dark' 
-                ? 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6' 
-                : 'bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6'
-            } transition-all duration-300 w-full sm:w-auto`}
+            className={`
+              bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500 hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6' 
+              transition-all duration-300 w-full sm:w-auto`}
             onClick={() => navigate('/')}
           >
             <LucideHome className="mr-2 h-4 w-4" />

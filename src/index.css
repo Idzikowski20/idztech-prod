@@ -287,90 +287,10 @@
     background-color: #a289f3;
   }
 
-  .light {
-    @apply bg-white text-premium-dark;
-  }
-
-  .bg-white {
-    background: transparent;
-  }
-
-  /* Style dla tabeli w jasnej wersji */
-  .light td,
-  .light th {
-    color: #000000 !important;
-  }
-
-  .light thead th {
-    color: #000000 !important;
-    font-weight: 600;
-  }
-
-  .light tbody td {
-    color: #000000 !important;
-  }
-
-  /* Uproszczone style dla hover w jasnej wersji */
-  .light button,
-  .light .button,
-  .light [role="button"] {
-    transition: transform 0.3s ease;
-  }
-
-  .light button:hover,
-  .light .button:hover,
-  .light [role="button"]:hover {
-    transform: scale(1.05);
-    background-color: transparent !important;
-  }
-
-  /* Usuwam niepotrzebne style hover dla jasnej wersji */
-  .light .hover\:bg-white:hover,
-  .light .hover\:bg-black:hover,
-  .light .hover\:text-white:hover,
-  .light .outline.hover\:bg-black:hover,
-  .light .border-black.hover\:bg-black:hover {
-    color: inherit !important;
-    background-color: transparent !important;
-  }
-
-  .light button:hover svg,
-  .light a:hover svg {
-    transform: scale(1);
-    color: inherit !important;
-  }
-
-  /* Zachowaj oryginalny kolor dla przycisków z explicit color */
-  .light .text-white {
-    color: #FFFFFF !important;
-  }
-
-  .light .text-black {
-    color: #000000 !important;
-  }
-
-  .dark {
-    @apply text-premium-light;
-    --color-1: oklch(66.2% 0.225 25.9);
-    --color-2: oklch(60.4% 0.26 302);
-    --color-3: oklch(69.6% 0.165 251);
-    --color-4: oklch(80.2% 0.134 225);
-    --color-5: oklch(90.7% 0.231 133);
-  }
-
-  .light h1, .light h2, .light h3, .light h4, .light h5, .light h6, 
-  .light p, .light span {
-    @apply text-premium-dark;
-  }
 
   .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
   .dark p, .dark span {
     @apply text-premium-light;
-  }
-
-  .light .hover\:bg-white:hover,
-  .light .hover\:bg-black:hover {
-    color: #FFFFFF !important;
   }
 
   .dark .hover\:bg-white:hover,
@@ -380,110 +300,8 @@
     transform: scale(1.05);
   }
 
-  .light .hover\:text-white:hover {
-    color: #FFFFFF !important;
-  }
-
   .dark .hover\:text-black:hover {
     color: #FFFFFF !important;
-  }
-
-  .light .bg-black\/80 .text-white,
-  .light .bg-black\/80 p {
-    color: #FFFFFF !important;
-  }
-
-  .light .bg-black\/80 .hover\:bg-white\/10:hover .text-white {
-    color: #FFFFFF !important;
-  }
-
-  .light .bg-premium-dark {
-    background-color: #FFFFFF;
-  }
-
-  .light .w-80.bg-premium-dark\/95 {
-    background-color: #FFFFFF;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-
-  .light .bg-premium-dark\/60 {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color: #e5e7eb;
-  }
-
-  .light .bg-premium-dark\/40, 
-  .light .bg-premium-dark\/50,
-  .light .bg-premium-dark\/70 {
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-
-  .light .accordion-content {
-    color: #000000;
-  }
-
-  .light .bg-black\/80 {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color: #e5e7eb;
-  }
-
-  .light .text-premium-light\/70 {
-    color: rgba(0, 0, 0, 0.7);
-  }
-
-  .light .text-premium-light\/60 {
-    color: rgba(0, 0, 0, 0.6);
-  }
-
-  .light .hover\:text-premium-light:hover {
-    color: #000000;
-  }
-
-  .light .border-black {
-    border-color: #000000;
-  }
-
-  .light .bg-black.text-white {
-    color: #FFFFFF !important;
-  }
-
-  .light .HoverCardContent {
-    background-color: #FFFFFF;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-
-  .light .backdrop-blur-md.bg-premium-dark\/80 {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #000000;
-  }
-
-  .light .bg-premium-dark\/30 {
-    background-color: #FFFFFF;
-    border: 1px solid #e5e7eb;
-  }
-
-  .light .portfolio-item .portfolio-overlay h3,
-  .light .portfolio-item .portfolio-overlay p,
-  .light .portfolio-item:hover .portfolio-overlay h3,
-  .light .portfolio-item:hover .portfolio-overlay p {
-    color: #FFFFFF !important;
-  }
-
-  .light .portfolio-category {
-    background-color: white;
-    color: #000000;
-  }
-
-  .light .portfolio-category:hover {
-    background-color: #000000;
-    color: #FFFFFF;
-  }
-
-  .light button:hover svg,
-  .light a:hover svg {
-    color: #FFFFFF;
   }
 
   .dark button,
@@ -506,24 +324,9 @@
     border: none !important;
   }
 
-  .light input,
-  .light textarea {
-    border: 1px solid #ccc;
-  }
-
   .footer a.hover\:scale-110:hover,
   .footer a:hover svg {
     transform: scale(1.1);
-  }
-
-  .light .hover\:bg-black {
-    transition: transform 0.3s ease;
-  }
-
-  .light .hover\:bg-black:hover {
-    transform: scale(1.05);
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
   }
 
   .dark .hover\:bg-black {
@@ -836,7 +639,7 @@
 }
 
 .text-black-important {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .shimmer {
@@ -876,6 +679,8 @@ input:-internal-autofill-selected {
 }
 
 .prose img {
+  object-fit: contain;
+  width: 100%;
   border-radius: 2rem !important;
   margin-top: 2rem !important;
   margin-bottom: 2rem !important;
@@ -1294,11 +1099,6 @@ input:-internal-autofill-selected {
 
 .display-none {
   display: none !important;
-}
-
-mark {
-  padding: 8px;
-  border-radius: 10px !important;
 }
 
 .border-radius999 {

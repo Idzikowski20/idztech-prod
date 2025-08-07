@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
-import { useTheme } from "@/utils/themeContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const cities = [
@@ -208,7 +207,6 @@ const formatCityPath = (cityName: string): string => {
 };
 
 const LocalSeoSection = () => {
-  const { theme } = useTheme();
   const navigate = useNavigate();
   const [activeCity, setActiveCity] = useState(defaultCity);
   const [isFading, setIsFading] = useState(false);
@@ -268,7 +266,7 @@ const LocalSeoSection = () => {
                 >
                   <span className="text-xl font-normal group-hover:text-premium-purple transition-colors">Pozycjonowanie {city.name}</span>
                   <Button 
-                    className={`border border-gray-200 rounded-full transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black' : 'borderborder-gray-200 text-slate-50 hover:text-white'}`} 
+                    className={`border border-gray-200 rounded-full transition-all duration-800 bg-transparent `} 
                     onClick={() => navigate(`/pozycjonowanie/${formatCityPath(city.name)}`)}
                   >
                     →
@@ -285,7 +283,7 @@ const LocalSeoSection = () => {
         <Link to="/pozycjonowanie-lokalne">
                 <Button
                   className={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-md mt-4
-                    ${theme === 'light' ? 'bg-black text-white hover:bg-black hover:text-white' : 'text-black-important'}`}
+                    `}
                 >
                   Dowiedz się więcej
                 </Button>

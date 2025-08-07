@@ -1,11 +1,9 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Code, ShoppingCart, Search, MapPin, FileText, Component, BarChart3 } from 'lucide-react';
-import { useTheme } from '@/utils/themeContext';
 import { WobbleCard } from "@/components/ui/wobble-card";
 
 const OurServices = () => {
-  const { theme } = useTheme();
   const touchStartYRef = React.useRef(0);
   const navigate = useNavigate();
 

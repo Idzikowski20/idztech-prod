@@ -1,12 +1,9 @@
-import React from 'react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { JavaScript, Css3, Html5, TypeScript, ReactIcon } from '@/components/TechnologyIcons';
-import { useTheme } from '@/utils/themeContext';
 import GlobalCTA from '@/components/GlobalCTA';
 import { Helmet } from 'react-helmet-async';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -14,7 +11,6 @@ import OgUrlMeta from "@/components/OgUrlMeta";
 
 const WebApps = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme();
 
   const features = [
     "Projektowanie responsywnych stron internetowych",
@@ -124,32 +120,39 @@ const WebApps = () => {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="pt-32 pb-16 relative overflow-hidden">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center">
-              <div className="w-full lg:w-1/2 mb-10 lg:mb-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-8 mb-6">
-                  Aplikacje webowe <span className="text-transparent bg-clip-text bg-premium-gradient"></span>
+        <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+          {/* Background elements */}
+          {/* <div className="max-md:hidden absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div> */}
+          <div className="max-md:hidden absolute bottom-[10rem] left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
+          
+          <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
+          
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="w-full h-full animate-fade-in">
+                <span className="text-main font-medium">SaaS Development</span>
+                <h1 className="text-4xl lg:text-4xl font-bold mt-4 mb-6 ">
+                Tworzymy aplikacje <mark className="text-main">webowe</mark>, które są intuicyjne i skalowalne, dostosowane do Twoich potrzeb.
                 </h1>
-                <p className="text-xl text-premium-light/70 mb-8 max-w-2xl">
-                  Projektujemy i rozwijamy nowoczesne aplikacje internetowe, platformy webowe oraz oprogramowanie webowe na zamówienie. Wspieramy firmy w cyfrowej transformacji, automatyzacji procesów i rozwoju biznesu online.
+                <p className="text-lg mb-8">
+                Projektujemy i rozwijamy nowoczesne aplikacje internetowe, platformy webowe oraz oprogramowanie webowe na zamówienie. Wspieramy firmy w cyfrowej transformacji, automatyzacji procesów i rozwoju biznesu online.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                  <Button className="bg-wave  bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
+                <div className="w-full h-full flex flex-col sm:flex-row gap-4 mb-10">
+                  <Button className="bg-wave from-[#00a0ff00] bg-gradient-to-br  via-premium-purple-500  hover:opacity-90 transition-opacity text-white rounded-full px-8 py-6" onClick={() => navigate('/contact')}>
                     Skontaktuj się z nami
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
-                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white`} onClick={() => navigate('/projects')}>
                     Zobacz nasze realizacje
                   </Button>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 flex justify-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <div className="w-full h-auto overflow-hidden rounded-lg">
+              
+              <div className="w-full h-full relative animate-slide-up">
+                <div className="w-full h-full overflow-hidden rounded-lg animate-float-1 aspect-[1.3]">
                   <img 
-                    src="/lovable-uploads/webaps.png" 
-                    alt="Aplikacje webowe - mockup" 
-                    className="w-full h-auto object-contain rounded-lg"
+                    src="/images/shop-image.svg" 
+                    alt="Sklep internetowy - mockup" 
+                    className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
               </div>
@@ -253,14 +256,14 @@ const WebApps = () => {
         </section>
 
         {/* Technologies Section */}
-        <section className={`py-16 ${theme === 'dark' ? '' : 'bg-white'}`}>
+        <section className={`py-16`}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>Technologie</h2>
-              <p className={`text-xl ${theme === 'dark' ? 'text-white/70' : 'text-black/70'} max-w-3xl mx-auto`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 text-white`}>Technologie</h2>
+              <p className={`text-xl max-w-3xl mx-auto`}>
                 W czym tworzymy aplikacje webowe?
               </p>
-              <p className={`mt-4 text-lg max-w-3xl mx-auto ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>
+              <p className={`mt-4 text-lg max-w-3xl mx-auto`}>
                 Korzystamy z najnowszych technologii, aby zapewnić Ci wydajne, bezpieczne i skalowalne aplikacje internetowe.
               </p>
             </div>
@@ -269,31 +272,31 @@ const WebApps = () => {
                 <div className="w-16 h-16 mb-3">
                   <JavaScript />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>JavaScript</p>
+                <p className={`font-medium text-white`}>JavaScript</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <Css3 />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>CSS3</p>
+                <p className={`font-medium text-white`}>CSS3</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <Html5 />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>HTML5</p>
+                <p className={`font-medium text-white`}>HTML5</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <TypeScript />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>TypeScript</p>
+                <p className={`font-medium text-white`}>TypeScript</p>
               </div>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <ReactIcon />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>React</p>
+                <p className={`font-medium text-white`}>React</p>
               </div>
             </div>
           </div>
@@ -311,14 +314,14 @@ const WebApps = () => {
             </div>
             <div className="relative max-w-4xl mx-auto">
               {/* pionowa linia */}
-              <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-premium-gradient -translate-x-1/2 z-0"></div>
+              <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  -translate-x-1/2 z-0"></div>
               <div className="flex flex-col gap-16">
                 {processSteps.map((step, idx) => (
                   <div key={idx} className={`relative flex flex-col md:flex-row items-center w-full ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
                     <div className={`w-full md:w-1/2 ${idx % 2 === 0 ? 'md:pr-8 md:order-1' : 'md:pl-8 md:order-2'} flex ${idx % 2 === 0 ? 'md:justify-end' : 'md:justify-start'} justify-center`}>
                       <div className="/60 border border-premium-light/10 rounded-xl p-6 shadow-lg max-w-md w-full z-10">
                         <div className="flex items-center mb-2">
-                          <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center m-4 text-white">
+                        <div className="w-12 h-12 rounded-xl bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center text-white m-4">
                             {idx + 1}
                           </div>
                           <h3 className="text-xl font-bold">{step.title.replace('stron', 'aplikacji webowych').replace('strony', 'aplikacji webowej')}</h3>
@@ -327,7 +330,7 @@ const WebApps = () => {
                       </div>
                     </div>
                     {/* Punkt na osi */}
-                    <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-premium-gradient border-4 border-white z-20"></div>
+                    <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  border-4 border-white z-20"></div>
                   </div>
                 ))}
               </div>
@@ -571,7 +574,6 @@ const WebApps = () => {
             </Button>
           ]}
         />
-        <Footer />
       </div>
     </>
   );

@@ -1,11 +1,9 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Check, ChevronRight, ShoppingCart, CreditCard, Truck, Package, BarChart, Shield, ArrowRight } from "lucide-react";
+import { Check, ShoppingCart, CreditCard, Truck, Package, BarChart, Shield, ArrowRight } from "lucide-react";
 import { WooCommerceIcon, ShopifyIcon, MagentoIcon } from "@/components/ECommerceIcons";
-import { useTheme } from '@/utils/themeContext';
 import GlobalCTA from "@/components/GlobalCTA";
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +11,6 @@ import FAQAccordion from '@/components/FAQAccordion';
 import OgUrlMeta from "@/components/OgUrlMeta";
 
 const ECommerce = () => {
-  const { theme } = useTheme();
   const navigate = useNavigate();
 
   return (
@@ -47,8 +44,8 @@ const ECommerce = () => {
         {/* Hero Section */}
         <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
           {/* Background elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div>
-          <div className="absolute bottom-[10rem] left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
+          {/* <div className="max-md:hidden absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div> */}
+          <div className="max-md:hidden absolute bottom-[10rem] left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
           
           <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
           
@@ -67,7 +64,7 @@ const ECommerce = () => {
                     Skontaktuj się z nami
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
-                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white`} onClick={() => navigate('/projects')}>
                     Zobacz nasze realizacje
                   </Button>
                 </div>
@@ -109,15 +106,15 @@ const ECommerce = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Masowe zarządzanie produktami</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Automatyczne powiadomienia</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Raporty sprzedaży</span>
                   </li>
                 </ul>
@@ -134,15 +131,15 @@ const ECommerce = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Przelewy24</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">PayPal</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Karty kredytowe/debetowe</span>
                   </li>
                 </ul>
@@ -184,15 +181,15 @@ const ECommerce = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Automatyczne aktualizacje</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Śledzenie przesyłek</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-blue mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Wielomagazynowość</span>
                   </li>
                 </ul>
@@ -209,15 +206,15 @@ const ECommerce = () => {
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Google Analytics</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Raporty sprzedażowe</span>
                   </li>
                   <li className="flex items-center">
-                    <Check size={16} className="text-premium-pink mr-2" />
+                    <Check size={16} className="text-premium-purple mr-2" />
                     <span className="text-premium-light/70 text-sm">Śledzenie konwersji</span>
                   </li>
                 </ul>
@@ -321,7 +318,7 @@ const ECommerce = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
-                    <div className="flex items-center mb-4">
+                    <div className="flex-col flex items-center mb-4">
                       <div className="w-12 h-12 rounded-full from-premium-blue-500 bg-wave bg-gradient-to-br  via-premium-purple-500  flex items-center justify-center mb-4 text-white">1</div>
                       <h3 className="text-xl font-semibold ml-4">Analiza i planowanie</h3>
                     </div>
@@ -354,7 +351,7 @@ const ECommerce = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
-                    <div className="flex items-center mb-4">
+                    <div className="flex-col flex items-center mb-4">
                       <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">2</div>
                       <h3 className="text-xl font-semibold ml-4">UX/UI Design</h3>
                     </div>
@@ -387,7 +384,7 @@ const ECommerce = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
-                    <div className="flex items-center mb-4">
+                    <div className="flex-col flex items-center mb-4">
                       <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">3</div>
                       <h3 className="text-xl font-semibold ml-4">Rozwój i wdrożenie</h3>
                     </div>
@@ -420,7 +417,7 @@ const ECommerce = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
-                    <div className="flex items-center mb-4">
+                    <div className="flex-col flex items-center mb-4">
                       <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">4</div>
                       <h3 className="text-xl font-semibold ml-4">Testy i optymalizacja</h3>
                     </div>
@@ -453,7 +450,7 @@ const ECommerce = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="w-full md:w-1/3">
                   <div className="/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 h-full">
-                    <div className="flex items-center mb-4">
+                    <div className="flex-col flex items-center mb-4">
                       <div className="w-12 h-12 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  flex items-center justify-center mb-4 text-white">5</div>
                       <h3 className="text-xl font-semibold ml-4">Launch i wsparcie</h3>
                     </div>
@@ -531,7 +528,6 @@ const ECommerce = () => {
           ]}
         />
         
-        <Footer />
       </div>
     </>
   );

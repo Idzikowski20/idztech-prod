@@ -2,10 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/utils/themeContext';
 
 const CTA = () => {
-  const { theme } = useTheme();
 
   return (
       <section className="py-16 relative overflow-hidden" style={{ margin: '20px', borderRadius: '20px' }}>

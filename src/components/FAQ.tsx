@@ -3,11 +3,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/utils/themeContext';
 import { useMobile } from '@/hooks/use-mobile';
 
 const FAQ = () => {
-  const { theme } = useTheme();
   const isMobile = useMobile();
   const faqItems = [{
     question: "Stawiamy na Twój biznes i realne efekty",
@@ -37,7 +35,7 @@ const FAQ = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-premium-purple font-medium">Dlaczego warto</span>
           <h5 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Z nami pracować:</h5>
-          <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'} text-lg`}>
+          <p className="text-premium-light/70 text-lg">
             Tutaj znajdziesz kilka kluczowych powodów dlaczego warto z nami współpracować
           </p>
         </div>
@@ -50,14 +48,14 @@ const FAQ = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`} 
-                  className={`${theme === 'light' ? 'border-gray-300' : 'border-white/10'}`}
+                  className="border-gray-300"
                 >
                   <AccordionTrigger 
-                    className={`text-xl font-medium py-4 hover:no-underline hover:text-premium-purple text-left ${theme === 'light' ? 'text-black' : 'text-white'}`}
+                    className="text-xl font-medium py-4 hover:no-underline hover:text-premium-purple text-left text-black"
                   >
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'} accordion-content`}>
+                  <AccordionContent className="text-premium-light/70 accordion-content">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -66,10 +64,10 @@ const FAQ = () => {
           </div>
 
           {/* Right Side - CTA */}
-          <div className={`${theme === 'light' ? 'bg-white border border-gray-100' : 'border-white/10'} rounded-xl p-8 h-full flex flex-col justify-center`}>
+          <div className={`border-white/10 rounded-xl p-8 h-full flex flex-col justify-center`}>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold">Nowoczesne strony, sklepy i skuteczne pozycjonowanie</h3>
-              <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'}`}>
+              <p className="text-premium-light/70">
                 Tworzymy profesjonalne strony internetowe i sklepy online, które nie tylko świetnie wyglądają, ale są też zoptymalizowane pod SEO i konwersję. Poprawiamy widoczność w Google, zajmujemy się pozycjonowaniem, optymalizacją techniczną oraz skutecznym copywritingiem. Zadbaj o rozwój swojego biznesu w internecie z Premium Digital Harvest.
               </p>
               {!isMobile && (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Index from '@/pages/Index';
 import Login from '@/pages/Login';
@@ -11,11 +11,6 @@ import Projects from '@/pages/Projects';
 import WebDevelopment from '@/pages/WebDevelopment';
 import ECommerce from '@/pages/ECommerce';
 import Seo from '@/pages/Seo';
-import LocalSeo from '@/pages/LocalSeo';
-import SeoAudit from '@/pages/SeoAudit';
-import SeoOptimization from '@/pages/SeoOptimization';
-import SeoCopywriting from '@/pages/SeoCopywriting';
-import ContentPlan from '@/pages/ContentPlan';
 import Error404 from '@/pages/Error404';
 import NotFound from '@/pages/NotFound';
 import PrivacyPolicy from '@/pages/PrivacyPolicy';
@@ -36,7 +31,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 // import SzczecinSeoPage from '@/pages/pozycjonowanie/szczecin';
 // import BydgoszczSeoPage from '@/pages/pozycjonowanie/bydgoszcz';
 // import LublinSeoPage from '@/pages/pozycjonowanie/lublin';
-import BialystokSeoPage from '@/pages/pozycjonowanie/bialystok';
+// import BialystokSeoPage from '@/pages/pozycjonowanie/bialystok';
 // import KatowiceSeoPage from '@/pages/pozycjonowanie/katowice';
 // import GdyniaSeoPage from '@/pages/pozycjonowanie/gdynia';
 // import CzestochowaSeoPage from '@/pages/pozycjonowanie/czestochowa';
@@ -62,6 +57,7 @@ import BialystokSeoPage from '@/pages/pozycjonowanie/bialystok';
 import WebApps from './pages/WebApps';
 import Navbar from './components/Navbar';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
+import Footer from './components/Footer';
 
 const App = () => {
   const { loading } = useAuth();
@@ -152,11 +148,6 @@ const App = () => {
         <Route path="/aplikacje-webowe" element={<WebApps />} />
         <Route path="/sklepy-internetowe" element={<ECommerce />} />
         <Route path="/pozycjonowanie-stron" element={<Seo />} />
-        <Route path="/pozycjonowanie-lokalne" element={<LocalSeo />} />
-        <Route path="/audyt-seo" element={<SeoAudit />} />
-        <Route path="/optymalizacja-seo" element={<SeoOptimization />} />
-        <Route path="/copywriting-seo" element={<SeoCopywriting />} />
-        <Route path="/content-plan" element={<ContentPlan />} />
         <Route path="/404" element={<Error404 />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
@@ -167,12 +158,10 @@ const App = () => {
         <Route path="/admin/new-post" element={<RequireAuth><BlogPostEditor /></RequireAuth>} />
         <Route path="/admin/edit-post/:id" element={<RequireAuth><BlogPostEditor /></RequireAuth>} />
 
-        {/* Pozycjonowanie lokalne */}
-        <Route path="/pozycjonowanie/bialystok" element={<BialystokSeoPage />} />
-        
         <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieBanner />
+      <Footer />
     </div>
     </>
   );

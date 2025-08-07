@@ -2,11 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@/utils/themeContext';
 
 const About = () => {
-  const { theme } = useTheme();
-  
   const stats = [
     { number: '200+', text: 'Zadowolonych klientów' },
     { number: '500+', text: 'Zrealizowanych projektów' },
@@ -23,7 +20,7 @@ const About = () => {
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Dlaczego warto <span className="bg-premium-gradient text-transparent bg-clip-text">wybrać nas?</span>
             </h2>
-            <p className={`text-lg mb-8 ${theme === 'light' ? 'text-black/70' : 'text-premium-light/70'}`}>
+            <p className={`text-lg mb-8 text-premium-light/70`}>
               Jesteśmy zespołem pasjonatów, którzy kochają tworzyć wyjątkowe strony internetowe. Nasza praca to nie tylko kod - to sztuka tworzenia cyfrowych doświadczeń.
             </p>
             
@@ -37,7 +34,7 @@ const About = () => {
                     <span className="text-2xl sm:text-3xl font-bold bg-premium-gradient text-transparent bg-clip-text">
                       {stat.number}
                     </span>
-                    <span className={`text-xs sm:text-sm ${theme === 'light' ? 'text-black/70' : 'text-premium-light/70'} mt-1 max-w-[100px]`}>
+                    <span className={`text-xs sm:text-sm text-premium-light/70 mt-1 max-w-[100px]`}>
                       {stat.text}
                     </span>
                   </div>

@@ -11,7 +11,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useAuth } from '@/utils/AuthProvider';
-import { useTheme } from '@/utils/themeContext';
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { trackEvent } from '@/utils/analytics';
 
@@ -25,7 +24,6 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeNavItem = 'da
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
-  const { theme, toggleDarkMode } = useTheme();
   const { pathname } = useLocation();
   
   console.log("AdminLayout rendered, user:", user);

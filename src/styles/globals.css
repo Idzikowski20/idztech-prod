@@ -151,3 +151,7 @@ body {
 [data-scroll-container] {
   min-height: 100vh;
 } */
+
+.text-black {
+  color: white !important;
+}

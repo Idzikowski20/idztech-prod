@@ -89,11 +89,11 @@ const ContactForm = () => {
             name="name"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Imię i nazwisko*</FormLabel>
+                <FormLabel className="text-white">Imię i nazwisko*</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Jan Kowalski"
-                    className={`${theme === 'dark' ? 'bg-transparent text-white border-gray-700' : 'bg-white text-black border-gray-300'}`}
+                    className="bg-black text-white border-gray-700 placeholder-gray-400"
                     {...field}
                   />
                 </FormControl>
@@ -107,11 +107,11 @@ const ContactForm = () => {
             name="company"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Nazwa firmy*</FormLabel>
+                <FormLabel className="text-white">Nazwa firmy*</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Nazwa firmy"
-                    className={`${theme === 'dark' ? 'bg-transparent text-white border-gray-700' : 'bg-white text-black border-gray-300'}`}
+                    className="bg-black text-white border-gray-700 placeholder-gray-400"
                     {...field}
                   />
                 </FormControl>
@@ -127,12 +127,12 @@ const ContactForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Email*</FormLabel>
+                <FormLabel className="text-white">Email*</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
                     placeholder="jan@example.com"
-                    className={`${theme === 'dark' ? 'bg-transparent text-white border-gray-700' : 'bg-white text-black border-gray-300'}`}
+                    className="bg-black text-white border-gray-700 placeholder-gray-400"
                     {...field}
                   />
                 </FormControl>
@@ -146,12 +146,12 @@ const ContactForm = () => {
             name="phone"
             render={({ field }) => (
               <FormItem className="space-y-2">
-                <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Telefon*</FormLabel>
+                <FormLabel className="text-white">Telefon*</FormLabel>
                 <FormControl>
                   <Input
                     type="tel"
                     placeholder="+48 123 456 789"
-                    className={`${theme === 'dark' ? 'bg-transparent text-white border-gray-700' : 'bg-white text-black border-gray-300'}`}
+                    className="bg-black text-white border-gray-700 placeholder-gray-400"
                     {...field}
                   />
                 </FormControl>
@@ -166,10 +166,10 @@ const ContactForm = () => {
           name="service"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Usługa, którą jesteś zainteresowany</FormLabel>
+              <FormLabel className="text-white">Usługa, którą jesteś zainteresowany</FormLabel>
               <FormControl>
                 <select
-                  className={`w-full rounded-md px-3 py-2 text-sm focus:outline-none focus:border-premium-purple focus:ring-1 focus:ring-premium-purple/20 ${theme === 'dark' ? 'bg-transparent text-white border-gray-700' : 'bg-white text-black border-gray-300'} border`}
+                  className="w-full rounded-md px-3 py-2 text-sm focus:outline-none focus:border-premium-purple focus:ring-1 focus:ring-premium-purple/20 bg-black text-white border-gray-700 placeholder-gray-400"
                   {...field}
                 >
                   <option value="">Wybierz usługę</option>
@@ -190,12 +190,12 @@ const ContactForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem className="space-y-2">
-              <FormLabel className={theme === 'dark' ? 'text-white' : ''}>Wiadomość</FormLabel>
+              <FormLabel className="text-white">Wiadomość</FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Opisz swoje potrzeby..."
                   rows={5}
-                  className={`${theme === 'dark' ? 'bg-transparent text-white border-gray-700' : 'bg-white text-black border-gray-300'} resize-none`}
+                  className="bg-black text-white border-gray-700 placeholder-gray-400 resize-none"
                   {...field}
                 />
               </FormControl>

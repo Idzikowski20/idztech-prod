@@ -1,13 +1,9 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import VerticalProcessSteps from '@/components/VerticalProcessSteps';
 import { JavaScript, Css3, Html5, TypeScript, ReactIcon } from '@/components/TechnologyIcons';
-import { useTheme } from '@/utils/themeContext';
 import GlobalCTA from '@/components/GlobalCTA';
 import { Helmet } from 'react-helmet-async';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -15,7 +11,6 @@ import OgUrlMeta from "@/components/OgUrlMeta";
 
 const WebDevelopment = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme();
 
   const features = [
     "Projektowanie responsywnych stron internetowych",
@@ -126,8 +121,8 @@ const WebDevelopment = () => {
         {/* Hero Section */}
         <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
           {/* Background elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div>
-          <div className="absolute bottom-[10rem] left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
+          {/* <div className="max-md:hidden absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div> */}
+          <div className="max-md:hidden absolute bottom-[10rem] left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
           
           <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
           
@@ -145,7 +140,7 @@ const WebDevelopment = () => {
                     Skontaktuj się z nami
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
-                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white`} onClick={() => navigate('/projects')}>
                     Zobacz nasze realizacje
                   </Button>
                 </div>
@@ -264,14 +259,14 @@ const WebDevelopment = () => {
         </section>
 
         {/* Technologies Section */}
-        <section className={`py-16 ${theme === 'dark' ? '' : 'bg-white'}`}>
+        <section className={`py-16`}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <p className="text-main font-medium mb-3">Technologie</p>
               <h2 className="text-3xl md:text-4xl font-bold">
                 W czym tworzymy strony internetowe?
               </h2>
-              <p className={`mt-4 text-lg max-w-3xl mx-auto ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>
+              <p className={`mt-4 text-lg max-w-3xl mx-auto text-white/70`}>
                 Korzystamy z najnowszych technologii, aby zapewnić Ci szybką, bezpieczną i funkcjonalną stronę internetową.
               </p>
             </div>
@@ -281,35 +276,35 @@ const WebDevelopment = () => {
                 <div className="w-16 h-16 mb-3">
                   <JavaScript />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>JavaScript</p>
+                <p className={`font-medium text-white`}>JavaScript</p>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <Css3 />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>CSS3</p>
+                <p className={`font-medium text-white`}>CSS3</p>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <Html5 />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>HTML5</p>
+                <p className={`font-medium text-white`}>HTML5</p>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <TypeScript />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>TypeScript</p>
+                <p className={`font-medium text-white`}>TypeScript</p>
               </div>
               
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 mb-3">
                   <ReactIcon />
                 </div>
-                <p className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>React</p>
+                <p className={`font-medium text-white`}>React</p>
               </div>
             </div>
           </div>
@@ -327,7 +322,7 @@ const WebDevelopment = () => {
             </div>
             <div className="relative max-w-4xl mx-auto">
               {/* pionowa linia */}
-              <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-wave bg-gradient-to-br  via-premium-purple-500  -translate-x-1/2 z-0"></div>
+              <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  -translate-x-1/2 z-0"></div>
               <div className="flex flex-col gap-16">
                 {processSteps.map((step, idx) => (
                   <div key={idx} className={`relative flex flex-col md:flex-row items-center w-full ${idx % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
@@ -343,7 +338,7 @@ const WebDevelopment = () => {
                       </div>
                     </div>
                     {/* Punkt na osi */}
-                    <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-wave bg-gradient-to-br  via-premium-purple-500  border-4 border-white z-20"></div>
+                    <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-wave bg-gradient-to-br from-premium-blue-500 via-premium-purple-500  border-4 border-white z-20"></div>
                   </div>
                 ))}
               </div>
@@ -587,7 +582,6 @@ const WebDevelopment = () => {
             </Button>
           ]}
         />
-        <Footer />
       </div>
     </>
   );

@@ -14,7 +14,6 @@ import TipTapEditor from '@/components/TipTapEditor';
 import { doc, getDoc, collection, getDocs } from 'firebase/firestore';
 import { db } from '@/integrations/firebase/client';
 import { useFirebaseBlogPosts } from '@/hooks/useFirebaseBlogPosts';
-import { useTheme } from '@/utils/themeContext';
 import Notification from '@/components/ui/Notification';
 import { useNotification } from '@/components/ui/NotificationContext';
 import { Helmet } from 'react-helmet';
@@ -66,7 +65,6 @@ const BlogPostEditor = () => {
   const [existingPost, setExistingPost] = useState<any>(null);
   const isEditing = !!id;
   const [editorContent, setEditorContent] = useState('');
-  const { theme } = useTheme();
   const { showNotification } = useNotification();
   const [isDirty, setIsDirty] = useState(false);
 
@@ -292,29 +290,45 @@ const BlogPostEditor = () => {
     navigate('/admin');
   };
 
-  useEffect(() => {
-    // Jeśli nie edytujemy konkretnego posta (brak id), sprawdź czy istnieje szkic tego użytkownika
-    if (!id && user) {
-      const fetchDraft = async () => {
-        try {
-          const postsCollection = collection(db, 'blog_posts');
-          const postsSnapshot = await getDocs(postsCollection);
-          const drafts = postsSnapshot.docs
-            .map(docSnap => ({ id: docSnap.id, ...docSnap.data() }))
-            .filter(post => post.author_id === user.uid && post.published === false);
-          if (drafts.length > 0) {
-            // Załaduj najnowszy szkic
-            const latestDraft = drafts.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())[0];
-            setExistingPost(latestDraft);
-            setEditorContent(latestDraft.content || '');
-          }
-        } catch (error) {
-          console.error('Błąd podczas ładowania szkicu:', error);
-        }
-      };
-      fetchDraft();
+// 1. Zdefiniuj interfejs dla posta
+interface BlogPost {
+  id: string;
+  author_id: string;
+  published: boolean;
+  content: string;
+  updated_at: any; // Lepsze byłoby użycie firebase.firestore.Timestamp
+  [key: string]: any; // Dla pozostałych pól
+}
+
+// 2. Poprawiona funkcja fetchDraft
+const fetchDraft = async () => {
+  try {
+    const postsCollection = collection(db, 'blog_posts');
+    const postsSnapshot = await getDocs(postsCollection);
+    const drafts = postsSnapshot.docs
+      .map(docSnap => ({ id: docSnap.id, ...docSnap.data() } as BlogPost))
+      .filter(post => 
+        post.author_id === user?.uid && 
+        post.published === false
+      );
+      
+    if (drafts.length > 0) {
+      const latestDraft = drafts.sort((a, b) => 
+        (b.updated_at?.toDate?.().getTime() || 0) - 
+        (a.updated_at?.toDate?.().getTime() || 0)
+      )[0];
+      
+      setExistingPost(latestDraft);
+      setEditorContent(latestDraft.content || '');
     }
-  }, [id, user]);
+  } catch (error) {
+    console.error('Błąd podczas ładowania szkicu:', error);
+    showNotification({ 
+      sender: 'IDZTECH', 
+      message: 'Wystąpił błąd podczas ładowania szkicu' 
+    });
+  }
+};
 
   return (
     <AdminLayout>
@@ -351,7 +365,7 @@ const BlogPostEditor = () => {
                   name="title" 
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="title" className={`${theme === 'dark' ? 'text-white' : ''}`}>Tytuł</FormLabel>
+                      <FormLabel htmlFor="title" className={`text-white`}>Tytuł</FormLabel>
                       <FormControl>
                         <Input id="title" {...field} 
                           placeholder="Tytuł posta" 
@@ -360,7 +374,7 @@ const BlogPostEditor = () => {
                               generateSlug();
                             }
                           }} 
-                          className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`}
+                          className={`bg-black text-white border-gray-700 placeholder-gray-400`}
                         />
                       </FormControl>
                       <FormMessage />
@@ -373,9 +387,9 @@ const BlogPostEditor = () => {
                   name="slug" 
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="slug" className={`${theme === 'dark' ? 'text-white' : ''}`}>Slug (URL)</FormLabel>
+                      <FormLabel htmlFor="slug" className={`text-white`}>Slug (URL)</FormLabel>
                       <FormControl>
-                        <Input id="slug" {...field} placeholder="url-posta" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
+                        <Input id="slug" {...field} placeholder="url-posta" className={`bg-black text-white border-gray-700 placeholder-gray-400`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -388,9 +402,9 @@ const BlogPostEditor = () => {
                 name="summary" 
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel htmlFor="summary" className={`${theme === 'dark' ? 'text-white' : ''}`}>Zajawka</FormLabel>
+                    <FormLabel htmlFor="summary" className={`text-white`}>Zajawka</FormLabel>
                     <FormControl>
-                      <Textarea id="summary" {...field} placeholder="Krótki opis posta (będzie widoczny na liście postów)" rows={2} className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''} shadow-sm`} />
+                      <Textarea id="summary" {...field} placeholder="Krótki opis posta (będzie widoczny na liście postów)" rows={2} className={`bg-black text-white border-gray-700 placeholder-gray-400 shadow-sm`} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -402,13 +416,13 @@ const BlogPostEditor = () => {
                 name="content" 
                 render={() => (
                   <FormItem>
-                    <FormLabel htmlFor="content" className={`${theme === 'dark' ? 'text-white' : ''}`}>Treść (HTML)</FormLabel>
+                    <FormLabel htmlFor="content" className={`text-white`}>Treść (HTML)</FormLabel>
                     <FormControl>
                       <TipTapEditor 
                         value={editorContent}
                         onChange={setEditorContent}
                         placeholder="Treść posta w formacie HTML"
-                        className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`}
+                        className={`bg-black text-white border-gray-700 placeholder-gray-400`}
                       />
                     </FormControl>
                     <FormMessage />
@@ -418,7 +432,7 @@ const BlogPostEditor = () => {
               
               {/* Featured Image Upload */}
               <div className="space-y-2">
-                <FormLabel htmlFor="featuredImage" className={`${theme === 'dark' ? 'text-white' : ''}`}>Zdjęcie główne</FormLabel>
+                <FormLabel htmlFor="featuredImage" className={`text-white`}>Zdjęcie główne</FormLabel>
                 <div className="flex flex-col space-y-4">
                   <div className="flex items-center space-x-4">
                     <label className="cursor-pointer">
@@ -435,7 +449,7 @@ const BlogPostEditor = () => {
                       />
                     </label>
                     {featuredImage && (
-                      <span className={`${theme === 'dark' ? 'text-white' : 'text-gray-400'} text-sm`}>
+                      <span className={`text-white text-sm`}>
                         {featuredImage.name} ({Math.round(featuredImage.size / 1024)} KB)
                       </span>
                     )}
@@ -469,8 +483,8 @@ const BlogPostEditor = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Author information display (not editable) */}
                 <div className="space-y-2">
-                  <FormLabel className={`${theme === 'dark' ? 'text-white' : ''}`}>Autor</FormLabel>
-                  <div className={`${theme === 'dark' ? 'text-white border-gray-700 bg-black' : ''} border transition-colors rounded-lg px-4 py-2 flex items-center`}>
+                  <FormLabel className={`text-white`}>Autor</FormLabel>
+                  <div className={`text-white border-gray-700 bg-black border transition-colors rounded-lg px-4 py-2 flex items-center`}>
                     {user?.email || 'Nieznany autor'}
                   </div>
                 </div>
@@ -480,9 +494,9 @@ const BlogPostEditor = () => {
                   name="categories" 
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="categories" className={`${theme === 'dark' ? 'text-white' : ''}`}>Kategorie (oddzielone przecinkami)</FormLabel>
+                      <FormLabel htmlFor="categories" className={`text-white`}>Kategorie (oddzielone przecinkami)</FormLabel>
                       <FormControl>
-                        <Input id="categories" {...field} placeholder="IT, Programowanie, AI" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
+                        <Input id="categories" {...field} placeholder="IT, Programowanie, AI" className={`bg-black text-white border-gray-700 placeholder-gray-400`} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -495,9 +509,9 @@ const BlogPostEditor = () => {
                 name="tags" 
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel htmlFor="tags" className={`${theme === 'dark' ? 'text-white' : ''}`}>Tagi (oddzielone przecinkami)</FormLabel>
+                    <FormLabel htmlFor="tags" className={`text-white`}>Tagi (oddzielone przecinkami)</FormLabel>
                     <FormControl>
-                      <Input id="tags" {...field} placeholder="pozycjonowanie, SEO, Google" className={`${theme === 'dark' ? 'bg-black text-white border-gray-700 placeholder-gray-400' : ''}`} />
+                      <Input id="tags" {...field} placeholder="pozycjonowanie, SEO, Google" className={`bg-black text-white border-gray-700 placeholder-gray-400`} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -512,7 +526,7 @@ const BlogPostEditor = () => {
                 >
                   {isLoading ? 'Zapisywanie...' : isEditing ? 'Aktualizuj post' : 'Opublikuj post'}
                 </Button>
-                <p className={`${theme === 'dark' ? 'text-premium-light/70' : 'text-gray-400'} text-xs mt-2`}>
+                <p className={`text-premium-light/70 text-xs mt-2`}>
                   Post zostanie automatycznie dodany do sitemap.xml dla lepszego indeksowania w Google.
                 </p>
               </div>

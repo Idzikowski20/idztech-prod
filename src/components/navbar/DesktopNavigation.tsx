@@ -8,8 +8,7 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/utils/themeContext';
-import { Globe, TrendingUp, Layout, ShoppingCart, Search, MapPin, FileText, Settings, PenLine, ListChecks } from 'lucide-react';
+import { Globe, TrendingUp } from 'lucide-react';
 
 // TypeScript interface for the NavigationMenuLink component
 interface NavigationMenuLinkProps {
@@ -22,17 +21,14 @@ const NavigationMenuLink: React.FC<NavigationMenuLinkProps> = ({ asChild, childr
 };
 
 const DesktopNavigation = () => {
-  const { theme } = useTheme();
   const location = useLocation();
 
   const activeClass =
-    'bg-gradient-to-br  via-[#9288ff] shadow-md text-white hover:bg-white/10 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
+    'bg-gradient-to-br  via-[#9288ff] shadow-md text-white hover:bg-neutral-400 hover:text-white rounded-full px-4 py-2 transition-colors duration-300';
 
   const linkClass = cn(
     "transition-colors duration-300 px-4 py-2 rounded-full",
-    theme === 'light'
-      ? 'text-black hover:bg-gray-100 hover:text-black hover:shadow-md'
-      : 'text-white hover:bg-white/10 hover:text-white hover:shadow-md'
+    'text-white hover:bg-[#604b9b] hover:text-black hover:shadow-md'
   );
 
   const isActive = (path: string) => location.pathname === path;
@@ -49,17 +45,13 @@ const DesktopNavigation = () => {
 
           <NavigationMenuItem>
             <NavigationMenuTrigger
-              className={cn(
-                'transition-colors duration-300 px-4 py-2 rounded-full bg-transparent',
-                theme === 'light'
-                  ? 'text-black hover:bg-gray-100 hover:text-black'
-                  : 'text-white hover:bg-white/10 hover:text-white'
-              )}
-            >
+              className="
+                transition-colors duration-300 px-4 py-2 rounded-full bg-transparent
+                text-black hover:bg-gray-100 hover:text-white">
               Usługi
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="flex flex-row rounded-xl px-0 py-0 min-w-[700px] max-w-[900px] bg-[#2f2c59f5] bg-gradient-to-br via-[#9288ffc2] backdrop-blur-sm  border-width-[1px] border-[#80808030]">
+              <div className="flex flex-row rounded-xl px-0 py-0 min-w-[700px] max-w-[900px] bg-[#0c0c14] border backdrop-blur-sm  border-width-[1px] border-[#80808030]">
                 {/* Strony www - lewa kolumna */}
                 <div className="flex flex-col flex-1 items-start justify-start px-8 py-8 text-left">
                   <div className="flex items-center gap-3 mb-4">
@@ -72,7 +64,7 @@ const DesktopNavigation = () => {
                         <Link to="/tworzenie-stron-internetowych" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <div className='p-2'>
                             <span className="font-semibold text-black dark:text-neutral-100">Strony internetowe</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Profesjonalne projektowanie i tworzenie stron www - responsywne strony firmowe, landing page i web design dla biznesu</div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Profesjonalne projektowanie i tworzenie stron www responsywne strony firmowe, landing page i web design dla biznesu</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -82,7 +74,7 @@ const DesktopNavigation = () => {
                         <Link to="/aplikacje-webowe" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <div className='p-2'>
                             <span className="font-semibold text-black dark:text-neutral-100">Aplikacje webowe</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Nowoczesne aplikacje webowe na zamówienie – rozwój aplikacji internetowych, platformy webowe i oprogramowanie dla firm - Aplikacje internetowe</div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Nowoczesne aplikacje webowe na zamówienie rozwój aplikacji internetowych, platformy webowe <br></br>  i oprogramowanie dla firm - Aplikacje internetowe</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -92,7 +84,7 @@ const DesktopNavigation = () => {
                         <Link to="/sklepy-internetowe" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <div className='p-2'>
                             <span className="font-semibold text-black dark:text-neutral-100">Sklepy internetowe</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe rozwiązania e-commerce - tworzenie i optymalizacja sklepów online (Shopify, WooCommerce)</div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe rozwiązania e-commerce tworzenie <br></br>  i optymalizacja sklepów online (Shopify, WooCommerce)</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -113,7 +105,7 @@ const DesktopNavigation = () => {
                         <Link to="/pozycjonowanie-stron" className="flex items-start gap-3 rounded-lg px-0 py-0 transition hover:bg-neutral-100 dark:hover:bg-neutral-800">
                           <div className='p-2'>
                             <span className="font-semibold text-black dark:text-neutral-100">Pozycjonowanie stron</span>
-                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe pozycjonowanie SEO - optymalizacja, link building i strategie Google dla firm</div>
+                            <div className="text-xs text-neutral-600 dark:text-neutral-300">Kompleksowe pozycjonowanie SEO optymalizacja, link building i strategie Google dla firm</div>
                           </div>
                         </Link>
                       </NavigationMenuLink>
@@ -125,25 +117,25 @@ const DesktopNavigation = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/projects" className={cn(linkClass, isActive('/projects') && activeClass)}>
+            <Link to="/projects" className={"hover:text-black" + cn(linkClass, isActive('/projects') && activeClass)}>
               Portfolio
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/about" className={cn(linkClass, isActive('/about') && activeClass)}>
+            <Link to="/about" className={"hover:text-black" + cn(linkClass, isActive('/about') && activeClass)}>
               O nas
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/blog" className={cn(linkClass, isActive('/blog') && activeClass)}>
+            <Link to="/blog" className={"hover:text-black" + cn(linkClass, isActive('/blog') && activeClass)}>
               Blog
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/contact" className={cn(linkClass, isActive('/contact') && activeClass)}>
+            <Link to="/contact" className={"hover:text-black" + cn(linkClass, isActive('/contact') && activeClass)}>
               Kontakt
             </Link>
           </NavigationMenuItem>

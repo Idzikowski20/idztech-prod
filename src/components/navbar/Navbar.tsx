@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { useTheme } from '@/utils/themeContext';
 import Brand from './Brand';
 import DesktopNavigation from './DesktopNavigation';
 import DesktopControls from './DesktopControls';
@@ -9,7 +8,6 @@ import MobileMenu from './MobileMenu';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme } = useTheme();
   
   // Optimize scroll handler with useCallback to prevent unnecessary re-renders
   const handleScroll = useCallback(() => {

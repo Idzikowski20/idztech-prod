@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Check, ChevronRight, Search, BarChart4, FileText, Settings, Target, TrendingUp, Award, Globe, ArrowRight } from "lucide-react";
@@ -9,13 +8,11 @@ import SplineSEO from "@/components/SplineSEO";
 import GlobalCTA from "@/components/GlobalCTA";
 import { Helmet } from 'react-helmet-async';
 import FAQAccordion from '@/components/FAQAccordion';
-import { useTheme } from '@/utils/themeContext';
 import LocalSeoSection from "@/components/LocalSeoSection";
 import OgUrlMeta from "@/components/OgUrlMeta";
 
 const Seo = () => {
   const navigate = useNavigate();
-  const { theme } = useTheme();
 
   return (
     <>
@@ -133,13 +130,17 @@ const Seo = () => {
         </Helmet>
         <Navbar />
         
-        {/* Hero Section */}
-        <section className="pt-32 pb-16 relative overflow-hidden">
-          <div className="container mx-auto px-4">
+          {/* Hero Section */}
+          <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+          {/* Background elements */}
+          {/* <div className="max-md:hidden absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div> */}
+          <div className="max-md:hidden absolute top-0 left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
+
+         <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
-                <span className="text-premium-purple font-medium">SEO</span>
+                <span className="text-main font-medium">Seo</span>
                 <h1 className="text-4xl lg:text-5xl font-bold mt-4 mb-6">Pozycjonowanie stron internetowych</h1>
                 <p className="text-premium-light/70 text-lg mb-8">
                   Zwiększamy widoczność Twojej strony w wyszukiwarce Google, pozyskujemy ruch organiczny
@@ -150,7 +151,7 @@ const Seo = () => {
                     Skontaktuj się z nami
                     <ArrowRight size={18} className="ml-2" />
                   </Button>
-                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent ${theme === 'light' ? 'border border-gray-200 text-black hover:scale-105' : 'borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white'}`} onClick={() => navigate('/projects')}>
+                  <Button className={`border border-gray-200 rounded-full px-8 py-6 transition-all duration-800 bg-transparent borderborder-gray-200 text-slate-50 hover:scale-105 hover:text-white`} onClick={() => navigate('/projects')}>
                     Zobacz nasze realizacje
                   </Button>
                 </div>
@@ -185,7 +186,7 @@ const Seo = () => {
           <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
             {/* Lewa kolumna */}
             <div className="flex-1 max-w-2xl">
-              <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
+              <span className="font-semibold text-main font-medium text-sm mb-4 block tracking-wider">Kilka słów o SEO</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                 Czym jest SEO i jak może <span className="text-premium-orange">wesprzeć Twój biznes?</span>
               </h2>
@@ -236,7 +237,7 @@ const Seo = () => {
         <section className="py-20  text-premium-light">
           <div className="container mx-auto px-4 flex flex-col gap-12">
             <div className="text-center mb-12">
-              <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">Opłaca się?</span>
+              <span className="font-semibold text-main font-medium text-sm mb-4 block tracking-wider">Opłaca się?</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4 leading-tight">
                 Dlaczego warto <span className="text-premium-orange">inwestować w SEO?</span>
               </h2>
@@ -246,28 +247,28 @@ const Seo = () => {
                 <span className="text-premium-orange text-2xl mt-1">🏆</span>
                 <div>
                   <h3 className="font-bold mb-1">75% użytkowników zostaje na pierwszej stronie Google</h3>
-                  <p className="text-premium-light/80 text-base">Aż 75 procent internautów nigdy nie zagląda poza pierwszą stronę wyników wyszukiwania. Jeśli Twoja witryna nie znajduje się wśród tych pierwszych pozycji, jest to jakby nie istniała dla większości użytkowników internetu.</p>
+                  <p className="text-premium-light/80">Aż 75 procent internautów nigdy nie zagląda poza pierwszą stronę wyników wyszukiwania. Jeśli Twoja witryna nie znajduje się wśród tych pierwszych pozycji, jest to jakby nie istniała dla większości użytkowników internetu.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-premium-orange text-2xl mt-1">🔍</span>
                 <div>
                   <h3 className="font-bold mb-1">93% działań w sieci zaczyna się od wyszukiwarki</h3>
-                  <p className="text-premium-light/80 text-base">Podkreślając istotę posiadania wysokiej pozycji w wynikach wyszukiwania, warto zauważyć, że 93% użytkowników rozpoczyna swoje poszukiwania w sieci od właśnie tego narzędzia.</p>
+                  <p className="text-premium-light/80">Podkreślając istotę posiadania wysokiej pozycji w wynikach wyszukiwania, warto zauważyć, że 93% użytkowników rozpoczyna swoje poszukiwania w sieci od właśnie tego narzędzia.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-premium-orange text-2xl mt-1">🚫</span>
                 <div>
                   <h3 className="font-bold mb-1">70–80% użytkowników omija reklamy w wyszukiwarce</h3>
-                  <p className="text-premium-light/80 text-base">Zdecydowana większość internautów, około 70–80 procent, ignoruje płatne reklamy, skupiając się głównie na organicznych wynikach wyszukiwania.</p>
+                  <p className="text-premium-light/80">Zdecydowana większość internautów, około 70–80 procent, ignoruje płatne reklamy, skupiając się głównie na organicznych wynikach wyszukiwania.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-premium-orange text-2xl mt-1">📈</span>
                 <div>
                   <h3 className="font-bold mb-1">10-krotnie więcej ruchu niż z mediów społecznościowych</h3>
-                  <p className="text-premium-light/80 text-base">Statystyki ruchu w wyszukiwarkach wyraźnie wskazują, że wyszukiwanie jest głównym źródłem ruchu w e-commerce.</p>
+                  <p className="text-premium-light/80">Statystyki ruchu w wyszukiwarkach wyraźnie wskazują, że wyszukiwanie jest głównym źródłem ruchu w e-commerce.</p>
                 </div>
               </div>
             </div>
@@ -279,7 +280,7 @@ const Seo = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-premium-purple font-medium uppercase">Nasze usługi</span>
+              <span className="text-main font-medium">Nasze usługi</span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Kompleksowe pozycjonowanie SEO</h2>
               <p className="text-premium-light/70 text-lg">
                 Oferujemy pełen zakres usług SEO, dostosowanych do specyfiki Twojego biznesu i branży.
@@ -444,7 +445,7 @@ const Seo = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-premium-purple font-medium uppercase">Dlaczego warto</span>
+              <span className="text-main font-medium">Dlaczego warto</span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Korzyści z inwestycji w SEO</h2>
               <p className="text-premium-light/70 text-lg">
                 Pozycjonowanie to jedna z najbardziej opłacalnych długoterminowych strategii marketingowych.
@@ -503,7 +504,7 @@ const Seo = () => {
         <section className="py-16  text-premium-light">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-10">
-              <span className="font-semibold uppercase text-premium-purple text-sm mb-4 block tracking-wider">SEO vs Google Ads</span>
+              <span className="font-semibold text-main text-sm mb-4 block tracking-wider">Seo vs Google Ads</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                 SEO czy Google Ads? <span className="text-premium-orange">Co wybrać?</span>
               </h2>
@@ -561,7 +562,7 @@ const Seo = () => {
         <section className="py-16">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-premium-purple font-medium uppercase">Nasze sposoby działania</span>
+              <span className="text-main font-medium">Nasze sposoby działania</span>
               <h2 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">Jak pracujemy nad SEO</h2>
               <p className="text-premium-light/70 text-lg">
                 Nasze podejście do pozycjonowania jest transparentne, oparte na danych i dostosowane do Twoich potrzeb.
@@ -709,25 +710,25 @@ const Seo = () => {
           <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-12">
             {/* Lewa kolumna */}
             <div className="flex-1 max-w-2xl">
-              <span className="font-semibold uppercase text-premium-purple font-medium text-sm mb-4 block tracking-wider">REALNE CASE STUDY</span>
+              <span className="font-semibold uppercase text-main font-medium text-sm mb-4 block tracking-wider">Realne case study</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                Optymalizacja SEO<br />na przykładzie <span className="text-premium-orange">case study</span>
+                Optymalizacja Seo<br />na przykładzie <mark className="text-main">case study</mark>
               </h2>
-              <p className="mb-8 text-premium-light/80 text-base">
+              <p className="mb-8 text-premium-light/80">
                 Pandemia mocno dotknęła branżę eventową. Jednak jeden z naszych klientów postanowił wykorzystać ten czas na poprawę wyników organicznych i zdobycie przewagi nad konkurencją. Sprawdź, co zrobiliśmy i co zyskaliśmy.
               </p>
               <div className="flex flex-col gap-6">
                 <div className="flex items-start gap-4">
                   <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">1</div>
-                  <span className="text-base text-premium-light/90">Wyszukaliśmy frazy z dużym potencjałem przyciągnięcia ruchu.</span>
+                  <span className="text-premium-light/90">Wyszukaliśmy frazy z dużym potencjałem przyciągnięcia ruchu.</span>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">2</div>
-                  <span className="text-base text-premium-light/90">Zadbaliśmy o zoptymalizowanie treści na stronie pod cele widoczności.</span>
+                  <span className="text-premium-light/90">Zadbaliśmy o zoptymalizowanie treści na stronie pod cele widoczności.</span>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">3</div>
-                  <span className="text-base text-premium-light/90">Przygotowaliśmy wpisy blogowe, by wzmocnić stronę i zbudować Topical Authority.</span>
+                  <span className="text-premium-light/90">Przygotowaliśmy wpisy blogowe, by wzmocnić stronę i zbudować Topical Authority.</span>
                 </div>
               </div>
             </div>
@@ -736,7 +737,7 @@ const Seo = () => {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <span className="block text-5xl font-bold text-premium-light">10</span>
-                  <span className="block text-premium-light/70 mt-2">fraz w TOP 20</span>
+                  <span className="block text-premium-light/70 mt-2">fraz w top 20</span>
                 </div>
                 <div>
                   <span className="block text-5xl font-bold text-premium-light">173%</span>
@@ -748,7 +749,7 @@ const Seo = () => {
                 </div>
                 <div>
                   <span className="block text-5xl font-bold text-premium-light">47%</span>
-                  <span className="block text-premium-light/70 mt-2">większa konwersja na stronie</span>
+                  <span className="block text-premium-light/70 mt-2">średni wzrost konwersji na stronie</span>
                 </div>
               </div>
             </div>
@@ -798,7 +799,6 @@ const Seo = () => {
           ]}
         />
         
-        <Footer />
       </div>
     </>
   );

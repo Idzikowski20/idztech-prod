@@ -7,10 +7,22 @@ import {
     type DragEvent,
     useEffect,
 } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants, Transition } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { UploadCloud, File as FileIcon, X, CheckCircle } from "lucide-react";
-import { useTheme } from "@/utils/themeContext";
+
+const successIconVariants: Variants = {
+    initial: { scale: 0, rotate: -180 },
+    animate: {
+        scale: 1,
+        rotate: 0,
+        transition: {
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+        },
+    },
+};
 
 type UploadStatus = "idle" | "dragging" | "uploading" | "success" | "error";
 
@@ -23,13 +35,42 @@ interface FileUploadProps {
     onFileRemove?: () => void;
 }
 
-const cardVariants = {
+interface CardVariants extends Variants {
+    initial: {
+        opacity: number;
+        y: number;
+    };
+    animate: {
+        opacity: number;
+        y: number;
+    };
+    exit: {
+        opacity: number;
+        y: number;
+    };
+}
+
+const cardVariants: CardVariants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -20 },
 };
 
-const dropzoneVariants = {
+interface DropzoneVariants extends Variants {
+    idle: {
+        scale: number;
+        borderColor: string;
+        backgroundColor: string;
+    };
+    dragging: {
+        scale: number;
+        borderColor: string;
+        backgroundColor: string;
+        transition: Transition;
+    };
+}
+
+const dropzoneVariants: DropzoneVariants = {
     idle: {
         scale: 1,
         borderColor: "var(--border-color)",
@@ -43,11 +84,26 @@ const dropzoneVariants = {
             type: "spring",
             stiffness: 400,
             damping: 25,
-        },
+        } as Transition,
     },
 };
 
-const iconVariants = {
+interface IconVariants extends Variants {
+    idle: {
+        y: number;
+        scale: number;
+    };
+    dragging: {
+        y: number;
+        scale: number;
+        transition: Transition & {
+            repeat: number;
+            repeatType: "reverse" | "loop" | "mirror";
+        };
+    };
+}
+
+const iconVariants: IconVariants = {
     idle: { y: 0, scale: 1 },
     dragging: {
         y: -5,
@@ -56,31 +112,30 @@ const iconVariants = {
             repeat: Number.POSITIVE_INFINITY,
             repeatType: "reverse" as const,
             duration: 1,
-            ease: "easeInOut",
+            ease: "easeInOut" as const,
         },
     },
 };
 
-const progressVariants = {
+interface ProgressVariants extends Variants {
+    initial: {
+        pathLength: number;
+        opacity: number;
+    };
+    animate: (progress: number) => {
+        pathLength: number;
+        opacity: number;
+        transition: Transition;
+    };
+}
+
+const progressVariants: ProgressVariants = {
     initial: { pathLength: 0, opacity: 0 },
     animate: (progress: number) => ({
         pathLength: progress / 100,
         opacity: 1,
-        transition: { duration: 0.5, ease: "easeOut" },
+        transition: { duration: 0.5, ease: "easeOut" as const } as Transition,
     }),
-};
-
-const successIconVariants = {
-    initial: { scale: 0, rotate: -180 },
-    animate: {
-        scale: 1,
-        rotate: 0,
-        transition: {
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
-        },
-    },
 };
 
 export default function FileUpload({
@@ -97,8 +152,6 @@ export default function FileUpload({
     const [error, setError] = useState<string | null>(null);
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const { theme } = useTheme();
-    const isDark = theme === 'dark';
 
     useEffect(() => {
         if (file?.type?.startsWith("image/")) {
@@ -263,21 +316,17 @@ export default function FileUpload({
             className="relative"
             style={
                 {
-                    "--border-color": isDark ? "rgb(var(--zinc-800) / 0.5)" : "rgb(var(--zinc-200) / 0.5)",
-                    "--bg-color": isDark ? "rgb(var(--zinc-900) / 0.3)" : "rgb(var(--zinc-50) / 0.3)",
-                    "--primary-color": isDark ? "rgb(var(--violet-400))" : "rgb(var(--violet-500))",
-                    "--primary-bg": isDark ? "rgb(var(--violet-500) / 0.1)" : "rgb(var(--violet-50) / 0.2)",
+                    "--border-color": "rgb(var(--zinc-800) / 0.5)",
+                    "--bg-color": "rgb(var(--zinc-900) / 0.3)",
+                    "--primary-color": "rgb(var(--violet-400))",
+                    "--primary-bg": "rgb(var(--violet-500) / 0.1)",
                 } as React.CSSProperties
             }
         >
-            <Card className={`w-full max-w-md mx-auto overflow-hidden min-h-[250px] flex flex-col ${
-                isDark ? 'bg-zinc-900 border-zinc-800/50' : 'bg-white border-zinc-200/50'
-            } shadow-lg shadow-zinc-200/50 dark:shadow-zinc-900/50`}>
+            <Card className={`w-full max-w-md mx-auto overflow-hidden min-h-[250px] flex flex-col bg-zinc-900 border-zinc-800/50 shadow-lg shadow-zinc-200/50 dark:shadow-zinc-900/50`}>
                 <CardContent className="p-6 flex-1 flex flex-col items-center justify-center text-center relative">
                     <div className={`absolute inset-0 bg-gradient-to-br ${
-                        isDark 
-                            ? 'from-violet-500/5 via-transparent to-sky-500/5' 
-                            : 'from-violet-50/20 via-transparent to-sky-50/20'
+                        'from-violet-500/5 via-transparent to-sky-500/5' 
                     }`} />
                     <div className="relative z-10 w-full">
                         <AnimatePresence mode="wait" initial={false}>
@@ -315,59 +364,47 @@ export default function FileUpload({
                                     )}
                                     {!previewUrl && (
                                         <FileIcon
-                                            className={`w-16 h-16 mb-4 ${isDark ? 'text-violet-400' : 'text-violet-500'}`}
+                                            className={`w-16 h-16 mb-4 text-violet-400`}
                                             aria-hidden="true"
                                         />
                                     )}
-                                    <h3 className={`text-lg font-semibold mb-2 ${
-                                        isDark ? 'text-zinc-100' : 'text-zinc-900'
-                                    }`}>
+                                    <h3 className={`text-lg font-semibold mb-2 text-zinc-100`}>
                                         Aktualny plik
                                     </h3>
-                                    <div className={`w-full max-w-xs rounded-lg p-3 mb-4 backdrop-blur-sm ${
-                                        isDark ? 'bg-zinc-800/50' : 'bg-zinc-50/50'
-                                    }`}>
-                                        <p className={`text-sm font-medium mb-2 truncate ${
-                                            isDark ? 'text-zinc-100' : 'text-zinc-900'
-                                        }`} title={file.name}>
+                                    <div className={`w-full max-w-xs rounded-lg p-3 mb-4 backdrop-blur-sm bg-zinc-800/50`}>
+                                        <p className={`text-sm font-medium mb-2 truncate text-zinc-100`} title={file.name}>
                                             {file.name}
                                         </p>
                                         <div className="grid grid-cols-2 gap-2 text-xs">
                                             <div className="flex flex-col space-y-1">
-                                                <span className={isDark ? 'text-zinc-400' : 'text-zinc-500'}>
+                                                <span className="text-zinc-400">
                                                     Rozmiar
                                                 </span>
-                                                <span className={`font-medium ${
-                                                    isDark ? 'text-zinc-300' : 'text-zinc-700'
-                                                }`}>
+                                                <span className={`font-medium text-zinc-300`}>
                                                     {formatBytes(file.size)}
                                                 </span>
                                             </div>
                                             <div className="flex flex-col space-y-1">
-                                                <span className={isDark ? 'text-zinc-400' : 'text-zinc-500'}>
+                                                <span className="text-zinc-400">
                                                     Typ
                                                 </span>
-                                                <span className={`font-medium ${
-                                                    isDark ? 'text-zinc-300' : 'text-zinc-700'
-                                                }`}>
+                                                <span className={`font-medium text-zinc-300`}>
                                                     {file.type.split("/")[1].toUpperCase() || "Nieznany"}
                                                 </span>
                                             </div>
                                             <div className="flex flex-col space-y-1">
-                                                <span className={isDark ? 'text-zinc-400' : 'text-zinc-500'}>
+                                                <span className="text-zinc-400">
                                                     Zmodyfikowano
                                                 </span>
-                                                <span className={`font-medium ${
-                                                    isDark ? 'text-zinc-300' : 'text-zinc-700'
-                                                }`}>
+                                                <span className={`font-medium text-zinc-300`}>
                                                     {new Date(file.lastModified).toLocaleDateString()}
                                                 </span>
                                             </div>
                                             <div className="flex flex-col space-y-1">
-                                                <span className={isDark ? 'text-zinc-400' : 'text-zinc-500'}>
+                                                <span className="text-zinc-400">
                                                     Status
                                                 </span>
-                                                <span className="font-medium text-emerald-600 dark:text-emerald-400">
+                                                <span className="font-medium text-emerald-600">
                                                     Gotowy
                                                 </span>
                                             </div>
@@ -377,11 +414,7 @@ export default function FileUpload({
                                         <button
                                             onClick={handleRemoveFile}
                                             type="button"
-                                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                                                isDark
-                                                    ? 'text-red-400 hover:text-red-300 border border-red-800 hover:border-red-700 focus-visible:ring-red-500 focus-visible:ring-offset-zinc-900'
-                                                    : 'text-red-600 hover:text-red-700 border border-red-200 hover:border-red-300 focus-visible:ring-red-500 focus-visible:ring-offset-white'
-                                            }`}
+                                            className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-red-400 hover:text-red-300 border border-red-800 hover:border-red-700 focus-visible:ring-red-500 focus-visible:ring-offset-zinc-900`}
                                             aria-label="Usuń plik"
                                         >
                                             Usuń
@@ -396,12 +429,8 @@ export default function FileUpload({
                                     animate={status === "dragging" ? "dragging" : "idle"}
                                     className={`w-full h-full flex flex-col items-center justify-center p-8 border-2 border-dashed rounded-lg ${
                                         status === "dragging"
-                                            ? isDark
-                                                ? 'border-violet-400 bg-violet-500/10'
-                                                : 'border-violet-500 bg-violet-50/20'
-                                            : isDark
-                                                ? 'border-zinc-800/50 hover:border-violet-600 hover:bg-violet-500/5'
-                                                : 'border-zinc-200/50 hover:border-violet-400 hover:bg-violet-50/10'
+                                            ? 'border-violet-400 bg-violet-500/10'
+                                            : 'border-violet-500 bg-violet-50/20'
                                     } transition-all duration-500 ease-in-out backdrop-blur-sm relative overflow-hidden group cursor-pointer`}
                                     onDragOver={handleDragOver}
                                     onDragLeave={handleDragLeave}
@@ -417,16 +446,8 @@ export default function FileUpload({
                                 >
                                     <div className="absolute inset-0 pointer-events-none">
                                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                                            <div className={`absolute inset-0 bg-gradient-to-b ${
-                                                isDark
-                                                    ? 'from-violet-500/[0.02] via-transparent to-violet-500/[0.02]'
-                                                    : 'from-violet-500/[0.02] via-transparent to-violet-500/[0.02]'
-                                            } animate-shimmer`} />
-                                            <div className={`absolute inset-0 ${
-                                                isDark
-                                                    ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.03),transparent_70%)]'
-                                                    : 'bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.02),transparent_70%)]'
-                                            } opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                                            <div className={`absolute inset-0 bg-gradient-to-b from-violet-500/[0.02] via-transparent to-violet-500/[0.02] animate-shimmer`} />
+                                            <div className={`absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.02),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
                                         </div>
                                     </div>
                                     <motion.div
@@ -437,31 +458,25 @@ export default function FileUpload({
                                         <UploadCloud
                                             className={`w-12 h-12 mb-4 transform transition-all duration-500 ease-out ${
                                                 status === "dragging"
-                                                    ? isDark
-                                                        ? 'text-violet-400'
-                                                        : 'text-violet-600'
-                                                    : isDark
-                                                        ? 'text-zinc-500 group-hover:text-violet-400 group-hover:translate-y-[-2px]'
-                                                        : 'text-zinc-400 group-hover:text-violet-500 group-hover:translate-y-[-2px]'
+                                                    ? 'text-violet-400'
+                                                    : 'text-violet-600'
                                             }`}
                                             aria-label="Ikona chmury do przesyłania"
                                         />
                                     </motion.div>
                                     <p className={`mb-2 text-sm transition-all duration-500 ${
-                                        isDark ? 'text-zinc-400' : 'text-zinc-600'
+                                        'text-zinc-400'
                                     }`}>
                                         <span className={`font-semibold transition-colors duration-500 ${
-                                            isDark
-                                                ? 'text-violet-400/90 group-hover:text-violet-400'
-                                                : 'text-violet-600/90 group-hover:text-violet-600'
+                                            'text-violet-400/90 group-hover:text-violet-400'
                                         }`}>
                                             Kliknij, aby przesłać
                                         </span>{" "}
                                         lub przeciągnij i upuść
                                     </p>
                                     <p className={`text-xs ${
-                                        isDark ? 'text-zinc-500/90' : 'text-zinc-500/90'
-                                    } group-hover:text-zinc-500 dark:group-hover:text-zinc-400 transition-colors duration-500`}>
+                                        'text-zinc-500/90'
+                                    } group-hover:text-zinc-500 transition-colors duration-500`}>
                                         {acceptedFileTypes && acceptedFileTypes.length > 0
                                             ? `Dozwolone: ${acceptedFileTypes
                                                   .map((t) => t.split("/")[1])
@@ -517,7 +532,7 @@ export default function FileUpload({
                                                 r="16"
                                                 fill="none"
                                                 className={`stroke-current ${
-                                                    isDark ? 'text-zinc-800' : 'text-zinc-100'
+                                                    'text-zinc-800'
                                                 }`}
                                                 strokeWidth="2.5"
                                             />
@@ -527,7 +542,7 @@ export default function FileUpload({
                                                 r="16"
                                                 fill="none"
                                                 className={`stroke-current ${
-                                                    isDark ? 'text-violet-400' : 'text-violet-500'
+                                                    'text-violet-400'
                                                 }`}
                                                 strokeWidth="2.5"
                                                 strokeDasharray="100"
@@ -549,19 +564,19 @@ export default function FileUpload({
                                         >
                                             <FileIcon
                                                 className={`w-8 h-8 absolute ${
-                                                    isDark ? 'text-violet-400' : 'text-violet-600'
+                                                    'text-violet-400'
                                                 }`}
                                                 aria-hidden="true"
                                             />
                                         </motion.div>
                                     </div>
                                     <p className={`text-sm font-medium mb-1 truncate max-w-[200px] ${
-                                        isDark ? 'text-zinc-100' : 'text-zinc-900'
+                                        'text-zinc-100'
                                     }`} title={file.name}>
                                         {file.name}
                                     </p>
                                     <p className={`text-xs ${
-                                        isDark ? 'text-zinc-400' : 'text-zinc-500'
+                                        'text-zinc-400'
                                     }`}>
                                         Przesyłanie... {Math.round(progress)}%
                                     </p>
@@ -569,9 +584,7 @@ export default function FileUpload({
                                         onClick={resetState}
                                         type="button"
                                         className={`mt-4 px-3 py-1.5 text-xs font-medium rounded-md border transition-all duration-300 ${
-                                            isDark
-                                                ? 'text-red-400 hover:text-red-300 border-red-800/50 hover:bg-red-900/20'
-                                                : 'text-red-600 hover:text-red-700 border-red-200/50 hover:bg-red-50/50'
+                                            'text-red-400 hover:text-red-300 border-red-800/50 hover:bg-red-900/20'
                                         }`}
                                         aria-label="Anuluj przesyłanie"
                                     >
@@ -594,7 +607,7 @@ export default function FileUpload({
                                     <div className="relative mb-4">
                                         <motion.div
                                             className={`absolute inset-0 blur-2xl rounded-full ${
-                                                isDark ? 'bg-emerald-500/20' : 'bg-emerald-500/10'
+                                                'bg-emerald-500/20'
                                             }`}
                                             initial={{ opacity: 0, scale: 0.8 }}
                                             animate={{ opacity: 1, scale: 1.5 }}
@@ -611,19 +624,19 @@ export default function FileUpload({
                                         >
                                             <CheckCircle
                                                 className={`w-16 h-16 relative z-10 drop-shadow-lg ${
-                                                    isDark ? 'text-emerald-400' : 'text-emerald-500'
+                                                    'text-emerald-400'
                                                 }`}
                                                 aria-label="Sukces"
                                             />
                                         </motion.div>
                                     </div>
                                     <h3 className={`text-lg font-semibold mb-1 ${
-                                        isDark ? 'text-zinc-100' : 'text-zinc-900'
+                                        'text-zinc-100'
                                     }`}>
                                         Przesyłanie zakończone sukcesem!
                                     </h3>
                                     <p className={`text-sm mb-4 truncate max-w-[200px] ${
-                                        isDark ? 'text-zinc-400' : 'text-zinc-600'
+                                        'text-zinc-400'
                                     }`} title={file.name}>
                                         {file.name} ({formatBytes(file.size)})
                                     </p>
@@ -631,9 +644,7 @@ export default function FileUpload({
                                         onClick={resetState}
                                         type="button"
                                         className={`px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-300 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                                            isDark
-                                                ? 'bg-violet-500 hover:bg-violet-600 shadow-violet-500/10 focus-visible:ring-violet-500 focus-visible:ring-offset-zinc-900'
-                                                : 'bg-violet-600 hover:bg-violet-700 shadow-violet-500/20 focus-visible:ring-violet-500 focus-visible:ring-offset-white'
+                                            'bg-violet-500 hover:bg-violet-600 shadow-violet-500/10 focus-visible:ring-violet-500 focus-visible:ring-offset-zinc-900'
                                         }`}
                                         aria-label="Prześlij inny plik"
                                     >
@@ -652,7 +663,7 @@ export default function FileUpload({
                                         damping: 25,
                                     }}
                                     className={`flex flex-col items-center text-center ${
-                                        isDark ? 'text-red-500' : 'text-red-600'
+                                        'text-red-500'
                                     }`}
                                     role="alert"
                                 >
@@ -673,9 +684,7 @@ export default function FileUpload({
                                         onClick={resetState}
                                         type="button"
                                         className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                                            isDark
-                                                ? 'text-zinc-300 bg-zinc-800/80 hover:bg-zinc-700/80 focus-visible:ring-zinc-500 focus-visible:ring-offset-zinc-900'
-                                                : 'text-zinc-700 bg-zinc-100/80 hover:bg-zinc-200/80 focus-visible:ring-zinc-500 focus-visible:ring-offset-white'
+                                            'text-zinc-300 bg-zinc-800/80 hover:bg-zinc-700/80 focus-visible:ring-zinc-500 focus-visible:ring-offset-zinc-900'
                                         }`}
                                         aria-label="Spróbuj ponownie"
                                     >

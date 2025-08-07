@@ -11,7 +11,6 @@ import { API_URL } from '@/config';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Slider } from "@/components/ui/slider";
 import AdminLayout from '@/components/AdminLayout';
-import { useTheme } from '@/utils/themeContext';
 import AIPostEditor from '@/components/AIPostEditor';
 import FileUpload from "@/components/FileUpload";
 import Notification from '@/components/ui/Notification';
@@ -76,7 +75,6 @@ const Shimmer = () => (
 export default function AIPostPage() {
   const { user, isAuthenticated, loading } = useAuth();
   const navigate = useNavigate();
-  const { theme } = useTheme();
   const { showNotification } = useNotification();
   
   // Stan dla kroków
@@ -433,8 +431,6 @@ export default function AIPostPage() {
     return <div className="min-h-screen flex items-center justify-center bg-black text-white">Ładowanie...</div>;
   }
 
-  const isDark = theme === 'dark';
-
   return (
     <AdminLayout>
       <div className="container mx-auto px-4 py-8">
@@ -530,15 +526,10 @@ export default function AIPostPage() {
               <Button 
                 variant="ghost" 
                 onClick={handleGoPanel}
-                className={`${
-                  isDark 
-                    ? 'text-white hover:/10' 
-                    : 'text-black hover:bg-gray-100'
-                }`}
-              >
+                className="text-white hover:/10">
                 <ArrowLeft size={18} className="mr-2" /> Wróć do panelu
               </Button>
-              <h1 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className="text-2xl font-bold text-white">
                 {aiEditorInitialData ? 'Podsumowanie utworzonego posta' : 'Nowy post AI'}
               </h1>
             </div>
@@ -595,9 +586,7 @@ export default function AIPostPage() {
             <div className="flex gap-8">
               {/* Lewa kolumna - miniaturka */}
               <div className={`w-1/3 rounded-xl p-6 border ${
-                isDark 
-                  ? '/50 border-premium-light/10' 
-                  : ' border-gray-200'
+                '/50 border-premium-light/10' 
               }`}>
                 <div className="flex flex-col items-center gap-4">
                   <div className="space-y-4">
@@ -618,15 +607,13 @@ export default function AIPostPage() {
               </div>
               {/* Prawa kolumna - kreator */}
               <div className={`w-2/3 rounded-xl p-6 border ${
-                isDark 
-                  ? '/50 border-premium-light/10' 
-                  : ' border-gray-200'
+                '/50 border-premium-light/10' 
               }`}>
                 <div className="flex flex-col gap-8">
                   {/* Krok 1 - Temat */}
                   {currentStep === 1 && (
                     <div className="space-y-4">
-                      <h2 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>O czym chcesz napisać?</h2>
+                      <h2 className="text-2xl font-bold text-white">O czym chcesz napisać?</h2>
                       <div className="flex flex-col gap-2 mb-2">
                         <input
                           type="text"
@@ -686,7 +673,7 @@ export default function AIPostPage() {
                   {/* Krok 2 - Długość */}
                   {currentStep === 2 && (
                     <div className="space-y-6">
-                      <h2 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
+                      <h2 className="text-2xl font-bold text-white">
                         Jak długi ma być artykuł?
                       </h2>
                       <div className="space-y-8">
@@ -699,8 +686,8 @@ export default function AIPostPage() {
                           onValueChange={(values) => setPostLength(values[0])}
                           className="w-full [&_[role=slider]]: [&_[role=slider]]:border-white [&_[role=track]]:bg-gray-700/50 [&_[role=track].data-[orientation=horizontal]]:h-2 [&_[role=range]]: [&_[role=range]]:data-[orientation=horizontal]: [&_[role=track]]:data-[orientation=horizontal]:bg-gray-700/50"
                         />
-                        <div className={`text-center ${isDark ? 'text-white' : 'text-gray-700'}`}>
-                            Aktualnie: <span className={`font-semibold ${isDark ? 'text-white' : 'text-black'}`}>{postLength}</span> słów
+                        <div className="text-center text-white">
+                            Aktualnie: <span className="font-semibold text-white">{postLength}</span> słów
                         </div>
                       </div>
                     </div>
@@ -709,7 +696,7 @@ export default function AIPostPage() {
                   {currentStep === 3 && (
                     <div className="space-y-4">
                       <div className="space-y-3">
-                        <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-black'}`}>
+                        <h2 className="text-lg font-semibold text-white">
                           Wybierz styl artykułu
                         </h2>
                         <div className="grid grid-cols-2 gap-2">
@@ -717,16 +704,14 @@ export default function AIPostPage() {
                             <button
                               key={style.id}
                               className={
-                                isDark
-                                  ? `btn-back p-2 rounded-lg border text-sm transition-all hover:scale-105${selectedStyle === style.id ? ' active' : ''}`
-                                  : `p-2 rounded-lg border text-sm transition-all hover:scale-105 ${selectedStyle === style.id ? 'border-blue-500 bg-blue-50 text-blue-700' : 'border-gray-300 hover:border-blue-500 text-gray-700'}`
+                                `btn-back p-2 rounded-lg border text-sm transition-all hover:scale-105${selectedStyle === style.id ? ' active' : ''}`
                               }
                               onClick={() => setSelectedStyle(style.id)}
                             >
-                              <h3 className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                              <h3 className="font-semibold mb-1 text-white">
                                 {style.name}
                               </h3>
-                              <p className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                              <p className="text-xs text-white">
                                 {style.description}
                               </p>
                             </button>
@@ -734,7 +719,7 @@ export default function AIPostPage() {
                         </div>
                       </div>
                       <div className="space-y-3">
-                        <h2 className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-black'}`}>
+                        <h2 className="text-lg font-semibold text-white">
                           Sposób przedstawienia artykułu
                         </h2>
                         <div className="grid grid-cols-2 gap-2">
@@ -742,16 +727,14 @@ export default function AIPostPage() {
                             <button
                               key={presentation.id}
                               className={
-                                isDark
-                                  ? `btn-back p-2 rounded-lg border text-sm transition-all hover:scale-105${selectedPresentation === presentation.id ? ' active' : ''}`
-                                  : `p-2 rounded-lg border text-sm transition-all hover:scale-105 ${selectedPresentation === presentation.id ? 'border-blue-500 bg-blue-50 text-blue-700' : 'border-gray-300 hover:border-blue-500 text-gray-700'}`
+                                `btn-back p-2 rounded-lg border text-sm transition-all hover:scale-105${selectedPresentation === presentation.id ? ' active' : ''}`
                               }
                               onClick={() => setSelectedPresentation(presentation.id)}
                             >
-                              <h3 className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                              <h3 className="font-semibold mb-1 text-white">
                                 {presentation.name}
                               </h3>
-                              <p className={`text-xs ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                              <p className="text-xs text-white">
                                 {presentation.description}
                               </p>
                             </button>
@@ -763,30 +746,28 @@ export default function AIPostPage() {
                   {/* Krok 4 - Generowanie */}
                   {currentStep === 4 && (
                     <div className="space-y-6">
-                      <h2 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-black'}`}>
+                      <h2 className="text-2xl font-bold text-white">
                         Gotowy do wygenerowania?
                       </h2>
                       <div className="space-y-4">
                         <div className={`rounded-lg p-4 space-y-2 ${
-                          isDark 
-                            ? 'bg-black/50 border border-gray-700' 
-                            : 'bg-gray-50 border border-gray-200'
+                          'bg-black/50 border border-gray-700' 
                         }`}>
-                          <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
-                            Temat: <span className={isDark ? 'text-white' : 'text-gray-900'}>{topic}</span>
+                          <p className="text-gray-300">
+                            Temat: <span className="text-white">{topic}</span>
                           </p>
-                          <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
-                            Długość: <span className={isDark ? 'text-white' : 'text-gray-900'}>
+                          <p className="text-gray-300">
+                            Długość: <span className="text-white">
                                   {postLength} słów
                           </span>
                           </p>
-                          <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
-                            Styl: <span className={isDark ? 'text-white' : 'text-gray-900'}>
+                          <p className="text-gray-300">
+                            Styl: <span className="text-white">
                               {postStyles.find(s => s.id === selectedStyle)?.name}
                             </span>
                           </p>
-                          <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
-                            Sposób przedstawienia: <span className={isDark ? 'text-white' : 'text-gray-900'}>
+                          <p className="text-gray-300">
+                            Sposób przedstawienia: <span className="text-white">
                               {postPresentations.find(p => p.id === selectedPresentation)?.name}
                             </span>
                           </p>
@@ -823,23 +804,19 @@ export default function AIPostPage() {
           <DialogContent
             onInteractOutside={e => e.preventDefault()}
             className={`p-8 rounded-xl max-w-lg w-full ${
-              isDark 
-                ? 'bg-black/95 border border-gray-200' 
-                : ' border border-gray-200'
+              'bg-black/95 border border-gray-200' 
             }`}
           >
             <DialogHeader>
-              <DialogTitle className={`text-xl font-semibold text-center ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}>
+              <DialogTitle className="text-xl font-semibold text-center text-white">
                 Generowanie posta...
               </DialogTitle>
             </DialogHeader>
             <div className="flex flex-col items-center justify-center gap-4">
               <Loader2 className={`w-12 h-12 animate-spin ${
-                isDark ? 'text-purple-500' : 'text-blue-500'
+                'text-purple-500'
               }`} />
-              <p className={isDark ? 'text-white' : 'text-gray-700'}>
+              <p className="text-white">
                 To może potrwać do kilku minut. Proszę o cierpliwość.
               </p>
             </div>
@@ -848,23 +825,17 @@ export default function AIPostPage() {
 
         <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
           <DialogContent className={`p-4 rounded-xl w-[90vw] max-w-[1400px] h-[90vh] overflow-hidden ${
-            isDark 
-              ? 'bg-black/50 backdrop-blur-[5px] border border-purple-500/30' 
-              : ' border border-gray-200'
+            'bg-black/50 backdrop-blur-[5px] border border-purple-500/30' 
           }`}>
             <DialogHeader className="pb-4">
               <div className="flex items-center justify-between">
-                <DialogTitle className={`text-xl font-semibold ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}>
+                <DialogTitle className="text-xl font-semibold text-white">
                   Edycja posta
                 </DialogTitle>
                 <Button
                   variant="ghost"
                   className={`transition-all hover:scale-105 ${
-                    isDark 
-                      ? 'text-white hover:bg-purple-600/20' 
-                      : 'text-gray-700 hover:bg-gray-100'
+                    'text-white hover:bg-purple-600/20' 
                   }`}
                   onClick={() => setIsEditModalOpen(false)}
                 >
@@ -874,17 +845,13 @@ export default function AIPostPage() {
             </DialogHeader>
             <div className="flex gap-4 h-[calc(90vh-120px)] mt-4">
               <div className="flex-1 flex flex-col">
-                <div className={`sticky top-0 z-10 rounded-lg border-0 ${
-                  isDark ? 'bg-black/50 backdrop-blur-[5px]' : ''
-                }`}>
+                <div className="sticky top-0 z-10 rounded-lg border-0 bg-black/50 backdrop-blur-[5px]">
                   <div className="tiptap-toolbar-container p-2">
                     {/* Toolbar będzie tutaj */}
                   </div>
                 </div>
                 <div className="flex-1 overflow-y-auto mt-4 pr-4">
-                  <div className={`rounded-lg border-0 ${
-                    isDark ? 'bg-black/50 backdrop-blur-[5px]' : ''
-                  }`}>
+                  <div className="rounded-lg border-0 bg-black/50 backdrop-blur-[5px]">
                     <SimpleEditor
                       value={editedPost}
                       onChange={setEditedPost}
@@ -913,19 +880,15 @@ export default function AIPostPage() {
 
         <Dialog open={showMissingThumbnailModal} onOpenChange={setShowMissingThumbnailModal}>
           <DialogContent className={`p-8 rounded-xl max-w-lg w-full ${
-            isDark 
-              ? 'bg-black/95 border border-purple-500/30' 
-              : ' border border-gray-200'
+            'bg-black/95 border border-purple-500/30' 
           }`}>
             <DialogHeader>
-              <DialogTitle className={`text-xl font-semibold text-center ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}>
+              <DialogTitle className="text-xl font-semibold text-center text-white">
                 Zapomniałeś dodać miniaturę!
               </DialogTitle>
             </DialogHeader>
             <div className="flex flex-col items-center justify-center gap-4 mt-4">
-              <p className={isDark ? 'text-white' : 'text-gray-700'}>
+              <p className="text-white">
                 Aby opublikować post, musisz dodać miniaturę.
               </p>
               <input
@@ -948,7 +911,7 @@ export default function AIPostPage() {
                 }}
               />
               <Button
-                className={isDark ? 'btn-next' : 'bg-blue-600 text-white hover:bg-blue-700'}
+                className="btn-next"
                 onClick={() => document.getElementById('thumbnail-upload-modal')?.click()}
               >
                 Wybierz plik
@@ -959,19 +922,15 @@ export default function AIPostPage() {
 
         <Dialog open={showExitModal} onOpenChange={setShowExitModal}>
           <DialogContent className={`p-8 rounded-xl max-w-lg w-full ${
-            isDark 
-              ? 'bg-black/95 border border-gray-700' 
-              : ' border border-gray-200'
+            'bg-black/95 border border-gray-700' 
           }`}>
             <DialogHeader>
-              <DialogTitle className={`text-xl font-semibold text-center ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}>
+              <DialogTitle className="text-xl font-semibold text-center text-white">
                 Czy na pewno chcesz wyjść?
               </DialogTitle>
             </DialogHeader>
             <div className="flex flex-col items-center justify-center gap-4 mt-4">
-              <p className={isDark ? 'text-white' : 'text-gray-700'}>
+              <p className= "text-white">
                 Wprowadzone zmiany nie zostaną zapisane.
               </p>
               <div className="flex gap-4 mt-4">

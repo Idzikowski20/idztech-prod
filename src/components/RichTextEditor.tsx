@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './RichTextEditorWhiteText.css';
-import { useTheme } from '@/utils/themeContext';
 
 interface RichTextEditorProps {
   value: string;
@@ -17,7 +16,6 @@ const RichTextEditor = ({
   placeholder = 'Wpisz treść...',
   rows = 10
 }: RichTextEditorProps) => {
-  const { theme } = useTheme();
   // Quill modules configuration - all available features
   const modules = useMemo(() => ({
     toolbar: [
@@ -62,7 +60,7 @@ const RichTextEditor = ({
         modules={modules}
         formats={formats}
         style={{ height: `${Math.max(minHeight, 200)}px`, backgroundColor: '#0f172a', color: '#fff' }}
-        className={theme === 'light' ? 'bg-slate-950 text-white' : 'bg-slate-950 text-white'}
+        className={'bg-slate-950 text-white'}
       />
       <div className="bg-slate-900 p-2 border-t border-premium-light/10">
         <div className="text-xs text-premium-light/60">

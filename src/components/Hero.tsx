@@ -1,12 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/utils/themeContext";
 import { useMobile } from '@/hooks/use-mobile';
 import { useNavigate } from "react-router-dom";
 import { Marquee } from "@/components/marquee";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 
 const Hero = () => {
-  const { theme } = useTheme();
   const isMobile = useMobile();
   const navigate = useNavigate();
   

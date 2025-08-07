@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Lock, Eye, EyeOff, Home } from 'lucide-react';
 import { useAuth } from '@/utils/AuthProvider';
-import { useTheme } from '@/utils/themeContext';
 import { useNotification } from '@/components/ui/NotificationContext';
 
 interface LocationState {
@@ -21,7 +20,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { signIn, isAuthenticated, user } = useAuth();
-  const { theme } = useTheme();
   const redirected = useRef(false);
   const { showNotification } = useNotification();
 
@@ -86,7 +84,7 @@ const Login = () => {
           <div className="flex items-center justify-center mb-4">
             <Button 
               variant="ghost" 
-              className={`flex gap-2 items-center ${theme === 'dark' ? '' : ''}`}
+              className={`flex gap-2 items-center`}
               onClick={() => navigate('/')}
             >
               <Home size={18} />

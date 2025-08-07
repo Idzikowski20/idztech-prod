@@ -1,6 +1,5 @@
 import React from 'react';
 import { Star, ArrowLeft, ArrowRight } from 'lucide-react';
-import { useTheme } from '@/utils/themeContext';
 
 const testimonials = [
   {
@@ -27,10 +26,9 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
-  const { theme } = useTheme();
   
   return (
-    <div className={`${theme === 'light' ? 'bg-white border-gray-300' : 'bg-premium-dark/60 border-white/10'} rounded-xl p-6 h-full flex flex-col`}>
+    <div className={`rounded-xl p-6 h-full flex flex-col`}>
       <div className="flex space-x-1 mb-4">
         {[...Array(5)].map((_, i) => (
           <Star 
@@ -40,11 +38,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
           />
         ))}
       </div>
-      <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/80'} flex-grow mb-6`}>"{testimonial.content}"</p>
+      <p className={`text-premium-dark flex-grow mb-6`}>"{testimonial.content}"</p>
       <div className="flex items-center mt-auto">
         <div>
           <h5 className="font-medium">{testimonial.author}</h5>
-          <p className={`text-sm ${theme === 'light' ? 'text-premium-dark/70' : 'text-premium-light/60'}`}>{testimonial.position}</p>
+          <p className={`text-sm text-premium-dark/70`}>{testimonial.position}</p>
         </div>
       </div>
     </div>
@@ -52,7 +50,6 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
 };
 
 const Testimonials = () => {
-  const { theme } = useTheme();
   
   return (
     <section className="py-20 relative overflow-hidden">
@@ -65,16 +62,16 @@ const Testimonials = () => {
             <h5 className="text-3xl lg:text-4xl font-bold mt-3 mb-6">
               Co mówią o nas nasi klienci
             </h5>
-            <p className={`${theme === 'light' ? 'text-premium-dark' : 'text-premium-light/70'}`}>
+            <p className={`text-premium-dark`}>
               Zaufało nam już ponad 10 firm z różnych branż. Poznaj opinie naszych klientów i przekonaj się, że jesteśmy właściwym wyborem dla Twojego biznesu.
             </p>
           </div>
           
           <div className="flex space-x-2 mt-6 md:mt-0">
-            <button className={`w-10 h-10 rounded-full ${theme === 'light' ? 'border-gray-300' : 'border-white/10'} flex items-center justify-center hover:bg-premium-dark/80 hover:border-white/30 transition-colors`}>
+            <button className={`w-10 h-10 rounded-full border-gray-300 flex items-center justify-center hover:bg-premium-dark/80 hover:border-white/30 transition-colors`}>
               <ArrowLeft size={18} />
             </button>
-            <button className={`w-10 h-10 rounded-full ${theme === 'light' ? 'border-gray-300' : 'border-white/10'} flex items-center justify-center hover:bg-premium-dark/80 hover:border-white/30 transition-colors`}>
+            <button className={`w-10 h-10 rounded-full border-gray-300 flex items-center justify-center hover:bg-premium-dark/80 hover:border-white/30 transition-colors`}>
               <ArrowRight size={18} />
             </button>
           </div>

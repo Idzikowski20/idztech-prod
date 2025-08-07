@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Youtube, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useTheme } from '@/utils/themeContext';
 
 const Footer = () => {
-  const { theme } = useTheme();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -15,7 +13,7 @@ const Footer = () => {
 
   return (
     <footer className={
-      `${theme === 'light' ? 'text-black' : 'text-white'} pt-16 pb-8`
+      `text-black pt-16 pb-8`
     }>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">

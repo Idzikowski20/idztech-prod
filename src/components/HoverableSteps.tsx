@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
-import { useTheme } from '@/utils/themeContext';
 
 type StepInfo = {
   id: string;
@@ -16,7 +15,6 @@ interface HoverableStepsProps {
 
 const HoverableSteps: React.FC<HoverableStepsProps> = ({ steps, className = "" }) => {
   const [activeStep, setActiveStep] = useState<string>(steps[0]?.id || '');
-  const { theme } = useTheme();
   
   // Find the active step data
   const activeStepData = steps.find(step => step.id === activeStep) || steps[0];
@@ -42,7 +40,7 @@ const HoverableSteps: React.FC<HoverableStepsProps> = ({ steps, className = "" }
                   className={`w-[60px] h-[60px] flex items-center justify-center rounded-full text-xl font-bold
                     ${activeStep === step.id 
                       ? 'bg-premium-gradient text-white' 
-                      : `${theme === 'light' ? 'bg-gray-100' : 'bg-white/5'} ${theme === 'light' ? 'text-black' : 'text-white'}`
+                      : 'bg-white text-black'
                     } transition-all duration-300`}
                 >
                   {step.id}
@@ -53,8 +51,8 @@ const HoverableSteps: React.FC<HoverableStepsProps> = ({ steps, className = "" }
                 <h3 
                   className={`text-xl font-semibold transition-all duration-300
                     ${activeStep === step.id 
-                      ? (theme === 'light' ? 'text-black' : 'text-white') 
-                      : (theme === 'light' ? 'text-gray-600' : 'text-gray-300')
+                      ? 'text-black' 
+                      : 'text-gray-600'
                     }`}
                 >
                   {step.title}
@@ -65,11 +63,11 @@ const HoverableSteps: React.FC<HoverableStepsProps> = ({ steps, className = "" }
         </div>
         
         {/* Right side - Content */}
-        <div className={`rounded-xl p-6 ${theme === 'light' ? 'bg-white shadow-lg' : 'bg-white/5 border border-white/10'}`}>
-          <h3 className={`text-2xl font-semibold mb-4 ${theme === 'light' ? 'text-black' : 'text-white'}`}>
+        <div className={`rounded-xl p-6 bg-white shadow-lg`}>
+          <h3 className={`text-2xl font-semibold mb-4 text-black`}>
             {activeStepData.title}
           </h3>
-          <p className={`mb-6 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>
+          <p className={`mb-6 text-gray-600`}>
             {activeStepData.description}
           </p>
           <div className="space-y-3">
@@ -80,7 +78,7 @@ const HoverableSteps: React.FC<HoverableStepsProps> = ({ steps, className = "" }
                     <Check className="w-3 h-3 text-white" />
                   </div>
                 </div>
-                <p className={theme === 'light' ? 'text-black' : 'text-gray-300'}>
+                <p className="text-black">
                   {feature}
                 </p>
               </div>
