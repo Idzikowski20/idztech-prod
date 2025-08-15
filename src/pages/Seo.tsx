@@ -128,13 +128,14 @@ const Seo = () => {
             }
           `}</script>
         </Helmet>
-        <Navbar />
         
           {/* Hero Section */}
-          <section className="min-h-[40vh] pt-32 pb-16 relative overflow-hidden">
+          <section className="md:py-24 relative max-md:pt-[7rem] bg-center max-md:bg-[length:300%_100%] bg-[length:100%_100%] overflow-hidden"
+    style={{ backgroundImage: "url('/images/bg-smoke.png')"}}
+    >
           {/* Background elements */}
           {/* <div className="max-md:hidden absolute top-0 right-0 w-96 h-96 bg-premium-blue/20 rounded-full blur-[120px] -z-10"></div> */}
-          <div className="max-md:hidden absolute top-0 left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div>
+          {/* <div className="max-md:hidden absolute top-0 left-0 w-96 h-96 bg-premium-pink/20 rounded-full blur-[120px] -z-10"></div> */}
 
          <div className="container mx-auto px-4 lg:px-8 overflow-hidden">
             
