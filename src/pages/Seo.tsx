@@ -161,19 +161,17 @@ const Seo = () => {
               <div className="relative animate-slide-up">
                 {/* Desktop/tablet układ */}
                 <div className="w-full h-[220px] sm:h-80 md:h-96 flex items-center justify-center overflow-hidden rounded-lg mt-6 gap-x-8 hidden md:flex">
-                  <img src="/lovable-uploads/seo1.svg" alt="Statystyka 1" className="w-[20rem] shadow-md rounded-lg animate-float-1" />
-                  <div className="flex flex-col justify-center items-center gap-10">
+                  <img src="/images/header.gif" alt="Statystyka 1" className="w-full h-full object-contain w-[20rem] animate-float-1" />
+                  {/* <div className="flex flex-col justify-center items-center gap-10">
                     <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="w-[10rem] mt-[20px] shadow-md rounded-lg animate-float-2" />
                     <img src="/lovable-uploads/seo3.svg" alt="Statystyka 3" className="w-28 md:w-36 shadow-md rounded-lg animate-float-3" />
-                  </div>
+                  </div> */}
                 </div>
                 {/* Mobile układ */}
                 <div className="w-full flex flex-col items-center justify-center md:hidden">
                   {/* Statystyki w rzędzie pod spodem */}
                   <div className="flex flex-row gap-4 w-full h-full justify-center">
-                    <img src="/lovable-uploads/seo1.svg" alt="Statystyka 1" className="w-[10rem] m-[5px] shadow-md rounded-lg" />
-                    <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="w-[10rem] m-[5px] shadow-md rounded-lg" />
-                    <img src="/lovable-uploads/seo3.svg" alt="Statystyka 3" className="w-20 shadow-md rounded-lg display-none" />
+                    <img src="/images/header.gif" alt="Statystyka 1" className="w-full h-full object-contain w-[20rem] animate-float-1" />
                   </div>
                 </div>
               </div>
@@ -245,34 +243,45 @@ const Seo = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="flex items-start gap-4">
-                <span className="text-premium-orange text-2xl mt-1">🏆</span>
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
                 <div>
                   <h3 className="font-bold mb-1">75% użytkowników zostaje na pierwszej stronie Google</h3>
                   <p className="text-premium-light/80">Aż 75 procent internautów nigdy nie zagląda poza pierwszą stronę wyników wyszukiwania. Jeśli Twoja witryna nie znajduje się wśród tych pierwszych pozycji, jest to jakby nie istniała dla większości użytkowników internetu.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-premium-orange text-2xl mt-1">🔍</span>
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
                 <div>
                   <h3 className="font-bold mb-1">93% działań w sieci zaczyna się od wyszukiwarki</h3>
                   <p className="text-premium-light/80">Podkreślając istotę posiadania wysokiej pozycji w wynikach wyszukiwania, warto zauważyć, że 93% użytkowników rozpoczyna swoje poszukiwania w sieci od właśnie tego narzędzia.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-premium-orange text-2xl mt-1">🚫</span>
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
                 <div>
                   <h3 className="font-bold mb-1">70–80% użytkowników omija reklamy w wyszukiwarce</h3>
                   <p className="text-premium-light/80">Zdecydowana większość internautów, około 70–80 procent, ignoruje płatne reklamy, skupiając się głównie na organicznych wynikach wyszukiwania.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-premium-orange text-2xl mt-1">📈</span>
+              <div className="w-10 h-10 rounded-full bg-premium-green flex items-center justify-center mt-1">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
                 <div>
                   <h3 className="font-bold mb-1">10-krotnie więcej ruchu niż z mediów społecznościowych</h3>
                   <p className="text-premium-light/80">Statystyki ruchu w wyszukiwarkach wyraźnie wskazują, że wyszukiwanie jest głównym źródłem ruchu w e-commerce.</p>
                 </div>
               </div>
             </div>
+            <div className="w-[65%] mx-auto flex items-center justify-center">
+                <img src="/images/position-checker-monitoring.gif" alt="Case Study" className="rounded-xl w-full h-full object-contain" />
+              </div>
           </div>
         </section>
         
@@ -720,15 +729,15 @@ const Seo = () => {
               </p>
               <div className="flex flex-col gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">1</div>
+                  <div className="p-5 w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">1</div>
                   <span className="text-premium-light/90">Wyszukaliśmy frazy z dużym potencjałem przyciągnięcia ruchu.</span>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">2</div>
+                  <div className="p-5 w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">2</div>
                   <span className="text-premium-light/90">Zadbaliśmy o zoptymalizowanie treści na stronie pod cele widoczności.</span>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">3</div>
+                  <div className="p-5 w-9 h-9 rounded-full bg-premium-purple flex items-center justify-center text-white font-bold text-lg">3</div>
                   <span className="text-premium-light/90">Przygotowaliśmy wpisy blogowe, by wzmocnić stronę i zbudować Topical Authority.</span>
                 </div>
               </div>
@@ -737,22 +746,26 @@ const Seo = () => {
             <div className="flex-1 flex flex-col justify-center gap-10 lg:gap-16">
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <span className="block text-5xl font-bold text-premium-light">10</span>
+                  <span className="block text-5xl font-bold text-main">10</span>
                   <span className="block text-premium-light/70 mt-2">fraz w top 20</span>
                 </div>
                 <div>
-                  <span className="block text-5xl font-bold text-premium-light">173%</span>
+                  <span className="block text-5xl font-bold text-main">173%</span>
                   <span className="block text-premium-light/70 mt-2">wzrost ROI</span>
                 </div>
                 <div>
-                  <span className="block text-5xl font-bold text-premium-light">20k+</span>
+                  <span className="block text-5xl font-bold text-main">20k+</span>
                   <span className="block text-premium-light/70 mt-2">wzrost unikalnych użytkowników</span>
                 </div>
                 <div>
-                  <span className="block text-5xl font-bold text-premium-light">47%</span>
+                  <span className="block text-5xl font-bold text-main">47%</span>
                   <span className="block text-premium-light/70 mt-2">średni wzrost konwersji na stronie</span>
                 </div>
               </div>
+              <div className="flex max-md:flex-col justify-center items-center gap-10">
+                    <img src="/lovable-uploads/seo2.svg" alt="Statystyka 2" className="w-[10rem] mt-[20px] shadow-md rounded-lg animate-float-2" />
+                    <img src="/lovable-uploads/seo1.svg" alt="Statystyka 2" className="w-[10rem] mt-[20px] shadow-md rounded-lg animate-float-1" />
+                  </div>
             </div>
           </div>
         </section>
